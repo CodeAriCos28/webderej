@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>proyectos | DerejSoft</title>
+    <link rel="shortcut icon" href="/logos/logo2D(1).ico">
+    <meta name="description" content="Descubre TiendaMax Pro, nuestra plataforma de comercio electrónico más avanzada. Solución completa para tu negocio online.">
+    
+    <!-- Fuentes y CSS externo -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+    <style>
+        /* Variables CSS - Mismo esquema de colores que index2.html */
+        :root {
+            /* Colores principales */
+            --primary-color: #6366f1;
+            --primary-dark: #4f46e5;
+            --primary-light: #818cf8;
+            --secondary-color: #f59e0b;
+            --accent-color: #10b981;
+            
+            /* Gradientes */
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --gradient-accent: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --gradient-warm: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            
+            /* Colores neutros */
+            --dark-bg: #0f0f23;
+            --dark-card: #1a1a2e;
+            --dark-accent: #16213e;
+            --light-text: #ffffff;
+            --gray-text: #a1a1aa;
+            --border-color: rgba(255, 255, 255, 0.1);
+            
+            /* Tipografía */
+            --font-primary: 'Inter', sans-serif;
+            --font-display: 'Playfair Display', serif;
+            
+            /* Espaciado */
+            --section-padding: 120px 0;
+            --container-padding: 0 20px;
+            --border-radius: 20px;
+            --border-radius-sm: 12px;
+            
+            /* Sombras */
+            --shadow-soft: 0 10px 40px rgba(0, 0, 0, 0.1);
+            --shadow-medium: 0 20px 60px rgba(0, 0, 0, 0.15);
+            --shadow-strong: 0 30px 80px rgba(0, 0, 0, 0.2);
+            
+            /* Transiciones */
+            --transition-fast: 0.3s ease;
+            --transition-medium: 0.5s ease;
+            --transition-slow: 0.8s ease;
+        }
+
+        /* Reset y estilos base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            background: var(--dark-bg);
+            color: var(--light-text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--container-padding);
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(15, 15, 35, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo28 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--light-text);
+            text-decoration: none;
+        }
+
+        .logo28 span {
+            color: var(--primary-color);
+        }
+
+        .logo-img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--light-text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition-fast);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .back-button {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition-fast);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        /* Sección principal del proyecto */
+        .project-showcase {
+            padding: 140px 0 80px;
+            background: var(--dark-bg);
+        }
+
+        .project-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .project-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            padding: 12px 24px;
+            border-radius: 50px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .project-badge i {
+            color: var(--primary-color);
+        }
+
+        .project-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .project-subtitle {
+            font-size: 1.3rem;
+            color: var(--gray-text);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .project-price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+
+        .price-note {
+            color: var(--gray-text);
+            font-size: 1rem;
+        }
+
+        /* Carrusel de imágenes */
+        .carousel-container {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto 60px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-strong);
+        }
+
+        .carousel-wrapper {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+        }
+
+        .carousel-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .carousel-slide.active {
+            opacity: 1;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: var(--transition-fast);
+            z-index: 10;
+        }
+
+        .carousel-nav:hover {
+            background: var(--primary-color);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-prev {
+            left: 20px;
+        }
+
+        .carousel-next {
+            right: 20px;
+        }
+
+        .carousel-indicators {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: var(--transition-fast);
+        }
+
+        .indicator.active {
+            background: var(--primary-color);
+            transform: scale(1.2);
+        }
+
+        /* Contenido del proyecto */
+        .project-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            margin-bottom: 80px;
+        }
+
+        .project-info h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--light-text);
+        }
+
+        .project-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--gray-text);
+            margin-bottom: 30px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .feature-item {
+            background: var(--dark-card);
+            padding: 25px;
+            border-radius: var(--border-radius-sm);
+            border: 1px solid var(--border-color);
+            transition: var(--transition-fast);
+        }
+
+        .feature-item:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            color: white;
+        }
+
+        .feature-item h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--light-text);
+        }
+
+        .feature-item p {
+            color: var(--gray-text);
+            font-size: 0.95rem;
+        }
+
+        /* Especificaciones técnicas */
+        .tech-specs {
+            background: var(--dark-card);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--border-color);
+        }
+
+        .tech-specs h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: var(--light-text);
+        }
+
+        .specs-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .spec-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 15px;
+            background: var(--dark-bg);
+            border-radius: var(--border-radius-sm);
+        }
+
+        .spec-item i {
+            color: var(--primary-color);
+            font-size: 1.1rem;
+        }
+
+        .spec-item span {
+            color: var(--light-text);
+            font-weight: 500;
+        }
+
+        /* Call to Action */
+        .cta-section {
+            text-align: center;
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--dark-card) 0%, var(--dark-accent) 100%);
+        }
+
+        .cta-content h2 {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .cta-content p {
+            font-size: 1.2rem;
+            color: var(--gray-text);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 18px 36px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: var(--transition-fast);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: white;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-strong);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .whatsapp-float a {
+            display: block;
+            width: 60px;
+            height: 60px;
+            background: #25d366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-medium);
+            transition: var(--transition-fast);
+            animation: bounce 2s infinite;
+        }
+
+        .whatsapp-float a:hover {
+            transform: scale(1.1);
+            box-shadow: var(--shadow-strong);
+            animation: none;
+        }
+
+        .whatsapp-float img {
+            width: 35px;
+            height: 35px;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .project-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .carousel-wrapper {
+                height: 300px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .specs-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .project-title {
+                font-size: 2.5rem;
+            }
+
+            .project-price {
+                font-size: 2rem;
+            }
+
+            .cta-content h2 {
+                font-size: 2rem;
+            }
+
+            .carousel-nav {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="/index2.html" class="logo28">
+                <img src="/logos/DerejLogo.ico" alt="Logo DerejSoft" class="logo-img">
+                <div>Derej<span>Soft</span></div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="/index2.html">Inicio</a></li>
+                <li><a href="/index2.html#proyectos">Proyectos</a></li>
+                <li><a href="/index2.html#contacto">Contacto</a></li>
+            </ul>
+            <a href="/index2.html" class="back-button">
+                <i class="fas fa-arrow-left"></i>
+                <span>Volver</span>
+            </a>
+        </nav>
+    </header>
+
+    <!-- WhatsApp Float -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/8294772269" target="_blank" aria-label="Abrir chat de WhatsApp">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" alt="WhatsApp">
+        </a>
+    </div>
+
+    <!-- Sección principal del proyecto -->
+    <section class="project-showcase">
+        <div class="container">
+            <!-- Header del proyecto -->
+            <div class="project-header">
+                <div class="project-badge">
+                    <i class="fas fa-crown"></i>
+                    <span>Proyecto Exclusivo</span>
+                </div>
+                <h1 class="project-title">DerejSoft</h1>
+                <p class="project-subtitle">
+                    La plataforma de comercio electrónico más avanzada y completa del mercado. 
+                    Diseñada para empresas que buscan la excelencia en ventas online.
+                </p>
+                <div class="project-price">RD$ 35,000</div>
+                <p class="price-note">Licencia completa + 1 año de soporte premium</p>
+            </div>
+
+            <!-- Carrusel de imágenes -->
+            <div class="carousel-container">
+                <div class="carousel-wrapper">
+                    <div class="carousel-slide active">
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80" alt="Dashboard principal de TiendaMax Pro">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2426&q=80" alt="Panel de administración">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80" alt="Análisis y reportes">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80" alt="Interfaz móvil">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&auto=format&fit=crop&w=2374&q=80" alt="Sistema de pagos">
+                    </div>
+                </div>
+                
+                <button class="carousel-nav carousel-prev">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-nav carousel-next">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                
+                <div class="carousel-indicators">
+                    <div class="indicator active" data-slide="0"></div>
+                    <div class="indicator" data-slide="1"></div>
+                    <div class="indicator" data-slide="2"></div>
+                    <div class="indicator" data-slide="3"></div>
+                    <div class="indicator" data-slide="4"></div>
+                </div>
+            </div>
+
+            <!-- Contenido del proyecto -->
+            <div class="project-content">
+                <div class="project-info">
+                    <h3>Revoluciona tu Negocio Online</h3>
+                    <p class="project-description">
+                        TiendaMax Pro es mucho más que una simple plataforma de e-commerce. Es una solución integral 
+                        que combina tecnología de vanguardia, diseño excepcional y funcionalidades avanzadas para 
+                        crear la experiencia de compra online perfecta.
+                    </p>
+                    <p class="project-description">
+                        Desarrollada con las últimas tecnologías web y optimizada para máximo rendimiento, esta 
+                        plataforma ha demostrado incrementar las conversiones hasta en un 340% comparado con 
+                        soluciones tradicionales.
+                    </p>
+
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                            <h4>Carrito Inteligente</h4>
+                            <p>Sistema de carrito con IA que sugiere productos y optimiza conversiones</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-credit-card"></i>
+                            </div>
+                            <h4>Pagos Seguros</h4>
+                            <p>Integración con +15 métodos de pago y cifrado de nivel bancario</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h4>Analytics Avanzado</h4>
+                            <p>Reportes en tiempo real y análisis predictivo de ventas</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <h4>Mobile First</h4>
+                            <p>Diseño 100% responsive optimizado para dispositivos móviles</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tech-specs">
+                    <h3>Especificaciones Técnicas</h3>
+                    <div class="specs-list">
+                        <div class="spec-item">
+                            <i class="fab fa-react"></i>
+                            <span>React 18 + Next.js</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fas fa-database"></i>
+                            <span>PostgreSQL + Redis</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fas fa-cloud"></i>
+                            <span>AWS Cloud Native</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>SSL + Cifrado AES-256</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>CDN Global</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fas fa-search"></i>
+                            <span>SEO Optimizado</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fas fa-language"></i>
+                            <span>Multi-idioma</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fas fa-coins"></i>
+                            <span>Multi-moneda</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fas fa-robot"></i>
+                            <span>IA Integrada</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fas fa-headset"></i>
+                            <span>Soporte 24/7</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fas fa-sync"></i>
+                            <span>Auto-updates</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fas fa-plug"></i>
+                            <span>API REST completa</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>¿Listo para Dominar el E-commerce?</h2>
+                <p>
+                    No dejes que tu competencia se adelante. TiendaMax Pro está disponible por tiempo limitado 
+                    con condiciones exclusivas para empresas visionarias.
+                </p>
+                <div class="cta-buttons">
+                    <a href="https://wa.me/8294772269?text=Hola,%20estoy%20interesado%20en%20TiendaMax%20Pro" class="btn btn-primary" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>Solicitar Demo</span>
+                    </a>
+                    <a href="#" class="btn btn-secondary" onclick="showPricing()">
+                        <i class="fas fa-calculator"></i>
+                        <span>Ver Precios</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        // Carrusel de imágenes
+        class ImageCarousel {
+            constructor() {
+                this.currentSlide = 0;
+                this.slides = document.querySelectorAll('.carousel-slide');
+                this.indicators = document.querySelectorAll('.indicator');
+                this.prevBtn = document.querySelector('.carousel-prev');
+                this.nextBtn = document.querySelector('.carousel-next');
+                this.autoSlideInterval = null;
+                
+                this.init();
+            }
+            
+            init() {
+                // Event listeners para navegación
+                this.prevBtn.addEventListener('click', () => this.prevSlide());
+                this.nextBtn.addEventListener('click', () => this.nextSlide());
+                
+                // Event listeners para indicadores
+                this.indicators.forEach((indicator, index) => {
+                    indicator.addEventListener('click', () => this.goToSlide(index));
+                });
+                
+                // Auto-slide
+                this.startAutoSlide();
+                
+                // Pausar auto-slide al hover
+                const carouselContainer = document.querySelector('.carousel-container');
+                carouselContainer.addEventListener('mouseenter', () => this.stopAutoSlide());
+                carouselContainer.addEventListener('mouseleave', () => this.startAutoSlide());
+            }
+            
+            goToSlide(slideIndex) {
+                // Remover clase active de slide actual
+                this.slides[this.currentSlide].classList.remove('active');
+                this.indicators[this.currentSlide].classList.remove('active');
+                
+                // Actualizar índice
+                this.currentSlide = slideIndex;
+                
+                // Agregar clase active al nuevo slide
+                this.slides[this.currentSlide].classList.add('active');
+                this.indicators[this.currentSlide].classList.add('active');
+            }
+            
+            nextSlide() {
+                const nextIndex = (this.currentSlide + 1) % this.slides.length;
+                this.goToSlide(nextIndex);
+            }
+            
+            prevSlide() {
+                const prevIndex = (this.currentSlide - 1 + this.slides.length) % this.slides.length;
+                this.goToSlide(prevIndex);
+            }
+            
+            startAutoSlide() {
+                this.autoSlideInterval = setInterval(() => {
+                    this.nextSlide();
+                }, 4000); // Cambiar cada 4 segundos
+            }
+            
+            stopAutoSlide() {
+                if (this.autoSlideInterval) {
+                    clearInterval(this.autoSlideInterval);
+                    this.autoSlideInterval = null;
+                }
+            }
+        }
+        
+        // Función para mostrar precios
+        function showPricing() {
+            Swal.fire({
+                title: ' TiendaMax Pro - Precios Exclusivos',
+                html: `
+                    <div style="text-align: left; color: #333;">
+                        <h3 style="color: #6366f1; margin-bottom: 15px;"> Paquete Completo</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin: 8px 0;"><i class="fas fa-check" style="color: #10b981; margin-right: 8px;"></i> Licencia perpetua del software</li>
+                            <li style="margin: 8px 0;"><i class="fas fa-check" style="color: #10b981; margin-right: 8px;"></i> Instalación y configuración completa</li>
+                            <li style="margin: 8px 0;"><i class="fas fa-check" style="color: #10b981; margin-right: 8px;"></i> Capacitación del equipo (8 horas)</li>
+                            <li style="margin: 8px 0;"><i class="fas fa-check" style="color: #10b981; margin-right: 8px;"></i> Soporte premium por 12 meses</li>
+                            <li style="margin: 8px 0;"><i class="fas fa-check" style="color: #10b981; margin-right: 8px;"></i> Actualizaciones gratuitas</li>
+                            <li style="margin: 8px 0;"><i class="fas fa-check" style="color: #10b981; margin-right: 8px;"></i> Integración con sistemas existentes</li>
+                        </ul>
+                        <div style="text-align: center; margin-top: 20px;">
+                            <div style="font-size: 2rem; font-weight: bold; color: #10b981;">$35,000 RD</div>
+                            <div style="color: #666; font-size: 0.9rem;">Pago único - Sin mensualidades</div>
+                        </div>
+                    </div>
+                `,
+                showCancelButton: true,
+                confirmButtonText: ' Contactar Ahora',
+                cancelButtonText: 'Cerrar',
+                confirmButtonColor: '#6366f1',
+                cancelButtonColor: '#6b7280',
+                width: '600px'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.open('https://wa.me/8294772269?text=Hola,%20quiero%20información%20sobre%20TiendaMax%20Pro%20y%20sus%20precios', '_blank');
+                }
+            });
+        }
+        
+        // Animaciones al scroll
+        function initScrollAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            // Observar elementos que necesitan animación
+            document.querySelectorAll('.feature-item, .spec-item').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'all 0.6s ease';
+                observer.observe(el);
+            });
+        }
+        
+        // Inicializar cuando el DOM esté listo
+        document.addEventListener('DOMContentLoaded', function() {
+            new ImageCarousel();
+            initScrollAnimations();
+            
+            // Efecto de typing en el título
+            const title = document.querySelector('.project-title');
+            const text = title.textContent;
+            title.textContent = '';
+            title.style.borderRight = '2px solid #6366f1';
+            
+            let i = 0;
+            const typeWriter = () => {
+                if (i < text.length) {
+                    title.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 100);
+                } else {
+                    setTimeout(() => {
+                        title.style.borderRight = 'none';
+                    }, 1000);
+                }
+            };
+            
+            setTimeout(typeWriter, 500);
+        });
+    </script>
+</body>
+</html>

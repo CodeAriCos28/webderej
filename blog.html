@@ -1,0 +1,1413 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - DerejSoft | Noticias y Tendencias Tecnológicas</title>
+    <link rel="shortcut icon" href="logos/logo2D(1).ico">
+    <meta name="description" content="Mantente al día con las últimas noticias, tendencias y novedades tecnológicas de DerejSoft. Blog de desarrollo web, innovación y tecnología.">
+    <meta name="keywords" content="blog tecnología, noticias desarrollo web, tendencias software, DerejSoft blog, innovación digital">
+    
+    <!-- Fuentes y CSS externo -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* Reset y Variables */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Colores principales */
+            --primary-color: #6366f1;
+            --primary-dark: #4f46e5;
+            --primary-light: #818cf8;
+            --secondary-color: #f59e0b;
+            --accent-color: #10b981;
+            
+            /* Gradientes */
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --gradient-accent: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --gradient-warm: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            
+            /* Colores neutros */
+            --dark-bg: #0f0f23;
+            --dark-card: #1a1a2e;
+            --dark-accent: #16213e;
+            --light-text: #ffffff;
+            --gray-text: #a1a1aa;
+            --border-color: rgba(255, 255, 255, 0.1);
+            
+            /* Tipografía */
+            --font-primary: 'Inter', sans-serif;
+            --font-display: 'Playfair Display', serif;
+            
+            /* Espaciado */
+            --section-padding: 120px 0;
+            --container-padding: 0 20px;
+            --border-radius: 20px;
+            --border-radius-sm: 12px;
+            
+            /* Sombras */
+            --shadow-soft: 0 10px 40px rgba(0, 0, 0, 0.1);
+            --shadow-medium: 0 20px 60px rgba(0, 0, 0, 0.15);
+            --shadow-strong: 0 30px 80px rgba(0, 0, 0, 0.2);
+            
+            /* Transiciones */
+            --transition-fast: 0.3s ease;
+            --transition-medium: 0.5s ease;
+            --transition-slow: 0.8s ease;
+        }
+
+        /* Estilos base */
+        body {
+            font-family: var(--font-primary);
+            background: var(--dark-bg);
+            color: var(--light-text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--container-padding);
+        }
+
+        /* Utilidades */
+        .gradient-text {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .section-subtitle {
+            font-size: 1.25rem;
+            color: var(--gray-text);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(15, 15, 35, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .logo28 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--light-text);
+        }
+
+        .logo28 span {
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--light-text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition-fast);
+            position: relative;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-primary);
+            transition: var(--transition-fast);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            background: none;
+            border: none;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--light-text);
+            transition: var(--transition-fast);
+        }
+
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .whatsapp-float a {
+            display: block;
+            width: 60px;
+            height: 60px;
+            background: #25d366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-medium);
+            transition: var(--transition-fast);
+        }
+
+        .whatsapp-float a:hover {
+            transform: scale(1.1);
+            box-shadow: var(--shadow-strong);
+        }
+
+        .whatsapp-float img {
+            width: 35px;
+            height: 35px;
+        }
+
+        /* Hero Section del Blog */
+        .blog-hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 120px 20px 80px;
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .gradient-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, 
+                rgba(102, 102, 234, 0.1) 0%, 
+                rgba(118, 75, 162, 0.1) 50%, 
+                rgba(240, 147, 251, 0.1) 100%);
+        }
+
+        .floating-shapes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            opacity: 0.1;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .shape-1 {
+            width: 300px;
+            height: 300px;
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .shape-2 {
+            width: 200px;
+            height: 200px;
+            top: 60%;
+            right: 10%;
+            animation-delay: -5s;
+        }
+
+        .shape-3 {
+            width: 150px;
+            height: 150px;
+            bottom: 20%;
+            left: 20%;
+            animation-delay: -10s;
+        }
+
+        .shape-4 {
+            width: 100px;
+            height: 100px;
+            top: 30%;
+            right: 30%;
+            animation-delay: -15s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-30px) rotate(120deg); }
+            66% { transform: translateY(20px) rotate(240deg); }
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            padding: 12px 24px;
+            border-radius: 50px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 30px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .hero-badge i {
+            color: var(--primary-color);
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 30px;
+        }
+
+        .title-line {
+            display: block;
+            animation: fadeInUp 1s ease both;
+        }
+
+        .title-line:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--gray-text);
+            margin-bottom: 50px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .blog-stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-bottom: 60px;
+            animation: fadeInUp 1s ease 0.8s both;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--gray-text);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Filtros de Categorías */
+        .blog-filters {
+            padding: 80px 0 40px;
+            background: var(--dark-bg);
+        }
+
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 60px;
+        }
+
+        .filter-btn {
+            padding: 12px 24px;
+            background: var(--dark-card);
+            border: 1px solid var(--border-color);
+            border-radius: 50px;
+            color: var(--gray-text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition-fast);
+            cursor: pointer;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--gradient-primary);
+            color: white;
+            border-color: transparent;
+            transform: translateY(-2px);
+        }
+
+        /* Grid de Artículos del Blog */
+        .blog-section {
+            padding: 40px 0 120px;
+            background: var(--dark-bg);
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .blog-card {
+            background: var(--dark-card);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: var(--transition-medium);
+            opacity: 0;
+            transform: translateY(30px);
+            position: relative;
+        }
+
+        .blog-card.aos-animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-strong);
+            border-color: var(--primary-color);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .blog-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition-medium);
+        }
+
+        .blog-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .blog-category {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: var(--gradient-primary);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .blog-content {
+            padding: 30px;
+        }
+
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            color: var(--gray-text);
+        }
+
+        .blog-meta i {
+            color: var(--primary-color);
+        }
+
+        .blog-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--light-text);
+            line-height: 1.3;
+        }
+
+        .blog-excerpt {
+            color: var(--gray-text);
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .blog-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 25px;
+        }
+
+        .blog-tag {
+            background: rgba(102, 102, 234, 0.2);
+            color: var(--primary-light);
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .read-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition-fast);
+        }
+
+        .read-more:hover {
+            gap: 12px;
+        }
+
+        /* Artículo Destacado */
+        .featured-section {
+            padding: 80px 0;
+            background: linear-gradient(180deg, var(--dark-bg) 0%, var(--dark-card) 100%);
+        }
+
+        .featured-article {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            background: var(--dark-card);
+            border-radius: var(--border-radius);
+            padding: 60px;
+            border: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .featured-image {
+            border-radius: var(--border-radius-sm);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .featured-article img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .featured-content h2 {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .featured-meta {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
+            color: var(--gray-text);
+        }
+
+        .featured-meta i {
+            color: var(--primary-color);
+        }
+
+        .featured-excerpt {
+            font-size: 1.1rem;
+            color: var(--gray-text);
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .featured-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 30px;
+            background: var(--gradient-primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition-fast);
+        }
+
+        .featured-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        /* Newsletter Section */
+        .newsletter-section {
+            padding: var(--section-padding);
+            background: var(--dark-card);
+            text-align: center;
+        }
+
+        .newsletter-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .newsletter-content h2 {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .newsletter-content p {
+            font-size: 1.2rem;
+            color: var(--gray-text);
+            margin-bottom: 40px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 15px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 15px 20px;
+            background: var(--dark-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 50px;
+            color: var(--light-text);
+            font-size: 1rem;
+        }
+
+        .newsletter-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .newsletter-btn {
+            padding: 15px 30px;
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-fast);
+        }
+
+        .newsletter-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-card);
+            padding: 60px 20px 20px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        footer nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--light-text);
+        }
+
+        .footer-logo span {
+            color: var(--primary-color);
+        }
+
+        .footer-link {
+            color: var(--gray-text);
+            text-decoration: none;
+            transition: var(--transition-fast);
+        }
+
+        .footer-link:hover {
+            color: var(--primary-color);
+        }
+
+        .redes ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .redes img {
+            width: 24px;
+            height: 24px;
+            transition: var(--transition-fast);
+        }
+
+        .redes a:hover img {
+            transform: scale(1.2);
+        }
+
+        .copyright-bar {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            color: var(--gray-text);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .blog-stats {
+                gap: 30px;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+            
+            .filter-container {
+                justify-content: flex-start;
+                overflow-x: auto;
+                padding-bottom: 10px;
+            }
+            
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .featured-article {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 40px;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+                max-width: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .blog-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .featured-content h2 {
+                font-size: 2rem;
+            }
+            
+            .newsletter-content h2 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Animaciones adicionales */
+        .particle {
+            animation: particleFloat 20s infinite linear !important;
+        }
+        
+        @keyframes particleFloat {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        .logo28 span {
+           position: relative;
+           left: 3px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header y navegación -->
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="logos/DerejLogo.ico" alt="Logo DerejSoft" class="logo-img">
+                <div class="logo28">Derej<span>Soft</span></div>
+            </div>
+            <button class="menu-toggle" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index2.html">Inicio</a></li>
+                <li><a href="index2.html#servicios">Servicios</a></li>
+                <li><a href="nosotros2.html">Nosotros</a></li>
+                <li><a href="index2.html#proyectos">Proyectos</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
+                <li><a href="index2.html#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="whatsapp-float">
+        <a href="https://wa.me/8294772269" target="_blank" aria-label="Abrir chat de WhatsApp">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" alt="WhatsApp">
+        </a>
+    </div>
+
+    <main>
+        <!-- Hero Section del Blog -->
+        <section class="blog-hero">
+            <div class="hero-background">
+                <div class="gradient-overlay"></div>
+                <div class="floating-shapes">
+                    <div class="shape shape-1"></div>
+                    <div class="shape shape-2"></div>
+                    <div class="shape shape-3"></div>
+                    <div class="shape shape-4"></div>
+                </div>
+            </div>
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-newspaper"></i>
+                    <span>Blog Tecnológico</span>
+                </div>
+                <h1 class="hero-title">
+                    <span class="title-line">Noticias y</span>
+                    <span class="title-line gradient-text">Tendencias</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Mantente al día con las últimas novedades en tecnología, desarrollo web e innovación digital
+                </p>
+                <div class="blog-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="500">0</span>
+                        <span class="stat-label">Artículos</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="12">0</span>
+                        <span class="stat-label">Categorías</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="1000000">0</span>
+                        <span class="stat-label">Lectores</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filtros de Categorías -->
+        <section class="blog-filters">
+            <div class="container">
+                <div class="filter-container">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="desarrollo">Desarrollo Web</button>
+                    <button class="filter-btn" data-filter="ia">Inteligencia Artificial</button>
+                    <button class="filter-btn" data-filter="movil">Desarrollo Móvil</button>
+                    <button class="filter-btn" data-filter="tendencias">Tendencias</button>
+                    <button class="filter-btn" data-filter="noticias">Noticias</button>
+                    <button class="filter-btn" data-filter="tutoriales">Tutoriales</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Artículo Destacado -->
+        <section class="featured-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Artículo <span class="gradient-text">Destacado</span></h2>
+                </div>
+                
+                <article class="featured-article">
+                    <div class="featured-image">
+                        <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="El Futuro del Desarrollo Web">
+                    </div>
+                    <div class="featured-content">
+                        <h2>El Futuro del Desarrollo Web: Tendencias 2025</h2>
+                        <div class="featured-meta">
+                            <span><i class="fas fa-calendar"></i> 15 Enero 2025</span>
+                            <span><i class="fas fa-clock"></i> 8 min lectura</span>
+                            <span><i class="fas fa-user"></i> Equipo DerejSoft</span>
+                        </div>
+                        <p class="featured-excerpt">
+                            Descubre las tecnologías emergentes que están revolucionando el desarrollo web. Desde WebAssembly hasta la computación en el edge, exploramos las tendencias que definirán el futuro de la web.
+                        </p>
+                        <a href="alticulos/arti.html" class="featured-btn">
+                            <span>Leer Artículo Completo</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+                
+            </div>
+        </section>
+
+        <!-- Grid de Artículos -->
+        <section class="blog-section">
+            <div class="container">
+                <div class="blog-grid">
+                    <!-- Artículo 1 -->
+                    <article class="blog-card" data-aos="fade-up" data-category="desarrollo">
+                        <div class="blog-image">
+                            <img src="https://images.unsplash.com/photo-1627398242454-45a1465c2479?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="React 18">
+                            <span class="blog-category">Desarrollo</span>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span><i class="fas fa-calendar"></i> 12 Enero 2025</span>
+                                <span><i class="fas fa-clock"></i> 5 min</span>
+                            </div>
+                            <h3>Novedades de React 18: Concurrent Features</h3>
+                            <p class="blog-excerpt">
+                                Exploramos las nuevas características concurrentes de React 18 y cómo pueden mejorar la experiencia del usuario en aplicaciones web complejas.
+                            </p>
+                            <div class="blog-tags">
+                                <span class="blog-tag">React</span>
+                                <span class="blog-tag">JavaScript</span>
+                                <span class="blog-tag">Frontend</span>
+                            </div>
+                            <a href="alticulos/arti3.html" class="read-more">
+                                Leer más <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Artículo 2 -->
+                    <article class="blog-card" data-aos="fade-up" data-aos-delay="200" data-category="ia">
+                        <div class="blog-image">
+                            <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="IA en Desarrollo">
+                            <span class="blog-category">IA</span>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span><i class="fas fa-calendar"></i> 10 Enero 2025</span>
+                                <span><i class="fas fa-clock"></i> 7 min</span>
+                            </div>
+                            <h3>IA Generativa en el Desarrollo de Software</h3>
+                            <p class="blog-excerpt">
+                                Cómo la inteligencia artificial está transformando la forma en que escribimos código y desarrollamos aplicaciones en 2025.
+                            </p>
+                            <div class="blog-tags">
+                                <span class="blog-tag">IA</span>
+                                <span class="blog-tag">ChatGPT</span>
+                                <span class="blog-tag">Automatización</span>
+                            </div>
+                            <a href="alticulos/arti2.html" class="read-more">
+                                Leer más <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Artículo 3 -->
+                    <article class="blog-card" data-aos="fade-up" data-aos-delay="400" data-category="movil">
+                        <div class="blog-image">
+                            <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Flutter vs React Native">
+                            <span class="blog-category">Móvil</span>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span><i class="fas fa-calendar"></i> 8 Enero 2025</span>
+                                <span><i class="fas fa-clock"></i> 6 min</span>
+                            </div>
+                            <h3>Flutter vs React Native: Comparativa 2025</h3>
+                            <p class="blog-excerpt">
+                                Análisis detallado de las dos principales tecnologías para desarrollo móvil multiplataforma y cuál elegir para tu próximo proyecto.
+                            </p>
+                            <div class="blog-tags">
+                                <span class="blog-tag">Flutter</span>
+                                <span class="blog-tag">React Native</span>
+                                <span class="blog-tag">Móvil</span>
+                            </div>
+                            <a href="alticulos/arti3.html" class="read-more">
+                                Leer más <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Artículo 4 -->
+                    <article class="blog-card" data-aos="fade-up" data-category="tendencias">
+                        <div class="blog-image">
+                            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%2Fid%2FOIP.2HiqVpyZDA-eK9SxruGdSgHaEc%3Fcb%3D12%26pid%3DApi&f=1&ipt=f4af845cb211a4e8e60068edc0637f5b7ed79337697ff7744448e6831f7977ba&ipo=images" alt="Web3 y Blockchain">
+                            <span class="blog-category">Tendencias</span>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span><i class="fas fa-calendar"></i> 5 Enero 2025</span>
+                                <span><i class="fas fa-clock"></i> 9 min</span>
+                            </div>
+                            <h3>Web3 y Blockchain: Más Allá del Hype</h3>
+                            <p class="blog-excerpt">
+                                Un análisis realista sobre las aplicaciones prácticas de Web3 y blockchain en el desarrollo de aplicaciones empresariales.
+                            </p>
+                            <div class="blog-tags">
+                                <span class="blog-tag">Web3</span>
+                                <span class="blog-tag">Blockchain</span>
+                                <span class="blog-tag">DApps</span>
+                            </div>
+                            <a href="alticulos/arti3.html" class="read-more">
+                                Leer más <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Artículo 5 -->
+                    <article class="blog-card" data-aos="fade-up" data-aos-delay="200" data-category="tutoriales">
+                        <div class="blog-image">
+                            <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Tutorial CSS">
+                            <span class="blog-category">Tutorial</span>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span><i class="fas fa-calendar"></i> 3 Enero 2025</span>
+                                <span><i class="fas fa-clock"></i> 12 min</span>
+                            </div>
+                            <h3>CSS Grid y Flexbox: Guía Completa 2025</h3>
+                            <p class="blog-excerpt">
+                                Tutorial paso a paso para dominar CSS Grid y Flexbox, las herramientas esenciales para crear layouts modernos y responsivos.
+                            </p>
+                            <div class="blog-tags">
+                                <span class="blog-tag">CSS</span>
+                                <span class="blog-tag">Grid</span>
+                                <span class="blog-tag">Flexbox</span>
+                            </div>
+                            <a href="alticulos/arti2.html" class="read-more">
+                                Leer más <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Artículo 6 -->
+                    <article class="blog-card" data-aos="fade-up" data-aos-delay="400" data-category="noticias">
+                        <div class="blog-image">
+                            <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Noticias Tech">
+                            <span class="blog-category">Noticias</span>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span><i class="fas fa-calendar"></i> 1 Enero 2025</span>
+                                <span><i class="fas fa-clock"></i> 4 min</span>
+                            </div>
+                            <h3>Resumen Tecnológico: Lo Mejor de 2024</h3>
+                            <p class="blog-excerpt">
+                                Repasamos los hitos más importantes del año en tecnología y desarrollo de software que marcaron tendencia en 2024.
+                            </p>
+                            <div class="blog-tags">
+                                <span class="blog-tag">Resumen</span>
+                                <span class="blog-tag">2024</span>
+                                <span class="blog-tag">Tecnología</span>
+                            </div>
+                            <a href="alticulos/arti2.html" class="read-more">
+                                Leer más <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Artículo 2 -->
+                    <article class="blog-card" data-aos="fade-up" data-aos-delay="200" data-category="ia">
+                        <div class="blog-image">
+                            <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="IA en Desarrollo">
+                            <span class="blog-category">IA</span>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span><i class="fas fa-calendar"></i> 10 Enero 2025</span>
+                                <span><i class="fas fa-clock"></i> 7 min</span>
+                            </div>
+                            <h3>IA Generativa en el Desarrollo de Software</h3>
+                            <p class="blog-excerpt">
+                                Cómo la inteligencia artificial está transformando la forma en que escribimos código y desarrollamos aplicaciones en 2025.
+                            </p>
+                            <div class="blog-tags">
+                                <span class="blog-tag">IA</span>
+                                <span class="blog-tag">ChatGPT</span>
+                                <span class="blog-tag">Automatización</span>
+                            </div>
+                            <a href="alticulos/arti3.html" class="read-more">
+                                Leer más <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Artículo 3 -->
+                    <article class="blog-card" data-aos="fade-up" data-aos-delay="400" data-category="movil">
+                        <div class="blog-image">
+                            <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Flutter vs React Native">
+                            <span class="blog-category">Móvil</span>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span><i class="fas fa-calendar"></i> 8 Enero 2025</span>
+                                <span><i class="fas fa-clock"></i> 6 min</span>
+                            </div>
+                            <h3>Flutter vs React Native: Comparativa 2025</h3>
+                            <p class="blog-excerpt">
+                                Análisis detallado de las dos principales tecnologías para desarrollo móvil multiplataforma y cuál elegir para tu próximo proyecto.
+                            </p>
+                            <div class="blog-tags">
+                                <span class="blog-tag">Flutter</span>
+                                <span class="blog-tag">React Native</span>
+                                <span class="blog-tag">Móvil</span>
+                            </div>
+                            <a href="alticulos/arti2.html" class="read-more">
+                                Leer más <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="newsletter-section">
+            <div class="container">
+                <div class="newsletter-content">
+                    <h2>Suscríbete a nuestro <span class="gradient-text">Newsletter</span></h2>
+                    <p>Recibe las últimas noticias y artículos directamente en tu bandeja de entrada</p>
+                    <form class="newsletter-form" id="contact-form" action="https://formsubmit.co/derejsoft2003@gmail.com" method="POST">
+                        <input type="email" class="newsletter-input" placeholder="tu@email.com" required>
+
+                        <!-- Campos ocultos para FormSubmit -->
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_subject" value="Nuevo mensaje desde el formulario">
+                        <input type="hidden" name="_next" value="">
+                        <button type="submit" class="newsletter-btn">Suscribirse</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <!-- <div class="footer-logo">Derej<span>Soft</span></div> -->
+        <nav>
+            <a href="Documentos_Legales/Terminos_de_Servicios.html" class="footer-link">Términos de Servicio</a>
+            <div class="redes">
+                <ul>
+                    <a href="https://www.instagram.com/derejsoft/?utm_source=ig_web_button_share_sheet" target="_blank" ><i class="fab fa-instagram" ></i></a>
+                    <a href="https://www.facebook.com/share/1JKws2oMEp/" target="_blank" ><i class="fab fa-facebook" ></i></a>
+                    <a href="https://www.tiktok.com/@derejsoft?is_from_webapp=1&sender_device=pc" target="_blank" ><i class="fab fa-tiktok" ></i></a>
+                </ul>
+            </div>
+            <a href="Documentos_Legales/Politicas_de _privacidad.html" class="footer-link">Política de Privacidad</a>
+        </nav>
+        <div>
+            <div class="copyright-bar">© 2025 DerejSoft. Todos los derechos reservados.</div>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript para funcionalidades del blog
+        document.addEventListener('DOMContentLoaded', function() {
+            // Inicializar todas las funcionalidades
+            initScrollAnimations();
+            initCounterAnimations();
+            initMenuToggle();
+            initSmoothScrolling();
+            initBlogFilters();
+            initNewsletterForm();
+            createParticleEffect();
+        });
+
+        // Sistema de animaciones al hacer scroll
+        function initScrollAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('aos-animate');
+                    }
+                });
+            }, observerOptions);
+
+            // Observar todos los elementos con data-aos
+            document.querySelectorAll('[data-aos]').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        // Animación de contadores
+        function initCounterAnimations() {
+            const counters = document.querySelectorAll('.stat-number');
+            const counterObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounter(entry.target);
+                        counterObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            counters.forEach(counter => {
+                counterObserver.observe(counter);
+            });
+        }
+
+        function animateCounter(element) {
+            const target = parseInt(element.getAttribute('data-target'));
+            const duration = 2000;
+            const start = performance.now();
+            const startValue = 0;
+
+            function updateCounter(currentTime) {
+                const elapsed = currentTime - start;
+                const progress = Math.min(elapsed / duration, 1);
+                const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+                const current = Math.floor(startValue + (target - startValue) * easeOutQuart);
+                
+                element.textContent = current;
+                
+                if (progress < 1) {
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    element.textContent = target;
+                }
+            }
+            
+            requestAnimationFrame(updateCounter);
+        }
+
+        // Menú móvil toggle
+        function initMenuToggle() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (menuToggle && navLinks) {
+                menuToggle.addEventListener('click', () => {
+                    navLinks.classList.toggle('active');
+                });
+            }
+        }
+
+        // Scroll suave para enlaces internos
+        function initSmoothScrolling() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        const headerHeight = document.querySelector('header').offsetHeight;
+                        const targetPosition = target.offsetTop - headerHeight - 20;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        }
+
+        // Filtros del blog
+        function initBlogFilters() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const blogCards = document.querySelectorAll('.blog-card');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remover clase active de todos los botones
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    // Agregar clase active al botón clickeado
+                    btn.classList.add('active');
+
+                    const filter = btn.getAttribute('data-filter');
+
+                    blogCards.forEach(card => {
+                        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                            card.style.display = 'block';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'translateY(0)';
+                            }, 100);
+                        } else {
+                            card.style.opacity = '0';
+                            card.style.transform = 'translateY(30px)';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+        }
+
+        // Formulario de newsletter
+        function initNewsletterForm() {
+            const form = document.querySelector('.newsletter-form');
+            
+            if (form) {
+                form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const email = form.querySelector('.newsletter-input').value;
+                    
+                    // Aquí puedes agregar la lógica para enviar el email
+                    alert('¡Gracias por suscribirte! Te mantendremos informado.');
+                    form.reset();
+                });
+            }
+        }
+
+        // Efectos de partículas en el hero
+        function createParticleEffect() {
+            const hero = document.querySelector('.blog-hero');
+            const particleCount = 50;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.cssText = `
+                    position: absolute;
+                    width: 2px;
+                    height: 2px;
+                    background: rgba(102, 102, 234, 0.5);
+                    border-radius: 50%;
+                    pointer-events: none;
+                    animation: float ${Math.random() * 20 + 10}s infinite linear;
+                    left: ${Math.random() * 100}%;
+                    top: ${Math.random() * 100}%;
+                    animation-delay: ${Math.random() * 20}s;
+                `;
+                hero.appendChild(particle);
+            }
+        }
+    </script>
+</body>
+</html>
