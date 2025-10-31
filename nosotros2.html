@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nosotros - DerejSoft</title>
-    <link rel="shortcut icon" href="./logos/logo2D(1).ico">
+    <link rel="shortcut icon" href="logos/logo2D(1).ico">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
@@ -243,6 +243,21 @@
             width: 100%;
             height: 100%;
             z-index: -1;
+        }
+        .avatar-placeholder {
+            width: 100px; /* Ajusta según el tamaño deseado */
+            height: 100px; /* Ajusta según el tamaño deseado */
+            border-radius: 50%; /* Para que sea circular */
+            overflow: hidden; /* Oculta lo que sobresalga */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .avatar-img {
+            width: 100%; /* Ocupa todo el ancho del contenedor */
+            height: 100%; /* Ocupa todo el alto del contenedor */
+            object-fit: cover; /* Ajusta la imagen sin deformarla */
         }
 
         .gradient-overlay {
@@ -1335,7 +1350,7 @@
     <header>
         <nav>
             <div class="logo">
-                <img src="./logos/DerejLogo.ico" alt="Logo DerejSoft" class="logo-img">
+                <img src="logos/DerejLogo.ico" alt="Logo DerejSoft" class="logo-img">
                 <div class="logo28">Derej<span>Soft</span></div>
             </div>
             <button class="menu-toggle" aria-label="Abrir menú">
@@ -1382,7 +1397,7 @@
                     <span class="title-line gradient-text">DerejSoft</span>
                 </h1>
                 <p class="hero-subtitle">
-                    Tres amigos unidos por la pasión tecnológica, creando el futuro digital una línea de código a la vez
+                    Un equipo de mentes creativas que transforma ideas en soluciones digitales funcionales. En DerejSoft, la innovación no es un concepto: es nuestro lenguaje diario.
                 </p>
                 <div class="hero-stats">
                     <div class="stat-item">
@@ -1410,7 +1425,7 @@
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title">Nuestra <span class="gradient-text">Historia</span></h2>
-                    <p class="section-subtitle">Un viaje de innovación, crecimiento y superación</p>
+                    <p class="section-subtitle">Cada proyecto, cada desafío y cada aprendizaje nos ha llevado a donde estamos hoy. DerejSoft es la suma de innovación, esfuerzo y compromiso por ofrecer tecnología que transforma.</p>
                 </div>
                 
                 <div class="timeline">
@@ -1500,13 +1515,14 @@
                         </div>
                         <div class="meaning-quote">
                             <i class="fas fa-quote-left"></i>
-                            <p>"Trazamos el camino hacia tu éxito digital"</p>
+                            <p>Construimos el camino hacia tu éxito empresarial con tecnología confiable, innovadora y diseñada para tus necesidades.</p>
+
                         </div>
                     </div>
                     <div class="meaning-visual">
                         <div class="logo-showcase">
                             <div class="logo-container">
-                                <img src="./logos/DerejLogo.ico" alt="Logo DerejSoft" class="showcase-logo">
+                                <img src="logos/DerejLogo.ico" alt="Logo DerejSoft" class="showcase-logo">
                             </div>
                             <div class="logo-elements">
                                 <div class="element element-1"></div>
@@ -1524,57 +1540,65 @@
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title">Nuestro <span class="gradient-text">Equipo</span></h2>
-                    <p class="section-subtitle">Tres mentes creativas, una visión compartida</p>
+                    <p class="section-subtitle">Un equipo de expertos en desarrollo y tecnología, comprometidos en ofrecer soluciones a medida que generan valor para cada cliente.</p>
                 </div>
                 
                 <div class="team-grid">
-                    <div class="team-card" data-aos="fade-up">
-                        <div class="card-inner">
-                            <div class="card-front">
-                                <div class="team-avatar">
-                                    <div class="avatar-placeholder">
-                                        <i class="fas fa-user"></i>
-                                    </div>
-                                </div>
-                                <h3>Rafael Acosta</h3>
-                                <p class="team-role">DevOps Engineer</p>
-                                <div class="team-skills">
-                                    <span class="skill">Monitoreo</span>
-                                    <span class="skill">CI/CD</span>
-                                    <span class="skill">Claud</span>
+                <div class="team-card" data-aos="fade-up">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="team-avatar">
+                                <!-- Reemplaza el icono por una imagen -->
+                                <div class="avatar-placeholder">
+                                    <img src="imagenes/rafael.jpg" alt="Rafael Acosta" class="avatar-img">
                                 </div>
                             </div>
-                            <div class="card-back">
-                                <h3>Especialista en Despliegue</h3>
-                                <p>Experto en automatizar despliegues, optimizar infraestructuras y garantizar entornos digitales eficientes y confiables.</p>
-                                <div class="social-links">
-                                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                                    <a href="#"><i class="fab fa-github"></i></a>
-                                    <a href="#"><i class="fab fa-instagram"></i></a>
-                                </div>
+                            <h3>Rafael Acosta</h3>
+                            <p class="team-role">DevOps Engineer</p>
+                            <div class="team-skills">
+                                <span class="skill">CI/CD</span>
+                                <span class="skill">Cloud</span>
+                                <span class="skill">Git</span>
+                                <span class="skill">VPS</span>
+                                <span class="skill">Hosting</span>
+                                <span class="skill">Monitoreo</span>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3>Especialista en DevOps</h3>
+                            <p>  Me dedico a automatizar despliegues y optimizar infraestructuras para que cada proyecto sea confiable, seguro y escalable.</p>
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="https://github.com/CodeAriCos28"><i class="fab fa-github"></i></a>
+                                <a href="https://www.instagram.com/thurealkingacosta28?igsh=NHlpMnhodGd0aTI5"><i class="fab fa-instagram"></i></a>
                             </div>
                         </div>
                     </div>
+                </div>
+
 
                     <div class="team-card" data-aos="fade-up" data-aos-delay="200">
                         <div class="card-inner">
                             <div class="card-front">
                                 <div class="team-avatar">
                                     <div class="avatar-placeholder">
-                                        <i class="fas fa-user"></i>
+                                        <img src="imagenes/josee.png" alt="Rafael Acosta" class="avatar-img">
                                     </div>
                                 </div>
-                                <h3>Fundador 2</h3>
-                                <p class="team-role">Backend Developer</p>
+                                <h3>Jose Miguel Bello</h3>
+                                <p class="team-role">Full Stack Developer</p>
                                 <div class="team-skills">
-                                    <span class="skill">Node.js</span>
-                                    <span class="skill">Database</span>
-                                    <span class="skill">API</span>
+                                    <span class="skill">Django</span>
+                                    <span class="skill">python</span>
+                                    <span class="skill">CSS</span>
+                                    <span class="skill">Git</span>
+                                    <span class="skill">HTML</span>
+                                    <span class="skill">JavaScript</span>
                                 </div>
                             </div>
                             <div class="card-back">
-                                <h3>Arquitecto de Backend</h3>
-                                <p>Especialista en crear sistemas robustos y escalables que dan vida a las aplicaciones web.</p>
+                                <h3>Desarrollador Full Stack</h3>
+                                <p> Me especializo en diseñar sistemas robustos y escalables que dan vida a aplicaciones web funcionales y confiables.</p>
                                 <div class="social-links">
                                     <a href="#"><i class="fab fa-linkedin"></i></a>
                                     <a href="#"><i class="fab fa-github"></i></a>
@@ -1588,20 +1612,20 @@
                             <div class="card-front">
                                 <div class="team-avatar">
                                     <div class="avatar-placeholder">
-                                        <i class="fas fa-user"></i>
+                                        <img src="logos/DerejLogo.ico" alt="Rafael Acosta" class="avatar-img">
                                     </div>
                                 </div>
                                 <h3>Fundador 3</h3>
-                                <p class="team-role">Full Stack Developer</p>
+                                <p class="team-role">Frontend Developer</p>
                                 <div class="team-skills">
-                                    <span class="skill">Full Stack</span>
-                                    <span class="skill">DevOps</span>
-                                    <span class="skill">Strategy</span>
+                                    <span class="skill">HTML</span>
+                                    <span class="skill">CSS</span>
+                                    <span class="skill">Git</span>
                                 </div>
                             </div>
                             <div class="card-back">
-                                <h3>Visionario Técnico</h3>
-                                <p>Combina habilidades técnicas con visión estratégica para liderar proyectos innovadores.</p>
+                                <h3>Arquitecto de Interfaces</h3>
+                                <p>Combino mis habilidades técnicas con visión estratégica para liderar proyectos innovadores y entregar interfaces atractivas y funcionales.</p>
                                 <div class="social-links">
                                     <a href="#"><i class="fab fa-linkedin"></i></a>
                                     <a href="#"><i class="fab fa-github"></i></a>
@@ -1618,7 +1642,7 @@
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title">Nuestros <span class="gradient-text">Valores</span></h2>
-                    <p class="section-subtitle">Los principios que guían cada proyecto</p>
+                    <p class="section-subtitle">Los principios que guían cada proyecto son la base de nuestro compromiso: crear soluciones tecnológicas confiables, innovadoras y pensadas para las personas.</p>
                 </div>
 
                 <div class="values-grid">
@@ -1627,7 +1651,7 @@
                             <i class="fas fa-lightbulb"></i>
                         </div>
                         <h3>Innovación</h3>
-                        <p>Buscamos constantemente nuevas formas de resolver problemas y crear soluciones que marquen la diferencia.</p>
+                        <p>Exploramos constantemente nuevas ideas y tecnologías para ofrecer soluciones creativas que impulsen la evolución de cada proyecto.</p>
                         <div class="value-hover-effect"></div>
                     </div>
 
@@ -1636,7 +1660,7 @@
                             <i class="fas fa-gem"></i>
                         </div>
                         <h3>Calidad</h3>
-                        <p>Nos comprometemos a entregar productos excepcionales que superen las expectativas de nuestros clientes.</p>
+                        <p>Nos enfocamos en la excelencia en cada detalle, garantizando resultados sólidos, funcionales y alineados con los objetivos de nuestros clientes.</p>
                         <div class="value-hover-effect"></div>
                     </div>
 
@@ -1645,7 +1669,7 @@
                             <i class="fas fa-users"></i>
                         </div>
                         <h3>Colaboración</h3>
-                        <p>Creemos en el poder del trabajo en equipo y la sinergia entre nuestros talentos y los de nuestros clientes.</p>
+                        <p>Creemos en el poder del trabajo conjunto. Unimos nuestras habilidades con las de nuestros clientes para crear soluciones efectivas y sostenibles.</p>
                         <div class="value-hover-effect"></div>
                     </div>
 
@@ -1654,7 +1678,7 @@
                             <i class="fas fa-heart"></i>
                         </div>
                         <h3>Pasión</h3>
-                        <p>Cada proyecto es una oportunidad de expresar nuestra pasión por la tecnología y el desarrollo web.</p>
+                        <p>Nos motiva el deseo de crear, aprender y superar límites, poniendo dedicación en cada línea de código y cada solución que desarrollamos.</p>
                         <div class="value-hover-effect"></div>
                     </div>
 
@@ -1663,7 +1687,7 @@
                             <i class="fas fa-shield-alt"></i>
                         </div>
                         <h3>Confianza</h3>
-                        <p>Construimos relaciones duraderas basadas en la transparencia, honestidad y cumplimiento de promesas.</p>
+                        <p>Fomentamos relaciones basadas en la transparencia y la responsabilidad, cumpliendo siempre lo que prometemos y entregando con integridad.</p>
                         <div class="value-hover-effect"></div>
                     </div>
 
@@ -1672,11 +1696,11 @@
                             <i class="fas fa-rocket"></i>
                         </div>
                         <h3>Crecimiento</h3>
-                        <p>Evolucionamos constantemente, adaptándonos a las nuevas tecnologías y necesidades del mercado.</p>
+                        <p>Avanzamos junto a nuestros clientes, adaptándonos al cambio y evolucionando con cada desafío para alcanzar nuevos niveles de éxito.</p>
                         <div class="value-hover-effect"></div>
                     </div>
                 </div>
-            </div>
+
         </section>
 
         <!-- Sección de Inspiración -->
@@ -1685,8 +1709,9 @@
                 <div class="inspiration-content">
                     <div class="inspiration-quote">
                         <i class="fas fa-quote-left quote-icon"></i>
-                        <h2>"No tengas miedo de comenzar"</h2>
-                        <p>Todo inicio es difícil, pero con una buena idea, esfuerzo y un equipo unido, se pueden lograr grandes cosas. Nosotros somos prueba de ello.</p>
+                       <h2>"Cada gran logro comienza con una idea y la valentía de creer en ella"</h2>
+                        <p>No importa cuán lejos parezca la meta: con esfuerzo, visión y un equipo comprometido, todo sueño puede transformarse en realidad. En DerejSoft, convertimos las ideas en proyectos que inspiran y trascienden.
+                        </p>
                         <div class="quote-author">
                             <strong>— Equipo DerejSoft</strong>
                         </div>
@@ -1715,8 +1740,9 @@
         <section id="cta" class="cta-section">
             <div class="container">
                 <div class="cta-content">
-                    <h2>¿Listo para crear algo increíble juntos?</h2>
-                    <p>Únete a nuestra historia de éxito. Convirtamos tu visión en realidad digital.</p>
+                    <h2>¿Tienes una idea? Nosotros te ayudamos a hacerla realidad.</h2>
+                    <p>Creemos en el poder de las ideas y en lo que pueden lograr cuando se convierten en acción.</p>
+
                     <div class="cta-buttons">
                         <a href="index.html#contacto" class="btn-primary">
                             <span>Hablemos</span>
