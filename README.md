@@ -38,11 +38,11 @@ Convertirnos en una empresa de desarrollo reconocida por la calidad, la innovaci
 
 ## Contáctanos
 
-- TikTok: @derejsoft
-- Facebook: DerejSoft
-- Instagram: @derejsoft
+- TikTok: [@derejsoft](https://www.tiktok.com/@derejsoft2003?_r=1&_t=ZS-912JRDQSIcr)
+- Facebook: [DerejSoft](https://www.facebook.com/share/1JKws2oMEp/)
+- Instagram: [@derejsoft](https://www.instagram.com/derejsoft?utm_source=qr&igsh=djV2ZHVicjZ2eTFn)
 - Gmail: derejsoft2003@gmail.com
-- WhatsApp: +1 (XXX) XXX-XXXX
+- WhatsApp: [DerejSoft](https://wa.me/qr/W7KAY5VJPZPLO1)
 
 ---
 
