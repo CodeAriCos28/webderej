@@ -42,7 +42,7 @@ Convertirnos en una empresa de desarrollo reconocida por la calidad, la innovaci
 - Facebook: [DerejSoft](https://www.facebook.com/share/1JKws2oMEp/)
 - Instagram: [@derejsoft](https://www.instagram.com/derejsoft?utm_source=qr&igsh=djV2ZHVicjZ2eTFn)
 - Gmail: derejsoft2003@gmail.com
-- WhatsApp: [DerejSoft](https://wa.me/qr/W7KAY5VJPZPLO1)
+- WhatsApp: [DerejSoft](https://wa.me/18294772269)
 
 ---
 
