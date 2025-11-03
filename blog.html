@@ -570,6 +570,46 @@
             gap: 12px;
         }
 
+        /* Estilos para paginación */
+        .pagination-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 60px;
+            flex-wrap: wrap;
+        }
+
+        .pagination-btn {
+            padding: 10px 16px;
+            background: var(--dark-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--gray-text);
+            cursor: pointer;
+            font-weight: 500;
+            transition: var(--transition-fast);
+            min-width: 44px;
+            text-align: center;
+        }
+
+        .pagination-btn:hover:not(:disabled) {
+            background: var(--gradient-primary);
+            color: white;
+            border-color: transparent;
+            transform: translateY(-2px);
+        }
+
+        .pagination-btn.active {
+            background: var(--gradient-primary);
+            color: white;
+            border-color: transparent;
+        }
+
+        .pagination-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
         /* Artículo Destacado */
         .featured-section {
             padding: 80px 0;
@@ -753,13 +793,14 @@
             gap: 20px;
         }
 
-        .redes img {
-            width: 24px;
-            height: 24px;
+        .redes i {
+            font-size: 24px;
+            color: var(--gray-text);
             transition: var(--transition-fast);
         }
 
-        .redes a:hover img {
+        .redes a:hover i {
+            color: var(--primary-color);
             transform: scale(1.2);
         }
 
@@ -918,15 +959,15 @@
                 </p>
                 <div class="blog-stats">
                     <div class="stat-item">
-                        <span class="stat-number" data-target="500">0</span>
+                        <span class="stat-number" data-target="8">0</span>
                         <span class="stat-label">Artículos</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number" data-target="12">0</span>
+                        <span class="stat-number" data-target="6">0</span>
                         <span class="stat-label">Categorías</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number" data-target="1000000">0</span>
+                        <span class="stat-number" data-target="1000">0</span>
                         <span class="stat-label">Lectores</span>
                     </div>
                 </div>
@@ -935,6 +976,10 @@
 
         <!-- Filtros de Categorías -->
         <section class="blog-filters">
+            <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Categorías De<span class="gradient-text"> Artículo</span></h2>
+            </div>
             <div class="container">
                 <div class="filter-container">
                     <button class="filter-btn active" data-filter="all">Todos</button>
@@ -954,10 +999,12 @@
                 <div class="section-header">
                     <h2 class="section-title">Artículo <span class="gradient-text">Destacado</span></h2>
                 </div>
+                 <span class="blog-category">Tendencias</span>
                 
                 <article class="featured-article">
                     <div class="featured-image">
                         <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="El Futuro del Desarrollo Web">
+                        <span class="blog-category">Destacado</span>
                     </div>
                     <div class="featured-content">
                         <h2>El Futuro del Desarrollo Web: Tendencias 2025</h2>
@@ -982,7 +1029,7 @@
         <!-- Grid de Artículos -->
         <section class="blog-section">
             <div class="container">
-                <div class="blog-grid">
+                <div class="blog-grid" id="blog-grid">
                     <!-- Artículo 1 -->
                     <article class="blog-card" data-aos="fade-up" data-category="desarrollo">
                         <div class="blog-image">
@@ -1139,7 +1186,7 @@
                         </div>
                     </article>
 
-                    <!-- Artículo 2 -->
+                    <!-- Artículo 7 -->
                     <article class="blog-card" data-aos="fade-up" data-aos-delay="200" data-category="ia">
                         <div class="blog-image">
                             <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="IA en Desarrollo">
@@ -1165,7 +1212,7 @@
                         </div>
                     </article>
 
-                    <!-- Artículo 3 -->
+                    <!-- Artículo 8 -->
                     <article class="blog-card" data-aos="fade-up" data-aos-delay="400" data-category="movil">
                         <div class="blog-image">
                             <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Flutter vs React Native">
@@ -1190,6 +1237,11 @@
                             </a>
                         </div>
                     </article>
+                </div>
+
+                <!-- Controles de paginación -->
+                <div class="pagination-container" id="pagination-container"></div>
+            </div>
         </section>
 
         <!-- Newsletter Section -->
@@ -1218,9 +1270,11 @@
             <a href="Documentos_Legales/Terminos_de_Servicios.html" class="footer-link">Términos de Servicio</a>
             <div class="redes">
                 <ul>
-                    <a href="https://www.instagram.com/derejsoft/?utm_source=ig_web_button_share_sheet" target="_blank" ><i class="fab fa-instagram" ></i></a>
-                    <a href="https://www.facebook.com/share/1JKws2oMEp/" target="_blank" ><i class="fab fa-facebook" ></i></a>
-                    <a href="https://www.tiktok.com/@derejsoft?is_from_webapp=1&sender_device=pc" target="_blank" ><i class="fab fa-tiktok" ></i></a>
+                    <a href="https://www.instagram.com/derejsoft?utm_source=qr&igsh=djV2ZHVicjZ2eTFn" target="_blank" ><i class="fab fa-instagram" ></i></a>
+
+                    <a href="https://www.facebook.com/share/1JKws2oMEp" target="_blank" ><i class="fab fa-facebook" ></i></a>
+
+                    <a href="https://www.tiktok.com/@derejsoft2003?_r=1&_t=ZS-912JRDQSIcr" target="_blank" ><i class="fab fa-tiktok" ></i></a>
                 </ul>
             </div>
             <a href="Documentos_Legales/Politicas_de _privacidad.html" class="footer-link">Política de Privacidad</a>
@@ -1231,6 +1285,10 @@
     </footer>
 
     <script>
+        const ARTICLES_PER_PAGE = 5;
+        let currentPage = 1;
+        let currentFilter = 'all';
+
         // JavaScript para funcionalidades del blog
         document.addEventListener('DOMContentLoaded', function() {
             // Inicializar todas las funcionalidades
@@ -1241,6 +1299,8 @@
             initBlogFilters();
             initNewsletterForm();
             createParticleEffect();
+            renderPagination();
+            displayPage(1);
         });
 
         // Sistema de animaciones al hacer scroll
@@ -1348,25 +1408,104 @@
                     // Agregar clase active al botón clickeado
                     btn.classList.add('active');
 
-                    const filter = btn.getAttribute('data-filter');
-
-                    blogCards.forEach(card => {
-                        if (filter === 'all' || card.getAttribute('data-category') === filter) {
-                            card.style.display = 'block';
-                            setTimeout(() => {
-                                card.style.opacity = '1';
-                                card.style.transform = 'translateY(0)';
-                            }, 100);
-                        } else {
-                            card.style.opacity = '0';
-                            card.style.transform = 'translateY(30px)';
-                            setTimeout(() => {
-                                card.style.display = 'none';
-                            }, 300);
-                        }
-                    });
+                    currentFilter = btn.getAttribute('data-filter');
+                    currentPage = 1;
+                    renderPagination();
+                    displayPage(1);
                 });
             });
+        }
+
+        function getFilteredArticles() {
+            const allCards = document.querySelectorAll('.blog-card');
+            if (currentFilter === 'all') {
+                return Array.from(allCards);
+            }
+            return Array.from(allCards).filter(card => 
+                card.getAttribute('data-category') === currentFilter
+            );
+        }
+
+        function renderPagination() {
+            const filteredArticles = getFilteredArticles();
+            const totalPages = Math.ceil(filteredArticles.length / ARTICLES_PER_PAGE);
+            const paginationContainer = document.getElementById('pagination-container');
+            
+            paginationContainer.innerHTML = '';
+
+            if (totalPages <= 1) return;
+
+            // Botón anterior
+            const prevBtn = document.createElement('button');
+            prevBtn.className = 'pagination-btn';
+            prevBtn.textContent = '← Anterior';
+            prevBtn.disabled = currentPage === 1;
+            prevBtn.addEventListener('click', () => {
+                if (currentPage > 1) {
+                    currentPage--;
+                    displayPage(currentPage);
+                }
+            });
+            paginationContainer.appendChild(prevBtn);
+
+            // Botones de páginas
+            for (let i = 1; i <= totalPages; i++) {
+                const pageBtn = document.createElement('button');
+                pageBtn.className = 'pagination-btn';
+                if (i === currentPage) pageBtn.classList.add('active');
+                pageBtn.textContent = i;
+                pageBtn.addEventListener('click', () => {
+                    currentPage = i;
+                    displayPage(i);
+                });
+                paginationContainer.appendChild(pageBtn);
+            }
+
+            // Botón siguiente
+            const nextBtn = document.createElement('button');
+            nextBtn.className = 'pagination-btn';
+            nextBtn.textContent = 'Siguiente →';
+            nextBtn.disabled = currentPage === totalPages;
+            nextBtn.addEventListener('click', () => {
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    displayPage(currentPage);
+                }
+            });
+            paginationContainer.appendChild(nextBtn);
+        }
+
+        function displayPage(pageNumber) {
+            const filteredArticles = getFilteredArticles();
+            const startIndex = (pageNumber - 1) * ARTICLES_PER_PAGE;
+            const endIndex = startIndex + ARTICLES_PER_PAGE;
+            const allCards = document.querySelectorAll('.blog-card');
+
+            allCards.forEach(card => {
+                card.style.display = 'none';
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+            });
+
+            const visibleArticles = filteredArticles.slice(startIndex, endIndex);
+            visibleArticles.forEach((card, index) => {
+                card.style.display = 'block';
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 50);
+            });
+
+            // Actualizar botones de paginación
+            document.querySelectorAll('.pagination-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.textContent === pageNumber.toString()) {
+                    btn.classList.add('active');
+                }
+            });
+
+            // Scroll suave a la sección
+            document.querySelector('.blog-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
 
         // Formulario de newsletter

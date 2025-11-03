@@ -564,6 +564,67 @@
                 font-size: 1rem;
             }
         }
+                /* Footer */
+        footer {
+            background: var(--dark-card);
+            padding: 60px 20px 20px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        footer nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--light-text);
+        }
+
+        .footer-logo span {
+            color: var(--primary-color);
+        }
+
+        .footer-link {
+            color: var(--gray-text);
+            text-decoration: none;
+            transition: var(--transition-fast);
+        }
+
+        .footer-link:hover {
+            color: var(--primary-color);
+        }
+
+        .redes ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .redes img {
+            width: 24px;
+            height: 24px;
+            transition: var(--transition-fast);
+        }
+
+        .redes a:hover img {
+            transform: scale(1.2);
+        }
+
+        .copyright-bar {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            color: var(--gray-text);
+            font-size: 0.9rem;
+        }
     </style>
 </head>
 <body>
@@ -773,6 +834,25 @@
             </div>
         </div>
     </section>
+    <footer>
+        <!-- <div class="footer-logo">Derej<span>Soft</span></div> -->
+        <nav>
+            <a href="Documentos_Legales/Terminos_de_Servicios.html" class="footer-link">Términos de Servicio</a>
+            <div class="redes">
+                <ul>
+                    <a href="https://www.instagram.com/derejsoft?utm_source=qr&igsh=djV2ZHVicjZ2eTFn" target="_blank" ><i class="fab fa-instagram" ></i></a>
+
+                    <a href="https://www.facebook.com/share/1JKws2oMEp" target="_blank" ><i class="fab fa-facebook" ></i></a>
+
+                    <a href="https://www.tiktok.com/@derejsoft2003?_r=1&_t=ZS-912JRDQSIcr" target="_blank" ><i class="fab fa-tiktok" ></i></a>
+                </ul>
+            </div>
+            <a href="Documentos_Legales/Politicas_de _privacidad.html" class="footer-link">Política de Privacidad</a>
+        </nav>
+        <div>
+            <div class="copyright-bar">© 2025 DerejSoft. Todos los derechos reservados.</div>
+        </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
