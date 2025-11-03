@@ -1,7 +1,7 @@
 
 # Bienvenido a DerejSoft
 ![Logo de DerejSoft](logos/DerejSoft.png)
-**Soluciones de software a la medida para impulsar tu negocio.**
+### **Soluciones de software a la medida para impulsar tu negocio.**
 
 
 En [DerejSoft](https://derejsoft.com/) desarrollamos software personalizado, enfocado en resolver los problemas reales que viven los negocios en su día a día. No creemos en soluciones genéricas que obligan a las empresas a adaptarse, sino en sistemas hechos exactamente a la medida, que se ajustan al proceso de cada cliente y que evolucionan junto a su crecimiento.
