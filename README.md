@@ -1,8 +1,14 @@
-# DerejSoft
 
+# Bienvenido a DerejSoft
+![Logo de DerejSoft](logos/DerejSoft.png)
 **Soluciones de software a la medida para impulsar tu negocio.**
 
-En DerejSoft desarrollamos software personalizado enfocado en resolver los problemas reales de nuestros clientes. Nuestro objetivo es facilitar el trabajo diario, automatizar tareas, optimizar procesos y aumentar la productividad.
+
+En DerejSoft desarrollamos software personalizado, enfocado en resolver los problemas reales que viven los negocios en su día a día. No creemos en soluciones genéricas que obligan a las empresas a adaptarse, sino en sistemas hechos exactamente a la medida, que se ajustan al proceso de cada cliente y que evolucionan junto a su crecimiento.
+
+Nuestro propósito principal es facilitar el trabajo diario, eliminar tareas repetitivas, reducir errores manuales, centralizar la información y aumentar la eficiencia. Diseñamos herramientas que automatizan procesos, mejoran el flujo operativo, integran datos, conectan áreas internas y ayudan a tomar decisiones rápidas, basadas en información real.
+
+En resumen: convertimos problemas empresariales en soluciones tecnológicas claras, efectivas y funcionando en producción. No solo hacemos software: creamos tecnología que realmente le suma productividad al negocio.
 
 ---
 
