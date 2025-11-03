@@ -1,6 +1,6 @@
 
 # Bienvenido a DerejSoft
-![Logo de DerejSoft](webderej/logos/DerejSoft.png)
+![Logo de DerejSoft](/webderej/logos/DerejSoft.png)
 **Soluciones de software a la medida para impulsar tu negocio.**
 
 
