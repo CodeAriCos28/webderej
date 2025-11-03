@@ -43,7 +43,7 @@ Convertirnos en una empresa de desarrollo reconocida por la calidad, la innovaci
 ---
 
 ## Contáctanos
--website: [derejsoft](https://derejsoft.com/)
+- website: [derejsoft](https://derejsoft.com/)
 - TikTok: [@derejsoft](https://www.tiktok.com/@derejsoft2003?_r=1&_t=ZS-912JRDQSIcr)
 - Facebook: [DerejSoft](https://www.facebook.com/share/1JKws2oMEp/)
 - Instagram: [@derejsoft](https://www.instagram.com/derejsoft?utm_source=qr&igsh=djV2ZHVicjZ2eTFn)
