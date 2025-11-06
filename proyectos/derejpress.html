@@ -955,26 +955,37 @@
         }
         
         // Función para mostrar precios
-        function showPricing() {
-            Swal.fire({
-                title: ' TiendaMax Pro - Precios Exclusivos',
-                html: `
-                    <div style="text-align: left; color: #333;">
-                        <h3 style="color: #6366f1; margin-bottom: 15px;"> Paquete Completo</h3>
-                        <ul style="list-style: none; padding: 0;">
-                            <li style="margin: 8px 0;"><i class="fas fa-check" style="color: #10b981; margin-right: 8px;"></i> Licencia perpetua del software</li>
-                            <li style="margin: 8px 0;"><i class="fas fa-check" style="color: #10b981; margin-right: 8px;"></i> Instalación y configuración completa</li>
-                            <li style="margin: 8px 0;"><i class="fas fa-check" style="color: #10b981; margin-right: 8px;"></i> Capacitación del equipo (8 horas)</li>
-                            <li style="margin: 8px 0;"><i class="fas fa-check" style="color: #10b981; margin-right: 8px;"></i> Soporte premium por 12 meses</li>
-                            <li style="margin: 8px 0;"><i class="fas fa-check" style="color: #10b981; margin-right: 8px;"></i> Actualizaciones gratuitas</li>
-                            <li style="margin: 8px 0;"><i class="fas fa-check" style="color: #10b981; margin-right: 8px;"></i> Integración con sistemas existentes</li>
-                        </ul>
-                        <div style="text-align: center; margin-top: 20px;">
-                            <div style="font-size: 2rem; font-weight: bold; color: #10b981;">$35,000 RD</div>
-                            <div style="color: #666; font-size: 0.9rem;">Pago único - Sin mensualidades</div>
-                        </div>
-                    </div>
-                `,
+function showPricing() {
+    Swal.fire({
+        title: 'DerejPres - Planes y Precios',
+        html: `
+            <div style="text-align: left; color: #333;">
+                <h3 style="color: #6366f1; margin-bottom: 15px;"> Pago Único</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin: 8px 0;"><i class="fas fa-check" style="color: #10b981; margin-right: 8px;"></i> Licencia de por vida</li>
+                    <li style="margin: 8px 0;"><i class="fas fa-check" style="color: #10b981; margin-right: 8px;"></i> Instalación y configuración inicial</li>
+                    <li style="margin: 8px 0;"><i class="fas fa-check" style="color: #10b981; margin-right: 8px;"></i> Capacitación básica al usuario</li>
+                    <li style="margin: 8px 0;"><i class="fas fa-check" style="color: #10b981; margin-right: 8px;"></i> Recibos imprimibles (PDF / Térmica)</li>
+                    <li style="margin: 8px 0;"><i class="fas fa-check" style="color: #10b981; margin-right: 8px;"></i> Configurable a la forma de trabajo del negocio</li>
+                </ul>
+                <div style="text-align: center; margin-top: 20px;">
+                    <div style="font-size: 2rem; font-weight: bold; color: #10b981;">RD$35,000 - RD$80,000</div>
+                    <div style="color: #666; font-size: 0.9rem;">Según el tamaño y personalizaciones</div>
+                </div>
+
+                <br>
+                <h3 style="color: #6366f1; margin-bottom: 15px;"> Suscripción Mensual</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin: 8px 0;"><i class="fas fa-check" style="color: #10b981; margin-right: 8px;"></i> Hosting, dominio y mantenimiento incluido</li>
+                    <li style="margin: 8px 0;"><i class="fas fa-check" style="color: #10b981; margin-right: 8px;"></i> Actualizaciones continuas</li>
+                    <li style="margin: 8px 0;"><i class="fas fa-check" style="color: #10b981; margin-right: 8px;"></i> Soporte según el plan</li>
+                </ul>
+                <div style="text-align: center; margin-top: 20px;">
+                    <div style="font-size: 2rem; font-weight: bold; color: #10b981;">RD$5,000 - RD$15,000</div>
+                    <div style="color: #666; font-size: 0.9rem;">Según el plan, dominio y servidor</div>
+                </div>
+            </div>
+        `,
                 showCancelButton: true,
                 confirmButtonText: ' Contactar Ahora',
                 cancelButtonText: 'Cerrar',
