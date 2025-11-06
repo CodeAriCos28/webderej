@@ -99,6 +99,24 @@
             max-width: 1200px;
             margin: 0 auto;
         }
+        .project-content {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+}
+
+        .project-info {
+            flex: 2;
+            /* ancho mayor */
+        }
+
+        .tech-specs {
+            flex: 1;
+            border-left: 1px solid #e8e8e8;
+            padding-left: 20px;
+        }
+
+
 
         .logo28 {
             display: flex;
@@ -513,6 +531,23 @@
             height: 35px;
         }
 
+        @media(max-width: 900px){
+            .project-content{
+                flex-direction: column;
+            }
+            .tech-specs{
+                border-left: none;
+                padding-left: 0;
+            }
+}
+        .project-header small.price-note{
+            display: block;
+            font-size: 1rem;
+            opacity: .75;
+            margin-top: 6px;
+        }
+
+
         @keyframes bounce {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-10px); }
@@ -566,7 +601,8 @@
                 font-size: 1rem;
             }
         }
-                /* Footer */
+   
+        /* Footer */
         footer {
             background: var(--dark-card);
             padding: 60px 20px 20px;
@@ -609,13 +645,14 @@
             gap: 20px;
         }
 
-        .redes img {
-            width: 24px;
-            height: 24px;
+        .redes i {
+            font-size: 24px;
+            color: var(--gray-text);
             transition: var(--transition-fast);
         }
 
-        .redes a:hover img {
+        .redes a:hover i {
+            color: var(--primary-color);
             transform: scale(1.2);
         }
 
@@ -667,18 +704,19 @@
                 </div>
                 <h1 class="project-title">DerejSoft</h1>
                 <p class="project-subtitle">
-                    La plataforma de comercio electrónico más avanzada y completa del mercado. 
-                    Diseñada para empresas que buscan la excelencia en ventas online.
+                    DerejPres organiza préstamos, pagos y financiamientos evitando desorden en libretas físicas. Controla cuánto debe cada cliente y se adapta a cualquier tipo de negocio.
                 </p>
-                <div class="project-price">RD$ 35,000</div>
-                <p class="price-note">Licencia completa + 1 año de soporte premium</p>
+                <div class="project-price">RD$ 35,000 - 80,000</div>
+                 <small class="price-note">El precio varía según las funciones adicionales que necesite tu negocio.</small>
+               <p class="price-note">Licencia perpetua (pago único) + 6 Meses de soporte incluido</p>
+                <p class="price-note">Licencia por suscripción (mensual o anual) + Soporte activo mientras tengas la licencia</p>
             </div>
 
             <!-- Carrusel de imágenes -->
             <div class="carousel-container">
                 <div class="carousel-wrapper">
                     <div class="carousel-slide active">
-                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80" alt="Dashboard principal de TiendaMax Pro">
+                        <img src="/webderej/imgproye/derejpress/DerejPres.webp" alt="Dashboard principal de TiendaMax Pro">
                     </div>
                     <div class="carousel-slide">
                         <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2426&q=80" alt="Panel de administración">
@@ -713,32 +751,27 @@
             <!-- Contenido del proyecto -->
             <div class="project-content">
                 <div class="project-info">
-                    <h3>Revoluciona tu Negocio Online</h3>
+                    <h3>La Forma Inteligente de Controlar Cuentas por Cobrar</h3>
                     <p class="project-description">
-                        TiendaMax Pro es mucho más que una simple plataforma de e-commerce. Es una solución integral 
-                        que combina tecnología de vanguardia, diseño excepcional y funcionalidades avanzadas para 
-                        crear la experiencia de compra online perfecta.
+                       DerejPres es un sistema web creado para controlar financiamientos, préstamos, clientes y pagos de manera ordenada y precisa. Calcula cuotas fijas o variables, imprime recibos en PDF o térmica y se adapta a cualquier negocio. Todo es configurable, desde las condiciones de pago hasta la forma de trabajar del usuario.
                     </p>
                     <p class="project-description">
-                        Desarrollada con las últimas tecnologías web y optimizada para máximo rendimiento, esta 
-                        plataforma ha demostrado incrementar las conversiones hasta en un 340% comparado con 
-                        soluciones tradicionales.
-                    </p>
+                      Surge como solución al desorden en libretas, falta de control y desconocimiento de quién debe y cuánto realmente. Con roles configurables, alertas y datos centralizados, evita errores comunes y mejora la gestión financiera. Es una herramienta flexible que se ajusta a cada empresa y a la forma real en que trabajan.
 
                     <div class="features-grid">
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-shopping-cart"></i>
                             </div>
-                            <h4>Carrito Inteligente</h4>
-                            <p>Sistema de carrito con IA que sugiere productos y optimiza conversiones</p>
+                           <h4>Carrito de Compra</h4>
+                            <p>Carrito simple y funcional para seleccionar productos y emitir la compra de forma rápida, sin procesos complicados ni pasos innecesarios.</p>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-credit-card"></i>
                             </div>
-                            <h4>Pagos Seguros</h4>
-                            <p>Integración con +15 métodos de pago y cifrado de nivel bancario</p>
+                            <h4>Control de Pagos</h4>
+                            <p>Permite registrar si la venta fue en efectivo o tarjeta, sin procesar el cobro dentro del sistema. Ideal para llevar control interno del tipo de pago.</p>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">
@@ -757,20 +790,21 @@
                     </div>
                 </div>
 
-                <div class="tech-specs">
+                <aside class="tech-specs">
+                <!-- <div class="tech-specs"> -->
                     <h3>Especificaciones Técnicas</h3>
                     <div class="specs-list">
                         <div class="spec-item">
-                            <i class="fab fa-react"></i>
-                            <span>React 18 + Next.js</span>
+                            <i class="fa-brands fa-python"></i>
+                            <span>Django + Html + CSS</span>
                         </div>
                         <div class="spec-item">
                             <i class="fas fa-database"></i>
-                            <span>PostgreSQL + Redis</span>
+                            <span>Mysql</span>
                         </div>
                         <div class="spec-item">
                             <i class="fas fa-cloud"></i>
-                            <span>AWS Cloud Native</span>
+                            <span>VPS</span>
                         </div>
                         <div class="spec-item">
                             <i class="fas fa-shield-alt"></i>
@@ -793,10 +827,6 @@
                             <span>Multi-moneda</span>
                         </div>
                         <div class="spec-item">
-                            <i class="fas fa-robot"></i>
-                            <span>IA Integrada</span>
-                        </div>
-                        <div class="spec-item">
                             <i class="fas fa-headset"></i>
                             <span>Soporte 24/7</span>
                         </div>
@@ -804,26 +834,22 @@
                             <i class="fas fa-sync"></i>
                             <span>Auto-updates</span>
                         </div>
-                        <div class="spec-item">
-                            <i class="fa-brands fa-python"></i>
-                            <i class="fas fa-plug"></i>
-                            <span>API REST completa</span>
-                        </div>
                     </div>
                 </div>
+                </aside>
             </div>
         </div>
+       
     </section>
 
     <!-- Call to Action -->
     <section class="cta-section">
         <div class="container">
-            <div class="cta-content">
-                <h2>¿Listo para Dominar el E-commerce?</h2>
-                <p>
-                    No dejes que tu competencia se adelante. TiendaMax Pro está disponible por tiempo limitado 
-                    con condiciones exclusivas para empresas visionarias.
-                </p>
+                <div class="cta-content">
+                    <h2>¿Listo para tener control real de tus finanzas?</h2>
+                    <p>Deja atrás libretas, errores y desorden. Con DerejPres puedes gestionar financiamientos con precisión y claridad. Estamos listos para ayudarte a avanzar.</p>
+                </div>
+
                 <div class="cta-buttons">
                     <a href="https://wa.me/8294772269?text=Hola,%20estoy%20interesado%20en%20TiendaMax%20Pro" class="btn btn-primary" target="_blank">
                         <i class="fab fa-whatsapp"></i>
