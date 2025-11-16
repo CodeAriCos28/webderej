@@ -519,6 +519,17 @@
             transition: var(--transition-fast);
             animation: bounce 2s infinite;
         }
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
 
         .whatsapp-float a:hover {
             transform: scale(1.1);
@@ -964,17 +975,35 @@
         <!-- <div class="footer-logo">Derej<span>Soft</span></div> -->
         <nav>
             <a href="Documentos_Legales/Terminos_de_Servicios.html" class="footer-link">Términos de Servicio</a>
+
             <div class="redes">
                 <ul>
-                    <a href="https://www.instagram.com/derejsoft?utm_source=qr&igsh=djV2ZHVicjZ2eTFn" target="_blank" ><i class="fab fa-instagram" ></i></a>
+                    <li>
+                        <a href="https://www.instagram.com/derejsoft?utm_source=qr&igsh=djV2ZHVicjZ2eTFn" target="_blank">
+                            <span class="sr-only">Instagram de DerejSoft</span>
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </li>
 
-                    <a href="https://www.facebook.com/share/1JKws2oMEp" target="_blank" ><i class="fab fa-facebook" ></i></a>
+                    <li>
+                        <a href="https://www.facebook.com/share/1JKws2oMEp" target="_blank">
+                            <span class="sr-only">Facebook de DerejSoft</span>
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </li>
 
-                    <a href="https://www.tiktok.com/@derejsoft2003?_r=1&_t=ZS-912JRDQSIcr" target="_blank" ><i class="fab fa-tiktok" ></i></a>
+                    <li>
+                        <a href="https://www.tiktok.com/@derejsoft2003?_r=1&_t=ZS-912JRDQSIcr" target="_blank">
+                            <span class="sr-only">TikTok de DerejSoft</span>
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </li>
                 </ul>
             </div>
+
             <a href="Documentos_Legales/Politicas_de _privacidad.html" class="footer-link">Política de Privacidad</a>
         </nav>
+
         <div>
             <div class="copyright-bar">© 2025 DerejSoft. Todos los derechos reservados.</div>
         </div>
