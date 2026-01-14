@@ -737,6 +737,20 @@
             box-shadow: 0 15px 30px rgba(99, 102, 241, 0.3);
         }
 
+            /* Preview Button Hover */
+            .btn-tertiary {
+                background: transparent;
+                border: 1.5px dashed var(--primary-color);
+                color: var(--primary-color);
+            }
+            .btn-tertiary:hover {
+                background: var(--primary-color);
+                color: #fff;
+                border-color: var(--primary-dark);
+                box-shadow: 0 10px 30px rgba(99, 102, 241, 0.2);
+                transform: translateY(-3px) scale(1.04);
+            }
+
         /* WhatsApp Float */
         .whatsapp-float {
             position: fixed;
@@ -1143,8 +1157,8 @@
     <!-- Header -->
     <header>
         <nav>
-            <a href="/webderej/index.html" class="logo28">
-                <img src="/webderej/logos/DerejLogo.ico" alt="Logo DerejSoft" class="logo-img">
+            <a href="/index.html" class="logo28">
+                <img src="/logos/DerejLogo.ico" alt="Logo DerejSoft" class="logo-img">
                 <div>Derej<span>Soft</span></div>
             </a>
             <ul class="nav-links">
@@ -1175,14 +1189,14 @@
                     <i class="fas fa-crown"></i>
                     <span>Proyecto Exclusivo Prestamos</span>
                 </div>
-                <h1 class="project-title">DerejPres</h1>
+                <h1 class="project-title">DerejFinance</h1>
                 <p class="project-subtitle">
-                    DerejPres organiza préstamos, pagos y financiamientos evitando desorden en libretas físicas. Controla cuánto debe cada cliente y se adapta a cualquier tipo de negocio.
+                     DerejFinance centraliza el control de tus finanzas personales, gastos y servicios en una sola plataforma web. Visualiza tu estado financiero con claridad y toma mejores decisiones cada día.
                 </p>
-                <div class="project-price">RD$ 4,000 - 15,000</div>
+                <div class="project-price">RD$ 10,000 - 40,000</div>
                  <small class="price-note">El precio varía según las funciones adicionales que necesite tu negocio.</small>
                <!-- <p class="price-note">Licencia perpetua (pago único) + 6 Meses de soporte incluido</p> -->
-                <p class="price-note">Licencia por suscripción (mensual o anual) + Soporte activo mientras tengas la licencia</p>
+                <p class="price-note">Licencia por pago unico + Soporte y garantia por 6 meses</p>
             </div>
 
             <!-- Carrusel de imágenes -->
@@ -1203,31 +1217,6 @@
                     <div class="carousel-slide">
                         <img src="/imgproye/derejpress/DP-detcliente.webp" alt="detalle cliente4">
                     </div>
-                    <div class="carousel-slide">
-                        <img src="/imgproye/derejpress/DP-inipres.webp" alt="Inicial Prestamos5">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="/imgproye/derejpress/DP-presabo.webp" alt="Prestamos Y Abonos6">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="/imgproye/derejpress/DP-prespago.webp" alt="Prestamos Pagados7">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="/imgproye/derejpress/DP-recliente.webp" alt="Registrar cleinte edi8">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="/imgproye/derejpress/DP-estcuenta.webp" alt="Estado De Cuenta9">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="/imgproye/derejpress/DP-anufat.webp" alt="Anulacion De Factura10">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="/webderej/imgproye/derejpress/DP-anurec.webp" alt="Anulacion De recibos11">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="/imgproye/derejpress/DP-reimp.webp" alt="Reimprimir13">
-                    </div>
-
                 </div>
                 
                 <button class="carousel-nav carousel-prev">
@@ -1244,49 +1233,41 @@
                     <div class="indicator" data-slide="3"></div>
                     <div class="indicator" data-slide="4"></div>
                     <div class="indicator" data-slide="5"></div>
-                    <div class="indicator" data-slide="6"></div>
-                    <div class="indicator" data-slide="7"></div>
-                    <div class="indicator" data-slide="8"></div>
-                    <div class="indicator" data-slide="9"></div>
-                    <div class="indicator" data-slide="10"></div>
-                    <div class="indicator" data-slide="11"></div>
-                    <div class="indicator" data-slide="12"></div>
-                    <div class="indicator" data-slide="13"></div>
                 </div>
             </div>
 
             <!-- Contenido del proyecto -->
             <div class="project-content">
                 <div class="project-info">
-                    <h3>La Forma Inteligente de Controlar Cuentas por Cobrar</h3>
+                    <h3>La Forma Inteligente de Gestionar tus Finanzas Personales</h3>
                     <p class="project-description">
-                       DerejPres es un sistema web creado para controlar financiamientos, préstamos, clientes y pagos de manera ordenada y precisa. Calcula cuotas fijas o variables, imprime recibos en PDF o térmica y se adapta a cualquier negocio. Todo es configurable, desde las condiciones de pago hasta la forma de trabajar del usuario.
+                      DerejFinance es una aplicación web diseñada para centralizar el control de tus finanzas personales, gastos, servicios y conversiones monetarias de forma clara y organizada. Permite registrar ingresos y egresos, categorizar gastos, gestionar pagos recurrentes y visualizar reportes que reflejan tu situación financiera real. Todo es configurable, desde las categorías hasta la forma en que analizas y consultas tu información. Con DerejFinance, puedes tomar decisiones financieras informadas, planificar tu presupuesto y mantener un control efectivo de tus finanzas diarias, todo desde una plataforma intuitiva y accesible desde cualquier dispositivo con conexión a internet.
                     </p>
                     <p class="project-description">
-                      Surge como solución al desorden en libretas, falta de control y desconocimiento de quién debe y cuánto realmente. Con roles configurables, alertas y datos centralizados, evita errores comunes y mejora la gestión financiera. Es una herramienta flexible que se ajusta a cada empresa y a la forma real en que trabajan.
+                        Surge como solución a la falta de control, al desconocimiento de en qué se va el dinero y a la dificultad de llevar un seguimiento financiero ordenado. Con datos centralizados, dashboards visuales y reportes claros, reduce errores, mejora la planificación y facilita la toma de decisiones. Es una herramienta flexible que se adapta a tu estilo de vida y a la forma real en que administras tu dinero.
 
                     <div class="features-grid">
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-shopping-cart"></i>
                         </div>
-                           <h4>Control de Préstamos</h4>
-                            <p>Gestione préstamos de forma rápida y organizada, registrando los montos iniciales, plazos, cuotas y los pagos realizados por cada cliente.</p>
+                           <h4>Control de Finanzas</h4>
+                            <p>Controla ingresos, gastos y saldos personales desde una sola plataforma web.</p>
                         </div>
                         <div class="feature-item">
                         <div class="feature-icon">
                             <i class="fa-solid fa-hand-holding-dollar"></i>
                         </div>
-                        <h4>Gestión de Pagos</h4>
-                        <p>Registra abonos, pagos completos y tipos de pago por cliente, manteniendo el historial claro y sin errores en la cobranza.</p>
+                        <h4>Gestión de Servicios</h4>
+                        <p>Administra pagos recurrentes, suscripciones y servicios sin olvidar ninguna fecha.</p>
                     </div>
 
                     <div class="feature-item">
                         <div class="feature-icon">
                             <i class="fa-solid fa-chart-line"></i>
                         </div>
-                        <h4>Indicadores y Métricas</h4>
-                        <p>Obtén estadísticas en tiempo real sobre préstamos activos, pagos realizados, saldos y rendimiento del negocio.</p>
+                        <h4>Reportes y Análisis</h4>
+                        <p>Visualiza gráficos claros para analizar tu comportamiento financiero fácilmente.</p>
                     </div>
 
                     <div class="feature-item">
@@ -1306,7 +1287,7 @@
                     <div class="specs-list">
                         <div class="spec-item">
                             <i class="fa-brands fa-python"></i>
-                            <span>Django + Html + CSS</span>
+                            <span>Django + Html + CSS + JavaScript</span>
                         </div>
                         <div class="spec-item">
                             <i class="fas fa-database"></i>
@@ -1352,44 +1333,24 @@
                             <span>Inicio</span>
                         </div>
                         <div class="spec-item">
-                            <i class="fa-solid fa-user-plus"></i>
-                            <span>Registrar Cliente</span>
+                            <i class="fa-solid fa-exchange-alt"></i>
+                            <span>conversiones</span>
                         </div>
                         <div class="spec-item">
-                            <i class="fa-solid fa-users"></i>
-                            <span>Clientes</span>
-                        </div>
-                        <div class="spec-item">
-                            <i class="fa-solid fa-money-bill-wave"></i>
-                            <span>Inicial Préstamo</span>
-                        </div>
-                        <div class="spec-item">
-                            <i class="fa-solid fa-hand-holding-dollar"></i>
-                            <span>Préstamos y Abonos</span>
-                        </div>
-                        <div class="spec-item">
-                            <i class="fa-solid fa-circle-check"></i>
-                            <span>Préstamos Pagados</span>
-                        </div>
-                        <div class="spec-item">
-                            <i class="fa-solid fa-user-pen"></i>
-                            <span>Editar Cliente</span>
-                        </div>
-                        <div class="spec-item">
-                            <i class="fa-solid fa-file-invoice-dollar"></i>
-                            <span>Estado de Cuenta</span>
-                        </div>
-                        <div class="spec-item">
-                            <i class="fa-solid fa-circle-xmark"></i>
-                            <span>Anular Factura</span>
-                        </div>
-                        <div class="spec-item">
-                            <i class="fa-solid fa-ban"></i>
-                            <span>Anular Recibo</span>
+                            <i class="fa-solid fa-wallet"></i>
+                            <span>Gestionar gastos</span>
                         </div>
                         <div class="spec-item">
                             <i class="fa-solid fa-print"></i>
-                            <span>Reimprimir Factura</span>
+                            <span>Impresiones</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fa-solid fa-file-pdf"></i>
+                            <span>Descargar PDF</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fa-solid fa-file-invoice-dollar"></i>
+                            <span>Gestionar Servicios</span>
                         </div>
                         <div class="spec-item">
                             <i class="fa-solid fa-chart-line"></i>
@@ -1397,7 +1358,11 @@
                         </div>
                         <div class="spec-item">
                             <i class="fa-solid fa-right-to-bracket"></i>
-                            <span>Login / Cerrar Sesión</span>
+                            <span>Login</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fa-solid fa-power-off"></i>
+                            <span>Cerrar Sesión</span>
                         </div>
 
                         </div>
@@ -1412,18 +1377,22 @@
     <section class="cta-section">
         <div class="container">
                 <div class="cta-content">
-                    <h2>¿Listo para tener control real de tus finanzas?</h2>
-                    <p>Deja atrás libretas, errores y desorden. Con DerejPres puedes gestionar financiamientos con precisión y claridad. Estamos listos para ayudarte a avanzar.</p>
+                    <h2>¿Listo para tener control real de tus finanzas personales?</h2>
+                    <p>Deja atrás el desorden y la falta de claridad. Con derejfinance gestionas tus finanzas con precisión, control y confianza.</p>
                 </div>
 
                 <div class="cta-buttons">
-                    <a href="https://wa.me/8294772269?text=Hola,%20estoy%20interesado%20en%20DerejPress" class="btn btn-primary" target="_blank">
+                    <a href="https://wa.me/8294772269?text=Hola,%20estoy%20interesado%20en%20DerejFinance" class="btn btn-primary" target="_blank">
                         <i class="fab fa-whatsapp"></i>
                         <span>Solicitar Demo</span>
                     </a>
                     <a href="#" class="btn btn-secondary" onclick="showPricing()">
                         <i class="fas fa-calculator"></i>
                         <span>Ver Precios</span>
+                    </a>
+                    <a href="https://codearicos28.github.io/mlanfinance/" class="btn btn-tertiary" target="_blank" style="background:transparent;border:1.5px dashed var(--primary-color);color:var(--primary-color);">
+                        <i class="fa-solid fa-object-group"></i>
+                        <span>Preview</span>
                     </a>
                 </div>
             </div>
