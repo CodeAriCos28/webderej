@@ -21,6 +21,18 @@
     />
 
     <style>
+      /* Solo para lectores de pantalla */
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
       /* Reset y Variables Modernas */
       * {
         margin: 0;
@@ -2133,12 +2145,12 @@
 
           <div class="footer-links">
             <a
-              href="Documentos_Legales/Terminos_de_Servicios.html"
+              href="Documentos_Legales/termino_servicio.html"
               class="footer-link"
               >Términos de Servicio</a
             >
             <a
-              href="Documentos_Legales/Politicas_de_privacidad.html"
+              href="Documentos_Legales/politica_privacidad.html"
               class="footer-link"
               >Privacidad</a
             >
@@ -2154,24 +2166,36 @@
                     href="https://www.instagram.com/derejsoft?utm_source=qr&igsh=djV2ZHVicjZ2eTFn"
                     target="_blank"
                     class="social-icon instagram"
-                    ><i class="fab fa-instagram"></i
-                  ></a>
+                    aria-label="Instagram de DerejSoft"
+                    title="Instagram de DerejSoft"
+                  >
+                    <i class="fab fa-instagram" aria-hidden="true"></i>
+                    <span class="sr-only">Instagram</span>
+                  </a>
                 </li>
                 <li>
                   <a
                     href="https://www.facebook.com/share/1JKws2oMEp"
                     target="_blank"
                     class="social-icon facebook"
-                    ><i class="fab fa-facebook-f"></i
-                  ></a>
+                    aria-label="Facebook de DerejSoft"
+                    title="Facebook de DerejSoft"
+                  >
+                    <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                    <span class="sr-only">Facebook</span>
+                  </a>
                 </li>
                 <li>
                   <a
                     href="https://www.tiktok.com/@derejsoft2003?_r=1&_t=ZS-912JRDQSIcr"
                     target="_blank"
                     class="social-icon tiktok"
-                    ><i class="fab fa-tiktok"></i
-                  ></a>
+                    aria-label="TikTok de DerejSoft"
+                    title="TikTok de DerejSoft"
+                  >
+                    <i class="fab fa-tiktok" aria-hidden="true"></i>
+                    <span class="sr-only">TikTok</span>
+                  </a>
                 </li>
               </ul>
             </div>

@@ -1,0 +1,2077 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <title>Política de Privacidad - DerejSoft</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../logos/logo2D(1).ico" />
+    
+    <!-- Fuentes Modernas -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    
+    <!-- Iconos FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    
+    <!-- Iconos de Tecnología (Devicon) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
+    <style>
+        /* =========================================
+           RESET Y VARIABLES (BASE TEMA OSCURO)
+           ========================================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        /* Eliminar subrayados de iconos */
+        i,
+        .fa,
+        .fab,
+        .fas,
+        .devicon {
+            text-decoration: none !important;
+            display: inline-block;
+        }
+
+        /* Clase para lectores de pantalla */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        :root {
+            /* Paleta de colores Premium */
+            --bg-dark: #0f172a;
+            --bg-card: rgba(30, 41, 59, 0.6);
+            --bg-glass: rgba(255, 255, 255, 0.03);
+
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.5);
+            --secondary: #ec4899;
+            --accent: #10b981;
+            --warning: #f59e0b;
+
+            /* Gradientes */
+            --gradient-main: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #d946ef 100%);
+            --gradient-text: linear-gradient(to right, #818cf8, #c084fc, #f472b6);
+
+            /* Texto */
+            --text-main: #ffffff;
+            --text-muted: #94a3b8;
+
+            /* Bordes y Sombras */
+            --border-light: rgba(255, 255, 255, 0.08);
+            --border-hover: rgba(99, 102, 241, 0.3);
+            --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+
+            /* Tipografía */
+            --font-heading: "Outfit", sans-serif;
+            --font-body: "Plus Jakarta Sans", sans-serif;
+
+            /* Layout */
+            --section-padding: 100px 0;
+            --container-padding: 0 24px;
+            --container-width: 1280px;
+            --border-radius: 24px;
+            --radius-lg: 20px;
+            --radius-sm: 12px;
+            --header-height: 80px;
+
+            /* Transiciones */
+            --ease-fluid: cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        html {
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.7;
+            overflow-x: hidden;
+            width: 100%;
+            min-height: 100vh;
+            background-color: var(--bg-dark);
+            background-image:
+                radial-gradient(circle at 15% 50%, rgba(99, 102, 241, 0.08), transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(236, 72, 153, 0.08), transparent 25%);
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: var(--container-padding);
+            position: relative;
+            z-index: 2;
+            width: 100%;
+        }
+
+        .gradient-text {
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        /* Animación de entrada */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s var(--ease-fluid) forwards;
+            animation-play-state: paused;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* =========================================
+           HEADER
+           ========================================= */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: var(--header-height);
+            z-index: 1000;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: var(--header-height);
+            padding: 0 24px;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--text-main);
+            text-decoration: none;
+            z-index: 1001;
+            flex-shrink: 0;
+        }
+
+        .logo-img {
+            width: 42px;
+            height: 42px;
+            filter: drop-shadow(0 0 8px var(--primary-glow));
+        }
+
+        .logo-text {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--text-main);
+        }
+
+        .logo-text span {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            padding: 8px 0;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--text-main);
+        }
+
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s var(--ease-fluid);
+            box-shadow: 0 0 10px var(--primary);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            background: none;
+            border: none;
+            cursor: pointer;
+            gap: 6px;
+            z-index: 1001;
+            padding: 10px;
+            margin-right: -10px;
+        }
+
+        .menu-toggle span {
+            width: 28px;
+            height: 2px;
+            background: var(--text-main);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 999;
+        }
+
+        .whatsapp-float a {
+            display: flex;
+            width: 56px;
+            height: 56px;
+            background: #25d366;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            transition: 0.3s;
+            text-decoration: none;
+        }
+
+        .whatsapp-float a:hover {
+            transform: scale(1.1) rotate(10deg);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
+        }
+
+        .whatsapp-float i {
+            font-size: 28px;
+            color: white;
+            text-decoration: none;
+        }
+
+        /* =========================================
+           HERO SECTION
+           ========================================= */
+        .hero-modern {
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: calc(var(--header-height) + 40px);
+            padding-bottom: 60px;
+            text-align: center;
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .gradient-overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at bottom, rgba(16, 185, 129, 0.15) 0%, transparent 70%);
+            z-index: 0;
+        }
+
+        /* Iconos flotantes */
+        .tech-icons {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+            mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 100%);
+            -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 100%);
+        }
+
+        .tech-icon {
+            position: absolute;
+            font-size: 2rem;
+            bottom: -100px;
+            animation: floatUp 20s linear infinite;
+            filter: drop-shadow(0 0 10px rgba(16, 185, 129, 0.4));
+            opacity: 0.3;
+        }
+
+        .tech-icon:nth-child(odd) { left: 10%; animation-duration: 25s; }
+        .tech-icon:nth-child(even) { left: 80%; animation-duration: 18s; }
+        .tech-icon:nth-child(3n) { left: 45%; animation-duration: 22s; color: #10b981; }
+        .tech-icon:nth-child(4n) { left: 20%; animation-duration: 28s; color: #6366f1; }
+
+        @keyframes floatUp {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+            20% { opacity: 0.3; }
+            80% { opacity: 0.3; }
+            100% { transform: translateY(-120vh) rotate(360deg); opacity: 0; }
+        }
+
+        .hero-content {
+            max-width: 800px;
+            z-index: 2;
+            position: relative;
+            padding: 0 20px;
+            width: 100%;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 20px;
+            background: rgba(16, 185, 129, 0.15);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: 100px;
+            font-size: 0.85rem;
+            color: #34d399;
+            margin-bottom: 24px;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
+
+        .hero-title {
+            font-family: var(--font-heading);
+            font-size: clamp(1.75rem, 5vw, 3.5rem);
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 24px;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(0.95rem, 2vw, 1.1rem);
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        /* =========================================
+           PRIVACY LAYOUT
+           ========================================= */
+        .privacy-layout {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 40px;
+            position: relative;
+            margin-top: 40px;
+            width: 100%;
+        }
+
+        /* Sidebar Sticky */
+        .sticky-sidebar {
+            position: sticky;
+            top: calc(var(--header-height) + 20px);
+            height: fit-content;
+            background: var(--bg-card);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            box-shadow: var(--shadow-glass);
+            max-height: calc(100vh - var(--header-height) - 40px);
+            overflow-y: auto;
+        }
+
+        .sidebar-title {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: var(--text-main);
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: 10px;
+        }
+
+        .toc-list {
+            list-style: none;
+        }
+
+        .toc-list li {
+            margin-bottom: 4px;
+        }
+
+        .toc-list a {
+            display: block;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            padding: 8px 12px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .toc-list a:hover,
+        .toc-list a.active {
+            background: rgba(16, 185, 129, 0.1);
+            color: #34d399;
+            transform: translateX(5px);
+        }
+
+        /* Main Content Area */
+        .privacy-content {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            width: 100%;
+            min-width: 0;
+        }
+
+        .last-updated {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        /* Section Styling */
+        .privacy-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            position: relative;
+            transition: 0.4s var(--ease-fluid);
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .privacy-section:hover {
+            border-color: var(--border-hover);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+
+        .privacy-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-main);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .privacy-section:hover::before {
+            opacity: 1;
+        }
+
+        .privacy-section h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(1.25rem, 3vw, 1.6rem);
+            margin-bottom: 20px;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            word-wrap: break-word;
+            line-height: 1.3;
+        }
+
+        .privacy-section h2 i {
+            color: var(--accent);
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .privacy-section h3 {
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin: 20px 0 10px;
+        }
+
+        .privacy-section p {
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            text-align: justify;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
+            font-size: clamp(0.9rem, 2vw, 1rem);
+            line-height: 1.7;
+        }
+
+        .privacy-section ul, .privacy-section ol {
+            margin-left: 20px;
+            margin-bottom: 20px;
+            color: var(--text-muted);
+        }
+
+        .privacy-section li {
+            margin-bottom: 8px;
+            padding-left: 8px;
+            font-size: clamp(0.9rem, 2vw, 1rem);
+        }
+
+        .privacy-section strong {
+            color: #e2e8f0;
+        }
+
+        /* Internal Sub-Cards */
+        .sub-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border-light);
+            border-radius: 16px;
+            padding: 20px;
+            margin-top: 16px;
+            margin-bottom: 16px;
+        }
+
+        .sub-card h3 {
+            margin-top: 0;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        /* Highlight Box Style */
+        .highlight-box {
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            border-left: 4px solid #f59e0b;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+
+        .highlight-box h3 {
+            margin-top: 0;
+            color: #fbbf24;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .highlight-box p {
+            color: #fcd34d;
+            margin: 0;
+        }
+
+        .highlight-box p + p {
+            margin-top: 10px;
+        }
+
+        .highlight-box ul {
+            color: #fcd34d;
+            margin-bottom: 0;
+        }
+
+        .highlight-box a {
+            color: #fbbf24;
+        }
+
+        /* Table Styling */
+        .table-container {
+            margin: 20px 0;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            width: 100%;
+            border-radius: 12px;
+            border: 1px solid var(--border-light);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 500px;
+        }
+        
+        thead, tbody, tr {
+            display: table;
+            width: 100%;
+            table-layout: fixed;
+        }
+        
+        th, td {
+            padding: 14px 12px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-light);
+            font-size: 0.9rem;
+        }
+        
+        th {
+            background-color: rgba(16, 185, 129, 0.2);
+            font-weight: 600;
+            color: var(--text-main);
+            text-transform: uppercase;
+            font-size: 0.7rem;
+            letter-spacing: 0.05em;
+        }
+        
+        tr {
+            transition: background 0.2s;
+        }
+
+        tr:hover {
+            background-color: rgba(255, 255, 255, 0.02);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .contact-card {
+            background: rgba(255,255,255,0.05);
+            padding: 20px 15px;
+            border-radius: 16px;
+            text-align: center;
+            transition: 0.3s;
+            border: 1px solid var(--border-light);
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            color: white;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.1);
+        }
+
+        .contact-card i {
+            font-size: 1.75rem;
+        }
+
+        .contact-card span {
+            font-size: 0.85rem;
+        }
+
+        .contact-card.whatsapp { color: #25d366; }
+        .contact-card.instagram { 
+            background: linear-gradient(45deg, rgba(228,64,95,0.2), rgba(188,24,136,0.2)); 
+            border-color: rgba(228,64,95,0.3);
+            color: #e4405f;
+        }
+        .contact-card.linkedin { color: #0077b5; }
+        .contact-card.email { color: #ea4335; }
+        .contact-card.tiktok { 
+            color: #ffffff; 
+            background: linear-gradient(45deg, rgba(0,242,234,0.1), rgba(255,0,80,0.1)); 
+        }
+
+        /* =========================================
+           FOOTER
+           ========================================= */
+        footer {
+            background: linear-gradient(180deg, #0f172a 0%, rgba(10, 10, 25, 0.98) 100%);
+            padding: 60px 0 30px;
+            margin-top: 60px;
+            border-top: 1px solid var(--border-light);
+            position: relative;
+        }
+
+        footer::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(ellipse at 20% 0%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 100%, rgba(118, 75, 162, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .footer-logo-img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .footer-logo-text {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .footer-logo-text span {
+            color: var(--primary);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .footer-link {
+            color: var(--text-muted);
+            position: relative;
+            padding: 5px 0;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .footer-link::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s var(--ease-fluid);
+        }
+
+        .footer-link:hover {
+            color: white;
+        }
+
+        .footer-link:hover::after {
+            width: 100%;
+        }
+
+        .footer-social {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .footer-social-title {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .redes ul {
+            display: flex;
+            gap: 12px;
+            list-style: none;
+        }
+
+        .social-icon {
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            text-decoration: none !important;
+            border: 1px solid var(--border-light);
+        }
+
+        .social-icon i {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            transition: all 0.4s ease;
+            position: relative;
+            z-index: 1;
+            text-decoration: none;
+        }
+
+        .social-icon:hover {
+            transform: translateY(-5px) scale(1.1);
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+        }
+
+        .social-icon:hover i {
+            color: white;
+        }
+
+        .social-icon.instagram:hover { border-color: #e4405f; }
+        .social-icon.instagram::before {
+            content: ""; 
+            position: absolute; 
+            inset: 0; 
+            opacity: 0; 
+            transition: 0.4s;
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+        }
+        .social-icon.instagram:hover::before { opacity: 1; }
+
+        .social-icon.facebook:hover { border-color: #1877f2; background: #1877f2; }
+        .social-icon.tiktok:hover { border-color: #00f2ea; background: #000; }
+        .social-icon.tiktok::before {
+             content: ""; 
+             position: absolute; 
+             inset: 0; 
+             opacity: 0; 
+             transition: 0.4s;
+             background: linear-gradient(45deg, #00f2ea, #ff0050);
+        }
+        .social-icon.tiktok:hover::before { opacity: 1; }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 0.85rem;
+            margin-top: 30px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        /* =========================================
+           RESPONSIVE - TABLETS (768px - 1024px)
+           ========================================= */
+        @media (max-width: 1024px) {
+            :root {
+                --header-height: 70px;
+            }
+
+            .privacy-layout {
+                grid-template-columns: 240px 1fr;
+                gap: 30px;
+            }
+
+            .sticky-sidebar {
+                padding: 20px;
+            }
+
+            .toc-list a {
+                font-size: 0.8rem;
+                padding: 6px 10px;
+            }
+
+            .privacy-section {
+                padding: 28px;
+            }
+
+            .contact-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-top {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-links {
+                justify-content: center;
+            }
+
+            .footer-social {
+                width: 100%;
+            }
+        }
+
+        /* =========================================
+           RESPONSIVE - TABLETS SMALL (max-width: 900px)
+           ========================================= */
+        @media (max-width: 900px) {
+            .privacy-layout {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            
+            .sticky-sidebar {
+                position: relative;
+                top: 0;
+                max-height: none;
+                margin-bottom: 10px;
+            }
+
+            .toc-list {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+            }
+            
+            .toc-list li {
+                margin-bottom: 0;
+            }
+
+            .toc-list a {
+                background: rgba(255, 255, 255, 0.05);
+                font-size: 0.75rem;
+                white-space: nowrap;
+                padding: 8px 12px;
+            }
+
+            .toc-list a:hover,
+            .toc-list a.active {
+                transform: translateX(0) translateY(-2px);
+            }
+        }
+
+        /* =========================================
+           RESPONSIVE - MÓVILES (max-width: 768px)
+           ========================================= */
+        @media (max-width: 768px) {
+            :root {
+                --header-height: 64px;
+            }
+
+            html {
+                font-size: 15px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .nav-links.active {
+                display: flex;
+                position: fixed;
+                top: var(--header-height);
+                left: 0;
+                width: 100%;
+                height: calc(100vh - var(--header-height));
+                height: calc(100dvh - var(--header-height));
+                background: rgba(15, 23, 42, 0.98);
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+                flex-direction: column;
+                padding: 30px 20px;
+                gap: 0;
+                overflow-y: auto;
+                animation: slideDown 0.3s ease;
+            }
+
+            @keyframes slideDown {
+                from {
+                    opacity: 0;
+                    transform: translateY(-20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .nav-links.active li {
+                border-bottom: 1px solid var(--border-light);
+            }
+
+            .nav-links.active a {
+                display: block;
+                padding: 16px 0;
+                font-size: 1.1rem;
+            }
+
+            nav {
+                padding: 0 16px;
+            }
+
+            .container {
+                padding: 0 16px;
+            }
+            
+            .privacy-layout {
+                gap: 20px;
+                margin-top: 24px;
+            }
+
+            .hero-modern {
+                min-height: 45vh;
+                padding-top: calc(var(--header-height) + 30px);
+                padding-bottom: 40px;
+            }
+
+            .hero-content {
+                padding: 0 10px;
+            }
+
+            .hero-badge {
+                padding: 6px 14px;
+                font-size: 0.75rem;
+            }
+
+            .hero-badge span {
+                display: inline;
+            }
+
+            /* Sidebar como acordeón en móvil */
+            .sticky-sidebar {
+                padding: 16px;
+            }
+
+            .sidebar-title {
+                font-size: 1rem;
+                margin-bottom: 16px;
+            }
+
+            .toc-list a {
+                font-size: 0.7rem;
+                padding: 6px 10px;
+            }
+
+            /* Secciones */
+            .privacy-section {
+                padding: 20px 16px;
+                border-radius: 16px;
+            }
+
+            .privacy-section h2 {
+                flex-direction: row;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            .privacy-section h2 i {
+                margin-top: 4px;
+                font-size: 1.1rem;
+            }
+
+            .sub-card {
+                padding: 16px;
+                margin-top: 12px;
+                margin-bottom: 12px;
+            }
+
+            .highlight-box {
+                padding: 16px;
+            }
+
+            /* Tabla responsiva */
+            .table-container {
+                margin: 16px 0;
+            }
+
+            table {
+                min-width: 450px;
+            }
+
+            th, td {
+                padding: 10px 8px;
+                font-size: 0.8rem;
+            }
+
+            th {
+                font-size: 0.65rem;
+            }
+
+            /* Contacto */
+            .contact-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+            
+            .contact-card {
+                padding: 16px 12px;
+            }
+
+            .contact-card i {
+                font-size: 1.5rem;
+            }
+
+            .contact-card span {
+                font-size: 0.8rem;
+            }
+            
+            /* Footer */
+            footer {
+                padding: 40px 0 24px;
+                margin-top: 40px;
+            }
+
+            .footer-top {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 24px;
+            }
+
+            .footer-links {
+                gap: 16px;
+                justify-content: flex-start;
+            }
+
+            .footer-link {
+                font-size: 0.85rem;
+            }
+            
+            .footer-social {
+                align-items: flex-start;
+                width: 100%;
+            }
+
+            .redes ul {
+                gap: 10px;
+            }
+
+            .social-icon {
+                width: 40px;
+                height: 40px;
+            }
+
+            .social-icon i {
+                font-size: 1rem;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+                gap: 10px;
+                font-size: 0.8rem;
+            }
+
+            /* WhatsApp button */
+            .whatsapp-float {
+                bottom: 16px;
+                right: 16px;
+            }
+
+            .whatsapp-float a {
+                width: 50px;
+                height: 50px;
+            }
+
+            .whatsapp-float i {
+                font-size: 24px;
+            }
+        }
+
+        /* =========================================
+           RESPONSIVE - MÓVILES PEQUEÑOS (max-width: 480px)
+           ========================================= */
+        @media (max-width: 480px) {
+            html {
+                font-size: 14px;
+            }
+
+            .container {
+                padding: 0 12px;
+            }
+
+            .logo-text {
+                font-size: 1.25rem;
+            }
+
+            .logo-img {
+                width: 36px;
+                height: 36px;
+            }
+
+            .hero-badge {
+                padding: 5px 12px;
+                font-size: 0.7rem;
+            }
+
+            .hero-badge i {
+                font-size: 0.8rem;
+            }
+
+            .hero-title {
+                font-size: 1.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 0.9rem;
+            }
+
+            .sticky-sidebar {
+                padding: 14px;
+            }
+
+            .toc-list a {
+                font-size: 0.65rem;
+                padding: 5px 8px;
+            }
+
+            .privacy-section {
+                padding: 16px 14px;
+            }
+
+            .privacy-section h2 {
+                font-size: 1.15rem;
+            }
+
+            .privacy-section h2 i {
+                font-size: 1rem;
+            }
+
+            .privacy-section h3 {
+                font-size: 1rem;
+            }
+
+            .privacy-section p,
+            .privacy-section li {
+                font-size: 0.85rem;
+                text-align: left;
+            }
+
+            .privacy-section ul,
+            .privacy-section ol {
+                margin-left: 16px;
+            }
+
+            .sub-card {
+                padding: 14px;
+            }
+
+            .sub-card h3 {
+                font-size: 0.95rem;
+            }
+
+            .highlight-box {
+                padding: 14px;
+            }
+
+            .highlight-box h3 {
+                font-size: 0.95rem;
+            }
+
+            .highlight-box p,
+            .highlight-box li {
+                font-size: 0.85rem;
+            }
+
+            /* Tabla más compacta */
+            table {
+                min-width: 380px;
+            }
+
+            th, td {
+                padding: 8px 6px;
+                font-size: 0.75rem;
+            }
+
+            th {
+                font-size: 0.6rem;
+            }
+
+            /* Contacto 2x2 grid */
+            .contact-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+
+            .contact-card {
+                padding: 14px 10px;
+                border-radius: 12px;
+            }
+
+            .contact-card i {
+                font-size: 1.25rem;
+            }
+
+            .contact-card span {
+                font-size: 0.75rem;
+            }
+
+            /* Footer compacto */
+            .footer-logo-text {
+                font-size: 1.25rem;
+            }
+
+            .footer-logo-img {
+                width: 32px;
+                height: 32px;
+            }
+
+            .footer-links {
+                gap: 12px;
+            }
+
+            .footer-link {
+                font-size: 0.8rem;
+            }
+
+            .social-icon {
+                width: 38px;
+                height: 38px;
+            }
+
+            .footer-bottom {
+                font-size: 0.75rem;
+            }
+        }
+
+        /* =========================================
+           RESPONSIVE - MÓVILES MUY PEQUEÑOS (max-width: 360px)
+           ========================================= */
+        @media (max-width: 360px) {
+            .container {
+                padding: 0 10px;
+            }
+
+            .hero-badge span {
+                font-size: 0.65rem;
+            }
+
+            .toc-list {
+                gap: 6px;
+            }
+
+            .toc-list a {
+                font-size: 0.6rem;
+                padding: 4px 6px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 8px;
+            }
+
+            .contact-card {
+                padding: 12px 8px;
+            }
+
+            .contact-card i {
+                font-size: 1.1rem;
+            }
+
+            .contact-card span {
+                font-size: 0.7rem;
+            }
+
+            table {
+                min-width: 320px;
+            }
+
+            th, td {
+                padding: 6px 4px;
+                font-size: 0.7rem;
+            }
+        }
+
+        /* =========================================
+           LANDSCAPE MODE FIXES
+           ========================================= */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .hero-modern {
+                min-height: auto;
+                padding-top: calc(var(--header-height) + 20px);
+                padding-bottom: 30px;
+            }
+
+            .nav-links.active {
+                padding: 20px;
+            }
+
+            .nav-links.active a {
+                padding: 12px 0;
+            }
+        }
+
+        /* =========================================
+           PRINT STYLES
+           ========================================= */
+        @media print {
+            header,
+            .whatsapp-float,
+            .sticky-sidebar,
+            .tech-icons,
+            footer {
+                display: none !important;
+            }
+
+            body {
+                background: white;
+                color: black;
+            }
+
+            .privacy-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .privacy-section {
+                background: white;
+                border: 1px solid #ddd;
+                page-break-inside: avoid;
+            }
+
+            .privacy-section h2,
+            .privacy-section h3 {
+                color: black;
+            }
+
+            .privacy-section p,
+            .privacy-section li {
+                color: #333;
+            }
+        }
+
+        /* =========================================
+           ACCESSIBILITY - REDUCED MOTION
+           ========================================= */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+
+            .fade-in-up {
+                opacity: 1;
+                transform: none;
+            }
+
+            .tech-icon {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="/index.html" class="logo">
+                <img src="/logos/DerejLogo.ico" alt="Logo DerejSoft" class="logo-img" />
+                <div class="logo-text">Derej<span>Soft</span></div>
+            </a>
+            <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="/index.html#inicio">Inicio</a></li>
+                <li><a href="/index.html#servicios">Servicios</a></li>
+                <li><a href="/nosotros2.html">Nosotros</a></li>
+                <li><a href="/index.html#proyectos">Proyectos</a></li>
+                <li><a href="/index.html#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="whatsapp-float">
+        <a href="https://wa.me/8294772269" target="_blank" rel="noopener noreferrer" aria-label="Abrir chat de WhatsApp">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+        </a>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-modern">
+            <div class="hero-background">
+                <div class="gradient-overlay"></div>
+                <div class="tech-icons" aria-hidden="true">
+                    <i class="tech-icon devicon-html5-plain"></i>
+                    <i class="tech-icon devicon-css3-plain"></i>
+                    <i class="tech-icon devicon-python-plain"></i>
+                    <i class="tech-icon devicon-react-original"></i>
+                    <i class="tech-icon devicon-django-plain"></i>
+                    <i class="tech-icon devicon-docker-plain"></i>
+                    <i class="tech-icon devicon-git-plain"></i>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-badge fade-in-up">
+                        <i class="fas fa-shield-alt" aria-hidden="true"></i>
+                        <span>Protección y Seguridad de Datos</span>
+                    </div>
+                    <h1 class="hero-title fade-in-up" style="animation-delay: 0.2s">
+                        Política de <span class="gradient-text">Privacidad</span>
+                    </h1>
+                    <p class="hero-subtitle fade-in-up" style="animation-delay: 0.4s">
+                        El compromiso de DerejSoft con la transparencia sobre cómo recopilamos, utilizamos y protegemos su información personal.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Privacy Content -->
+        <section class="container">
+            <div class="privacy-layout">
+                <!-- Sidebar Navigation -->
+                <aside class="sticky-sidebar fade-in-up" style="animation-delay: 0.5s">
+                    <h3 class="sidebar-title">Tabla de Contenidos</h3>
+                    <nav aria-label="Tabla de contenidos">
+                        <ul class="toc-list">
+                            <li><a href="#introduccion">1. Introducción</a></li>
+                            <li><a href="#informacion">2. Información recopilada</a></li>
+                            <li><a href="#uso">3. Uso de la información</a></li>
+                            <li><a href="#comparticion">4. Compartición de datos</a></li>
+                            <li><a href="#derechos">5. Derechos del usuario</a></li>
+                            <li><a href="#seguridad">6. Seguridad de datos</a></li>
+                            <li><a href="#retencion">7. Retención de información</a></li>
+                            <li><a href="#transferencias">8. Transferencias internacionales</a></li>
+                            <li><a href="#menores">9. Privacidad de menores</a></li>
+                            <li><a href="#enlaces">10. Enlaces a terceros</a></li>
+                            <li><a href="#cambios">11. Cambios en la política</a></li>
+                            <li><a href="#contacto">12. Información de contacto</a></li>
+                        </ul>
+                    </nav>
+                </aside>
+
+                <!-- Main Text -->
+                <article class="privacy-content">
+                    <div class="last-updated fade-in-up">
+                        <i class="far fa-clock" aria-hidden="true"></i> 
+                        <span>Última actualización: 29 de marzo de 2025</span>
+                    </div>
+
+                    <!-- Alert Box -->
+                    <div class="highlight-box fade-in-up">
+                        <h3><i class="fas fa-exclamation-circle" aria-hidden="true"></i> Información importante</h3>
+                        <p>Esta Política de Privacidad describe cómo DerejSoft recopila, utiliza y comparte su información personal. Por favor, lea esta política detenidamente para entender nuestras prácticas con respecto a sus datos personales.</p>
+                        <p>Al utilizar nuestros servicios, usted acepta las prácticas descritas en esta Política de Privacidad.</p>
+                    </div>
+
+                    <!-- Section 1 -->
+                    <section id="introduccion" class="privacy-section fade-in-up">
+                        <h2><i class="fas fa-info-circle" aria-hidden="true"></i> Introducción y alcance</h2>
+                        <p>DerejSoft ("nosotros", "nuestro" o "la Compañía") se compromete a proteger la privacidad y la seguridad de la información personal de nuestros usuarios. Esta Política de Privacidad se aplica a toda la información recopilada a través de nuestro sitio web, aplicaciones, productos y servicios (colectivamente, los "Servicios").</p>
+                        <p>Esta política describe:</p>
+                        <ul>
+                            <li>Qué información recopilamos y cómo la obtenemos</li>
+                            <li>Cómo utilizamos esa información</li>
+                            <li>Con quién compartimos la información</li>
+                            <li>Sus derechos y opciones con respecto a su información</li>
+                            <li>Cómo protegemos su información</li>
+                            <li>Cuánto tiempo conservamos su información</li>
+                            <li>Otros aspectos importantes relacionados con su privacidad</li>
+                        </ul>
+                        <p>Al acceder o utilizar nuestros Servicios, usted confirma que ha leído, entendido y aceptado los términos de esta Política de Privacidad.</p>
+                    </section>
+
+                    <!-- Section 2 -->
+                    <section id="informacion" class="privacy-section fade-in-up">
+                        <h2><i class="fas fa-database" aria-hidden="true"></i> Información recopilada</h2>
+                        
+                        <div class="sub-card">
+                            <h3>Información que usted nos proporciona</h3>
+                            <p>Recopilamos información que usted nos proporciona directamente cuando:</p>
+                            <ul>
+                                <li>Crea una cuenta o se registra para utilizar nuestros Servicios</li>
+                                <li>Completa formularios o perfiles en nuestros Servicios</li>
+                                <li>Realiza compras a través de nuestros Servicios</li>
+                                <li>Se comunica con nosotros por correo electrónico, teléfono o cualquier otro medio</li>
+                                <li>Participa en encuestas, concursos o promociones</li>
+                                <li>Publica contenido o comentarios en nuestros Servicios</li>
+                            </ul>
+                            <p>Esta información puede incluir:</p>
+                            <ul>
+                                <li>Información de identificación personal (como nombre, dirección de correo electrónico, número de teléfono, dirección postal)</li>
+                                <li>Información de pago (como detalles de tarjeta de crédito, dirección de facturación)</li>
+                                <li>Información de perfil (como foto de perfil, intereses, preferencias)</li>
+                                <li>Comunicaciones y correspondencia que mantiene con nosotros</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="sub-card">
+                            <h3>Información recopilada automáticamente</h3>
+                            <p>Cuando utiliza nuestros Servicios, recopilamos automáticamente cierta información, incluyendo:</p>
+                            <ul>
+                                <li>Información del dispositivo (tipo de dispositivo, sistema operativo, identificadores únicos)</li>
+                                <li>Información de registro (dirección IP, fecha y hora de acceso, páginas visitadas)</li>
+                                <li>Información de ubicación (ubicación geográfica basada en su dirección IP o GPS con consentimiento)</li>
+                                <li>Información de uso (características utilizadas, patrones de uso, tiempo de permanencia)</li>
+                                <li>Información de cookies y tecnologías similares</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="sub-card">
+                            <h3>Información de terceros</h3>
+                            <p>Podemos recibir información sobre usted de terceros, incluyendo:</p>
+                            <ul>
+                                <li>Socios comerciales con los que ofrecemos servicios co-branded</li>
+                                <li>Plataformas de redes sociales (credenciales de acceso)</li>
+                                <li>Proveedores de servicios que nos ayudan a verificar información</li>
+                                <li>Fuentes públicamente disponibles</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- Section 3 -->
+                    <section id="uso" class="privacy-section fade-in-up">
+                        <h2><i class="fas fa-cogs" aria-hidden="true"></i> Uso de la información</h2>
+                        <p>Utilizamos la información que recopilamos para los siguientes propósitos:</p>
+                        
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Propósito</th>
+                                        <th>Descripción</th>
+                                        <th>Base legal (RGPD)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Servicios</strong></td>
+                                        <td>Operar, mantener, administrar y proporcionar las características de nuestros Servicios; mejorar su experiencia.</td>
+                                        <td>Ejecución de contrato, Interés legítimo</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Comunicación</strong></td>
+                                        <td>Responder consultas, soporte técnico y enviar actualizaciones importantes.</td>
+                                        <td>Ejecución de contrato, Interés legítimo</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Marketing</strong></td>
+                                        <td>Enviar información sobre nuevos productos, ofertas especiales y eventos.</td>
+                                        <td>Consentimiento, Interés legítimo</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Análisis</strong></td>
+                                        <td>Entender cómo los usuarios acceden y utilizan nuestros Servicios para mejorar la funcionalidad.</td>
+                                        <td>Interés legítimo</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Seguridad</strong></td>
+                                        <td>Detectar, prevenir y abordar problemas técnicos, fraudes y actividades ilegales.</td>
+                                        <td>Interés legítimo, Obligación legal</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Pagos</strong></td>
+                                        <td>Procesar transacciones y enviar notificaciones relacionadas con pagos.</td>
+                                        <td>Ejecución de contrato</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Cumplimiento</strong></td>
+                                        <td>Cumplir con las obligaciones legales aplicables y procesos legales.</td>
+                                        <td>Obligación legal</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <p>Si reside en el Espacio Económico Europeo (EEE), Reino Unido o Suiza, procesamos sus datos personales de acuerdo con el Reglamento General de Protección de Datos (RGPD) y otras leyes de protección de datos aplicables.</p>
+                    </section>
+
+                    <!-- Section 4 -->
+                    <section id="comparticion" class="privacy-section fade-in-up">
+                        <h2><i class="fas fa-share-alt" aria-hidden="true"></i> Compartición de datos</h2>
+                        <p>Podemos compartir su información personal con las siguientes categorías de destinatarios:</p>
+                        
+                        <div class="sub-card">
+                            <h3>Proveedores de servicios</h3>
+                            <p>Compartimos información con proveedores de servicios externos que realizan servicios en nuestro nombre:</p>
+                            <ul>
+                                <li>Proveedores de alojamiento y servicios en la nube</li>
+                                <li>Procesadores de pago</li>
+                                <li>Proveedores de análisis y marketing</li>
+                                <li>Servicios de atención al cliente</li>
+                                <li>Proveedores de servicios de correo electrónico y comunicación</li>
+                            </ul>
+                            <p>Estos proveedores están obligados contractualmente a proteger su información.</p>
+                        </div>
+                        
+                        <div class="sub-card">
+                            <h3>Socios comerciales</h3>
+                            <p>Podemos compartir información con socios comerciales con los que ofrecemos productos o servicios conjuntos.</p>
+                        </div>
+                        
+                        <div class="sub-card">
+                            <h3>Cumplimiento legal y protección</h3>
+                            <p>Podemos divulgar información si creemos de buena fe que es necesario para:</p>
+                            <ul>
+                                <li>Cumplir con una obligación legal o solicitud gubernamental</li>
+                                <li>Hacer cumplir nuestros términos, políticas y acuerdos</li>
+                                <li>Proteger la seguridad, propiedad o derechos de DerejSoft</li>
+                                <li>Detectar, prevenir o abordar fraudes o problemas de seguridad</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="sub-card">
+                            <h3>Transacciones corporativas</h3>
+                            <p>Si DerejSoft participa en una fusión, adquisición, venta de activos o quiebra, su información puede ser transferida. Le notificaremos sobre cualquier cambio en la propiedad o uso de su información.</p>
+                        </div>
+                        
+                        <div class="highlight-box">
+                            <h3>Información agregada o anonimizada</h3>
+                            <p>Podemos compartir información agregada o anonimizada que no pueda razonablemente utilizarse para identificarle, con fines de investigación y análisis.</p>
+                        </div>
+                    </section>
+
+                    <!-- Section 5 -->
+                    <section id="derechos" class="privacy-section fade-in-up">
+                        <h2><i class="fas fa-user-shield" aria-hidden="true"></i> Derechos y opciones del usuario</h2>
+                        <p>Dependiendo de su ubicación, puede tener ciertos derechos con respecto a su información personal:</p>
+                        
+                        <div class="sub-card">
+                            <h3>Derechos de acceso y control</h3>
+                            <ul>
+                                <li><strong>Acceso:</strong> Solicitar una copia de la información personal.</li>
+                                <li><strong>Rectificación:</strong> Solicitar la corrección de información inexacta.</li>
+                                <li><strong>Eliminación:</strong> Solicitar la eliminación de su información personal.</li>
+                                <li><strong>Restricción:</strong> Solicitar la restricción del procesamiento.</li>
+                                <li><strong>Portabilidad:</strong> Recibir su información en un formato estructurado.</li>
+                                <li><strong>Objeción:</strong> Oponerse al procesamiento de su información.</li>
+                                <li><strong>Retirada:</strong> Retirar su consentimiento en cualquier momento.</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="sub-card">
+                            <h3>Cómo ejercer sus derechos</h3>
+                            <p>Para ejercer cualquiera de estos derechos, contáctenos utilizando la información en la sección de contacto. Responderemos dentro del plazo legal. Podemos verificar su identidad antes de conceder acceso.</p>
+                        </div>
+                        
+                        <div class="sub-card">
+                            <h3>Preferencias de comunicación</h3>
+                            <p>Puede optar por no recibir comunicaciones de marketing siguiendo las instrucciones de cancelación incluidas en dichas comunicaciones.</p>
+                        </div>
+                    </section>
+
+                    <!-- Section 6 -->
+                    <section id="seguridad" class="privacy-section fade-in-up">
+                        <h2><i class="fas fa-lock" aria-hidden="true"></i> Seguridad de datos</h2>
+                        <p>Implementamos medidas de seguridad técnicas, administrativas y físicas diseñadas para proteger su información personal.</p>
+                        
+                        <div class="highlight-box">
+                            <h3>Nuestras medidas incluyen:</h3>
+                            <ul>
+                                <li>Encriptación de datos sensibles en tránsito y en reposo</li>
+                                <li>Controles de acceso basados en roles</li>
+                                <li>Firewalls y sistemas de detección de intrusiones</li>
+                                <li>Monitoreo regular de seguridad y pruebas de vulnerabilidad</li>
+                                <li>Planes de respuesta a incidentes</li>
+                            </ul>
+                        </div>
+                        
+                        <p>No podemos garantizar una seguridad absoluta. En caso de violación de datos, nos comprometemos a notificarle de acuerdo con la ley.</p>
+                    </section>
+
+                    <!-- Section 7 -->
+                    <section id="retencion" class="privacy-section fade-in-up">
+                        <h2><i class="fas fa-clock" aria-hidden="true"></i> Retención de información</h2>
+                        <p>Conservamos su información personal solo durante el tiempo necesario para cumplir con los fines para los que la recopilamos.</p>
+                        <p>Los criterios incluyen:</p>
+                        <ul>
+                            <li>El tiempo que tenga una cuenta activa</li>
+                            <li>Obligaciones legales (retención de registros financieros)</li>
+                            <li>Necesidades legales (litigios o investigaciones)</li>
+                        </ul>
+                        <p>Cuando ya no sea necesario, eliminaremos o anonimizaremos su información de forma segura.</p>
+                    </section>
+
+                    <!-- Section 8 -->
+                    <section id="transferencias" class="privacy-section fade-in-up">
+                        <h2><i class="fas fa-globe" aria-hidden="true"></i> Transferencias internacionales</h2>
+                        <p>DerejSoft opera globalmente y puede transferir, almacenar y procesar su información en países distintos al suyo. Cuando transferimos información desde el EEE, Reino Unido o Suiza a países no reconocidos como seguros, implementamos salvaguardas como cláusulas contractuales estándar.</p>
+                    </section>
+
+                    <!-- Section 9 -->
+                    <section id="menores" class="privacy-section fade-in-up">
+                        <h2><i class="fas fa-child" aria-hidden="true"></i> Privacidad de menores</h2>
+                        <p>Nuestros Servicios no están dirigidos a personas menores de 16 años. Si descubrimos que hemos recopilado información personal de un niño menor de 16 años sin verificación del consentimiento parental, tomaremos medidas para eliminarla.</p>
+                    </section>
+
+                    <!-- Section 10 -->
+                    <section id="enlaces" class="privacy-section fade-in-up">
+                        <h2><i class="fas fa-external-link-alt" aria-hidden="true"></i> Enlaces a terceros</h2>
+                        <p>Nuestros Servicios pueden contener enlaces a sitios web de terceros. No tenemos control sobre las prácticas de privacidad de terceros.</p>
+                        <div class="highlight-box">
+                            <p>Le recomendamos revisar las políticas de privacidad de cualquier sitio web de terceros que visite.</p>
+                        </div>
+                    </section>
+
+                    <!-- Section 11 -->
+                    <section id="cambios" class="privacy-section fade-in-up">
+                        <h2><i class="fas fa-edit" aria-hidden="true"></i> Cambios en la política</h2>
+                        <p>Podemos actualizar esta Política de Privacidad. Si realizamos cambios materiales, le notificaremos a través de un aviso en nuestro sitio web o por correo electrónico.</p>
+                    </section>
+
+                    <!-- Section 12 -->
+                    <section id="contacto" class="privacy-section fade-in-up">
+                        <h2><i class="fas fa-envelope-open-text" aria-hidden="true"></i> Información de contacto</h2>
+                        <p>Si tiene preguntas o inquietudes, puede contactarnos a través de:</p>
+                        
+                        <div class="contact-grid">
+                            <a href="https://wa.me/8294772269" target="_blank" rel="noopener noreferrer" class="contact-card whatsapp">
+                                <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                                <span>WhatsApp</span>
+                            </a>
+                            <a href="https://www.instagram.com/derejsoft/" target="_blank" rel="noopener noreferrer" class="contact-card instagram">
+                                <i class="fab fa-instagram" aria-hidden="true"></i>
+                                <span>Instagram</span>
+                            </a>
+                            <a href="https://www.tiktok.com/@derejsoft" target="_blank" rel="noopener noreferrer" class="contact-card tiktok">
+                                <i class="fab fa-tiktok" aria-hidden="true"></i>
+                                <span>TikTok</span>
+                            </a>
+                            <a href="mailto:derejsoft2003@gmail.com" class="contact-card email">
+                                <i class="fas fa-envelope" aria-hidden="true"></i>
+                                <span>Email</span>
+                            </a>
+                        </div>
+
+                        <div class="highlight-box">
+                            <h3>Delegado de Protección de Datos (DPO)</h3>
+                            <p>Hemos designado un Delegado de Protección de Datos. Puede contactar con nuestro DPO en <a href="mailto:derejsoft2003@gmail.com">derejsoft2003@gmail.com</a>.</p>
+                        </div>
+                    </section>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-logo-container">
+                    <img src="/logos/DerejLogo.ico" alt="DerejSoft Logo" class="footer-logo-img" />
+                    <div class="footer-logo-text">Derej<span>Soft</span></div>
+                </div>
+
+                <div class="footer-links">
+                    <a href="/index.html" class="footer-link">Inicio</a>
+                    <a href="/index.html#servicios" class="footer-link">Servicios</a>
+                    <a href="politica_privacidad.html" class="footer-link">Privacidad</a>
+                    <a href="termino_servicio.html" class="footer-link">Términos</a>
+                    <a href="/index.html#contacto" class="footer-link">Contacto</a>
+                </div>
+
+                <div class="footer-social">
+                    <span class="footer-social-title">Síguenos</span>
+                    <div class="redes">
+                        <ul>
+                            <li>
+                                <a href="https://www.instagram.com/derejsoft/" target="_blank" rel="noopener noreferrer" class="social-icon instagram" aria-label="Instagram de DerejSoft" title="Instagram de DerejSoft">
+                                    <i class="fab fa-instagram" aria-hidden="true"></i>
+                                    <span class="sr-only">Instagram</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.facebook.com/share/1JKws2oMEp/" target="_blank" rel="noopener noreferrer" class="social-icon facebook" aria-label="Facebook de DerejSoft" title="Facebook de DerejSoft">
+                                    <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                                    <span class="sr-only">Facebook</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.tiktok.com/@derejsoft" target="_blank" rel="noopener noreferrer" class="social-icon tiktok" aria-label="TikTok de DerejSoft" title="TikTok de DerejSoft">
+                                    <i class="fab fa-tiktok" aria-hidden="true"></i>
+                                    <span class="sr-only">TikTok</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>© 2025 <span style="color: var(--primary)">DerejSoft</span>. Todos los derechos reservados.</div>
+                <div>Hecho con <i class="fas fa-heart" style="color: #e11d48" aria-hidden="true"></i> en República Dominicana</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Intersection Observer para animaciones
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: "0px 0px -50px 0px",
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running';
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll(".fade-in-up").forEach((el) => observer.observe(el));
+
+            // Mobile Menu Toggle
+            const menuToggle = document.querySelector(".menu-toggle");
+            const navLinks = document.querySelector(".nav-links");
+
+            if (menuToggle && navLinks) {
+                menuToggle.addEventListener("click", () => {
+                    const isOpen = navLinks.classList.toggle("active");
+                    menuToggle.classList.toggle("active");
+                    menuToggle.setAttribute("aria-expanded", isOpen);
+                    
+                    if (isOpen) {
+                        document.body.style.overflow = "hidden";
+                    } else {
+                        document.body.style.overflow = "";
+                    }
+                });
+
+                // Cerrar menú al hacer clic en un enlace
+                navLinks.querySelectorAll("a").forEach((link) => {
+                    link.addEventListener("click", () => {
+                        navLinks.classList.remove("active");
+                        menuToggle.classList.remove("active");
+                        menuToggle.setAttribute("aria-expanded", "false");
+                        document.body.style.overflow = "";
+                    });
+                });
+
+                // Cerrar menú con tecla Escape
+                document.addEventListener("keydown", (e) => {
+                    if (e.key === "Escape" && navLinks.classList.contains("active")) {
+                        navLinks.classList.remove("active");
+                        menuToggle.classList.remove("active");
+                        menuToggle.setAttribute("aria-expanded", "false");
+                        document.body.style.overflow = "";
+                    }
+                });
+            }
+
+            // Smooth Scroll para enlaces de la TOC
+            document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+                anchor.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute("href");
+                    const target = document.querySelector(targetId);
+                    
+                    if (target) {
+                        const headerOffset = 90;
+                        const elementPosition = target.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: "smooth"
+                        });
+                        
+                        // Actualizar estado activo
+                        document.querySelectorAll('.toc-list a').forEach(a => a.classList.remove('active'));
+                        this.classList.add('active');
+                        
+                        // Actualizar URL sin afectar el historial
+                        history.replaceState(null, null, targetId);
+                    }
+                });
+            });
+
+            // Scroll Spy - destacar sección activa en la TOC
+            const sections = document.querySelectorAll('.privacy-section');
+            const tocLinks = document.querySelectorAll('.toc-list a');
+            
+            let scrollTimeout;
+            
+            const updateActiveSection = () => {
+                let current = '';
+                const scrollPosition = window.pageYOffset;
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 150;
+                    const sectionBottom = sectionTop + section.offsetHeight;
+                    
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                tocLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + current) {
+                        link.classList.add('active');
+                    }
+                });
+            };
+
+            window.addEventListener('scroll', () => {
+                if (scrollTimeout) {
+                    window.cancelAnimationFrame(scrollTimeout);
+                }
+                scrollTimeout = window.requestAnimationFrame(updateActiveSection);
+            }, { passive: true });
+
+            // Ejecutar una vez al cargar
+            updateActiveSection();
+
+            // Resize handler para cerrar menú en cambio de orientación
+            let resizeTimeout;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimeout);
+                resizeTimeout = setTimeout(() => {
+                    if (window.innerWidth > 768 && navLinks.classList.contains("active")) {
+                        navLinks.classList.remove("active");
+                        menuToggle.classList.remove("active");
+                        menuToggle.setAttribute("aria-expanded", "false");
+                        document.body.style.overflow = "";
+                    }
+                }, 100);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1625 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Términos y Condiciones - DerejSoft</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../logos/logo2D(1).ico" />
+
+    <!-- Fuentes Modernas -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Iconos FontAwesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Iconos de Tecnología (Devicon) -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    />
+
+    <style>
+      /* =========================================
+           RESET Y VARIABLES (TOMADAS DEL ESTILO NOSOTROS)
+           ========================================= */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+      }
+
+      /* Eliminar subrayados de iconos */
+      i,
+      .fa,
+      .fab,
+      .fas,
+      .devicon {
+        text-decoration: none !important;
+        display: inline-block;
+      }
+
+      :root {
+        /* Paleta de colores Premium */
+        --bg-dark: #0f172a;
+        --bg-card: rgba(30, 41, 59, 0.6);
+        --bg-glass: rgba(255, 255, 255, 0.03);
+
+        --primary: #6366f1;
+        --primary-glow: rgba(99, 102, 241, 0.5);
+        --secondary: #ec4899;
+        --accent: #10b981;
+
+        /* Gradientes */
+        --gradient-main: linear-gradient(
+          135deg,
+          #6366f1 0%,
+          #8b5cf6 50%,
+          #d946ef 100%
+        );
+        --gradient-text: linear-gradient(to right, #818cf8, #c084fc, #f472b6);
+
+        /* Texto */
+        --text-main: #ffffff;
+        --text-muted: #94a3b8;
+
+        /* Bordes y Sombras */
+        --border-light: rgba(255, 255, 255, 0.08);
+        --border-hover: rgba(99, 102, 241, 0.3);
+        --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+
+        /* Tipografía */
+        --font-heading: "Outfit", sans-serif;
+        --font-body: "Plus Jakarta Sans", sans-serif;
+
+        /* Layout */
+        --section-padding: 100px 0;
+        --container-padding: 0 24px;
+        --container-width: 1280px;
+        --border-radius: 24px;
+        --radius-lg: 20px;
+        --radius-sm: 12px;
+        --header-height: 80px;
+
+        /* Transiciones */
+        --ease-fluid: cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      body {
+        font-family: var(--font-body);
+        background: var(--bg-dark);
+        color: var(--text-main);
+        line-height: 1.7;
+        overflow-x: hidden;
+      }
+
+      /* Fondo animado fluido */
+      body {
+        background-color: var(--bg-dark);
+        background-image:
+          radial-gradient(
+            circle at 15% 50%,
+            rgba(99, 102, 241, 0.08),
+            transparent 25%
+          ),
+          radial-gradient(
+            circle at 85% 30%,
+            rgba(236, 72, 153, 0.08),
+            transparent 25%
+          );
+        background-attachment: fixed;
+      }
+
+      .container {
+        max-width: var(--container-width);
+        margin: 0 auto;
+        padding: var(--container-padding);
+        position: relative;
+        z-index: 2;
+      }
+
+      .gradient-text {
+        background: var(--gradient-text);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 700;
+      }
+
+      /* Animación de entrada */
+      .fade-in-up {
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeInUp 0.8s var(--ease-fluid) forwards;
+      }
+
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* =========================================
+           HEADER
+           ========================================= */
+      header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: var(--header-height);
+        z-index: 1000;
+        background: rgba(15, 23, 42, 0.85);
+        backdrop-filter: blur(16px);
+        border-bottom: 1px solid var(--border-light);
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: var(--header-height);
+        padding: 0 24px;
+        max-width: var(--container-width);
+        margin: 0 auto;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-family: var(--font-heading);
+        font-weight: 700;
+        font-size: 1.5rem;
+        color: var(--text-main);
+        text-decoration: none;
+      }
+
+      .logo-img {
+        width: 42px;
+        height: 42px;
+        filter: drop-shadow(0 0 8px var(--primary-glow));
+      }
+      .logo-text {
+        font-family: var(--font-heading);
+        font-weight: 700;
+        font-size: 1.5rem;
+        color: var(--text-main);
+      }
+      .logo-text span {
+        color: var(--primary);
+      }
+
+      .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 30px;
+      }
+
+      .nav-links a {
+        color: var(--text-muted);
+        text-decoration: none;
+        font-weight: 500;
+        position: relative;
+        padding: 8px 0;
+        transition: color 0.3s;
+        font-size: 0.95rem;
+      }
+
+      .nav-links a:hover,
+      .nav-links a.active {
+        color: var(--text-main);
+      }
+
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--primary);
+        transition: width 0.3s var(--ease-fluid);
+        box-shadow: 0 0 10px var(--primary);
+      }
+
+      .nav-links a:hover::after,
+      .nav-links a.active::after {
+        width: 100%;
+      }
+
+      .menu-toggle {
+        display: none;
+        flex-direction: column;
+        background: none;
+        border: none;
+        cursor: pointer;
+        gap: 6px;
+      }
+      .menu-toggle span {
+        width: 28px;
+        height: 2px;
+        background: var(--text-main);
+        border-radius: 2px;
+      }
+
+      /* WhatsApp Float */
+      .whatsapp-float {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        z-index: 999;
+      }
+
+      .whatsapp-float a {
+        display: flex;
+        width: 60px;
+        height: 60px;
+        background: #25d366;
+        border-radius: 50%;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+        transition: 0.3s;
+        text-decoration: none;
+      }
+
+      .whatsapp-float a:hover {
+        transform: scale(1.1) rotate(10deg);
+        box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
+      }
+      .whatsapp-float i {
+        font-size: 32px;
+        color: white;
+        text-decoration: none;
+      }
+
+      /* =========================================
+           HERO SECTION (MODIFICADO PARA TÉRMINOS)
+           ========================================= */
+      .hero-modern {
+        min-height: 60vh; /* Menos alto que el nosotros */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+        padding-top: calc(var(--header-height) + 40px);
+        padding-bottom: 60px;
+        text-align: center;
+      }
+
+      .hero-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+      }
+
+      .gradient-overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(
+          ellipse at bottom,
+          rgba(99, 102, 241, 0.15) 0%,
+          transparent 70%
+        );
+        z-index: 0;
+      }
+
+      /* Iconos flotantes */
+      .tech-icons {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: 0;
+        mask-image: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 1) 40%,
+          rgba(0, 0, 0, 0) 100%
+        );
+        -webkit-mask-image: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 1) 40%,
+          rgba(0, 0, 0, 0) 100%
+        );
+      }
+
+      .tech-icon {
+        position: absolute;
+        font-size: 2.5rem;
+        bottom: -100px;
+        animation: floatUp 20s linear infinite;
+        filter: drop-shadow(0 0 10px rgba(99, 102, 241, 0.4));
+        opacity: 0.3;
+      }
+
+      /* Posiciones aleatorias */
+      .tech-icon:nth-child(odd) {
+        left: 10%;
+        animation-duration: 25s;
+      }
+      .tech-icon:nth-child(even) {
+        left: 80%;
+        animation-duration: 18s;
+      }
+      .tech-icon:nth-child(3n) {
+        left: 45%;
+        animation-duration: 22s;
+        color: #f7df1e;
+      }
+      .tech-icon:nth-child(4n) {
+        left: 20%;
+        animation-duration: 28s;
+        color: #e34f26;
+      }
+
+      @keyframes floatUp {
+        0% {
+          transform: translateY(0) rotate(0deg);
+          opacity: 0;
+        }
+        20% {
+          opacity: 0.3;
+        }
+        80% {
+          opacity: 0.3;
+        }
+        100% {
+          transform: translateY(-120vh) rotate(360deg);
+          opacity: 0;
+        }
+      }
+
+      .hero-content {
+        max-width: 800px;
+        z-index: 2;
+        position: relative;
+      }
+
+      .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 20px;
+        background: rgba(236, 72, 153, 0.15);
+        border: 1px solid rgba(236, 72, 153, 0.3);
+        border-radius: 100px;
+        font-size: 0.9rem;
+        color: #f472b6;
+        margin-bottom: 24px;
+        backdrop-filter: blur(5px);
+      }
+
+      .hero-title {
+        font-family: var(--font-heading);
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 700;
+        line-height: 1.1;
+        margin-bottom: 24px;
+      }
+
+      .hero-subtitle {
+        font-size: 1.1rem;
+        color: var(--text-muted);
+        margin-bottom: 30px;
+      }
+
+      /* =========================================
+           TERMS LAYOUT (GRID SIDEBAR + CONTENT)
+           ========================================= */
+      .terms-layout {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: 40px;
+        position: relative;
+      }
+
+      /* Sidebar Sticky */
+      .sticky-sidebar {
+        position: sticky;
+        top: calc(var(--header-height) + 40px);
+        height: fit-content;
+        background: var(--bg-card);
+        backdrop-filter: blur(12px);
+        border: 1px solid var(--border-light);
+        border-radius: var(--radius-lg);
+        padding: 24px;
+        box-shadow: var(--shadow-glass);
+      }
+
+      .sidebar-title {
+        font-family: var(--font-heading);
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+        color: var(--text-main);
+        border-bottom: 1px solid var(--border-light);
+        padding-bottom: 10px;
+      }
+
+      .toc-list {
+        list-style: none;
+      }
+
+      .toc-list li {
+        margin-bottom: 8px;
+      }
+
+      .toc-list a {
+        display: block;
+        color: var(--text-muted);
+        text-decoration: none;
+        font-size: 0.9rem;
+        padding: 8px 12px;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+      }
+
+      .toc-list a:hover,
+      .toc-list a.active {
+        background: rgba(99, 102, 241, 0.1);
+        color: var(--primary);
+        transform: translateX(5px);
+      }
+
+      /* Main Content Area */
+      .terms-content {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+      }
+
+      .last-updated {
+        font-size: 0.9rem;
+        color: var(--text-muted);
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      /* Section Styling */
+      .terms-section {
+        background: var(--bg-card);
+        border: 1px solid var(--border-light);
+        border-radius: var(--radius-lg);
+        padding: 40px;
+        position: relative;
+        overflow: hidden;
+        transition: 0.4s var(--ease-fluid);
+      }
+
+      .terms-section:hover {
+        border-color: var(--border-hover);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Decorative gradient line for sections */
+      .terms-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4px;
+        height: 100%;
+        background: var(--gradient-main);
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+
+      .terms-section:hover::before {
+        opacity: 1;
+      }
+
+      .terms-section h2 {
+        font-family: var(--font-heading);
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+        color: var(--text-main);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .terms-section h2 i {
+        color: var(--primary);
+        font-size: 1.4rem;
+      }
+
+      .terms-section h3 {
+        font-size: 1.2rem;
+        color: var(--primary);
+        margin: 20px 0 10px;
+      }
+
+      .terms-section p {
+        color: var(--text-muted);
+        margin-bottom: 15px;
+        text-align: justify;
+      }
+
+      .terms-section ul,
+      .terms-section ol {
+        margin-left: 20px;
+        margin-bottom: 20px;
+        color: var(--text-muted);
+      }
+
+      .terms-section li {
+        margin-bottom: 8px;
+        padding-left: 8px;
+      }
+
+      .terms-section strong {
+        color: #e2e8f0;
+      }
+
+      /* Highlight Box Style */
+      .highlight {
+        background: rgba(245, 158, 11, 0.1);
+        border: 1px solid rgba(245, 158, 11, 0.3);
+        border-left: 4px solid #f59e0b;
+        padding: 20px;
+        border-radius: 12px;
+        margin: 20px 0;
+      }
+
+      .highlight p {
+        margin: 0;
+        color: #fbbf24;
+      }
+
+      /* Contact Section Styling */
+      .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+      }
+
+      .contact-card {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 20px;
+        border-radius: 16px;
+        text-align: center;
+        transition: 0.3s;
+        border: 1px solid var(--border-light);
+        text-decoration: none;
+        display: block;
+        color: white;
+      }
+
+      .contact-card:hover {
+        transform: translateY(-5px);
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      .contact-card i {
+        font-size: 2rem;
+        margin-bottom: 10px;
+        display: block;
+      }
+
+      .contact-card.whatsapp {
+        color: #25d366;
+      }
+      .contact-card.instagram {
+        background: linear-gradient(
+          45deg,
+          rgba(228, 64, 95, 0.2),
+          rgba(188, 24, 136, 0.2)
+        );
+        border-color: rgba(228, 64, 95, 0.3);
+      }
+      .contact-card.linkedin {
+        color: #0077b5;
+      }
+      .contact-card.email {
+        color: #ea4335;
+      }
+
+      /* =========================================
+           FOOTER
+           ========================================= */
+      footer {
+        background: linear-gradient(
+          180deg,
+          #0f172a 0%,
+          rgba(10, 10, 25, 0.98) 100%
+        );
+        padding: 80px 0 30px;
+        margin-top: 80px;
+        border-top: 1px solid var(--border-light);
+        position: relative;
+      }
+
+      footer::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background:
+          radial-gradient(
+            ellipse at 20% 0%,
+            rgba(99, 102, 241, 0.08) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            ellipse at 80% 100%,
+            rgba(118, 75, 162, 0.08) 0%,
+            transparent 50%
+          );
+        pointer-events: none;
+      }
+
+      .footer-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 30px;
+        padding-bottom: 40px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .footer-logo-container {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .footer-logo-img {
+        width: 40px;
+        height: 40px;
+      }
+
+      .footer-logo-text {
+        font-family: var(--font-heading);
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: white;
+      }
+      .footer-logo-text span {
+        color: var(--primary);
+      }
+
+      .footer-links {
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
+      }
+
+      .footer-link {
+        color: var(--text-muted);
+        position: relative;
+        padding: 5px 0;
+        font-size: 0.9rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        text-decoration: none;
+      }
+
+      .footer-link::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--primary);
+        transition: width 0.3s var(--ease-fluid);
+      }
+
+      .footer-link:hover {
+        color: white;
+      }
+      .footer-link:hover::after {
+        width: 100%;
+      }
+
+      .footer-social {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .footer-social-title {
+        color: var(--text-muted);
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+
+      .redes ul {
+        display: flex;
+        gap: 15px;
+      }
+      .redes li {
+        list-style: none;
+      }
+
+      .social-icon {
+        width: 44px;
+        height: 44px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-muted);
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+        text-decoration: none !important;
+        border: 1px solid var(--border-light);
+      }
+
+      .social-icon i {
+        font-size: 1.3rem;
+        color: var(--text-muted);
+        transition: all 0.4s ease;
+        position: relative;
+        z-index: 1;
+        text-decoration: none;
+      }
+
+      .social-icon:hover {
+        transform: translateY(-5px) scale(1.1);
+        border-color: var(--primary);
+        box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+      }
+
+      .social-icon:hover i {
+        color: white;
+      }
+
+      /* Colores hover especificos */
+      .social-icon.instagram:hover {
+        border-color: #e4405f;
+      }
+      .social-icon.instagram::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        transition: 0.4s;
+        background: linear-gradient(
+          45deg,
+          #f09433,
+          #e6683c,
+          #dc2743,
+          #cc2366,
+          #bc1888
+        );
+      }
+      .social-icon.instagram:hover::before {
+        opacity: 1;
+      }
+
+      .social-icon.facebook:hover {
+        border-color: #1877f2;
+        background: #1877f2;
+      }
+      .social-icon.tiktok:hover {
+        border-color: #00f2ea;
+        background: #000;
+      }
+      .social-icon.tiktok::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        transition: 0.4s;
+        background: linear-gradient(45deg, #00f2ea, #ff0050);
+      }
+      .social-icon.tiktok:hover::before {
+        opacity: 1;
+      }
+
+      .footer-bottom {
+        display: flex;
+        justify-content: space-between;
+        color: rgba(255, 255, 255, 0.3);
+        font-size: 0.85rem;
+        margin-top: 30px;
+      }
+
+      /* =========================================
+           RESPONSIVE
+           ========================================= */
+      @media (max-width: 992px) {
+        .terms-layout {
+          grid-template-columns: 1fr;
+        }
+
+        .sticky-sidebar {
+          position: relative;
+          top: 0;
+          margin-bottom: 30px;
+        }
+
+        .toc-list {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 10px;
+        }
+
+        .toc-list li {
+          margin-bottom: 0;
+        }
+
+        .toc-list a {
+          background: rgba(255, 255, 255, 0.05);
+          font-size: 0.8rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+        }
+        .menu-toggle {
+          display: flex;
+        }
+
+        .nav-links.active {
+          display: flex;
+          position: absolute;
+          top: var(--header-height);
+          left: 0;
+          width: 100%;
+          background: rgba(15, 23, 42, 0.95);
+          flex-direction: column;
+          padding: 20px;
+          border-bottom: 1px solid var(--border-light);
+        }
+
+        .terms-section {
+          padding: 25px;
+        }
+
+        .terms-section h2 {
+          font-size: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <nav>
+          <a href="/index.html" class="logo">
+            <!-- Nota: Ajustado path de imagen para asumir estructura de carpetas -->
+            <img
+              src="/logos/DerejLogo.ico"
+              alt="Logo DerejSoft"
+              class="logo-img"
+            />
+            <div class="logo-text">Derej<span>Soft</span></div>
+          </a>
+          <button class="menu-toggle" aria-label="Abrir menú">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <ul class="nav-links">
+            <li><a href="/index.html#inicio">Inicio</a></li>
+            <li><a href="/index.html#servicios">Servicios</a></li>
+            <li><a href="/nosotros2.html">Nosotros</a></li>
+            <li><a href="/index.html#proyectos">Proyectos</a></li>
+            <li><a href="/index.html#contacto">Contacto</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div class="whatsapp-float">
+      <a
+        href="https://wa.me/8294772269"
+        target="_blank"
+        aria-label="Abrir chat de WhatsApp"
+      >
+        <i class="fab fa-whatsapp"></i>
+      </a>
+    </div>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="hero-modern">
+        <div class="hero-background">
+          <div class="gradient-overlay"></div>
+          <!-- Iconos de tecnología de fondo -->
+          <div class="tech-icons">
+            <i class="tech-icon devicon-javascript-plain"></i>
+            <i class="tech-icon devicon-python-plain"></i>
+            <i class="tech-icon devicon-react-original"></i>
+            <i class="tech-icon devicon-html5-plain"></i>
+            <i class="tech-icon devicon-css3-plain"></i>
+            <i class="tech-icon devicon-django-plain"></i>
+            <i class="tech-icon devicon-git-plain"></i>
+            <i class="tech-icon devicon-docker-plain"></i>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="hero-content">
+            <div class="hero-badge fade-in-up">
+              <i class="fas fa-file-contract"></i>
+              <span>Marco Legal y Regulatorio</span>
+            </div>
+            <h1 class="hero-title fade-in-up" style="animation-delay: 0.2s">
+              Términos y <span class="gradient-text">Condiciones</span>
+            </h1>
+            <p class="hero-subtitle fade-in-up" style="animation-delay: 0.4s">
+              El compromiso de DerejSoft con la transparencia, seguridad y el
+              buen uso de nuestros servicios tecnológicos.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Terms Content -->
+      <section class="container">
+        <div class="terms-layout">
+          <!-- Sidebar Navigation -->
+          <aside
+            class="sticky-sidebar fade-in-up"
+            style="animation-delay: 0.5s"
+          >
+            <h3 class="sidebar-title">Tabla de Contenidos</h3>
+            <ul class="toc-list">
+              <li><a href="#aceptacion">1. Aceptación</a></li>
+              <li><a href="#definiciones">2. Definiciones</a></li>
+              <li><a href="#registro">3. Registro</a></li>
+              <li><a href="#licencias">4. Licencias</a></li>
+              <li><a href="#contenido">5. Contenido</a></li>
+              <li><a href="#propiedad">6. Propiedad</a></li>
+              <li><a href="#privacidad">7. Privacidad</a></li>
+              <li><a href="#modificaciones">8. Modificaciones</a></li>
+              <li><a href="#terminacion">9. Terminación</a></li>
+              <li><a href="#garantias">10. Garantías</a></li>
+              <li><a href="#limitacion">11. Responsabilidad</a></li>
+              <li><a href="#indemnizacion">12. Indemnización</a></li>
+              <li><a href="#ley">13. Ley Aplicable</a></li>
+              <li><a href="#disputas">14. Disputas</a></li>
+              <li><a href="#contacto">15. Contacto</a></li>
+            </ul>
+          </aside>
+
+          <!-- Main Text -->
+          <article class="terms-content">
+            <div class="last-updated fade-in-up">
+              <i class="far fa-clock"></i> Última actualización: 29 de marzo de
+              2025
+            </div>
+
+            <!-- Section 1 -->
+            <div id="aceptacion" class="terms-section fade-in-up">
+              <h2>
+                <i class="fas fa-check-circle"></i> Aceptación de términos
+              </h2>
+              <p>
+                Al acceder o utilizar los servicios, productos, aplicaciones o
+                sitio web de DerejSoft (en adelante, "el Servicio"), usted
+                acepta estar legalmente vinculado por estos Términos y
+                Condiciones. Si no está de acuerdo con alguno de estos términos,
+                no debe utilizar nuestros servicios.
+              </p>
+              <p>
+                Estos términos constituyen un acuerdo legal entre usted y
+                DerejSoft con respecto a su uso del Servicio. Al registrarse,
+                acceder o utilizar nuestros servicios, usted confirma que ha
+                leído, entendido y aceptado estos términos en su totalidad.
+              </p>
+              <div class="highlight">
+                <p>
+                  Por favor, lea estos términos cuidadosamente antes de utilizar
+                  nuestros servicios. El uso continuado de nuestros servicios
+                  después de cualquier modificación de estos términos
+                  constituirá su aceptación de dichos cambios.
+                </p>
+              </div>
+            </div>
+
+            <!-- Section 2 -->
+            <div id="definiciones" class="terms-section fade-in-up">
+              <h2><i class="fas fa-book"></i> Definiciones</h2>
+              <p>Para los propósitos de estos Términos y Condiciones:</p>
+              <ul>
+                <li>
+                  <strong>"DerejSoft"</strong>, "nosotros", "nos" o "nuestro" se
+                  refiere a la empresa DerejSoft, sus subsidiarias, afiliados,
+                  directores, funcionarios, empleados, agentes y contratistas.
+                </li>
+                <li>
+                  <strong>"Usuario"</strong>, "usted" o "su" se refiere a
+                  cualquier persona que acceda o utilice el Servicio.
+                </li>
+                <li>
+                  <strong>"Servicio"</strong> se refiere a todos los productos,
+                  aplicaciones, sitios web y servicios ofrecidos por DerejSoft.
+                </li>
+                <li>
+                  <strong>"Contenido"</strong> se refiere a cualquier
+                  información, datos, texto, software, gráficos, mensajes u
+                  otros materiales que se muestren o se pongan a disposición a
+                  través del Servicio.
+                </li>
+                <li>
+                  <strong>"Contenido del Usuario"</strong> se refiere a
+                  cualquier contenido que usted envíe, publique o transmita a
+                  través del Servicio.
+                </li>
+                <li>
+                  <strong>"Cuenta"</strong> se refiere a la relación establecida
+                  entre DerejSoft y un Usuario cuando este último se registra en
+                  el Servicio.
+                </li>
+              </ul>
+            </div>
+
+            <!-- Section 3 -->
+            <div id="registro" class="terms-section fade-in-up">
+              <h2><i class="fas fa-user-plus"></i> Registro de cuenta</h2>
+              <p>
+                Para utilizar ciertas funciones del Servicio, es posible que
+                deba registrarse y crear una cuenta. Al registrarse, usted
+                acepta proporcionar información precisa, actual y completa, y
+                mantenerla actualizada.
+              </p>
+              <p>
+                Usted es responsable de mantener la confidencialidad de su
+                contraseña y de todas las actividades que ocurran bajo su
+                cuenta. Debe notificarnos inmediatamente sobre cualquier uso no
+                autorizado de su cuenta o cualquier otra violación de seguridad.
+              </p>
+              <p>
+                Nos reservamos el derecho de rechazar el registro, cancelar
+                cuentas o eliminar o editar contenido a nuestra sola discreción,
+                sin previo aviso y sin responsabilidad hacia usted.
+              </p>
+              <p>
+                Los usuarios menores de 18 años deben obtener el consentimiento
+                de sus padres o tutores legales antes de utilizar el Servicio.
+              </p>
+            </div>
+
+            <!-- Section 4 -->
+            <div id="licencias" class="terms-section fade-in-up">
+              <h2><i class="fas fa-key"></i> Licencias y restricciones</h2>
+              <p>
+                DerejSoft le otorga una licencia limitada, no exclusiva, no
+                transferible y revocable para utilizar el Servicio de acuerdo
+                con estos Términos y Condiciones.
+              </p>
+              <h3>Usted no puede:</h3>
+              <ul>
+                <li>
+                  Utilizar el Servicio para cualquier propósito ilegal o no
+                  autorizado.
+                </li>
+                <li>
+                  Modificar, adaptar, traducir, realizar ingeniería inversa,
+                  descompilar o desensamblar cualquier parte del Servicio.
+                </li>
+                <li>
+                  Eliminar, alterar u ocultar cualquier aviso de derechos de
+                  autor, marca registrada u otros derechos de propiedad.
+                </li>
+                <li>
+                  Acceder o intentar acceder a la cuenta de otro usuario sin
+                  autorización.
+                </li>
+                <li>
+                  Interferir o interrumpir el Servicio o los servidores o redes
+                  conectados al Servicio.
+                </li>
+                <li>
+                  Recopilar o almacenar datos personales de otros usuarios sin
+                  su consentimiento.
+                </li>
+                <li>
+                  Utilizar robots, arañas, raspadores o cualquier otro medio
+                  automatizado para acceder al Servicio.
+                </li>
+                <li>
+                  Revender, sublicenciar o transferir el Servicio o cualquier
+                  parte del mismo a terceros.
+                </li>
+              </ul>
+            </div>
+
+            <!-- Section 5 -->
+            <div id="contenido" class="terms-section fade-in-up">
+              <h2><i class="fas fa-file-upload"></i> Contenido del usuario</h2>
+              <p>
+                Usted conserva todos los derechos sobre el Contenido del Usuario
+                que envíe, publique o muestre en o a través del Servicio. Al
+                enviar, publicar o mostrar Contenido del Usuario, usted otorga a
+                DerejSoft una licencia mundial, no exclusiva, libre de regalías,
+                transferible y sublicenciable para usar, reproducir, modificar,
+                adaptar, publicar, traducir, crear obras derivadas, distribuir y
+                mostrar dicho Contenido del Usuario en relación con la operación
+                y provisión del Servicio.
+              </p>
+              <p>Usted declara y garantiza que:</p>
+              <ul>
+                <li>
+                  Posee o tiene los derechos necesarios para proporcionar el
+                  Contenido del Usuario y otorgar la licencia anterior.
+                </li>
+                <li>
+                  El Contenido del Usuario no infringe los derechos de propiedad
+                  intelectual, privacidad, publicidad u otros derechos de
+                  terceros.
+                </li>
+                <li>
+                  El Contenido del Usuario no contiene material difamatorio,
+                  obsceno, ofensivo, indecente o ilegal.
+                </li>
+                <li>
+                  El Contenido del Usuario no contiene virus, adware, spyware,
+                  gusanos u otro código malicioso.
+                </li>
+              </ul>
+              <p>
+                DerejSoft se reserva el derecho, pero no tiene la obligación, de
+                monitorear, editar o eliminar cualquier Contenido del Usuario
+                que considere, a su sola discreción, violatorio de estos
+                Términos o inapropiado por cualquier motivo.
+              </p>
+            </div>
+
+            <!-- Section 6 -->
+            <div id="propiedad" class="terms-section fade-in-up">
+              <h2><i class="fas fa-copyright"></i> Propiedad intelectual</h2>
+              <p>
+                El Servicio y su contenido original, características y
+                funcionalidad son propiedad de DerejSoft y están protegidos por
+                derechos de autor, marcas registradas, patentes, secretos
+                comerciales y otras leyes de propiedad intelectual o derechos de
+                propiedad.
+              </p>
+              <p>
+                Las marcas comerciales, logotipos, nombres de productos y
+                servicios de DerejSoft que aparecen en el Servicio son marcas
+                comerciales de DerejSoft. No se otorga ningún derecho o licencia
+                para utilizar dichas marcas sin el consentimiento previo por
+                escrito de DerejSoft.
+              </p>
+              <p>
+                Cualquier retroalimentación, comentarios o sugerencias que
+                proporcione con respecto al Servicio se considera no
+                confidencial y DerejSoft tendrá derecho a utilizar dicha
+                retroalimentación sin restricciones y sin compensación para
+                usted.
+              </p>
+            </div>
+
+            <!-- Section 7 -->
+            <div id="privacidad" class="terms-section fade-in-up">
+              <h2><i class="fas fa-user-shield"></i> Privacidad</h2>
+              <p>
+                Su privacidad es importante para nosotros. Nuestra Política de
+                Privacidad, que se incorpora a estos Términos por referencia,
+                describe cómo recopilamos, utilizamos y divulgamos la
+                información que obtenemos de usted cuando utiliza nuestro
+                Servicio.
+              </p>
+              <p>
+                Al utilizar el Servicio, usted acepta la recopilación y uso de
+                su información de acuerdo con nuestra Política de Privacidad.
+              </p>
+              <p>
+                Implementamos medidas de seguridad diseñadas para proteger su
+                información, pero no podemos garantizar que su información
+                siempre permanecerá segura.
+              </p>
+            </div>
+
+            <!-- Section 8 -->
+            <div id="modificaciones" class="terms-section fade-in-up">
+              <h2><i class="fas fa-tools"></i> Modificaciones</h2>
+              <p>
+                DerejSoft se reserva el derecho, a su sola discreción, de
+                modificar o reemplazar estos Términos en cualquier momento. Si
+                una revisión es material, proporcionaremos al menos 30 días de
+                aviso antes de que los nuevos términos entren en vigencia. Lo
+                que constituye un cambio material será determinado a nuestra
+                sola discreción.
+              </p>
+              <p>
+                Al continuar accediendo o utilizando nuestro Servicio después de
+                que esas revisiones entren en vigencia, usted acepta estar
+                sujeto a los términos revisados. Si no está de acuerdo con los
+                nuevos términos, debe dejar de utilizar el Servicio.
+              </p>
+              <p>
+                También podemos, sin previo aviso, cambiar los servicios; dejar
+                de proporcionar los servicios o características de los
+                servicios; o crear límites para los servicios.
+              </p>
+            </div>
+
+            <!-- Section 9 -->
+            <div id="terminacion" class="terms-section fade-in-up">
+              <h2><i class="fas fa-ban"></i> Terminación</h2>
+              <p>
+                Podemos terminar o suspender su acceso al Servicio
+                inmediatamente, sin previo aviso o responsabilidad, por
+                cualquier motivo, incluyendo, sin limitación, si usted incumple
+                estos Términos.
+              </p>
+              <p>
+                Todas las disposiciones de los Términos que por su naturaleza
+                deberían sobrevivir a la terminación sobrevivirán a la
+                terminación, incluyendo, sin limitación, disposiciones de
+                propiedad, renuncias de garantía, indemnización y limitaciones
+                de responsabilidad.
+              </p>
+              <p>
+                Tras la terminación, su derecho a utilizar el Servicio cesará
+                inmediatamente. Si desea terminar su cuenta, puede simplemente
+                dejar de utilizar el Servicio o contactarnos para solicitar la
+                eliminación de su cuenta.
+              </p>
+            </div>
+
+            <!-- Section 10 -->
+            <div id="garantias" class="terms-section fade-in-up">
+              <h2>
+                <i class="fas fa-exclamation-triangle"></i> Exclusiones de
+                garantías
+              </h2>
+              <p>
+                El Servicio se proporciona "tal cual" y "según disponibilidad"
+                sin garantías de ningún tipo, ya sean expresas o implícitas.
+              </p>
+              <p>DerejSoft no garantiza que:</p>
+              <ul>
+                <li>El Servicio cumplirá con sus requisitos específicos.</li>
+                <li>
+                  El Servicio será ininterrumpido, oportuno, seguro o libre de
+                  errores.
+                </li>
+                <li>
+                  Los resultados que puedan obtenerse del uso del Servicio serán
+                  precisos o confiables.
+                </li>
+                <li>
+                  La calidad de cualquier producto, servicio, información u otro
+                  material comprado u obtenido por usted a través del Servicio
+                  cumplirá con sus expectativas.
+                </li>
+                <li>Cualquier error en el Servicio será corregido.</li>
+              </ul>
+              <div class="highlight">
+                <p>
+                  En la medida máxima permitida por la ley aplicable, DerejSoft
+                  renuncia a todas las garantías, ya sean expresas, implícitas o
+                  estatutarias, incluyendo, pero no limitado a, cualquier
+                  garantía de comerciabilidad, idoneidad para un propósito
+                  particular, título y no infracción.
+                </p>
+              </div>
+            </div>
+
+            <!-- Section 11 -->
+            <div id="limitacion" class="terms-section fade-in-up">
+              <h2>
+                <i class="fas fa-balance-scale"></i> Limitación de
+                responsabilidad
+              </h2>
+              <p>
+                En ningún caso DerejSoft, sus directores, empleados, socios,
+                agentes, proveedores o afiliados serán responsables por
+                cualquier daño indirecto, incidental, especial, consecuente o
+                punitivo, incluyendo, sin limitación, pérdida de beneficios,
+                datos, uso, buena voluntad u otras pérdidas intangibles,
+                resultantes de:
+              </p>
+              <ul>
+                <li>
+                  Su acceso o uso o incapacidad para acceder o usar el Servicio.
+                </li>
+                <li>
+                  Cualquier conducta o contenido de terceros en el Servicio.
+                </li>
+                <li>Cualquier contenido obtenido del Servicio.</li>
+                <li>
+                  Acceso no autorizado, uso o alteración de sus transmisiones o
+                  contenido.
+                </li>
+              </ul>
+              <p>
+                En ningún caso la responsabilidad total de DerejSoft hacia usted
+                por todos los daños, pérdidas y causas de acción excederá la
+                cantidad pagada por usted a DerejSoft, si la hubiera, por su uso
+                del Servicio durante los seis (6) meses anteriores a la causa de
+                la acción.
+              </p>
+            </div>
+
+            <!-- Section 12 -->
+            <div id="indemnizacion" class="terms-section fade-in-up">
+              <h2><i class="fas fa-hand-holding-usd"></i> Indemnización</h2>
+              <p>
+                Usted acepta defender, indemnizar y mantener indemne a
+                DerejSoft, sus afiliados, licenciantes y proveedores de
+                servicios, y sus respectivos funcionarios, directores,
+                empleados, contratistas, agentes, licenciantes, proveedores,
+                sucesores y cesionarios de y contra cualquier reclamación,
+                responsabilidad, daño, juicio, premio, pérdida, costo, gasto o
+                tarifa (incluyendo honorarios razonables de abogados) que surjan
+                de o estén relacionados con su violación de estos Términos o su
+                uso del Servicio.
+              </p>
+            </div>
+
+            <!-- Section 13 -->
+            <div id="ley" class="terms-section fade-in-up">
+              <h2><i class="fas fa-gavel"></i> Ley aplicable</h2>
+              <p>
+                Estos Términos se regirán e interpretarán de acuerdo con las
+                leyes del país en el que DerejSoft tiene su sede principal, sin
+                tener en cuenta sus disposiciones sobre conflictos de leyes.
+              </p>
+              <p>
+                Nuestra falta de hacer cumplir cualquier derecho o disposición
+                de estos Términos no se considerará una renuncia a esos
+                derechos. Si alguna disposición de estos Términos es considerada
+                inválida o inaplicable por un tribunal, las disposiciones
+                restantes de estos Términos permanecerán en vigor.
+              </p>
+            </div>
+
+            <!-- Section 14 -->
+            <div id="disputas" class="terms-section fade-in-up">
+              <h2><i class="fas fa-comments"></i> Resolución de disputas</h2>
+              <p>
+                Cualquier disputa que surja de o en relación con estos Términos,
+                incluyendo cualquier cuestión relacionada con su existencia,
+                validez o terminación, será resuelta mediante arbitraje de
+                acuerdo con las reglas de arbitraje de la institución de
+                arbitraje designada en el país donde DerejSoft tiene su sede
+                principal.
+              </p>
+              <p>
+                El número de árbitros será uno. La sede, o lugar legal, del
+                arbitraje será la ciudad donde DerejSoft tiene su sede
+                principal. El idioma a utilizar en el procedimiento arbitral
+                será el idioma oficial del país donde DerejSoft tiene su sede
+                principal.
+              </p>
+              <p>
+                Antes de iniciar cualquier procedimiento de arbitraje, usted
+                acepta intentar resolver la disputa informalmente contactando a
+                DerejSoft. Si la disputa no se resuelve dentro de los 30 días
+                posteriores a dicho contacto, cualquiera de las partes puede
+                iniciar el arbitraje.
+              </p>
+            </div>
+
+            <!-- Section 15 (Contact) -->
+            <div id="contacto" class="terms-section fade-in-up">
+              <h2>
+                <i class="fas fa-address-card"></i> Información de contacto
+              </h2>
+              <p>
+                ¿Tienes dudas sobre estos términos? Nos esforzamos por responder
+                a todas las consultas dentro de las 48 horas hábiles.
+              </p>
+
+              <div class="contact-grid">
+                <a
+                  href="https://wa.me/8294772269"
+                  target="_blank"
+                  class="contact-card whatsapp"
+                >
+                  <i class="fab fa-whatsapp"></i>
+                  <span>WhatsApp</span>
+                </a>
+                <a
+                  href="https://www.instagram.com/derejsoft/"
+                  target="_blank"
+                  class="contact-card instagram"
+                >
+                  <i class="fab fa-instagram"></i>
+                  <span>Instagram</span>
+                </a>
+                <a
+                  href="https://www.tiktok.com/@derejsoft"
+                  target="_blank"
+                  class="contact-card tiktok"
+                >
+                  <i class="fab fa-tiktok"></i>
+                  <span>TikTok</span>
+                </a>
+                <a
+                  href="mailto:derejsoft2003@gmail.com"
+                  class="contact-card email"
+                >
+                  <i class="fas fa-envelope"></i>
+                  <span>Email</span>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-top">
+          <div class="footer-logo-container">
+            <img
+              src="/logos/DerejLogo.ico"
+              alt="DerejSoft Logo"
+              class="footer-logo-img"
+            />
+            <div class="footer-logo-text">Derej<span>Soft</span></div>
+          </div>
+
+          <div class="footer-links">
+            <a href="/index.html" class="footer-link">Inicio</a>
+            <a href="/index.html#servicios" class="footer-link">Servicios</a>
+            <a href="politica_privacidad.html" class="footer-link"
+              >Privacidad</a
+            >
+            <a href="termino_servicio.html" class="footer-link">Términos</a>
+            <a href="/index.html#contacto" class="footer-link">Contacto</a>
+          </div>
+
+          <div class="footer-social">
+            <span class="footer-social-title">Síguenos</span>
+            <div class="redes">
+              <ul>
+                <li>
+                  <a
+                    href="https://www.instagram.com/derejsoft/"
+                    target="_blank"
+                    class="social-icon instagram"
+                    aria-label="Instagram de DerejSoft"
+                    title="Instagram de DerejSoft"
+                  >
+                    <i class="fab fa-instagram" aria-hidden="true"></i>
+                    <span class="sr-only">Instagram</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.facebook.com/share/1JKws2oMEp/"
+                    target="_blank"
+                    class="social-icon facebook"
+                    aria-label="Facebook de DerejSoft"
+                    title="Facebook de DerejSoft"
+                  >
+                    <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                    <span class="sr-only">Facebook</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.tiktok.com/@derejsoft"
+                    target="_blank"
+                    class="social-icon tiktok"
+                    aria-label="TikTok de DerejSoft"
+                    title="TikTok de DerejSoft"
+                  >
+                    <i class="fab fa-tiktok" aria-hidden="true"></i>
+                    <span class="sr-only">TikTok</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div>
+            © 2025 <span style="color: var(--primary)">DerejSoft</span>. Todos
+            los derechos reservados.
+          </div>
+          <div>
+            Hecho con <i class="fas fa-heart" style="color: #e11d48"></i> en
+            República Dominicana
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Intersection Observer para animaciones de entrada
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: "0px 0px -50px 0px",
+        };
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("aos-animate"); // Clase genérica para activar si hubiera CSS específico, aunque usamos fade-in-up directo
+              entry.target.style.animationPlayState = "running"; // Asegurar que la animación corra
+            }
+          });
+        }, observerOptions);
+
+        document
+          .querySelectorAll(".fade-in-up")
+          .forEach((el) => observer.observe(el));
+
+        // Mobile Menu Toggle
+        const menuToggle = document.querySelector(".menu-toggle");
+        const navLinks = document.querySelector(".nav-links");
+
+        if (menuToggle) {
+          menuToggle.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+          });
+
+          navLinks.querySelectorAll("a").forEach((link) => {
+            link.addEventListener("click", () => {
+              navLinks.classList.remove("active");
+            });
+          });
+        }
+
+        // Smooth Scroll para los links del índice (TOC)
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute("href"));
+            if (target) {
+              target.scrollIntoView({ behavior: "smooth", block: "start" });
+
+              // Actualizar clase active en el TOC
+              document
+                .querySelectorAll(".toc-list a")
+                .forEach((a) => a.classList.remove("active"));
+              this.classList.add("active");
+            }
+          });
+        });
+
+        // Highlight del TOC al hacer scroll
+        const sections = document.querySelectorAll(".terms-section");
+        const navLi = document.querySelectorAll(".toc-list a");
+
+        window.addEventListener("scroll", () => {
+          let current = "";
+          sections.forEach((section) => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (pageYOffset >= sectionTop - 200) {
+              current = section.getAttribute("id");
+            }
+          });
+
+          navLi.forEach((a) => {
+            a.classList.remove("active");
+            if (a.getAttribute("href").includes(current)) {
+              a.classList.add("active");
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
