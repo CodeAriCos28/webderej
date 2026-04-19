@@ -8,7 +8,7 @@
     <meta name="description" content="Descubre TiendaMax Pro, nuestra plataforma de comercio electrónico más avanzada. Solución completa para tu negocio online.">
     
     <!-- Fuentes y CSS externo -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 <!-- FontAwesome -->
@@ -16,42 +16,43 @@
 
     <style>
         /* Variables CSS - Mismo esquema de colores que index2.html */
-        :root {
-            /* Colores principales */
-            --primary-color: #6366f1;
-            --primary-dark: #4f46e5;
-            --primary-light: #818cf8;
-            --secondary-color: #f59e0b;
+                :root {
+            /* Colores principales CYBER/TECH */
+            --primary-color: #00f2fe;
+            --primary-dark: #00a8cc;
+            --primary-light: #66f5ff;
+            --secondary-color: #8b5cf6;
             --accent-color: #10b981;
             
             /* Gradientes */
-            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            --gradient-accent: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            --gradient-warm: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            --gradient-primary: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+            --gradient-secondary: linear-gradient(135deg, #4facfe 0%, #8b5cf6 100%);
+            --gradient-accent: linear-gradient(135deg, #00f2fe 0%, #8b5cf6 100%);
+            --gradient-warm: linear-gradient(135deg, #10b981 0%, #00f2fe 100%);
             
             /* Colores neutros */
-            --dark-bg: #0f0f23;
-            --dark-card: #1a1a2e;
-            --dark-accent: #16213e;
-            --light-text: #ffffff;
-            --gray-text: #a1a1aa;
-            --border-color: rgba(255, 255, 255, 0.1);
+            --dark-bg: #050b14;
+            --dark-card: #0a1120;
+            --dark-accent: #0f172a;
+            --light-text: #e2e8f0;
+            --gray-text: #94a3b8;
+            --border-color: rgba(0, 242, 254, 0.15);
             
             /* Tipografía */
-            --font-primary: 'Inter', sans-serif;
-            --font-display: 'Playfair Display', serif;
+            --font-primary: 'Outfit', 'Inter', sans-serif;
+            --font-display: 'JetBrains Mono', monospace;
+            --font-mono: 'JetBrains Mono', monospace;
             
             /* Espaciado */
             --section-padding: 120px 0;
             --container-padding: 0 20px;
-            --border-radius: 20px;
-            --border-radius-sm: 12px;
+            --border-radius: 8px; /* HUD sharp corners */
+            --border-radius-sm: 4px;
             
             /* Sombras */
-            --shadow-soft: 0 10px 40px rgba(0, 0, 0, 0.1);
-            --shadow-medium: 0 20px 60px rgba(0, 0, 0, 0.15);
-            --shadow-strong: 0 30px 80px rgba(0, 0, 0, 0.2);
+            --shadow-soft: 0 10px 40px rgba(0, 242, 254, 0.1);
+            --shadow-medium: 0 20px 60px rgba(0, 242, 254, 0.15);
+            --shadow-strong: 0 30px 80px rgba(0, 242, 254, 0.2);
             
             /* Transiciones */
             --transition-fast: 0.3s ease;
@@ -627,6 +628,103 @@
             color: var(--gray-text);
             font-size: 0.9rem;
         }
+    
+      /* ESTILOS FUTURISTAS AÑADIDOS */
+      #fixed-background::after {
+        content: "";
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background-image: 
+          linear-gradient(rgba(0, 242, 254, 0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(0, 242, 254, 0.03) 1px, transparent 1px);
+        background-size: 40px 40px;
+        z-index: 1;
+        pointer-events: none;
+      }
+      .terminal-badge {
+        font-family: var(--font-mono) !important;
+        background: rgba(0, 0, 0, 0.5) !important;
+        border: 1px solid var(--primary) !important;
+        color: var(--primary) !important;
+        box-shadow: 0 0 15px rgba(0, 242, 254, 0.3) !important;
+        border-radius: 4px !important;
+        text-transform: lowercase;
+      }
+      .typewriter {
+        overflow: hidden;
+        border-right: .15em solid var(--primary);
+        white-space: nowrap;
+        margin: 0 auto;
+        letter-spacing: .1em;
+        animation: typing 3s steps(40, end), blink-caret .75s step-end infinite;
+      }
+      @keyframes typing { from { width: 0 } to { width: 100% } }
+      @keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: var(--primary); } }
+      
+      .service-card, .project-card, .article-card {
+        border-radius: 8px !important; /* Más angular */
+        border-top: 2px solid var(--border-light) !important;
+        border-bottom: 2px solid transparent !important;
+        background: linear-gradient(180deg, rgba(10,17,32,0.9) 0%, rgba(5,11,20,0.95) 100%) !important;
+        position: relative;
+      }
+      .service-card::after, .project-card::after, .article-card::after {
+        content: '';
+        position: absolute;
+        bottom: 0; left: 0; width: 0; height: 2px;
+        background: var(--gradient-main);
+        transition: width 0.4s ease;
+      }
+      .service-card:hover::after, .project-card:hover::after, .article-card:hover::after {
+        width: 100%;
+      }
+      .tech-tag {
+        font-family: var(--font-mono) !important;
+        background: rgba(0, 0, 0, 0.6) !important;
+        border: 1px solid var(--border-light) !important;
+        color: var(--primary) !important;
+        border-radius: 4px !important;
+        font-size: 0.75rem !important;
+        padding: 4px 8px !important;
+        text-transform: uppercase;
+      }
+      .project-badge {
+        font-family: var(--font-mono) !important;
+        border-radius: 0 0 8px 0 !important;
+      }
+      .section-title {
+        font-family: var(--font-mono) !important;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+      .section-title::before {
+        content: "> ";
+        color: var(--primary);
+      }
+      .section-title::after {
+        content: "_";
+        color: var(--primary);
+        animation: blink-caret 1s step-end infinite;
+      }
+
+    
+        /* HUD y Cyber Tech Extras */
+        body { background-image: linear-gradient(rgba(0, 242, 254, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 242, 254, 0.03) 1px, transparent 1px); background-size: 40px 40px; }
+        .feature-item, .tech-specs, .spec-item {
+            border-top: 2px solid var(--border-color) !important;
+            border-bottom: 2px solid transparent !important;
+            border-radius: 8px !important;
+        }
+        .feature-item::after, .tech-specs::after {
+            content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px;
+            background: var(--gradient-primary); transition: width 0.4s ease;
+        }
+        .feature-item:hover::after, .tech-specs:hover::after { width: 100%; }
+        .project-badge { font-family: var(--font-mono); text-transform: uppercase; border-radius: 4px !important; }
+        .project-title { font-family: var(--font-display) !important; letter-spacing: -1px; }
+        .project-title::before { content: ">_"; color: var(--primary-color); margin-right: 10px; }
+        .btn { font-family: var(--font-mono); text-transform: uppercase; border-radius: 4px !important; }
+
     </style>
 </head>
 <body>
