@@ -12,238 +12,170 @@
 
 <p align="center">
     <img alt="Estado" src="https://img.shields.io/badge/Estado-Activo-0f766e" />
-    <img alt="Stack" src="https://img.shields.io/badge/Stack-HTML5%20%7C%20CSS3%20%7C%20JavaScript-1f2937" />
-    <img alt="Arquitectura" src="https://img.shields.io/badge/Arquitectura-Frontend%20Estático-6d28d9" />
+    <img alt="Stack" src="https://img.shields.io/badge/Stack-HTML5%20%7C%20CSS3%20%7C%20Vanilla_JS-1f2937" />
+    <img alt="Arquitectura" src="https://img.shields.io/badge/Arquitectura-Frontend%20Estático%20(MPA)-6d28d9" />
 </p>
 
 ---
 
 ## Tabla de contenido
 
-1. [Resumen del proyecto](#resumen-del-proyecto)
-2. [Objetivo y alcance](#objetivo-y-alcance)
-3. [Mapa completo del sitio](#mapa-completo-del-sitio)
-4. [Estructura del repositorio](#estructura-del-repositorio)
-5. [Arquitectura frontend](#arquitectura-frontend)
-6. [Tecnologías y recursos externos](#tecnologías-y-recursos-externos)
-7. [Funcionalidades clave](#funcionalidades-clave)
-8. [Accesibilidad y buenas prácticas](#accesibilidad-y-buenas-prácticas)
-9. [Responsive design](#responsive-design)
-10. [Ejecución local](#ejecución-local)
-11. [Despliegue](#despliegue)
-12. [Guía de mantenimiento](#guía-de-mantenimiento)
-13. [Checklist de calidad](#checklist-de-calidad)
-14. [Contacto](#contacto)
+1. [Visión General](#1-visión-general)
+2. [Estructura del Proyecto y Directorios](#2-estructura-del-proyecto-y-directorios)
+3. [Tecnologías y Stack](#3-tecnologías-y-stack)
+4. [Sistema de Diseño (UI/UX)](#4-sistema-de-diseño-uiux)
+5. [Análisis de Componentes Principales](#5-análisis-de-componentes-principales)
+6. [Responsive Design y Accesibilidad](#6-responsive-design-y-accesibilidad)
+7. [Guía de Mantenimiento y Extensión](#7-guía-de-mantenimiento-y-extensión)
+8. [Ejecución Local y Despliegue](#8-ejecución-local-y-despliegue)
+9. [Checklist de Calidad](#9-checklist-de-calidad)
+10. [Contacto](#10-contacto)
 
 ---
 
-## Resumen del proyecto
+## 1. Visión General
 
-**WebDerej** es la web institucional de DerejSoft. El sistema está orientado a:
+**WebDerej** es la plataforma web institucional desarrollada para **DerejSoft**. Su propósito principal es servir como carta de presentación corporativa, catálogo de proyectos de software, centro de recursos (blog) y repositorio de documentación legal. 
 
-- Comunicar la propuesta de valor y servicios de la marca.
-- Exponer proyectos y productos desarrollados.
-- Publicar artículos y contenido informativo.
-- Mostrar documentos legales obligatorios (privacidad y términos).
+El proyecto destaca por su enfoque en rendimiento, diseño moderno (inspirado en la estética *Glassmorphism* y entornos *Dark Mode*) y autonomía de cada vista mediante un patrón de aplicación multipágina (MPA) completamente estático. No depende de ningún backend para renderizar las vistas, facilitando un despliegue rápido.
 
-La solución está construida con frontend puro (`HTML`, `CSS`, `JavaScript`), optimizada para carga rápida y despliegue simple en hosting estático.
+---
 
-## Objetivo y alcance
+## 2. Estructura del Proyecto y Directorios
 
-### Objetivo
-
-Consolidar una presencia web profesional y confiable para clientes, aliados y visitantes, con navegación clara, estética moderna y contenido corporativo estructurado.
-
-### Alcance actual
-
-- Landing principal con secciones de negocio.
-- Página institucional "Nosotros".
-- Sección de blog y artículos individuales.
-- Sección de proyectos con páginas dedicadas.
-- Documentación legal publicada en páginas propias.
-- Recursos multimedia organizados por carpetas.
-
-## Mapa completo del sitio
-
-### Páginas raíz
-
-- `index.html`: portada principal de la marca.
-- `nosotros2.html`: presentación institucional y cultura de empresa.
-- `blog.html`: índice general del blog.
-
-### Artículos
-
-- `alticulos/arti.html`
-- `alticulos/arti2.html`
-- `alticulos/arti3.html`
-
-### Proyectos
-
-- `proyectos/proye1.html`
-- `proyectos/derejfinance.html`
-- `proyectos/derejmotium.html`
-- `proyectos/derejpress.html`
-- `proyectos/derejstorage.html`
-
-### Documentos legales
-
-- `Documentos_Legales/politica_privacidad.html`
-- `Documentos_Legales/termino_servicio.html`
-
-## Estructura del repositorio
+El sistema está construido sin frameworks reactivos pesados. La arquitectura de carpetas se organiza semánticamente por contexto de negocio:
 
 ```text
 webderej/
-|-- index.html
-|-- nosotros2.html
-|-- blog.html
-|-- README.md
-|-- alticulos/
-|   |-- arti.html
-|   |-- arti2.html
-|   |-- arti3.html
-|-- Documentos_Legales/
-|   |-- politica_privacidad.html
-|   |-- termino_servicio.html
-|-- proyectos/
-|   |-- proye1.html
-|   |-- derejfinance.html
-|   |-- derejmotium.html
-|   |-- derejpress.html
-|   |-- derejstorage.html
-|-- imagenes/
-|-- imgproye/
-|   |-- derejfinance/
-|   |-- derejmotium/
-|   |-- derejpress/
-|   |-- derejstorange/
-|-- logos/
+├── index.html                   # Landing page principal
+├── nosotros2.html               # Página institucional y cultura
+├── blog.html                    # Índice del blog corporativo
+├── README.md                    # Documentación técnica
+├── alticulos/                   # Módulo de Blog (Artículos individuales)
+│   ├── arti.html, arti2.html...
+├── proyectos/                   # Módulo de Portafolio de Productos
+│   ├── derejfinance.html
+│   ├── derejmotium.html
+│   ├── derejpress.html
+│   ├── derejstorage.html
+│   └── proye1.html
+├── Documentos_Legales/          # Módulo Legal y Compliance
+│   ├── politica_privacidad.html
+│   └── termino_servicio.html
+├── imagenes/                    # Assets visuales globales
+├── imgproye/                    # Assets clasificados por proyecto
+└── logos/                       # Branding, favicon y recursos de identidad
 ```
-
-### Rol de cada carpeta
-
-- `alticulos/`: contenido editorial individual.
-- `Documentos_Legales/`: cumplimiento legal y transparencia.
-- `proyectos/`: detalle de productos/proyectos del portafolio.
-- `imagenes/`: assets visuales generales.
-- `imgproye/`: imágenes segmentadas por proyecto.
-- `logos/`: branding, favicon y recursos de identidad.
-
-## Arquitectura frontend
-
-### Patrón general
-
-- Sitio multipágina (MPA) con rutas estáticas.
-- Navegación horizontal con versión móvil colapsable.
-- Estructura visual basada en secciones (hero, bloques de valor, cards, footer).
-- Estilos definidos dentro de cada HTML para autonomía por vista.
-
-### Componentes comunes observados
-
-- `header` fijo con menú principal.
-- Hero visual con gradientes y/o elementos animados.
-- Cards informativas para servicios, posts y proyectos.
-- Footer corporativo con enlaces legales y redes.
-- Botón flotante de contacto en secciones aplicables.
-
-## Tecnologías y recursos externos
-
-### Base tecnológica
-
-- `HTML5` semántico.
-- `CSS3` moderno con variables (`:root`), `flex`, `grid`, animaciones y media queries.
-- `JavaScript Vanilla` para interacciones y comportamiento dinámico.
-
-### Dependencias CDN utilizadas
-
-- Google Fonts (`Outfit`, `Plus Jakarta Sans`, `Inter`, `Playfair Display`).
-- Font Awesome para iconografía.
-- Devicon para iconos tecnológicos.
-- SweetAlert2 (en páginas que lo incluyen) para alertas visuales.
-
-## Funcionalidades clave
-
-- Navegación fija y contexto visual de la sección activa.
-- Menú responsive para móviles.
-- Animaciones de entrada y efectos hover en bloques interactivos.
-- Sección de blog con artículos enlazados por página individual.
-- Showcase de proyectos con páginas de detalle.
-- Publicación de información legal accesible desde navegación/footer.
-- Integración de enlaces de contacto y redes sociales.
-
-## Accesibilidad y buenas prácticas
-
-- Uso de etiquetas semánticas (`main`, `section`, `nav`, `footer`).
-- Inclusión de atributos descriptivos (`aria-label`, `title`, textos alternativos).
-- Presencia de clase utilitaria `sr-only` para apoyo a lectores de pantalla.
-- Jerarquía tipográfica y separación clara de contenidos.
-- Contrastes y foco visual considerados en componentes interactivos.
-
-## Responsive design
-
-- Diseño fluido mediante `flexbox` y `CSS grid`.
-- Adaptación progresiva para escritorio, tablet y móvil.
-- Menús y bloques reordenados según ancho de pantalla.
-- Ajustes de tipografía y espaciado para legibilidad en pantallas pequeñas.
-
-## Ejecución local
-
-1. Clona o descarga el repositorio.
-2. Abre la carpeta `webderej` en VS Code.
-3. Ejecuta `index.html` en navegador o con una extensión tipo `Live Server`.
-4. Navega al resto de vistas mediante los enlaces del menú.
-
-## Despliegue
-
-- Proyecto apto para cualquier hosting estático (GitHub Pages, Netlify, Vercel estático, cPanel, etc.).
-- Requiere conservar la misma estructura de carpetas para que las rutas relativas funcionen correctamente.
-- No depende de backend para renderizar vistas principales.
-
-## Guía de mantenimiento
-
-### Publicar nuevo artículo
-
-1. Crear archivo en `alticulos/` con la misma convención actual.
-2. Añadir tarjeta/enlace correspondiente en `blog.html`.
-3. Verificar navegación, estilos y enlaces internos.
-
-### Publicar nuevo proyecto
-
-1. Crear nueva página en `proyectos/`.
-2. Añadir recursos visuales en `imgproye/<nombre-proyecto>/`.
-3. Integrar enlace desde portada o sección de proyectos.
-
-### Actualizar documentos legales
-
-1. Editar archivos dentro de `Documentos_Legales/`.
-2. Validar títulos, anclas y navegación lateral si aplica.
-3. Confirmar que estén enlazados desde header o footer.
-
-### Recomendaciones técnicas
-
-- Mantener consistencia visual reutilizando variables CSS.
-- Evitar duplicar estilos complejos sin necesidad.
-- Optimizar imágenes antes de publicarlas.
-- Validar cada cambio en desktop y móvil antes de subir.
-
-## Checklist de calidad
-
-- Enlaces internos funcionando al 100%.
-- Menú móvil operativo.
-- Sin imágenes rotas.
-- Metadatos (`title`, `description`) actualizados por página.
-- Documentos legales accesibles desde la navegación.
-- Pruebas en al menos 2 navegadores modernos.
-
-## Contacto
-
-**DerejSoft**
-
-- Email: `derejsoft2003@gmail.com`
-- Instagram: [@derejsoft](https://www.instagram.com/derejsoft/)
-- TikTok: [@derejsoft](https://www.tiktok.com/@derejsoft)
-- WhatsApp: `+1 829 477 2269`
 
 ---
 
-<p align="center"><strong>Desarrollado con pasión por DerejSoft.</strong></p>
+## 3. Tecnologías y Stack
+
+El desarrollo emplea un stack "Vanilla", eliminando dependencias de compiladores externos para el desarrollo y despliegue.
+
+### Base Tecnológica
+* **HTML5:** Marcado semántico, optimizado para accesibilidad (A11y) y SEO.
+* **CSS3:** Estilos nativos utilizando Custom Properties (`:root`), CSS Grid, Flexbox y animaciones avanzadas por `@keyframes`. Los estilos están definidos dentro de cada HTML para dar autonomía a las vistas.
+* **JavaScript (Vanilla):** Manejo de la interactividad del DOM, eventos de scroll, menús responsivos y animaciones complejas de cursor/partículas.
+
+### Dependencias Externas (CDNs)
+* **Tipografía:** Google Fonts (`Outfit` para títulos, `Plus Jakarta Sans`, `Inter`, `Playfair Display` para cuerpos y acentos).
+* **Iconografía:** FontAwesome 6 (Iconos de UI) y Devicon (Iconos tecnológicos de lenguajes/herramientas).
+* **Interacciones:** SweetAlert2 para lanzar alertas visuales premium en formularios o acciones de usuario.
+
+---
+
+## 4. Sistema de Diseño (UI/UX)
+
+La interfaz se ha diseñado buscando una experiencia de usuario premium, interactiva y tecnológica:
+
+* **Paleta de Colores (Dark Mode Nativo):** Emplea un esquema oscuro (`--bg-dark: #0f0f23`, `--bg-card: #1a1a2e`) con acentos vibrantes neón: Índigo/Violeta (`--primary: #6366f1`), Rosa (`--secondary: #ec4899`) y Esmeralda (`--accent: #10b981`).
+* **Glassmorphism:** Tarjetas, headers y bloques de contenido con fondos translúcidos usando `backdrop-filter: blur()`.
+* **Micro-interacciones:** Efectos hover avanzados que alteran posiciones, transforman iconos e incrementan el "glow" (sombras CSS dinámicas).
+* **Backgrounds Dinámicos:** Fondos fijos con gradientes radiales animados y uso de un *Custom Cursor* interactivo (`cursor-glow`) mediante JavaScript.
+
+---
+
+## 5. Análisis de Componentes Principales
+
+Cada página incrusta sus propios estilos y scripts, previniendo fallos en cascada entre páginas. Los patrones comunes son:
+
+1. **Header & Navegación:** Barra de navegación superior fija (`fixed`), con efecto blur, menú de hamburguesa móvil e indicadores visuales de scroll.
+2. **Hero Section (`index.html`):** Incorpora una animación compleja de iconos tecnológicos flotando en bucle vertical y textos con gradientes.
+3. **Showcase de Servicios y Proyectos:** Tarjetas diseñadas en `CSS Grid` que reaccionan a las coordenadas del mouse (`Mouse tracking effect`) para iluminar el fondo al hacer hover.
+4. **Blog e Información:** Artículos interconectados, publicación de normativas legales desde navegación/footer, y llamadas a la acción (CTAs) con gradientes destacados.
+
+---
+
+## 6. Responsive Design y Accesibilidad
+
+* **Mobile First Adaptativo:** Diseño fluido mediante `flexbox` y `grid`. Uso de `clamp()` en tipografías y `media queries` para asegurar que el reordenamiento de bloques y lectura en resoluciones pequeñas o móviles sea perfecto.
+* **Accesibilidad (A11y):** Inclusión de atributos descriptivos (`aria-label`, textos alternativos en imágenes), uso de semántica HTML (`main`, `section`, `nav`, `footer`) y la clase utilitaria `.sr-only` para apoyar a lectores de pantalla. Consideraciones de contraste en colores interactivos.
+
+---
+
+## 7. Guía de Mantenimiento y Extensión
+
+### Modificar estilos y colores globales
+La consistencia visual se gestiona reutilizando variables CSS. Edita las variables dentro de `:root` en el `<style>` del `<head>` (Principalmente en `index.html` y `nosotros2.html`).
+```css
+:root {
+  --primary: #6366f1; /* Color principal índigo */
+}
+```
+
+### Publicar un nuevo artículo en el Blog
+1. Crea un nuevo archivo en la carpeta `alticulos/` duplicando un archivo base (`arti.html`).
+2. Edita su contenido (Títulos, Textos, Imágenes).
+3. Añade la tarjeta/enlace correspondiente en la vista índice `blog.html`.
+
+### Añadir un proyecto al portafolio
+1. Crea la página de detalle en `proyectos/` (ej. copiando `proyectos/proye1.html`).
+2. Agrega sus recursos visuales (capturas, logos) dentro de una subcarpeta en `imgproye/`.
+3. Integra el enlace hacia la nueva página desde la sección correspondiente en el `index.html` o listado de proyectos.
+
+### Actualizar Documentos Legales
+1. Edita los archivos HTML de la carpeta `Documentos_Legales/`.
+2. Verifica que los enlaces desde el footer global y header apunten correctamente a dichos documentos tras actualizar.
+
+---
+
+## 8. Ejecución Local y Despliegue
+
+### Entorno de desarrollo
+1. Clona o descarga el repositorio localmente.
+2. Abre la carpeta raíz `webderej/` en un editor como VS Code.
+3. Al ser completamente estático, ejecuta `index.html` directamente en el navegador o mediante una extensión como `Live Server`. No se necesitan servidores node/backend locales.
+
+### Despliegue en Producción
+El proyecto está optimizado y es apto para cualquier hosting estático gratuito o CDN de alto rendimiento:
+- **Vercel / Netlify / Cloudflare Pages:** Vinculando directamente el repositorio de GitHub. No requiere comandos de "build".
+- **GitHub Pages:** Activando el entorno desde las configuraciones del repositorio apuntando al branch principal (root).
+- **cPanel/Hosting Compartido:** Subiendo el contenido íntegro a `public_html`. (Es vital conservar la estructura de carpetas exacta para evitar enlaces rotos).
+
+---
+
+## 9. Checklist de Calidad
+
+Antes de cualquier actualización o subida a producción, se recomienda verificar:
+- [ ] Enlaces internos y anclajes en estado funcional (100%).
+- [ ] Menú móvil respondiendo al toque correctamente.
+- [ ] Validación de rutas de imágenes (sin imágenes rotas).
+- [ ] Metadatos (`title`, `description`) únicos y optimizados por cada vista.
+- [ ] Documentos legales y accesos del footer operando correctamente.
+- [ ] Comprobación del renderizado en múltiples navegadores (Chrome, Safari, Firefox) y dispositivos.
+
+---
+
+## 10. Contacto
+
+**DerejSoft**
+
+- 📧 Email: `derejsoft2003@gmail.com`
+- 📸 Instagram: [@derejsoft](https://www.instagram.com/derejsoft/)
+- 🎵 TikTok: [@derejsoft](https://www.tiktok.com/@derejsoft)
+- 💬 WhatsApp: `+1 829 477 2269`
+
+---
+
+<p align="center"><strong>Desarrollado con pasión y tecnología por DerejSoft.</strong></p>
