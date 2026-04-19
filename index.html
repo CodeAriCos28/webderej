@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
@@ -24,7 +24,7 @@
 
     <!-- Fuentes y CSS externo -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
     <link
@@ -64,37 +64,38 @@
       }
 
       :root {
-        /* COLORES */
-        --bg-dark: #0f0f23;
-        --bg-card: #1a1a2e;
-        --bg-glass: rgba(255, 255, 255, 0.03);
+        /* COLORES CYBER/TECH */
+        --bg-dark: #050b14;
+        --bg-card: #0a1120;
+        --bg-glass: rgba(0, 242, 254, 0.03);
 
-        --primary: #6366f1;
-        --primary-glow: rgba(99, 102, 241, 0.5);
-        --secondary: #ec4899;
+        --primary: #00f2fe;
+        --primary-glow: rgba(0, 242, 254, 0.6);
+        --secondary: #8b5cf6;
         --accent: #10b981;
 
         /* Gradientes */
         --gradient-main: linear-gradient(
           135deg,
-          #6366f1 0%,
-          #8b5cf6 50%,
-          #d946ef 100%
+          #00f2fe 0%,
+          #4facfe 50%,
+          #8b5cf6 100%
         );
-        --gradient-text: linear-gradient(to right, #818cf8, #c084fc, #f472b6);
+        --gradient-text: linear-gradient(to right, #00f2fe, #4facfe, #8b5cf6);
 
         /* Texto */
-        --text-main: #ffffff;
-        --text-muted: #a1a1aa;
+        --text-main: #e2e8f0;
+        --text-muted: #94a3b8;
 
         /* Bordes y Sombras */
-        --border-light: rgba(255, 255, 255, 0.1);
-        --border-hover: rgba(99, 102, 241, 0.4);
-        --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+        --border-light: rgba(0, 242, 254, 0.15);
+        --border-hover: rgba(0, 242, 254, 0.6);
+        --shadow-glass: 0 8px 32px 0 rgba(0, 242, 254, 0.15);
 
         /* Tipografía */
         --font-heading: "Outfit", sans-serif;
         --font-body: "Plus Jakarta Sans", sans-serif;
+        --font-mono: "JetBrains Mono", monospace;
 
         /* Layout */
         --container-width: 1280px;
@@ -1594,6 +1595,85 @@
         z-index: 9999;
         mix-blend-mode: screen;
       }
+    
+      /* ESTILOS FUTURISTAS AÑADIDOS */
+      #fixed-background::after {
+        content: "";
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background-image: 
+          linear-gradient(rgba(0, 242, 254, 0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(0, 242, 254, 0.03) 1px, transparent 1px);
+        background-size: 40px 40px;
+        z-index: 1;
+        pointer-events: none;
+      }
+      .terminal-badge {
+        font-family: var(--font-mono) !important;
+        background: rgba(0, 0, 0, 0.5) !important;
+        border: 1px solid var(--primary) !important;
+        color: var(--primary) !important;
+        box-shadow: 0 0 15px rgba(0, 242, 254, 0.3) !important;
+        border-radius: 4px !important;
+        text-transform: lowercase;
+      }
+      .typewriter {
+        overflow: hidden;
+        border-right: .15em solid var(--primary);
+        white-space: nowrap;
+        margin: 0 auto;
+        letter-spacing: .1em;
+        animation: typing 3s steps(40, end), blink-caret .75s step-end infinite;
+      }
+      @keyframes typing { from { width: 0 } to { width: 100% } }
+      @keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: var(--primary); } }
+      
+      .service-card, .project-card {
+        border-radius: 8px !important; /* Más angular */
+        border-top: 2px solid var(--border-light) !important;
+        border-bottom: 2px solid transparent !important;
+        background: linear-gradient(180deg, rgba(10,17,32,0.9) 0%, rgba(5,11,20,0.95) 100%) !important;
+        position: relative;
+      }
+      .service-card::after, .project-card::after {
+        content: '';
+        position: absolute;
+        bottom: 0; left: 0; width: 0; height: 2px;
+        background: var(--gradient-main);
+        transition: width 0.4s ease;
+      }
+      .service-card:hover::after, .project-card:hover::after {
+        width: 100%;
+      }
+      .tech-tag {
+        font-family: var(--font-mono) !important;
+        background: rgba(0, 0, 0, 0.6) !important;
+        border: 1px solid var(--border-light) !important;
+        color: var(--primary) !important;
+        border-radius: 4px !important;
+        font-size: 0.75rem !important;
+        padding: 4px 8px !important;
+        text-transform: uppercase;
+      }
+      .project-badge {
+        font-family: var(--font-mono) !important;
+        border-radius: 0 0 8px 0 !important;
+      }
+      .section-title {
+        font-family: var(--font-mono) !important;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+      .section-title::before {
+        content: "> ";
+        color: var(--primary);
+      }
+      .section-title::after {
+        content: "_";
+        color: var(--primary);
+        animation: blink-caret 1s step-end infinite;
+      }
+
     </style>
   </head>
   <body>
@@ -1658,43 +1738,42 @@
         <div class="hero-background">
           <div class="gradient-overlay"></div>
           <div class="tech-icons">
-            <i class="tech-icon devicon-javascript-plain"></i>
             <i class="tech-icon devicon-python-plain"></i>
+            <i class="tech-icon devicon-django-plain"></i>
+            <i class="tech-icon devicon-mysql-plain"></i>
+            <i class="tech-icon devicon-javascript-plain"></i>
             <i class="tech-icon devicon-html5-plain"></i>
             <i class="tech-icon devicon-css3-plain"></i>
-            <i class="tech-icon devicon-mysql-plain"></i>
-            <i class="tech-icon devicon-django-plain"></i>
-            <i class="tech-icon devicon-vscode-plain"></i>
-            <i class="tech-icon devicon-git-plain"></i>
-            <i class="tech-icon devicon-github-original"></i>
-            <i class="tech-icon devicon-postgresql-plain"></i>
-            <i class="tech-icon devicon-linux-plain"></i>
             <i class="tech-icon devicon-ubuntu-plain"></i>
-            <i class="tech-icon devicon-debian-plain"></i>
-            <i class="tech-icon devicon-windows11-original"></i>
+            <i class="tech-icon devicon-linux-plain"></i>
+            <i class="tech-icon devicon-nginx-original"></i>
             <i class="tech-icon devicon-bash-plain"></i>
-            <i class="tech-icon devicon-powershell-plain"></i>
-            <i class="tech-icon devicon-flask-original"></i>
-            <i class="tech-icon devicon-anaconda-original"></i>
-            <i class="tech-icon devicon-docker-plain"></i>
-            <i class="tech-icon devicon-nodejs-plain"></i>
+            <i class="tech-icon devicon-python-plain"></i>
+            <i class="tech-icon devicon-django-plain"></i>
+            <i class="tech-icon devicon-mysql-plain"></i>
+            <i class="tech-icon devicon-javascript-plain"></i>
+            <i class="tech-icon devicon-ubuntu-plain"></i>
+            <i class="tech-icon devicon-nginx-original"></i>
+            <i class="tech-icon devicon-linux-plain"></i>
+            <i class="tech-icon devicon-html5-plain"></i>
+            <i class="tech-icon devicon-css3-plain"></i>
+            <i class="tech-icon devicon-bash-plain"></i>
           </div>
         </div>
         <div class="hero-content">
-          <div class="hero-badge fade-in-up">
-            <i class="fas fa-rocket"></i>
-            <span>Innovación Digital</span>
+          <div class="hero-badge fade-in-up terminal-badge">
+            <i class="fas fa-terminal"></i>
+            <span class="typewriter">root@derejsoft:~$ ./init_system.sh</span>
           </div>
           <h1 class="fade-in-up" style="animation-delay: 0.1s">
-            <span class="gradient-text">Creamos</span> el Software que tu
-            Negocio Necesita
+            <span class="gradient-text">&lt;Code&gt;</span> que impulsa tu
+            Negocio <span class="gradient-text">/&gt;</span>
           </h1>
           <p class="fade-in-up" style="animation-delay: 0.2s">
-            En DerejSoft desarrollamos soluciones a tu medida. Escuchamos tus
-            ideas, entendemos tus metas y las convertimos en herramientas
-            digitales que hacen crecer tu proyecto.
-            <span class="slogan"
-              >Innovación Responsable, Calidad Asegurada.</span
+            Arquitectura de software avanzada, desarrollo backend robusto y soluciones tecnológicas de alto rendimiento construidas con 
+            <span style="color: var(--primary); font-family: var(--font-mono);">Python, Django, y JavaScript</span>.
+            <span class="slogan" style="font-family: var(--font-mono); font-style: normal; margin-top: 20px; color: var(--accent);"
+              >>_ Innovación Responsable. Código Limpio.</span
             >
           </p>
           <div class="fade-in-up" style="animation-delay: 0.3s">
@@ -1797,284 +1876,8 @@
           </div>
 
           <div class="projects-grid" id="projects-grid">
-            <!-- Proyecto 1 -->
-            <a href="/proyectos/derejpress.html" class="project-card">
-              <span class="project-badge finanzas"
-                ><i class="fas fa-calculator"></i> Finanzas</span
-              >
-              <div class="project-image">
-                <img src="/imagenes/DerejPres.webp" alt="derejpres" />
-                <div class="project-overlay">
-                  <i class="fas fa-external-link-alt"></i>
-                </div>
-              </div>
-              <div class="project-content">
-                <h3>DerejPres</h3>
-                <p>
-                  Software web para negocios que necesitan controlar
-                  financiamientos, pagos y deudas. Organiza clientes, calcula
-                  cuotas, evita errores y se adapta a cualquier modelo de
-                  negocio.
-                </p>
-                <div class="project-tech">
-                  <span class="tech-tag django">Django</span>
-                  <span class="tech-tag mysql">MySQL</span>
-                  <span class="tech-tag html">HTML</span>
-                  <span class="tech-tag css">CSS</span>
-                  <span class="tech-tag javascript">JavaScript</span>
-                </div>
-              </div>
-            </a>
-
-            <!-- Proyecto 2 -->
-            <a href="/proyectos/derejstorage.html" class="project-card">
-              <span class="project-badge finanzas"
-                ><i class="fas fa-calculator"></i> Finanzas</span
-              >
-              <div class="project-image">
-                <img src="/imagenes/derejstorange.webp" alt="derejstorage" />
-                <div class="project-overlay">
-                  <i class="fas fa-external-link-alt"></i>
-                </div>
-              </div>
-              <div class="project-content">
-                <h3>DerejStorage</h3>
-                <p>
-                  Software para molinos y agroquímicas que organiza facturas de
-                  entrada y salida, evita pérdida de documentos, agiliza
-                  búsquedas y se adapta a las necesidades de cada cliente.
-                </p>
-                <div class="project-tech">
-                  <span class="tech-tag django">Django</span>
-                  <span class="tech-tag mysql">MySQL</span>
-                  <span class="tech-tag html">HTML</span>
-                  <span class="tech-tag css">CSS</span>
-                  <span class="tech-tag javascript">JavaScript</span>
-                </div>
-              </div>
-            </a>
-
-            <!-- Proyecto 3 -->
-            <a href="/proyectos/derejmotium.html" class="project-card">
-              <span class="project-badge comercio"
-                ><i class="fas fa-shopping-cart"></i> Comercio</span
-              >
-              <div class="project-image">
-                <img src="/imagenes/derejmotium.webp" alt="derejmotium" />
-                <div class="project-overlay">
-                  <i class="fas fa-external-link-alt"></i>
-                </div>
-              </div>
-              <div class="project-content">
-                <h3>DerejMotium</h3>
-                <p>
-                  Sistema web para agencias de motocicletas que centraliza
-                  ventas de contado y crédito, controla clientes y suplidores,
-                  agiliza facturación y reduce errores.
-                </p>
-                <div class="project-tech">
-                  <span class="tech-tag django">Django</span>
-                  <span class="tech-tag mysql">MySQL</span>
-                  <span class="tech-tag html">HTML</span>
-                  <span class="tech-tag css">CSS</span>
-                  <span class="tech-tag javascript">JavaScript</span>
-                </div>
-              </div>
-            </a>
-           
-            <!-- Proyecto 4 -->
-            <a href="/proyectos/derejfinance.html" class="project-card">
-              <span class="project-badge finanzas"
-                ><i class="fas fa-calculator"></i> Finanzas</span
-              >
-              <div class="project-image">
-                <img src="/imagenes/DF-Dashboard.webp" alt="motium-mobile" />
-                <div class="project-overlay">
-                  <i class="fas fa-external-link-alt"></i>
-                </div>
-              </div>
-              <div class="project-content">
-                <h3>DerejFinance</h3>
-                <p>
-                  Aplicación web para controlar tus finanzas con facilidad y
-                  mejorar la eficiencia de tu administración financiera
-                  personal.
-                </p>
-                <div class="project-tech">
-                  <span class="tech-tag django">Django</span>
-                  <span class="tech-tag mysql">MySQL</span>
-                  <span class="tech-tag html">HTML</span>
-                  <span class="tech-tag css">CSS</span>
-                  <span class="tech-tag javascript">JavaScript</span>
-                </div>
-              </div>
-            </a>
-
-             <!-- Proyecto 5 -->
-            <a href="/proyectos/derejmotium.html" class="project-card">
-              <span class="project-badge comercio"
-                ><i class="fas fa-shopping-cart"></i> Comercio</span
-              >
-              <div class="project-image">
-                <img src="/imagenes/derejmotium.webp" alt="derejmotium" />
-                <div class="project-overlay">
-                  <i class="fas fa-external-link-alt"></i>
-                </div>
-              </div>
-              <div class="project-content">
-                <h3>DerejFood</h3>
-                <p>
-                  Sistema web para agencias de motocicletas que centraliza
-                  ventas de contado y crédito, controla clientes y suplidores,
-                  agiliza facturación y reduce errores.
-                </p>
-                <div class="project-tech">
-                  <span class="tech-tag django">Django</span>
-                  <span class="tech-tag mysql">MySQL</span>
-                  <span class="tech-tag html">HTML</span>
-                  <span class="tech-tag css">CSS</span>
-                  <span class="tech-tag javascript">JavaScript</span>
-                </div>
-              </div>
-            </a>
-
-             <!-- Proyecto 6 -->
-            <a href="/proyectos/derejmotium.html" class="project-card">
-              <span class="project-badge comercio"
-                ><i class="fas fa-shopping-cart"></i> Comercio</span
-              >
-              <div class="project-image">
-                <img src="/imagenes/derejmotium.webp" alt="derejmotium" />
-                <div class="project-overlay">
-                  <i class="fas fa-external-link-alt"></i>
-                </div>
-              </div>
-              <div class="project-content">
-                <h3>DerejAutix</h3>
-                <p>
-                  Sistema web para agencias de motocicletas que centraliza
-                  ventas de contado y crédito, controla clientes y suplidores,
-                  agiliza facturación y reduce errores.
-                </p>
-                <div class="project-tech">
-                  <span class="tech-tag django">Django</span>
-                  <span class="tech-tag mysql">MySQL</span>
-                  <span class="tech-tag html">HTML</span>
-                  <span class="tech-tag css">CSS</span>
-                  <span class="tech-tag javascript">JavaScript</span>
-                </div>
-              </div>
-            </a>
-            <!-- Proyecto 7 -->
-            <a href="/proyectos/derejmotium.html" class="project-card">
-              <span class="project-badge comercio"
-                ><i class="fas fa-shopping-cart"></i> Comercio</span
-              >
-              <div class="project-image">
-                <img src="/imagenes/derejmotium.webp" alt="derejmotium" />
-                <div class="project-overlay">
-                  <i class="fas fa-external-link-alt"></i>
-                </div>
-              </div>
-              <div class="project-content">
-                <h3>DerejAgro</h3>
-                <p>
-                  Sistema web para agencias de motocicletas que centraliza
-                  ventas de contado y crédito, controla clientes y suplidores,
-                  agiliza facturación y reduce errores.
-                </p>
-                <div class="project-tech">
-                  <span class="tech-tag django">Django</span>
-                  <span class="tech-tag mysql">MySQL</span>
-                  <span class="tech-tag html">HTML</span>
-                  <span class="tech-tag css">CSS</span>
-                  <span class="tech-tag javascript">JavaScript</span>
-                </div>
-              </div>
-            </a>
-            <!-- Proyecto 8 -->
-            <a href="/proyectos/derejmotium.html" class="project-card">
-              <span class="project-badge comercio"
-                ><i class="fas fa-tasks"></i>Gestión</span
-              >
-              <div class="project-image">
-                <img src="/imagenes/derejmotium.webp" alt="derejmotium" />
-                <div class="project-overlay">
-                  <i class="fas fa-external-link-alt"></i>
-                </div>
-              </div>
-              <div class="project-content">
-                <h3>DerejCitas</h3>
-                <p>
-                  Sistema web para agencias de motocicletas que centraliza
-                  ventas de contado y crédito, controla clientes y suplidores,
-                  agiliza facturación y reduce errores.
-                </p>
-                <div class="project-tech">
-                  <span class="tech-tag django">Django</span>
-                  <span class="tech-tag mysql">MySQL</span>
-                  <span class="tech-tag html">HTML</span>
-                  <span class="tech-tag css">CSS</span>
-                  <span class="tech-tag javascript">JavaScript</span>
-                </div>
-              </div>
-            </a>
-             <!-- Proyecto 9 -->
-            <a href="/proyectos/derejmotium.html" class="project-card">
-              <span class="project-badge automotriz"
-                ><i class="fas fa-tasks"></i>Gestión</span
-              >
-              <div class="project-image">
-                <img src="/imagenes/derejmotium.webp" alt="derejmotium" />
-                <div class="project-overlay">
-                  <i class="fas fa-external-link-alt"></i>
-                </div>
-              </div>
-              <div class="project-content">
-                <h3>DerejTurnos</h3>
-                <p>
-                  Sistema web para agencias de motocicletas que centraliza
-                  ventas de contado y crédito, controla clientes y suplidores,
-                  agiliza facturación y reduce errores.
-                </p>
-                <div class="project-tech">
-                  <span class="tech-tag django">Django</span>
-                  <span class="tech-tag mysql">MySQL</span>
-                  <span class="tech-tag html">HTML</span>
-                  <span class="tech-tag css">CSS</span>
-                  <span class="tech-tag javascript">JavaScript</span>
-                </div>
-              </div>
-            </a>
-             <!-- Proyecto 10 -->
-            <a href="/proyectos/derejmotium.html" class="project-card">
-              <span class="project-badge comercio"
-                ><i class="fas fa-shopping-cart"></i>Comercio</span
-              >
-              <div class="project-image">
-                <img src="/imagenes/derejmotium.webp" alt="derejmotium" />
-                <div class="project-overlay">
-                  <i class="fas fa-external-link-alt"></i>
-                </div>
-              </div>
-              <div class="project-content">
-                <h3>DerejKonix</h3>
-                <p>
-                  Sistema web para agencias de motocicletas que centraliza
-                  ventas de contado y crédito, controla clientes y suplidores,
-                  agiliza facturación y reduce errores.
-                </p>
-                <div class="project-tech">
-                  <span class="tech-tag django">Django</span>
-                  <span class="tech-tag mysql">MySQL</span>
-                  <span class="tech-tag html">HTML</span>
-                  <span class="tech-tag css">CSS</span>
-                  <span class="tech-tag javascript">JavaScript</span>
-                </div>
-              </div>
-            </a>
+            <!-- Los proyectos se cargan dinámicamente desde proyectos.js -->
           </div>
-
           <div class="pagination-container" id="pagination-container"></div>
         </div>
       </section>
@@ -2252,6 +2055,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="proyectos.js"></script>
     <script>
       // Configuración y Lógica JS
       const PROJECTS_PER_PAGE = 6;
@@ -2264,6 +2068,7 @@
         initMenuToggle();
         initSmoothScrolling();
         initContactForm();
+        renderProjects();
         initProjectsPagination();
         initCursorEffect();
         initCardMouseEffect();
@@ -2575,3 +2380,4 @@
     </script>
   </body>
 </html>
+
