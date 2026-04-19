@@ -426,6 +426,8 @@
             display: flex;
             flex-direction: column;
             gap: 40px;
+            min-width: 0;
+            width: 100%;
         }
 
         .last-updated {
@@ -571,6 +573,8 @@
             -webkit-overflow-scrolling: touch;
             border-radius: 12px;
             border: 1px solid var(--border-light);
+            width: 100%;
+            max-width: 100%;
         }
         
         table {
@@ -860,10 +864,12 @@
                 top: var(--header-height);
                 left: 0;
                 width: 100%;
-                background: rgba(15, 23, 42, 0.95);
+                background: rgba(15, 23, 42, 0.98);
                 flex-direction: column;
                 padding: 20px;
                 border-bottom: 1px solid var(--border-light);
+                z-index: 1001;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             }
 
             .privacy-section {
@@ -1062,17 +1068,17 @@
                     <h3 class="sidebar-title">Tabla de Contenidos</h3>
                     <ul class="toc-list">
                         <li><a href="#introduccion">1. Introducción</a></li>
-                        <li><a href="#informacion">2. Información recopilada</a></li>
-                        <li><a href="#uso">3. Uso de la información</a></li>
-                        <li><a href="#comparticion">4. Compartición de datos</a></li>
-                        <li><a href="#derechos">5. Derechos del usuario</a></li>
-                        <li><a href="#seguridad">6. Seguridad de datos</a></li>
-                        <li><a href="#retencion">7. Retención de información</a></li>
-                        <li><a href="#transferencias">8. Transferencias internacionales</a></li>
-                        <li><a href="#menores">9. Privacidad de menores</a></li>
-                        <li><a href="#enlaces">10. Enlaces a terceros</a></li>
-                        <li><a href="#cambios">11. Cambios en la política</a></li>
-                        <li><a href="#contacto">12. Información de contacto</a></li>
+                        <li><a href="#informacion">2. Datos Recopilados</a></li>
+                        <li><a href="#uso">3. Uso de Datos</a></li>
+                        <li><a href="#comparticion">4. Compartir Datos</a></li>
+                        <li><a href="#derechos">5. Sus Derechos</a></li>
+                        <li><a href="#seguridad">6. Seguridad</a></li>
+                        <li><a href="#retencion">7. Retención</a></li>
+                        <li><a href="#transferencias">8. Transferencias</a></li>
+                        <li><a href="#menores">9. Menores</a></li>
+                        <li><a href="#enlaces">10. Terceros</a></li>
+                        <li><a href="#cambios">11. Cambios</a></li>
+                        <li><a href="#contacto">12. Contacto</a></li>
                     </ul>
                 </aside>
 
