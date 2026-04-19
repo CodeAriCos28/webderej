@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
@@ -368,11 +368,12 @@
            ========================================= */
       .hero {
         min-height: 100vh;
+        min-height: 100dvh;
         display: flex;
         align-items: center;
         justify-content: center;
         position: relative;
-        padding-top: var(--hero-gap);
+        padding: var(--header-height) 0 40px;
         overflow: hidden;
       }
 
@@ -567,7 +568,7 @@
 
       .hero h1 {
         font-family: var(--font-heading);
-        font-size: clamp(2.8rem, 6vw, 5rem);
+        font-size: clamp(2.2rem, 8vw, 4.5rem);
         font-weight: 800;
         line-height: 1.1;
         margin-bottom: 24px;
@@ -575,12 +576,13 @@
       }
 
       .hero p {
-        font-size: 1.2rem;
+        font-size: clamp(1rem, 2.5vw, 1.25rem);
         color: var(--text-muted);
         margin-bottom: 40px;
-        max-width: 700px;
+        max-width: 750px;
         margin-left: auto;
         margin-right: auto;
+        padding: 0 10px;
       }
 
       .hero .slogan {
@@ -1526,7 +1528,7 @@
           margin-bottom: 12px;
         }
         .hero h1 {
-          font-size: 2.5rem;
+          font-size: clamp(1.8rem, 10vw, 2.5rem);
         }
         .footer-top {
           flex-direction: column;
@@ -1553,7 +1555,7 @@
           justify-content: center;
         }
         .hero h1 {
-          font-size: 2rem;
+          font-size: clamp(1.6rem, 12vw, 2.2rem);
         }
         .footer-bottom {
           flex-direction: column;
@@ -1569,6 +1571,13 @@
         }
         .contact-feature span {
           font-size: 0.9rem;
+        }
+        .hero-badge {
+          font-size: 0.75rem;
+          padding: 6px 12px;
+        }
+        .typewriter {
+          letter-spacing: 0.05em;
         }
         .contact-info h2 {
           font-size: 1.6rem;
@@ -1616,6 +1625,8 @@
         box-shadow: 0 0 15px rgba(0, 242, 254, 0.3) !important;
         border-radius: 4px !important;
         text-transform: lowercase;
+        max-width: 100%;
+        overflow: hidden;
       }
       .typewriter {
         overflow: hidden;
@@ -1686,7 +1697,7 @@
         <nav>
           <div class="logo28">
             <img
-              src="/logos/DerejLogo.ico"
+              src="logos/DerejLogo.ico"
               alt="Logo DerejSoft"
               class="logo-img"
             />
