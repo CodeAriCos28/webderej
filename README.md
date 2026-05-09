@@ -33,7 +33,7 @@ El proyecto se organiza mediante un sistema de directorios semánticos que facil
 webderej/
 ├── 🌐 Root
 │   ├── index.html           # Centro de mando (Landing Page)
-│   ├── nosotros2.html       # ADN Corporativo y Cultura
+│   ├── nosotros.html        # ADN Corporativo y Cultura
 │   ├── blog.html            # Hub de Inteligencia (Artículos)
 │   └── proyectos.js         # Motor dinámico de renderizado de portafolio
 ├── 📝 alticulos/            # Repositorio de micro-artículos (Blog posts)
