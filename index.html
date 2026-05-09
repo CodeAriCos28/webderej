@@ -857,7 +857,7 @@
       /* ---- Terminal typing ---- */
       (function(){
         const el=document.getElementById('typed-text');
-        const cmds=['./init_system.sh','deploy --production','git push origin main','python manage.py runserver'];
+        const cmds=['./init_system.sh','deploy --production','git push origin main','python manage.py migrate','python manage.py createsuperuser','python manage.py runserver'];
         let ci=0,chi=0,dir=1;
         function tick(){
           const cmd=cmds[ci];
