@@ -3,12 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nosotros — DerejSoft</title>
+    <title>Quiénes Somos | Equipo DerejSoft — Desarrollo de Software en RD</title>
+    <meta name="description" content="Conoce al equipo de DerejSoft: desarrolladores apasionados que crean soluciones digitales de alto rendimiento para empresas y emprendedores en República Dominicana." />
     <link rel="shortcut icon" href="/logos/logo2D(1).ico" />
     <meta name="theme-color" content="#050a18" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <!-- Preload & Async Load para Fuentes (LCP Optimization) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"></noscript>
+
+    <!-- Async Load para CSS de terceros -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" media="print" onload="this.media='all'" />
     <style>
       /* =============================================
          RESET & TOKENS (shared with index)
@@ -362,6 +370,18 @@
         .hero-modern{padding-top:calc(var(--header-h) + 16px)}
       }
     </style>
+  
+    <!-- SEO & Open Graph -->
+    <link rel="canonical" href="https://derejsoft.com/nosotros.html" />
+    <meta property="og:title" content="DerejSoft" />
+    <meta property="og:description" content="Soluciones tecnológicas de alto rendimiento para empresas y emprendedores. Desarrollo web, backend y consultoría." />
+    <meta property="og:url" content="https://derejsoft.com/nosotros.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_DO" />
+    <meta property="og:site_name" content="DerejSoft" />
+    <meta property="og:image" content="https://derejsoft.com/logos/DerejSoft.webp" />
+    <meta name="twitter:card" content="summary_large_image" />
+
   </head>
   <body>
     <canvas id="bg-canvas"></canvas>
@@ -371,7 +391,7 @@
     <header class="site-header">
       <nav>
         <a href="index.html#inicio" class="logo">
-          <img src="logos/DerejLogo.ico" alt="Logo DerejSoft" class="logo-img" />
+          <img src="logos/derejdoc.webp" alt="Logo DerejSoft" class="logo-img" />
           <div class="logo-text">Derej<span>Soft</span></div>
         </a>
         <button class="menu-toggle" aria-label="Abrir menú"><span></span><span></span><span></span></button>
@@ -505,7 +525,7 @@
             <div class="meaning-visual reveal reveal-delay-2">
               <div class="logo-showcase">
                 <div class="logo-container">
-                  <img src="logos/DerejLogo.ico" alt="Logo DerejSoft" class="showcase-logo" />
+                  <img src="logos/derejdoc.webp" alt="Logo DerejSoft" class="showcase-logo" />
                 </div>
                 <div class="logo-elements">
                   <div class="element element-1" title="Django"><i class="devicon-django-plain"></i></div>
@@ -530,7 +550,7 @@
             <div class="team-card reveal reveal-delay-1">
               <div class="card-inner">
                 <div class="card-front">
-                  <div class="team-avatar"><img src="imagenes/rafael.jpg" alt="Rafael Acosta" class="avatar-img" /></div>
+                  <div class="team-avatar"><img loading="lazy" src="imagenes/rafael.webp" alt="Rafael Acosta" class="avatar-img" /></div>
                   <h3>Rafael Acosta</h3>
                   <p class="team-role">DevOps Engineer</p>
                   <div class="team-skills">
@@ -555,7 +575,7 @@
             <div class="team-card reveal reveal-delay-2">
               <div class="card-inner">
                 <div class="card-front">
-                  <div class="team-avatar"><img src="imagenes/josee.png" alt="Jose Miguel Bello" class="avatar-img" /></div>
+                  <div class="team-avatar"><img loading="lazy" src="imagenes/josee.webp" alt="Jose Miguel Bello" class="avatar-img" /></div>
                   <h3>Jose Miguel Bello</h3>
                   <p class="team-role">Full Stack Developer</p>
                   <div class="team-skills">
@@ -580,7 +600,7 @@
             <div class="team-card reveal reveal-delay-3">
               <div class="card-inner">
                 <div class="card-front">
-                  <div class="team-avatar"><img src="logos/DerejLogo.ico" alt="Fundador 3" class="avatar-img" /></div>
+                  <div class="team-avatar"><img src="logos/derejdoc.webp" alt="Fundador 3" class="avatar-img" /></div>
                   <h3>Fundador 3</h3>
                   <p class="team-role">Frontend Developer</p>
                   <div class="team-skills">
@@ -686,12 +706,12 @@
       <div class="container">
         <div class="footer-top">
           <div class="footer-logo-container">
-            <img src="logos/DerejLogo.ico" alt="DerejSoft Logo" class="footer-logo-img" />
+            <img src="logos/derejdoc.webp" alt="DerejSoft Logo" class="footer-logo-img" />
             <div class="footer-logo-text">Derej<span>Soft</span></div>
           </div>
           <div class="footer-links">
-            <a href="Documentos_Legales/termino_servicio.html" class="footer-link">Términos de Servicio</a>
-            <a href="Documentos_Legales/politica_privacidad.html" class="footer-link">Privacidad</a>
+            <a href="documentos-legales/terminos-de-servicio.html" class="footer-link">Términos de Servicio</a>
+            <a href="documentos-legales/politica-de-privacidad.html" class="footer-link">Privacidad</a>
             <a href="index.html#contacto" class="footer-link">Contacto</a>
           </div>
           <div class="footer-social">

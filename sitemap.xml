@@ -3,21 +3,21 @@
 
   <!-- Páginas principales -->
   <url>
-    <loc>https://www.derejsoft.com/</loc>
+    <loc>https://derejsoft.com/</loc>
     <lastmod>2026-05-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://www.derejsoft.com/nosotros.html</loc>
+    <loc>https://derejsoft.com/nosotros.html</loc>
     <lastmod>2026-05-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://www.derejsoft.com/blog.html</loc>
+    <loc>https://derejsoft.com/blog.html</loc>
     <lastmod>2026-05-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -25,28 +25,28 @@
 
   <!-- Proyectos -->
   <url>
-    <loc>https://www.derejsoft.com/proyectos/derejpress.html</loc>
+    <loc>https://derejsoft.com/proyectos/derejpress.html</loc>
     <lastmod>2026-05-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://www.derejsoft.com/proyectos/derejstorage.html</loc>
+    <loc>https://derejsoft.com/proyectos/derejstorage.html</loc>
     <lastmod>2026-05-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://www.derejsoft.com/proyectos/derejmotium.html</loc>
+    <loc>https://derejsoft.com/proyectos/derejmotium.html</loc>
     <lastmod>2026-05-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://www.derejsoft.com/proyectos/derejfinance.html</loc>
+    <loc>https://derejsoft.com/proyectos/derejfinance.html</loc>
     <lastmod>2026-05-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
@@ -54,14 +54,14 @@
 
   <!-- Documentos Legales -->
   <url>
-    <loc>https://www.derejsoft.com/Documentos_Legales/termino_servicio.html</loc>
+    <loc>https://derejsoft.com/Documentos_Legales/termino_servicio.html</loc>
     <lastmod>2026-05-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
 
   <url>
-    <loc>https://www.derejsoft.com/Documentos_Legales/politica_privacidad.html</loc>
+    <loc>https://derejsoft.com/Documentos_Legales/politica_privacidad.html</loc>
     <lastmod>2026-05-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>

@@ -198,7 +198,7 @@ function renderProjects() {
         <i class="${project.badgeIcon}"></i> ${project.badgeText}
       </span>
       <div class="project-image">
-        <img src="${project.image}" alt="${project.title}" />
+        <img src="${project.image}" alt="${project.title}" loading="lazy" />
         <div class="project-overlay">
           <i class="fas fa-external-link-alt"></i>
         </div>

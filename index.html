@@ -8,13 +8,19 @@
     <meta name="description" content="DerejSoft ofrece soluciones tecnológicas de alto rendimiento para empresas y emprendedores. Desarrollo web, backend y consultoría." />
     <meta name="keywords" content="DerejSoft, desarrollo web, software, Python, Django, soluciones tecnológicas" />
     <meta name="google-site-verification" content="U8NxFe4ImPVgVONMKLManzbFzU_wdJkFNd8_-gbuSBo" />
-    <meta name="google-site-verification" content="nCp--AE32HJM6zSVggKokuL5yRJ2mJ9DlwJadmQxgyM" />
-    <meta name="theme-color" content="#050a18" />
+        <meta name="theme-color" content="#050a18" />
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" />
+    <!-- Preload & Async Load para Fuentes (LCP Optimization) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"></noscript>
+
+    <!-- Async Load para CSS de terceros -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" media="print" onload="this.media='all'" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" media="print" onload="this.media='all'" />
 
     <style>
       /* =============================================
@@ -619,6 +625,41 @@
         .terminal-badge{font-size:.72rem;padding:8px 14px}
       }
     </style>
+    <!-- SEO & Open Graph -->
+    <link rel="canonical" href="https://derejsoft.com/" />
+    <meta property="og:title" content="DerejSoft - Desarrollo de Software" />
+    <meta property="og:description" content="Soluciones tecnológicas de alto rendimiento para empresas y emprendedores. Desarrollo web, backend y consultoría." />
+    <meta property="og:url" content="https://derejsoft.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_DO" />
+    <meta property="og:site_name" content="DerejSoft" />
+    <meta property="og:image" content="https://derejsoft.com/logos/DerejSoft.webp" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Schema JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "name": "DerejSoft",
+          "url": "https://derejsoft.com",
+          "logo": "https://derejsoft.com/logos/DerejSoft.webp",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+1-829-477-2269",
+            "contactType": "servicio al cliente"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "name": "DerejSoft",
+          "url": "https://derejsoft.com"
+        }
+      ]
+    }
+    </script>
   </head>
   <body>
     <!-- Background layers -->
@@ -630,7 +671,7 @@
     <header class="site-header">
       <nav>
         <a href="#inicio" class="logo">
-          <img src="logos/DerejLogo.ico" alt="Logo DerejSoft" class="logo-img" />
+          <img src="logos/derejdoc.webp" alt="Logo DerejSoft" class="logo-img" />
           <div class="logo-text">Derej<span>Soft</span></div>
         </a>
         <button class="menu-toggle" aria-label="Abrir menú"><span></span><span></span><span></span></button>
@@ -685,7 +726,7 @@
             <span id="typed-text"></span><span class="cursor"></span>
           </div>
           <h1 class="fade-in-up" style="animation-delay:.12s">
-            <span class="gradient-text">&lt;Código/&gt;</span> que impulsa tu Negocio
+            <span class="gradient-text">Desarrollo de Software</span> que impulsa tu Negocio
           </h1>
           <p class="fade-in-up" style="animation-delay:.22s">
             Arquitectura de software avanzada, desarrollo backend robusto y soluciones tecnológicas de alto rendimiento construidas con
@@ -712,27 +753,27 @@
           </div>
           <div class="services-grid">
             <div class="service-card reveal reveal-delay-1">
-              <div class="service-icon"><img src="/imagenes/webD.png" alt="Desarrollo Web" /></div>
+              <div class="service-icon"><img loading="lazy" src="/imagenes/webD.webp" alt="Desarrollo Web" /></div>
               <h3>Desarrollo Web</h3>
               <p>Diseñamos y desarrollamos sitios web modernos, seguros y totalmente adaptables. Convertimos tus ideas en experiencias digitales que inspiran confianza.</p>
             </div>
             <div class="service-card reveal reveal-delay-2">
-              <div class="service-icon"><img src="/imagenes/soporte.png" alt="Soporte" /></div>
+              <div class="service-icon"><img loading="lazy" src="/imagenes/soporte.webp" alt="Soporte" /></div>
               <h3>Mantenimiento y Soporte</h3>
               <p>Soporte técnico continuo y mantenimiento preventivo para garantizar que tus sistemas funcionen siempre al máximo rendimiento.</p>
             </div>
             <div class="service-card reveal reveal-delay-3">
-              <div class="service-icon"><img src="/imagenes/database.png" alt="Bases de Datos" /></div>
+              <div class="service-icon"><img loading="lazy" src="/imagenes/database.webp" alt="Bases de Datos" /></div>
               <h3>Bases de Datos</h3>
               <p>Diseñamos y gestionamos bases de datos seguras, estables y adaptadas a tus necesidades. Tu información siempre organizada y protegida.</p>
             </div>
             <div class="service-card reveal reveal-delay-4">
-              <div class="service-icon"><img src="/imagenes/development.png" alt="Aplicaciones" /></div>
+              <div class="service-icon"><img loading="lazy" src="/imagenes/development.webp" alt="Aplicaciones" /></div>
               <h3>Aplicaciones Web</h3>
               <p>Aplicaciones web potentes, intuitivas y seguras pensadas para crecer junto a tu negocio y mejorar la experiencia de tus usuarios.</p>
             </div>
             <div class="service-card reveal reveal-delay-5">
-              <div class="service-icon"><img src="/imagenes/consul.png" alt="Consultoría" /></div>
+              <div class="service-icon"><img loading="lazy" src="/imagenes/consul.webp" alt="Consultoría" /></div>
               <h3>Consultoría Tecnológica</h3>
               <p>Analizamos tus necesidades y diseñamos estrategias tecnológicas que impulsan tu crecimiento. Elegimos juntos la mejor solución.</p>
             </div>
@@ -795,12 +836,12 @@
       <div class="container">
         <div class="footer-top">
           <div class="footer-logo-container">
-            <img src="/logos/DerejLogo.ico" alt="Logo DerejSoft" class="footer-logo-img" />
+            <img loading="lazy" src="/logos/derejdoc.webp" alt="Logo DerejSoft" class="footer-logo-img" />
             <div class="footer-logo-text">Derej<span>Soft</span></div>
           </div>
           <div class="footer-links">
-            <a href="/Documentos_Legales/termino_servicio.html" class="footer-link">Términos de Servicio</a>
-            <a href="/Documentos_Legales/politica_privacidad.html" class="footer-link">Privacidad</a>
+            <a href="/documentos-legales/terminos-de-servicio.html" class="footer-link">Términos de Servicio</a>
+            <a href="/documentos-legales/politica-de-privacidad.html" class="footer-link">Privacidad</a>
             <a href="#contacto" class="footer-link">Contacto</a>
           </div>
           <div class="footer-social">
