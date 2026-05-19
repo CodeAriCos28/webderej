@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.derejsoft.com/sitemap.xml
+Sitemap: https://derejsoft.com/sitemap.xml
