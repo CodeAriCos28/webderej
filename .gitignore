@@ -3,9 +3,9 @@ video.mp4
 /null
 temp/
 CNAME
-
+*.py
 .vscode/
-
+seo.md
 .vscode/settings.json
 
 
