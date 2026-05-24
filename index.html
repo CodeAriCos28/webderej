@@ -13,15 +13,9 @@
     <!-- Preload & Async Load para Fuentes (LCP Optimization) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdn.jsdelivr.net">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"></noscript>
-
-    <!-- Async Load para CSS de terceros -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" media="print" onload="this.media='all'" />
 
     <style>
       /* =============================================
@@ -100,6 +94,7 @@
       a{text-decoration:none;color:inherit;transition:color .25s var(--ease-out)}
       ul{list-style:none}
       img{max-width:100%;display:block}
+      .icon{fill:currentColor;display:inline-block;vertical-align:-.125em;width:1em;height:1em}
 
       .container{max-width:var(--container);margin:0 auto;padding:0 24px}
       .gradient-text{background:var(--gradient-text);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
@@ -192,24 +187,12 @@
       /* Floating tech icons */
       .tech-icons{position:absolute;width:100%;height:100%;overflow:hidden;z-index:0;opacity:.45;mask-image:linear-gradient(to bottom,rgba(0,0,0,1) 30%,rgba(0,0,0,0) 100%);-webkit-mask-image:linear-gradient(to bottom,rgba(0,0,0,1) 30%,rgba(0,0,0,0) 100%)}
       .tech-icon{position:absolute;width:40px;height:40px;bottom:-80px;animation:floatUp 22s linear infinite;filter:drop-shadow(0 0 8px rgba(0,229,255,0.3))}
-      .tech-icon:nth-child(1){left:5%;animation-delay:0s;color:#f7df1e}
-      .tech-icon:nth-child(2){left:12%;animation-delay:-2s;color:#3776ab}
-      .tech-icon:nth-child(3){left:19%;animation-delay:-4s;color:#e34f26}
-      .tech-icon:nth-child(4){left:26%;animation-delay:-6s;color:#1572b6}
-      .tech-icon:nth-child(5){left:33%;animation-delay:-8s;color:#4479a1}
-      .tech-icon:nth-child(6){left:40%;animation-delay:-10s;color:#44b78b}
-      .tech-icon:nth-child(7){left:47%;animation-delay:-12s;color:#007acc}
-      .tech-icon:nth-child(8){left:54%;animation-delay:-1s;color:#f05032}
-      .tech-icon:nth-child(9){left:61%;animation-delay:-3s;color:#fff}
-      .tech-icon:nth-child(10){left:68%;animation-delay:-5s;color:#336791}
-      .tech-icon:nth-child(11){left:75%;animation-delay:-7s;color:#fcc624}
-      .tech-icon:nth-child(12){left:82%;animation-delay:-9s;color:#e95420}
-      .tech-icon:nth-child(13){left:89%;animation-delay:-11s;color:#a80030}
-      .tech-icon:nth-child(14){left:95%;animation-delay:-13s;color:#00a4ef}
-      .tech-icon:nth-child(15){left:8%;animation-delay:-15s;color:#4eaa25}
-      .tech-icon:nth-child(16){left:50%;animation-delay:-17s;color:#5391fe}
-      .tech-icon:nth-child(17){left:30%;animation-delay:-19s;color:#2496ed}
-      .tech-icon:nth-child(18){left:70%;animation-delay:-21s;color:#339933}
+      .tech-icon:nth-child(1){left:5%;animation-delay:0s;color:#3776ab}
+      .tech-icon:nth-child(2){left:20%;animation-delay:-3s;color:#44b78b}
+      .tech-icon:nth-child(3){left:35%;animation-delay:-6s;color:#f7df1e}
+      .tech-icon:nth-child(4){left:50%;animation-delay:-9s;color:#61dafb}
+      .tech-icon:nth-child(5){left:65%;animation-delay:-12s;color:#2496ed}
+      .tech-icon:nth-child(6){left:80%;animation-delay:-15s;color:#4479a1}
       @keyframes floatUp{0%{transform:translateY(0) rotate(0deg);opacity:0}15%{opacity:.35}85%{opacity:.35}100%{transform:translateY(-120vh) rotate(360deg);opacity:0}}
 
       .hero-content{text-align:center;max-width:860px;z-index:2;padding:0 20px}
@@ -571,7 +554,7 @@
         box-shadow:0 4px 16px rgba(37,211,102,0.35);transition:.3s var(--ease-bounce);
       }
       .whatsapp-float a:hover{transform:scale(1.12) rotate(8deg);box-shadow:0 8px 24px rgba(37,211,102,0.5)}
-      .whatsapp-float i{font-size:28px;color:#fff}
+      .whatsapp-float .icon{width:28px;height:28px;color:#fff}
 
       /* =============================================
          12. SCROLL REVEAL
@@ -705,7 +688,7 @@
     <!-- WhatsApp -->
     <div class="whatsapp-float">
       <a href="https://wa.me/8294772269" target="_blank" aria-label="Abrir chat de WhatsApp">
-        <i class="fab fa-whatsapp"></i>
+        <svg class="icon" width="28" height="28"><use href="/svg/icons.svg#icon-whatsapp"/></svg>
       </a>
     </div>
 
@@ -717,23 +700,12 @@
           <div class="orb orb-2"></div>
           <div class="orb orb-3"></div>
           <div class="tech-icons">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="tech-icon" fetchpriority="high" />
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django" class="tech-icon" fetchpriority="high" />
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" class="tech-icon" fetchpriority="high" />
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="tech-icon" fetchpriority="high" />
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" class="tech-icon" fetchpriority="high" />
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" class="tech-icon" />
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ubuntu/ubuntu-plain.svg" alt="Ubuntu" class="tech-icon" />
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg" alt="Nginx" class="tech-icon" />
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="Bash" class="tech-icon" />
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" class="tech-icon" />
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="NodeJS" class="tech-icon" />
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" class="tech-icon" />
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" class="tech-icon" />
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VSCode" class="tech-icon" />
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" class="tech-icon" />
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" class="tech-icon" />
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" alt="Redis" class="tech-icon" />
+            <img src="/svg/python-original.svg" alt="Python" class="tech-icon" />
+            <img src="/svg/django-plain.svg" alt="Django" class="tech-icon" />
+            <img src="/svg/javascript-original.svg" alt="JavaScript" class="tech-icon" />
+            <img src="/svg/react-original.svg" alt="React" class="tech-icon" />
+            <img src="/svg/docker-original.svg" alt="Docker" class="tech-icon" />
+            <img src="/svg/mysql-original.svg" alt="MySQL" class="tech-icon" />
           </div>
         </div>
         <div class="hero-content">
@@ -754,7 +726,7 @@
           <div class="fade-in-up" style="animation-delay:.32s">
             <a href="#contacto" class="cta-button">
               <span>Hablemos de tu Proyecto</span>
-              <i class="fas fa-arrow-right"></i>
+               <svg class="icon"><use href="/svg/icons.svg#icon-arrow-right"/></svg>
             </a>
           </div>
         </div>
@@ -817,9 +789,9 @@
               <h2>¿Listo para <span class="gradient-text">transformar</span> tu idea?</h2>
               <p>Nos encantaría conocer tu proyecto y ayudarte a convertirlo en realidad.</p>
               <div class="contact-features">
-                <div class="contact-feature"><i class="fas fa-clock"></i><span>Respuesta en menos de 24 horas</span></div>
-                <div class="contact-feature"><i class="fas fa-users"></i><span>Consultoría personalizada gratuita</span></div>
-                <div class="contact-feature"><i class="fas fa-shield-alt"></i><span>Confidencialidad garantizada</span></div>
+                <div class="contact-feature"><svg class="icon"><use href="/svg/icons.svg#icon-clock"/></svg><span>Respuesta en menos de 24 horas</span></div>
+                <div class="contact-feature"><svg class="icon"><use href="/svg/icons.svg#icon-users"/></svg><span>Consultoría personalizada gratuita</span></div>
+                <div class="contact-feature"><svg class="icon"><use href="/svg/icons.svg#icon-shield-alt"/></svg><span>Confidencialidad garantizada</span></div>
               </div>
             </div>
             <form id="contact-form" action="https://formsubmit.co/derejsoft2003@gmail.com" method="POST" aria-label="Formulario de contacto" class="reveal reveal-delay-2">
@@ -840,7 +812,7 @@
               <input type="hidden" name="_next" value="" />
               <button type="submit" class="submit-button">
                 <span>Enviar Mensaje</span>
-                <i class="fas fa-paper-plane"></i>
+                <svg class="icon"><use href="/svg/icons.svg#icon-paper-plane"/></svg>
               </button>
             </form>
           </div>
@@ -863,15 +835,15 @@
           <div class="footer-social">
             <span class="footer-social-title">Síguenos</span>
             <ul>
-              <li><a href="https://www.instagram.com/derejsoft" target="_blank" class="social-icon instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
-              <li><a href="https://www.facebook.com/share/1JKws2oMEp" target="_blank" class="social-icon facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-              <li><a href="https://www.tiktok.com/@derejsoft" target="_blank" class="social-icon tiktok" aria-label="TikTok"><i class="fab fa-tiktok"></i></a></li>
+              <li><a href="https://www.instagram.com/derejsoft" target="_blank" class="social-icon instagram" aria-label="Instagram"><svg class="icon"><use href="/svg/icons.svg#icon-instagram"/></svg></a></li>
+              <li><a href="https://www.facebook.com/share/1JKws2oMEp" target="_blank" class="social-icon facebook" aria-label="Facebook"><svg class="icon"><use href="/svg/icons.svg#icon-facebook-f"/></svg></a></li>
+              <li><a href="https://www.tiktok.com/@derejsoft" target="_blank" class="social-icon tiktok" aria-label="TikTok"><svg class="icon"><use href="/svg/icons.svg#icon-tiktok"/></svg></a></li>
             </ul>
           </div>
         </div>
         <div class="footer-bottom">
           <div>© 2025 <span style="color:var(--accent-cyan);font-weight:700">DerejSoft</span>. Todos los derechos reservados.</div>
-          <div>Hecho con <i class="fas fa-heart" style="color:#e11d48"></i> en República Dominicana</div>
+          <div>Hecho con <svg class="icon" style="color:#e11d48"><use href="/svg/icons.svg#icon-heart"/></svg> en República Dominicana</div>
         </div>
       </div>
     </footer>
@@ -880,12 +852,12 @@
     <script src="proyectos.js" defer></script>
     <script>
       /* ---- Canvas Particles ---- */
-      window.addEventListener('load', () => { setTimeout(() => {
+      (self.requestIdleCallback||setTimeout)(()=>{
         const c=document.getElementById('bg-canvas'),ctx=c.getContext('2d');
         let W,H,pts=[];
         function resize(){W=c.width=innerWidth;H=c.height=innerHeight}
         resize();addEventListener('resize',resize);
-        const N=Math.min(Math.floor(W*H/18000),80);
+        const N=Math.min(Math.floor(W*H/25000),50);
         for(let i=0;i<N;i++) pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.3,vy:(Math.random()-.5)*.3,r:Math.random()*1.5+.5});
         function draw(){
           ctx.clearRect(0,0,W,H);
@@ -908,7 +880,7 @@
           requestAnimationFrame(draw);
         }
         draw();
-      }, 0) });
+      });
 
       /* ---- Terminal typing ---- */
       (function(){
@@ -939,20 +911,21 @@
       nlinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nlinks.classList.remove('active');document.body.classList.remove('menu-open')}));
 
       /* ---- Smooth scroll ---- */
+      const headerH=document.querySelector('.site-header').offsetHeight;
       document.querySelectorAll('a[href^="#"]').forEach(a=>{
         a.addEventListener('click',function(e){
           e.preventDefault();
           const t=document.querySelector(this.getAttribute('href'));
-          if(t){const h=document.querySelector('.site-header').offsetHeight;window.scrollTo({top:t.offsetTop-h-16,behavior:'smooth'})}
+          if(t) window.scrollTo({top:t.getBoundingClientRect().top+window.scrollY-headerH-16,behavior:'smooth'})
         });
       });
 
       /* ---- Active nav ---- */
-      const secs=document.querySelectorAll('section[id]'),nlas=document.querySelectorAll('.nav-links a[href^="#"]');
-      addEventListener('scroll',()=>{
-        let cur='';secs.forEach(s=>{if(pageYOffset>=s.offsetTop-150)cur=s.id});
-        nlas.forEach(l=>{l.classList.toggle('active',l.getAttribute('href')==='#'+cur)});
-      });
+      const nlas=document.querySelectorAll('.nav-links a[href^="#"]');
+      const navObs=new IntersectionObserver(entries=>{
+        entries.forEach(e=>{if(e.isIntersecting)nlas.forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id))});
+      },{threshold:.3,rootMargin:'-150px 0px'});
+      document.querySelectorAll('section[id]').forEach(s=>navObs.observe(s));
 
       /* ---- Scroll reveal ---- */
       const robs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');robs.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -40px 0px'});
@@ -960,7 +933,7 @@
 
       /* ---- Card mouse glow (service + project) ---- */
       document.querySelectorAll('.service-card, .project-card').forEach(c=>{
-        c.addEventListener('mousemove',e=>{const r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')});
+        c.addEventListener('mousemove',e=>{c.style.setProperty('--mx',e.offsetX+'px');c.style.setProperty('--my',e.offsetY+'px')});
       });
 
       /* ---- Contact form ---- */
@@ -995,9 +968,9 @@
       function showPg(p,cards){const s=(p-1)*PP,e=s+PP;cards.forEach((c,i)=>{c.style.display=i>=s&&i<e?'block':'none';if(i>=s&&i<e){c.classList.remove('reveal','visible');requestAnimationFrame(()=>{c.classList.add('reveal');setTimeout(()=>c.classList.add('visible'),60)});}});pg=p}
       function mkPg(cards){
         const pc=document.getElementById('pagination-container');pc.innerHTML='';
-        const pv=document.createElement('button');pv.className='pagination-btn';pv.setAttribute('aria-label', 'Página anterior');pv.innerHTML='<i class="fas fa-chevron-left"></i>';pv.disabled=pg===1;pv.onclick=()=>{if(pg>1){showPg(pg-1,cards);updPg(cards)}};pc.appendChild(pv);
+        const pv=document.createElement('button');pv.className='pagination-btn';pv.setAttribute('aria-label', 'Página anterior');pv.innerHTML='<svg class="icon"><use href="/svg/icons.svg#icon-chevron-left"/></svg>';pv.disabled=pg===1;pv.onclick=()=>{if(pg>1){showPg(pg-1,cards);updPg(cards)}};pc.appendChild(pv);
         for(let i=1;i<=tp;i++){const b=document.createElement('button');b.className='pagination-btn'+(i===pg?' active':'');b.textContent=i;b.onclick=()=>{showPg(i,cards);updPg(cards)};pc.appendChild(b)}
-        const nx=document.createElement('button');nx.className='pagination-btn';nx.setAttribute('aria-label', 'Página siguiente');nx.innerHTML='<i class="fas fa-chevron-right"></i>';nx.disabled=pg===tp;nx.onclick=()=>{if(pg<tp){showPg(pg+1,cards);updPg(cards)}};pc.appendChild(nx);
+        const nx=document.createElement('button');nx.className='pagination-btn';nx.setAttribute('aria-label', 'Página siguiente');nx.innerHTML='<svg class="icon"><use href="/svg/icons.svg#icon-chevron-right"/></svg>';nx.disabled=pg===tp;nx.onclick=()=>{if(pg<tp){showPg(pg+1,cards);updPg(cards)}};pc.appendChild(nx);
       }
       function updPg(cards){const bs=document.getElementById('pagination-container').querySelectorAll('.pagination-btn');bs.forEach((b,i)=>{if(i===0)b.disabled=pg===1;else if(i===bs.length-1)b.disabled=pg===tp;else{b.classList.toggle('active',i===pg)}})}
       document.addEventListener('DOMContentLoaded',()=>{
@@ -1007,10 +980,6 @@
         document.querySelectorAll('.project-card').forEach(el=>{
           el.classList.add('reveal');
           robs.observe(el);
-        });
-        // Re-init mouse glow for project cards
-        document.querySelectorAll('.project-card').forEach(c=>{
-          c.addEventListener('mousemove',e=>{const r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')});
         });
       });
     </script>

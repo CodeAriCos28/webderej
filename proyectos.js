@@ -8,7 +8,7 @@ const projectsData = [
   {
     link: '/proyectos/derejpress.html',
     badgeClass: 'finanzas',
-    badgeIcon: 'fas fa-calculator',
+    badgeIcon: 'calculator',
     badgeText: 'Finanzas',
     image: '/imagenes/DerejPres.webp',
     title: 'DerejPres',
@@ -24,7 +24,7 @@ const projectsData = [
   {
     link: '/proyectos/derejstorage.html',
     badgeClass: 'finanzas',
-    badgeIcon: 'fas fa-calculator',
+    badgeIcon: 'calculator',
     badgeText: 'Finanzas',
     image: '/imagenes/derejstorange.webp',
     title: 'DerejStorage',
@@ -40,7 +40,7 @@ const projectsData = [
   {
     link: '/proyectos/derejmotium.html',
     badgeClass: 'comercio',
-    badgeIcon: 'fas fa-shopping-cart',
+    badgeIcon: 'shopping-cart',
     badgeText: 'Comercio',
     image: '/imagenes/derejmotium.webp',
     title: 'DerejMotium',
@@ -56,7 +56,7 @@ const projectsData = [
   {
     link: '/proyectos/derejfinance.html',
     badgeClass: 'finanzas',
-    badgeIcon: 'fas fa-calculator',
+    badgeIcon: 'calculator',
     badgeText: 'Finanzas',
     image: '/imagenes/DF-Dashboard.webp',
     title: 'DerejFinance',
@@ -72,7 +72,7 @@ const projectsData = [
   {
     link: '/proyectos/derejmotium.html',
     badgeClass: 'comercio',
-    badgeIcon: 'fas fa-shopping-cart',
+    badgeIcon: 'shopping-cart',
     badgeText: 'Comercio',
     image: '/imagenes/derejmotium.webp',
     title: 'DerejFood',
@@ -88,7 +88,7 @@ const projectsData = [
   {
     link: '/proyectos/derejmotium.html',
     badgeClass: 'comercio',
-    badgeIcon: 'fas fa-shopping-cart',
+    badgeIcon: 'shopping-cart',
     badgeText: 'Comercio',
     image: '/imagenes/derejmotium.webp',
     title: 'DerejAutix',
@@ -104,7 +104,7 @@ const projectsData = [
   {
     link: '/proyectos/derejmotium.html',
     badgeClass: 'comercio',
-    badgeIcon: 'fas fa-shopping-cart',
+    badgeIcon: 'shopping-cart',
     badgeText: 'Comercio',
     image: '/imagenes/derejmotium.webp',
     title: 'DerejAgro',
@@ -120,7 +120,7 @@ const projectsData = [
   {
     link: '/proyectos/derejmotium.html',
     badgeClass: 'comercio',
-    badgeIcon: 'fas fa-tasks',
+    badgeIcon: 'tasks',
     badgeText: 'Gestión',
     image: '/imagenes/derejmotium.webp',
     title: 'DerejCitas',
@@ -136,7 +136,7 @@ const projectsData = [
   {
     link: '/proyectos/derejmotium.html',
     badgeClass: 'automotriz',
-    badgeIcon: 'fas fa-tasks',
+    badgeIcon: 'tasks',
     badgeText: 'Gestión',
     image: '/imagenes/derejmotium.webp',
     title: 'DerejTurnos',
@@ -152,7 +152,7 @@ const projectsData = [
    {
     link: '/proyectos/derejstorage.html',
     badgeClass: 'finanzas',
-    badgeIcon: 'fas fa-calculator',
+    badgeIcon: 'calculator',
     badgeText: 'Finanzas',
     image: '/imagenes/derejstorange.webp',
     title: 'DerejStorage',
@@ -168,7 +168,7 @@ const projectsData = [
   {
     link: '/proyectos/derejmotium.html',
     badgeClass: 'comercio',
-    badgeIcon: 'fas fa-shopping-cart',
+    badgeIcon: 'shopping-cart',
     badgeText: 'Comercio',
     image: '/imagenes/derejmotium.webp',
     title: 'DerejKonix',
@@ -195,12 +195,12 @@ function renderProjects() {
   const projectsHTML = projectsData.map(project => `
     <a href="${project.link}" class="project-card">
       <span class="project-badge ${project.badgeClass}">
-        <i class="${project.badgeIcon}"></i> ${project.badgeText}
+        <svg class="icon"><use href="/svg/icons.svg#icon-${project.badgeIcon}"/></svg> ${project.badgeText}
       </span>
       <div class="project-image">
         <img src="${project.image}" alt="${project.title}" loading="lazy" />
         <div class="project-overlay">
-          <i class="fas fa-external-link-alt"></i>
+          <svg class="icon"><use href="/svg/icons.svg#icon-external-link-alt"/></svg>
         </div>
       </div>
       <div class="project-content">
