@@ -983,7 +983,7 @@
         cards.forEach(c=>c.style.display='none');
         showPg(1,cards);mkPg(cards);
       }
-      function showPg(p,cards){const s=(p-1)*PP,e=s+PP;cards.forEach((c,i)=>{c.style.display=i>=s&&i<e?'block':'none';if(i>=s&&i<e){c.classList.remove('reveal','visible');void c.offsetWidth;c.classList.add('reveal');setTimeout(()=>c.classList.add('visible'),60)}});pg=p}
+      function showPg(p,cards){const s=(p-1)*PP,e=s+PP;cards.forEach((c,i)=>{c.style.display=i>=s&&i<e?'block':'none';if(i>=s&&i<e){c.classList.remove('reveal','visible');requestAnimationFrame(()=>{c.classList.add('reveal');setTimeout(()=>c.classList.add('visible'),60)});}});pg=p}
       function mkPg(cards){
         const pc=document.getElementById('pagination-container');pc.innerHTML='';
         const pv=document.createElement('button');pv.className='pagination-btn';pv.setAttribute('aria-label', 'Página anterior');pv.innerHTML='<i class="fas fa-chevron-left"></i>';pv.disabled=pg===1;pv.onclick=()=>{if(pg>1){showPg(pg-1,cards);updPg(cards)}};pc.appendChild(pv);
