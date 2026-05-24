@@ -53,8 +53,8 @@
         --gradient-glow:radial-gradient(circle,rgba(0,229,255,0.12) 0%,transparent 70%);
 
         --text-primary:#f0f4ff;
-        --text-secondary:#94a3c8;
-        --text-muted:#5a6b8a;
+        --text-secondary:#a6b4d4;
+        --text-muted:#8f9db9;
 
         --border-subtle:rgba(0,229,255,0.08);
         --border-default:rgba(0,229,255,0.12);
@@ -986,9 +986,9 @@
       function showPg(p,cards){const s=(p-1)*PP,e=s+PP;cards.forEach((c,i)=>{c.style.display=i>=s&&i<e?'block':'none';if(i>=s&&i<e){c.classList.remove('reveal','visible');void c.offsetWidth;c.classList.add('reveal');setTimeout(()=>c.classList.add('visible'),60)}});pg=p}
       function mkPg(cards){
         const pc=document.getElementById('pagination-container');pc.innerHTML='';
-        const pv=document.createElement('button');pv.className='pagination-btn';pv.innerHTML='<i class="fas fa-chevron-left"></i>';pv.disabled=pg===1;pv.onclick=()=>{if(pg>1){showPg(pg-1,cards);updPg(cards)}};pc.appendChild(pv);
+        const pv=document.createElement('button');pv.className='pagination-btn';pv.setAttribute('aria-label', 'Página anterior');pv.innerHTML='<i class="fas fa-chevron-left"></i>';pv.disabled=pg===1;pv.onclick=()=>{if(pg>1){showPg(pg-1,cards);updPg(cards)}};pc.appendChild(pv);
         for(let i=1;i<=tp;i++){const b=document.createElement('button');b.className='pagination-btn'+(i===pg?' active':'');b.textContent=i;b.onclick=()=>{showPg(i,cards);updPg(cards)};pc.appendChild(b)}
-        const nx=document.createElement('button');nx.className='pagination-btn';nx.innerHTML='<i class="fas fa-chevron-right"></i>';nx.disabled=pg===tp;nx.onclick=()=>{if(pg<tp){showPg(pg+1,cards);updPg(cards)}};pc.appendChild(nx);
+        const nx=document.createElement('button');nx.className='pagination-btn';nx.setAttribute('aria-label', 'Página siguiente');nx.innerHTML='<i class="fas fa-chevron-right"></i>';nx.disabled=pg===tp;nx.onclick=()=>{if(pg<tp){showPg(pg+1,cards);updPg(cards)}};pc.appendChild(nx);
       }
       function updPg(cards){const bs=document.getElementById('pagination-container').querySelectorAll('.pagination-btn');bs.forEach((b,i)=>{if(i===0)b.disabled=pg===1;else if(i===bs.length-1)b.disabled=pg===tp;else{b.classList.toggle('active',i===pg)}})}
       document.addEventListener('DOMContentLoaded',()=>{
