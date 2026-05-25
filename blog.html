@@ -8,15 +8,9 @@
     <meta name="description" content="Blog de DerejSoft: artículos sobre desarrollo de software, Python, Django, diseño web, tendencias tecnológicas y consejos para tu negocio digital." />
     <meta name="keywords" content="DerejSoft blog, desarrollo web, software, Python, Django, tecnología, programación" />
     <meta name="theme-color" content="#050a18" />
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"></noscript>
 
-    <link rel="preload" as="style" href="styles.css">
-    <link rel="preload" as="style" href="blog.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="blog.css">
 
@@ -1069,5 +1063,15 @@ def get_dashboard_data(user_id):
     }), { threshold: .12, rootMargin: '0px 0px -40px 0px' });
     document.querySelectorAll('.reveal').forEach(el => robs.observe(el));
     </script>
-  </body>
+  
+    <!-- Google Fonts: carga asíncrona (no bloquea LCP) -->
+    <script>
+      (self.requestIdleCallback||setTimeout)(function(){
+        var l=document.createElement('link');
+        l.rel='stylesheet';
+        l.href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap';
+        document.head.appendChild(l);
+      });
+    </script>
+</body>
 </html>
