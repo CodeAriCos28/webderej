@@ -198,7 +198,7 @@ function renderProjects() {
         <svg class="icon"><use href="/svg/icons.svg#icon-${project.badgeIcon}"/></svg> ${project.badgeText}
       </span>
       <div class="project-image">
-        <img src="${project.image}" alt="${project.title}" loading="lazy" />
+        <img src="${project.image}" alt="${project.title}" loading="lazy" width="340" height="200" />
         <div class="project-overlay">
           <svg class="icon"><use href="/svg/icons.svg#icon-external-link-alt"/></svg>
         </div>

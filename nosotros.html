@@ -409,7 +409,7 @@
     <header class="site-header">
       <nav>
         <a href="index.html#inicio" class="logo">
-          <img src="logos/DerejLogo.webp" alt="Logo DerejSoft" class="logo-img" />
+          <img src="logos/DerejLogo.webp" alt="Logo DerejSoft" class="logo-img" width="38" height="38" />
           <div class="logo-text">Derej<span>Soft</span></div>
         </a>
         <button class="menu-toggle" aria-label="Abrir menú"><span></span><span></span><span></span></button>
@@ -418,6 +418,7 @@
           <li><a href="index.html#servicios"><span class="link-text">Servicios</span></a></li>
           <li><a href="nosotros.html" class="active"><span class="link-text">Nosotros</span></a></li>
           <li><a href="index.html#proyectos"><span class="link-text">Proyectos</span></a></li>
+          <li><a href="blog.html"><span class="link-text">Blog</span></a></li>
           <li><a href="index.html#contacto"><span class="link-text">Contacto</span></a></li>
         </ul>
       </nav>
@@ -724,7 +725,7 @@
       <div class="container">
         <div class="footer-top">
           <div class="footer-logo-container">
-            <img src="logos/DerejLogo.webp" alt="DerejSoft Logo" class="footer-logo-img" />
+            <img src="logos/DerejLogo.webp" alt="DerejSoft Logo" class="footer-logo-img" width="36" height="36" />
             <div class="footer-logo-text">Derej<span>Soft</span></div>
           </div>
           <div class="footer-links">
@@ -749,8 +750,31 @@
     </footer>
 
     <script>
-      /* Canvas Particles */
-      (function(){const c=document.getElementById('bg-canvas'),ctx=c.getContext('2d');let W,H,pts=[];function resize(){W=c.width=innerWidth;H=c.height=innerHeight}resize();addEventListener('resize',resize);const N=Math.min(Math.floor(W*H/18000),70);for(let i=0;i<N;i++)pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.25,vy:(Math.random()-.5)*.25,r:Math.random()*1.5+.4});function draw(){ctx.clearRect(0,0,W,H);for(let i=0;i<pts.length;i++){const p=pts[i];p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle='rgba(0,229,255,0.3)';ctx.fill();for(let j=i+1;j<pts.length;j++){const q=pts[j],dx=p.x-q.x,dy=p.y-q.y,d=Math.sqrt(dx*dx+dy*dy);if(d<140){ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.strokeStyle='rgba(0,229,255,'+(0.07*(1-d/140))+')';ctx.lineWidth=.5;ctx.stroke()}}}requestAnimationFrame(draw)}draw()})();
+      /* Canvas Particles - Optimized for mobile */
+      (function(){
+        const isMobile = window.innerWidth < 768;
+        const c=document.getElementById('bg-canvas'),ctx=c.getContext('2d');
+        let W,H,pts=[];
+        function resize(){W=c.width=innerWidth;H=c.height=innerHeight}
+        resize();addEventListener('resize',resize);
+        const N=isMobile?Math.min(Math.floor(W*H/80000),12):Math.min(Math.floor(W*H/18000),40);
+        for(let i=0;i<N;i++)pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.25,vy:(Math.random()-.5)*.25,r:Math.random()*1.5+.4});
+        function draw(){
+          ctx.clearRect(0,0,W,H);
+          for(let i=0;i<pts.length;i++){
+            const p=pts[i];p.x+=p.vx;p.y+=p.vy;
+            if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;
+            ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+            ctx.fillStyle='rgba(0,229,255,0.3)';ctx.fill();
+            if(!isMobile) for(let j=i+1;j<pts.length;j++){
+              const q=pts[j],dx=p.x-q.x,dy=p.y-q.y,d=Math.sqrt(dx*dx+dy*dy);
+              if(d<140){ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.strokeStyle='rgba(0,229,255,'+(0.07*(1-d/140))+')';ctx.lineWidth=.5;ctx.stroke()}
+            }
+          }
+          requestAnimationFrame(draw)
+        }
+        draw()
+      })();
 
       /* Header scroll */
       const hdr=document.querySelector('.site-header');

@@ -1,1577 +1,1806 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - DerejSoft | Noticias y Tendencias Tecnológicas</title>
-    <link rel="shortcut icon" href="logos/logo2D(1).ico">
-    <meta name="description" content="Mantente al día con las últimas noticias, tendencias y novedades tecnológicas de DerejSoft. Blog de desarrollo web, innovación y tecnología.">
-    <meta name="keywords" content="blog tecnología, noticias desarrollo web, tendencias software, DerejSoft blog, innovación digital">
-    
-    <!-- Fuentes y CSS externo -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <style>
-        /* Reset y Variables */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            /* Colores principales */
-            --primary-color: #6366f1;
-            --primary-dark: #4f46e5;
-            --primary-light: #818cf8;
-            --secondary-color: #f59e0b;
-            --accent-color: #10b981;
-            
-            /* Gradientes */
-            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            --gradient-accent: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            --gradient-warm: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
-            
-            /* Colores neutros */
-            --dark-bg: #0f0f23;
-            --dark-card: #1a1a2e;
-            --dark-accent: #16213e;
-            --light-text: #ffffff;
-            --gray-text: #a1a1aa;
-            --border-color: rgba(255, 255, 255, 0.1);
-            
-            /* Tipografía */
-            --font-primary: 'Inter', sans-serif;
-            --font-display: 'Playfair Display', serif;
-            
-            /* Espaciado */
-            --section-padding: 120px 0;
-            --container-padding: 0 20px;
-            --border-radius: 20px;
-            --border-radius-sm: 12px;
-            
-            /* Sombras */
-            --shadow-soft: 0 10px 40px rgba(0, 0, 0, 0.1);
-            --shadow-medium: 0 20px 60px rgba(0, 0, 0, 0.15);
-            --shadow-strong: 0 30px 80px rgba(0, 0, 0, 0.2);
-            
-            /* Transiciones */
-            --transition-fast: 0.3s ease;
-            --transition-medium: 0.5s ease;
-            --transition-slow: 0.8s ease;
-        }
-
-        /* Estilos base */
-        body {
-            font-family: var(--font-primary);
-            background: var(--dark-bg);
-            color: var(--light-text);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: var(--container-padding);
-        }
-
-        /* Utilidades */
-        .gradient-text {
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 80px;
-        }
-
-        .section-title {
-            font-family: var(--font-display);
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 700;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        .section-subtitle {
-            font-size: 1.25rem;
-            color: var(--gray-text);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* Header */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            background: rgba(15, 15, 35, 0.95);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .logo-img {
-            width: 40px;
-            height: 40px;
-        }
-
-        .logo28 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--light-text);
-        }
-
-        .logo28 span {
-            color: var(--primary-color);
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            color: var(--light-text);
-            text-decoration: none;
-            font-weight: 500;
-            transition: var(--transition-fast);
-            position: relative;
-        }
-
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: var(--primary-color);
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gradient-primary);
-            transition: var(--transition-fast);
-        }
-
-        .nav-links a:hover::after,
-        .nav-links a.active::after {
-            width: 100%;
-        }
-
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            background: none;
-            border: none;
-            cursor: pointer;
-            gap: 4px;
-        }
-
-        .menu-toggle span {
-            width: 25px;
-            height: 3px;
-            background: var(--light-text);
-            transition: var(--transition-fast);
-        }
-
-        /* WhatsApp Float */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 1000;
-        }
-
-        .whatsapp-float a {
-            display: block;
-            width: 60px;
-            height: 60px;
-            background: #25d366;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: var(--shadow-medium);
-            transition: var(--transition-fast);
-        }
-
-        .whatsapp-float a:hover {
-            transform: scale(1.1);
-            box-shadow: var(--shadow-strong);
-        }
-
-        .whatsapp-float img {
-            width: 35px;
-            height: 35px;
-        }
-
-        /* Hero Section del Blog */
-        .blog-hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-            padding: 120px 20px 80px;
-        }
-
-        .hero-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-
-        .gradient-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, 
-                rgba(102, 102, 234, 0.1) 0%, 
-                rgba(118, 75, 162, 0.1) 50%, 
-                rgba(240, 147, 251, 0.1) 100%);
-        }
-
-        .floating-shapes {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-        }
-
-        .shape {
-            position: absolute;
-            border-radius: 50%;
-            background: var(--gradient-primary);
-            opacity: 0.1;
-            animation: float 20s infinite ease-in-out;
-        }
-
-        .shape-1 {
-            width: 300px;
-            height: 300px;
-            top: 10%;
-            left: 10%;
-            animation-delay: 0s;
-        }
-
-        .shape-2 {
-            width: 200px;
-            height: 200px;
-            top: 60%;
-            right: 10%;
-            animation-delay: -5s;
-        }
-
-        .shape-3 {
-            width: 150px;
-            height: 150px;
-            bottom: 20%;
-            left: 20%;
-            animation-delay: -10s;
-        }
-
-        .shape-4 {
-            width: 100px;
-            height: 100px;
-            top: 30%;
-            right: 30%;
-            animation-delay: -15s;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            33% { transform: translateY(-30px) rotate(120deg); }
-            66% { transform: translateY(20px) rotate(240deg); }
-        }
-
-        .hero-content {
-            text-align: center;
-            max-width: 800px;
-            z-index: 1;
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(20px);
-            padding: 12px 24px;
-            border-radius: 50px;
-            border: 1px solid var(--border-color);
-            margin-bottom: 30px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            animation: fadeInUp 1s ease 0.2s both;
-        }
-
-        .hero-badge i {
-            color: var(--primary-color);
-        }
-
-        .hero-title {
-            font-family: var(--font-display);
-            font-size: clamp(3rem, 8vw, 6rem);
-            font-weight: 700;
-            line-height: 1.1;
-            margin-bottom: 30px;
-        }
-
-        .title-line {
-            display: block;
-            animation: fadeInUp 1s ease both;
-        }
-
-        .title-line:nth-child(2) {
-            animation-delay: 0.4s;
-        }
-
-        .hero-subtitle {
-            font-size: 1.25rem;
-            color: var(--gray-text);
-            margin-bottom: 50px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            animation: fadeInUp 1s ease 0.6s both;
-        }
-
-        .blog-stats {
-            display: flex;
-            justify-content: center;
-            gap: 60px;
-            margin-bottom: 60px;
-            animation: fadeInUp 1s ease 0.8s both;
-        }
-
-        .stat-item {
-            text-align: center;
-        }
-
-        .stat-number {
-            display: block;
-            font-size: 2.5rem;
-            font-weight: 700;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 5px;
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            color: var(--gray-text);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Filtros de Categorías */
-        .blog-filters {
-            padding: 80px 0 40px;
-            background: var(--dark-bg);
-        }
-
-        .filter-container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-bottom: 60px;
-        }
-
-        .filter-btn {
-            padding: 12px 24px;
-            background: var(--dark-card);
-            border: 1px solid var(--border-color);
-            border-radius: 50px;
-            color: var(--gray-text);
-            text-decoration: none;
-            font-weight: 500;
-            transition: var(--transition-fast);
-            cursor: pointer;
-        }
-
-        .filter-btn:hover,
-        .filter-btn.active {
-            background: var(--gradient-primary);
-            color: white;
-            border-color: transparent;
-            transform: translateY(-2px);
-        }
-
-        /* Grid de Artículos del Blog */
-        .blog-section {
-            padding: 40px 0 120px;
-            background: var(--dark-bg);
-        }
-
-        .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-        }
-
-        .blog-card {
-            background: var(--dark-card);
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            border: 1px solid var(--border-color);
-            transition: var(--transition-medium);
-            opacity: 0;
-            transform: translateY(30px);
-            position: relative;
-        }
-
-        .blog-card.aos-animate {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .blog-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-strong);
-            border-color: var(--primary-color);
-        }
-
-        .blog-image {
-            width: 100%;
-            height: 250px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .blog-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition-medium);
-        }
-
-        .blog-card:hover img {
-            transform: scale(1.1);
-        }
-
-        .blog-category {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            background: var(--gradient-primary);
-            color: white;
-            padding: 6px 12px;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .blog-content {
-            padding: 30px;
-        }
-
-        .blog-meta {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            margin-bottom: 15px;
-            font-size: 0.9rem;
-            color: var(--gray-text);
-        }
-
-        .blog-meta i {
-            color: var(--primary-color);
-        }
-
-        .blog-card h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-            color: var(--light-text);
-            line-height: 1.3;
-        }
-
-        .blog-excerpt {
-            color: var(--gray-text);
-            line-height: 1.6;
-            margin-bottom: 25px;
-        }
-
-        .blog-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 25px;
-        }
-
-        .blog-tag {
-            background: rgba(102, 102, 234, 0.2);
-            color: var(--primary-light);
-            padding: 4px 10px;
-            border-radius: 12px;
-            font-size: 0.75rem;
-            font-weight: 500;
-        }
-
-        .read-more {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 600;
-            transition: var(--transition-fast);
-        }
-
-        .read-more:hover {
-            gap: 12px;
-        }
-
-        /* Estilos para paginación */
-        .pagination-container {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 60px;
-            flex-wrap: wrap;
-        }
-
-        .pagination-btn {
-            padding: 10px 16px;
-            background: var(--dark-card);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            color: var(--gray-text);
-            cursor: pointer;
-            font-weight: 500;
-            transition: var(--transition-fast);
-            min-width: 44px;
-            text-align: center;
-        }
-
-        .pagination-btn:hover:not(:disabled) {
-            background: var(--gradient-primary);
-            color: white;
-            border-color: transparent;
-            transform: translateY(-2px);
-        }
-
-        .pagination-btn.active {
-            background: var(--gradient-primary);
-            color: white;
-            border-color: transparent;
-        }
-
-        .pagination-btn:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-
-        /* Artículo Destacado */
-        .featured-section {
-            padding: 80px 0;
-            background: linear-gradient(180deg, var(--dark-bg) 0%, var(--dark-card) 100%);
-        }
-
-        .featured-article {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-            background: var(--dark-card);
-            border-radius: var(--border-radius);
-            padding: 60px;
-            border: 1px solid var(--border-color);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .featured-image {
-            border-radius: var(--border-radius-sm);
-            overflow: hidden;
-            position: relative;
-        }
-
-        .featured-article img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-        }
-
-        .featured-content h2 {
-            font-family: var(--font-display);
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        .featured-meta {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            margin-bottom: 20px;
-            color: var(--gray-text);
-        }
-
-        .featured-meta i {
-            color: var(--primary-color);
-        }
-
-        .featured-excerpt {
-            font-size: 1.1rem;
-            color: var(--gray-text);
-            line-height: 1.7;
-            margin-bottom: 30px;
-        }
-
-        .featured-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 15px 30px;
-            background: var(--gradient-primary);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: var(--transition-fast);
-        }
-
-        .featured-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-medium);
-        }
-
-        /* Newsletter Section */
-        .newsletter-section {
-            padding: var(--section-padding);
-            background: var(--dark-card);
-            text-align: center;
-        }
-
-        .newsletter-content {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .newsletter-content h2 {
-            font-family: var(--font-display);
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        .newsletter-content p {
-            font-size: 1.2rem;
-            color: var(--gray-text);
-            margin-bottom: 40px;
-        }
-
-        .newsletter-form {
-            display: flex;
-            gap: 15px;
-            max-width: 400px;
-            margin: 0 auto;
-        }
-
-        .newsletter-input {
-            flex: 1;
-            padding: 15px 20px;
-            background: var(--dark-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 50px;
-            color: var(--light-text);
-            font-size: 1rem;
-        }
-
-        .newsletter-input:focus {
-            outline: none;
-            border-color: var(--primary-color);
-        }
-
-        .newsletter-btn {
-            padding: 15px 30px;
-            background: var(--gradient-primary);
-            color: white;
-            border: none;
-            border-radius: 50px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition-fast);
-        }
-
-        .newsletter-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-medium);
-        }
-
-        /* Footer */
-        footer {
-            background: var(--dark-card);
-            padding: 60px 20px 20px;
-            border-top: 1px solid var(--border-color);
-        }
-
-        footer nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .footer-logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--light-text);
-        }
-
-        .footer-logo span {
-            color: var(--primary-color);
-        }
-
-        .footer-link {
-            color: var(--gray-text);
-            text-decoration: none;
-            transition: var(--transition-fast);
-        }
-
-        .footer-link:hover {
-            color: var(--primary-color);
-        }
-
-        .redes ul {
-            display: flex;
-            list-style: none;
-            gap: 20px;
-        }
-
-        .redes i {
-            font-size: 24px;
-            color: var(--gray-text);
-            transition: var(--transition-fast);
-        }
-
-        .redes a:hover i {
-            color: var(--primary-color);
-            transform: scale(1.2);
-        }
-
-        .copyright-bar {
-            text-align: center;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid var(--border-color);
-            color: var(--gray-text);
-            font-size: 0.9rem;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .menu-toggle {
-                display: flex;
-            }
-            
-            .nav-links {
-                display: none;
-            }
-            
-            .blog-stats {
-                gap: 30px;
-            }
-            
-            .stat-number {
-                font-size: 2rem;
-            }
-            
-            .filter-container {
-                justify-content: flex-start;
-                overflow-x: auto;
-                padding-bottom: 10px;
-            }
-            
-            .blog-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .featured-article {
-                grid-template-columns: 1fr;
-                gap: 40px;
-                padding: 40px;
-            }
-            
-            .newsletter-form {
-                flex-direction: column;
-                max-width: 300px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero-title {
-                font-size: 2.5rem;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-            
-            .blog-stats {
-                flex-direction: column;
-                gap: 20px;
-            }
-            
-            .featured-content h2 {
-                font-size: 2rem;
-            }
-            
-            .newsletter-content h2 {
-                font-size: 2rem;
-            }
-        }
-
-        /* Animaciones adicionales */
-        .particle {
-            animation: particleFloat 20s infinite linear !important;
-        }
-        
-        @keyframes particleFloat {
-            0% {
-                transform: translateY(100vh) rotate(0deg);
-                opacity: 0;
-            }
-            10% {
-                opacity: 1;
-            }
-            90% {
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-100vh) rotate(360deg);
-                opacity: 0;
-            }
-        }
-        .logo28 span {
-           position: relative;
-           left: 3px;
-        }
-    </style>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog | DerejSoft — Tecnología, Desarrollo y Software</title>
+    <link rel="shortcut icon" href="/logos/logo2D(1).ico" />
+    <meta name="description" content="Blog de DerejSoft: artículos sobre desarrollo de software, Python, Django, diseño web, tendencias tecnológicas y consejos para tu negocio digital." />
+    <meta name="keywords" content="DerejSoft blog, desarrollo web, software, Python, Django, tecnología, programación" />
+    <meta name="theme-color" content="#050a18" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"></noscript>
 
     <!-- SEO & Open Graph -->
     <link rel="canonical" href="https://derejsoft.com/blog.html" />
-    <meta property="og:title" content="Blog DerejSoft | Noticias y Tendencias Tecnológicas" />
-    <meta property="og:description" content="Artículos, tendencias y novedades sobre desarrollo web, Python, Django y tecnología. Mantente al día con el equipo de DerejSoft." />
+    <meta property="og:title" content="Blog | DerejSoft — Tecnología y Desarrollo" />
+    <meta property="og:description" content="Artículos sobre desarrollo de software, Python, Django, diseño web y tendencias tecnológicas." />
     <meta property="og:url" content="https://derejsoft.com/blog.html" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_DO" />
     <meta property="og:site_name" content="DerejSoft" />
     <meta property="og:image" content="https://derejsoft.com/logos/DerejSoft.webp" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Blog DerejSoft | Noticias y Tendencias Tecnológicas" />
-    <meta name="twitter:description" content="Artículos, tendencias y novedades sobre desarrollo web, Python, Django y tecnología. Mantente al día con el equipo de DerejSoft." />
+    <meta name="twitter:title" content="Blog | DerejSoft" />
+    <meta name="twitter:description" content="Artículos sobre desarrollo de software, Python, Django y más." />
     <meta name="twitter:site" content="@derejsoft" />
-    <!-- Schema JSON-LD -->
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Blog",
-      "name": "Blog DerejSoft | Noticias y Tendencias Tecnológicas",
+      "name": "DerejSoft Blog",
       "url": "https://derejsoft.com/blog.html",
-      "description": "Artículos, tendencias y novedades sobre desarrollo web, Python, Django y tecnología."
+      "description": "Blog técnico de DerejSoft sobre desarrollo de software, web y tecnología.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "DerejSoft",
+        "logo": "https://derejsoft.com/logos/DerejSoft.webp"
+      }
     }
     </script>
 
+    <style>
+      /* =============================================
+         0. RESET & ACCESSIBILITY
+         ============================================= */
+      .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+      *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+      html{scroll-behavior:smooth;scroll-padding-top:80px;overflow-x:hidden}
+
+      /* =============================================
+         1. DESIGN TOKENS
+         ============================================= */
+      :root{
+        --bg-base:#050a18;
+        --bg-surface:#0b1228;
+        --bg-elevated:#111d3a;
+        --bg-glass:rgba(11,18,40,0.65);
+        --bg-glass-hover:rgba(11,18,40,0.85);
+
+        --accent-cyan:#00e5ff;
+        --accent-blue:#3d7aed;
+        --accent-violet:#7c3aed;
+        --accent-emerald:#10b981;
+        --accent-pink:#ec4899;
+        --accent-amber:#f59e0b;
+
+        --gradient-hero:linear-gradient(135deg,#00e5ff 0%,#3d7aed 40%,#7c3aed 100%);
+        --gradient-text:linear-gradient(90deg,#00e5ff,#3d7aed,#7c3aed);
+        --gradient-card:linear-gradient(180deg,rgba(17,29,58,0.9) 0%,rgba(5,10,24,0.95) 100%);
+        --gradient-glow:radial-gradient(circle,rgba(0,229,255,0.12) 0%,transparent 70%);
+
+        --text-primary:#f0f4ff;
+        --text-secondary:#a6b4d4;
+        --text-muted:#8f9db9;
+
+        --border-subtle:rgba(0,229,255,0.08);
+        --border-default:rgba(0,229,255,0.12);
+        --border-hover:rgba(0,229,255,0.35);
+
+        --shadow-sm:0 2px 8px rgba(0,0,0,0.3);
+        --shadow-md:0 8px 24px rgba(0,0,0,0.4);
+        --shadow-lg:0 16px 48px rgba(0,0,0,0.5);
+        --shadow-glow:0 0 30px rgba(0,229,255,0.15);
+        --shadow-glow-strong:0 0 60px rgba(0,229,255,0.25);
+
+        --font-heading:'Space Grotesk',sans-serif;
+        --font-body:'Inter',sans-serif;
+        --font-mono:'JetBrains Mono',monospace;
+
+        --radius-xs:6px;
+        --radius-sm:10px;
+        --radius-md:14px;
+        --radius-lg:20px;
+        --radius-xl:28px;
+        --radius-full:9999px;
+
+        --header-h:72px;
+        --container:1200px;
+
+        --ease-out:cubic-bezier(0.16,1,0.3,1);
+        --ease-bounce:cubic-bezier(0.34,1.56,0.64,1);
+        --ease-spring:cubic-bezier(0.22,1,0.36,1);
+      }
+
+      /* =============================================
+         2. BASE STYLES
+         ============================================= */
+      body{
+        font-family:var(--font-body);
+        color:var(--text-primary);
+        line-height:1.7;
+        background:var(--bg-base);
+        overflow-x:hidden;
+        -webkit-font-smoothing:antialiased;
+      }
+      a{text-decoration:none;color:inherit;transition:color .25s var(--ease-out)}
+      ul{list-style:none}
+      img{max-width:100%;display:block}
+      .icon{fill:currentColor;display:inline-block;vertical-align:-.125em;width:1em;height:1em}
+
+      .container{max-width:var(--container);margin:0 auto;padding:0 24px}
+      .gradient-text{background:var(--gradient-text);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+      /* =============================================
+         3. BACKGROUND CANVAS + GRID
+         ============================================= */
+      #bg-canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none}
+      #grid-overlay{
+        position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;
+        background-image:
+          linear-gradient(rgba(0,229,255,0.025) 1px,transparent 1px),
+          linear-gradient(90deg,rgba(0,229,255,0.025) 1px,transparent 1px);
+        background-size:60px 60px;
+        mask-image:radial-gradient(ellipse 80% 60% at 50% 40%,black 30%,transparent 100%);
+        -webkit-mask-image:radial-gradient(ellipse 80% 60% at 50% 40%,black 30%,transparent 100%);
+      }
+      #ambient-glow{
+        position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;
+        background:
+          radial-gradient(ellipse 50% 40% at 20% 50%,rgba(0,229,255,0.06),transparent),
+          radial-gradient(ellipse 50% 40% at 80% 30%,rgba(124,58,237,0.06),transparent),
+          radial-gradient(ellipse 40% 30% at 50% 80%,rgba(16,185,129,0.04),transparent);
+      }
+
+      /* =============================================
+         4. HEADER
+         ============================================= */
+      .site-header{
+        position:fixed;top:0;left:0;width:100%;height:var(--header-h);z-index:10000;
+        background:rgba(5,10,24,0.7);
+        backdrop-filter:blur(20px) saturate(1.4);
+        -webkit-backdrop-filter:blur(20px) saturate(1.4);
+        border-bottom:1px solid var(--border-subtle);
+        transition:all .4s var(--ease-out);
+      }
+      .site-header.scrolled{
+        background:rgba(5,10,24,0.95);
+        box-shadow:0 4px 30px rgba(0,0,0,0.4);
+        border-bottom-color:rgba(61,122,237,0.2);
+      }
+      .site-header nav{
+        display:flex;justify-content:space-between;align-items:center;
+        height:100%;max-width:var(--container);margin:0 auto;padding:0 24px;
+      }
+      .logo{display:flex;align-items:center;gap:10px;font-family:var(--font-heading);font-weight:700;font-size:1.4rem;line-height:1}
+      .logo-img{width:38px;height:38px;filter:drop-shadow(0 0 10px rgba(0,229,255,0.4));transition:transform .3s var(--ease-bounce)}
+      .logo:hover .logo-img{transform:rotate(8deg) scale(1.1)}
+      .logo-text span{color:var(--accent-cyan)}
+
+      .nav-links{display:flex;gap:36px;align-items:center;height:100%}
+      .nav-links a{font-size:.9rem;font-weight:500;color:var(--text-secondary);position:relative;padding:6px 0;transition:color .25s}
+      .nav-links a .link-text{position:relative;display:inline-block}
+      .nav-links a .link-text::after{
+        content:'';display:block;height:2px;width:100%;
+        background:var(--accent-cyan);transform-origin:left;transform:scaleX(0);
+        transition:transform .28s var(--ease-out);margin-top:5px;
+        box-shadow:0 0 8px rgba(0,229,255,0.5);
+      }
+      .nav-links a:hover,.nav-links a.active{color:var(--text-primary)}
+      .nav-links a:hover .link-text::after,.nav-links a.active .link-text::after{transform:scaleX(1)}
+
+      .menu-toggle{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;background:none;border:none;cursor:pointer;padding:0 8px;z-index:100001;height:var(--header-h);min-width:48px}
+      .menu-toggle span{width:24px;height:2px;background:var(--text-primary);border-radius:2px;transition:.3s;display:block}
+      body.menu-open{overflow:hidden}
+
+      /* =============================================
+         5. BLOG HERO
+         ============================================= */
+      .blog-hero{
+        min-height:50vh;
+        display:flex;align-items:center;justify-content:center;
+        position:relative;padding:calc(var(--header-h) + 60px) 0 60px;overflow:hidden;z-index:1;
+      }
+      .blog-hero-bg{position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none}
+      .blog-hero-bg .orb{
+        position:absolute;border-radius:50%;filter:blur(80px);opacity:.35;
+        animation:orbFloat 20s ease-in-out infinite alternate;
+      }
+      .blog-hero-bg .orb-1{width:400px;height:400px;background:rgba(0,229,255,0.15);top:-20%;left:-5%;animation-delay:0s}
+      .blog-hero-bg .orb-2{width:350px;height:350px;background:rgba(124,58,237,0.12);bottom:-20%;right:-5%;animation-delay:-7s}
+      @keyframes orbFloat{
+        0%{transform:translate(0,0) scale(1)}
+        33%{transform:translate(30px,-20px) scale(1.05)}
+        66%{transform:translate(-20px,15px) scale(0.95)}
+        100%{transform:translate(10px,-10px) scale(1.02)}
+      }
+
+      .blog-hero-content{text-align:center;max-width:860px;z-index:2;padding:0 20px}
+
+      .terminal-badge{
+        display:inline-flex;align-items:center;gap:10px;
+        padding:10px 22px;font-family:var(--font-mono);font-size:.82rem;
+        background:rgba(0,0,0,0.5);border:1px solid rgba(0,229,255,0.25);
+        border-radius:var(--radius-xs);color:var(--accent-cyan);
+        box-shadow:0 0 20px rgba(0,229,255,0.12);margin-bottom:28px;
+        backdrop-filter:blur(8px);
+      }
+      .terminal-badge .prompt{color:var(--accent-emerald)}
+      .terminal-badge .path{color:var(--accent-cyan)}
+      .terminal-badge .cursor{
+        display:inline-block;width:8px;height:16px;
+        background:var(--accent-cyan);animation:blink 1s step-end infinite;
+        vertical-align:middle;margin-left:2px;
+      }
+      @keyframes blink{50%{opacity:0}}
+
+      .blog-hero h1{
+        font-family:var(--font-heading);font-size:clamp(2.2rem,6vw,3.6rem);
+        font-weight:800;line-height:1.1;margin-bottom:18px;letter-spacing:-.03em;
+      }
+      .blog-hero p{
+        font-size:clamp(1rem,2vw,1.15rem);color:var(--text-secondary);
+        max-width:600px;margin:0 auto;line-height:1.8;
+      }
+
+      .fade-in-up{opacity:0;transform:translateY(28px);animation:fadeInUp .7s var(--ease-out) forwards}
+      @keyframes fadeInUp{to{opacity:1;transform:translateY(0)}}
+
+      /* =============================================
+         6. CATEGORY FILTERS
+         ============================================= */
+      .blog-filters{
+        position:relative;z-index:1;padding:0 0 48px;
+      }
+      .filter-bar{
+        display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+      }
+      .filter-btn{
+        padding:10px 22px;border-radius:var(--radius-full);
+        border:1px solid var(--border-default);background:rgba(255,255,255,0.02);
+        color:var(--text-secondary);cursor:pointer;transition:.3s var(--ease-out);
+        font-family:var(--font-body);font-size:.88rem;font-weight:500;
+        display:inline-flex;align-items:center;gap:8px;
+      }
+      .filter-btn:hover{
+        border-color:var(--border-hover);color:var(--text-primary);
+        background:rgba(0,229,255,0.04);
+      }
+      .filter-btn.active{
+        background:var(--gradient-hero);border-color:transparent;color:#fff;
+        box-shadow:0 4px 16px rgba(0,229,255,0.2);
+      }
+      .filter-count{
+        font-family:var(--font-mono);font-size:.72rem;
+        background:rgba(255,255,255,0.08);padding:2px 8px;border-radius:var(--radius-full);
+      }
+      .filter-btn.active .filter-count{background:rgba(255,255,255,0.2)}
+
+      /* =============================================
+         7. FEATURED POST
+         ============================================= */
+      .featured-section{
+        position:relative;z-index:1;padding:0 0 72px;
+      }
+      .featured-card{
+        display:grid;grid-template-columns:1.1fr 1fr;gap:0;
+        background:var(--gradient-card);
+        border:1px solid var(--border-default);border-radius:var(--radius-lg);
+        overflow:hidden;transition:.45s var(--ease-out);position:relative;
+        text-decoration:none;color:inherit;
+      }
+      .featured-card::after{
+        content:'';position:absolute;bottom:0;left:0;width:0;height:3px;
+        background:var(--gradient-hero);transition:width .5s var(--ease-out);z-index:5;
+      }
+      .featured-card:hover::after{width:100%}
+      .featured-card:hover{
+        transform:translateY(-6px);
+        border-color:var(--border-hover);
+        box-shadow:0 24px 60px rgba(0,0,0,0.5),0 0 40px rgba(0,229,255,0.08);
+      }
+
+      .featured-image{
+        position:relative;overflow:hidden;min-height:340px;
+      }
+      .featured-image img{
+        width:100%;height:100%;object-fit:cover;
+        transition:transform .6s var(--ease-out);filter:saturate(.9) brightness(.9);
+      }
+      .featured-card:hover .featured-image img{
+        transform:scale(1.06);filter:saturate(1.1) brightness(1);
+      }
+      .featured-image .featured-overlay{
+        position:absolute;inset:0;
+        background:linear-gradient(135deg,rgba(0,229,255,0.08),rgba(124,58,237,0.08));
+        opacity:0;transition:.4s;
+      }
+      .featured-card:hover .featured-overlay{opacity:1}
+
+      .featured-label{
+        position:absolute;top:20px;left:20px;z-index:5;
+        display:inline-flex;align-items:center;gap:6px;
+        padding:8px 16px;border-radius:var(--radius-full);
+        background:var(--gradient-hero);color:#fff;
+        font-family:var(--font-mono);font-size:.72rem;font-weight:700;
+        letter-spacing:1px;text-transform:uppercase;
+        box-shadow:0 4px 16px rgba(0,229,255,0.3);
+      }
+
+      .featured-content{
+        padding:40px 36px;display:flex;flex-direction:column;justify-content:center;
+      }
+      .featured-meta{
+        display:flex;align-items:center;gap:16px;margin-bottom:16px;
+        font-size:.82rem;color:var(--text-muted);
+      }
+      .featured-meta span{display:inline-flex;align-items:center;gap:6px}
+      .featured-meta .dot{width:4px;height:4px;background:var(--accent-cyan);border-radius:50%}
+
+      .featured-category{
+        display:inline-flex;padding:5px 14px;border-radius:var(--radius-full);
+        font-size:.75rem;font-weight:600;font-family:var(--font-mono);
+        text-transform:uppercase;letter-spacing:.5px;margin-bottom:14px;
+        width:fit-content;
+      }
+      .featured-category.cat-python{background:rgba(55,118,171,0.2);color:#6baed6;border:1px solid rgba(55,118,171,0.25)}
+      .featured-category.cat-django{background:rgba(9,46,32,0.5);color:#44b78b;border:1px solid rgba(68,183,139,0.25)}
+      .featured-category.cat-web{background:rgba(227,76,38,0.15);color:#ff7043;border:1px solid rgba(227,76,38,0.2)}
+      .featured-category.cat-tendencias{background:rgba(124,58,237,0.15);color:#a78bfa;border:1px solid rgba(124,58,237,0.25)}
+      .featured-category.cat-negocio{background:rgba(245,158,11,0.15);color:#fbbf24;border:1px solid rgba(245,158,11,0.25)}
+      .featured-category.cat-devops{background:rgba(16,185,129,0.15);color:#34d399;border:1px solid rgba(16,185,129,0.25)}
+
+      .featured-content h2{
+        font-family:var(--font-heading);font-size:1.7rem;font-weight:700;
+        margin-bottom:14px;line-height:1.25;letter-spacing:-.01em;
+        transition:color .3s;
+      }
+      .featured-card:hover .featured-content h2{color:var(--accent-cyan)}
+
+      .featured-content p{
+        color:var(--text-secondary);font-size:.92rem;line-height:1.75;
+        margin-bottom:24px;
+      }
+      .featured-read-more{
+        display:inline-flex;align-items:center;gap:10px;
+        font-family:var(--font-heading);font-weight:600;font-size:.92rem;
+        color:var(--accent-cyan);transition:.3s;
+      }
+      .featured-read-more svg{transition:transform .3s var(--ease-bounce)}
+      .featured-card:hover .featured-read-more svg{transform:translateX(6px)}
+
+      /* =============================================
+         8. BLOG GRID
+         ============================================= */
+      .blog-section{
+        position:relative;z-index:1;padding:0 0 80px;
+      }
+      .blog-section .section-header{text-align:center;margin-bottom:48px}
+      .section-title{
+        font-family:var(--font-heading);font-size:clamp(1.8rem,4vw,2.8rem);
+        font-weight:700;margin-bottom:14px;letter-spacing:-.02em;
+        text-transform:uppercase;letter-spacing:1px;
+      }
+      .section-title::before{content:'> ';color:var(--accent-cyan);font-family:var(--font-mono)}
+      .section-title::after{content:'_';color:var(--accent-cyan);animation:blink 1s step-end infinite;font-family:var(--font-mono)}
+      .section-subtitle{font-size:1.05rem;color:var(--text-secondary);max-width:580px;margin:0 auto;line-height:1.8}
+
+      .blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:28px}
+
+      .blog-card{
+        background:var(--gradient-card);
+        backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+        border:1px solid var(--border-default);border-radius:var(--radius-md);
+        overflow:hidden;text-decoration:none;color:inherit;
+        transition:all .45s var(--ease-out);position:relative;
+        display:flex;flex-direction:column;
+      }
+      .blog-card::before{
+        content:'';position:absolute;top:0;left:0;right:0;bottom:0;
+        background:radial-gradient(500px circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,0.04),transparent 40%);
+        z-index:1;opacity:0;transition:opacity .4s;pointer-events:none;
+      }
+      .blog-card::after{
+        content:'';position:absolute;bottom:0;left:0;width:0;height:2px;
+        background:var(--gradient-hero);transition:width .4s var(--ease-out);z-index:5;
+      }
+      .blog-card:hover::before{opacity:1}
+      .blog-card:hover::after{width:100%}
+      .blog-card:hover{
+        transform:translateY(-6px);border-color:var(--border-hover);
+        box-shadow:var(--shadow-glow);
+      }
+
+      .blog-card-image{
+        position:relative;overflow:hidden;height:200px;
+      }
+      .blog-card-image img{
+        width:100%;height:100%;object-fit:cover;
+        transition:transform .55s var(--ease-out);filter:saturate(.85) brightness(.9);
+      }
+      .blog-card:hover .blog-card-image img{transform:scale(1.07);filter:saturate(1.05) brightness(1)}
+      .blog-card-image .img-overlay{
+        position:absolute;inset:0;
+        background:linear-gradient(180deg,rgba(0,0,0,0) 50%,rgba(5,10,24,0.6) 100%);
+      }
+
+      .blog-card-category{
+        position:absolute;top:14px;left:14px;z-index:5;
+        padding:5px 12px;border-radius:var(--radius-full);
+        font-size:.7rem;font-weight:700;font-family:var(--font-mono);
+        text-transform:uppercase;letter-spacing:.4px;
+        backdrop-filter:blur(8px);
+      }
+      .blog-card-category.cat-python{background:rgba(55,118,171,0.25);color:#6baed6;border:1px solid rgba(55,118,171,0.3)}
+      .blog-card-category.cat-django{background:rgba(9,46,32,0.6);color:#44b78b;border:1px solid rgba(68,183,139,0.3)}
+      .blog-card-category.cat-web{background:rgba(227,76,38,0.2);color:#ff7043;border:1px solid rgba(227,76,38,0.25)}
+      .blog-card-category.cat-tendencias{background:rgba(124,58,237,0.2);color:#a78bfa;border:1px solid rgba(124,58,237,0.3)}
+      .blog-card-category.cat-negocio{background:rgba(245,158,11,0.2);color:#fbbf24;border:1px solid rgba(245,158,11,0.25)}
+      .blog-card-category.cat-devops{background:rgba(16,185,129,0.2);color:#34d399;border:1px solid rgba(16,185,129,0.25)}
+
+      .blog-card-readtime{
+        position:absolute;top:14px;right:14px;z-index:5;
+        padding:5px 10px;border-radius:var(--radius-full);
+        background:rgba(0,0,0,0.6);border:1px solid rgba(255,255,255,0.08);
+        backdrop-filter:blur(8px);font-size:.7rem;font-family:var(--font-mono);
+        color:var(--text-secondary);display:inline-flex;align-items:center;gap:4px;
+      }
+
+      .blog-card-body{
+        padding:20px 22px 24px;flex:1;display:flex;flex-direction:column;
+        position:relative;z-index:2;
+      }
+      .blog-card-date{
+        font-size:.78rem;color:var(--text-muted);font-family:var(--font-mono);
+        margin-bottom:10px;display:flex;align-items:center;gap:6px;
+      }
+      .blog-card-title{
+        font-family:var(--font-heading);font-size:1.15rem;font-weight:700;
+        margin-bottom:10px;line-height:1.35;letter-spacing:-.01em;
+        transition:color .3s;
+        display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+      }
+      .blog-card:hover .blog-card-title{color:var(--accent-cyan)}
+      .blog-card-excerpt{
+        color:var(--text-secondary);font-size:.87rem;line-height:1.7;
+        margin-bottom:18px;flex:1;
+        display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;
+      }
+
+      .blog-card-footer{
+        display:flex;justify-content:space-between;align-items:center;
+        padding-top:14px;border-top:1px solid var(--border-subtle);
+      }
+      .blog-card-author{
+        display:flex;align-items:center;gap:8px;
+      }
+      .blog-card-avatar{
+        width:28px;height:28px;border-radius:50%;
+        background:var(--gradient-hero);
+        display:flex;align-items:center;justify-content:center;
+        font-size:.7rem;font-weight:700;color:#fff;
+      }
+      .blog-card-author-name{font-size:.8rem;font-weight:500;color:var(--text-secondary)}
+      .blog-card-arrow{
+        width:32px;height:32px;border-radius:50%;
+        background:rgba(0,229,255,0.08);border:1px solid rgba(0,229,255,0.15);
+        display:flex;align-items:center;justify-content:center;
+        color:var(--accent-cyan);transition:.3s var(--ease-out);
+      }
+      .blog-card:hover .blog-card-arrow{
+        background:var(--accent-cyan);color:#var(--bg-base);
+        box-shadow:0 4px 12px rgba(0,229,255,0.3);transform:translateX(3px);
+      }
+
+      /* Tags inside cards */
+      .blog-card-tags{
+        display:flex;flex-wrap:wrap;gap:5px;margin-bottom:14px;
+      }
+      .blog-tag{
+        font-size:.65rem;padding:3px 8px;border-radius:var(--radius-xs);
+        font-family:var(--font-mono);font-weight:600;text-transform:uppercase;
+        letter-spacing:.3px;
+      }
+      .blog-tag.python{background:rgba(55,118,171,0.15);color:#6baed6;border:1px solid rgba(55,118,171,0.2)}
+      .blog-tag.django{background:rgba(9,46,32,0.4);color:#44b78b;border:1px solid rgba(68,183,139,0.2)}
+      .blog-tag.javascript{background:rgba(247,223,30,0.08);color:#ffd54f;border:1px solid rgba(247,223,30,0.15)}
+      .blog-tag.html{background:rgba(227,76,38,0.12);color:#ff7043;border:1px solid rgba(227,76,38,0.15)}
+      .blog-tag.css{background:rgba(21,114,182,0.12);color:#64b5f6;border:1px solid rgba(21,114,182,0.15)}
+      .blog-tag.react{background:rgba(97,218,251,0.08);color:#61dafb;border:1px solid rgba(97,218,251,0.15)}
+      .blog-tag.docker{background:rgba(36,150,237,0.12);color:#60a5fa;border:1px solid rgba(36,150,237,0.15)}
+      .blog-tag.aws{background:rgba(255,153,0,0.1);color:#ffb74d;border:1px solid rgba(255,153,0,0.15)}
+      .blog-tag.seo{background:rgba(16,185,129,0.1);color:#34d399;border:1px solid rgba(16,185,129,0.15)}
+      .blog-tag.ia{background:rgba(124,58,237,0.12);color:#a78bfa;border:1px solid rgba(124,58,237,0.15)}
+      .blog-tag.seguridad{background:rgba(239,68,68,0.12);color:#f87171;border:1px solid rgba(239,68,68,0.15)}
+      .blog-tag.negocio{background:rgba(245,158,11,0.1);color:#fbbf24;border:1px solid rgba(245,158,11,0.15)}
+      .blog-tag.openapi{background:rgba(97,218,251,0.08);color:#93c5fd;border:1px solid rgba(97,218,251,0.12)}
+
+      /* =============================================
+         9. LOAD MORE
+         ============================================= */
+      .load-more-container{
+        display:flex;justify-content:center;margin-top:48px;
+      }
+      .load-more-btn{
+        display:inline-flex;align-items:center;gap:10px;
+        padding:14px 36px;border-radius:var(--radius-full);
+        border:1px solid var(--border-default);background:rgba(255,255,255,0.02);
+        color:var(--text-primary);cursor:pointer;transition:.3s var(--ease-out);
+        font-family:var(--font-heading);font-size:.95rem;font-weight:600;
+      }
+      .load-more-btn:hover{
+        background:var(--gradient-hero);border-color:transparent;color:#fff;
+        box-shadow:0 8px 32px rgba(0,229,255,0.2);transform:translateY(-2px);
+      }
+
+      /* =============================================
+         10. NEWSLETTER
+         ============================================= */
+      .newsletter-section{
+        position:relative;z-index:1;padding:0 0 80px;
+      }
+      .newsletter-box{
+        background:var(--gradient-card);border:1px solid var(--border-default);
+        border-radius:var(--radius-lg);padding:56px 48px;text-align:center;
+        position:relative;overflow:hidden;
+      }
+      .newsletter-box::before{
+        content:'';position:absolute;top:0;left:0;width:100%;height:3px;
+        background:var(--gradient-hero);
+      }
+      .newsletter-box::after{
+        content:'';position:absolute;top:-100px;right:-100px;
+        width:300px;height:300px;border-radius:50%;
+        background:radial-gradient(circle,rgba(0,229,255,0.06),transparent 70%);
+        pointer-events:none;
+      }
+      .newsletter-box h3{
+        font-family:var(--font-heading);font-size:1.8rem;font-weight:700;
+        margin-bottom:12px;position:relative;z-index:2;
+      }
+      .newsletter-box p{
+        color:var(--text-secondary);font-size:1rem;margin-bottom:28px;
+        max-width:500px;margin-left:auto;margin-right:auto;position:relative;z-index:2;
+      }
+      .newsletter-form{
+        display:flex;gap:12px;max-width:480px;margin:0 auto;position:relative;z-index:2;
+      }
+      .newsletter-input{
+        flex:1;padding:14px 18px;background:rgba(0,0,0,0.3);
+        border:1px solid var(--border-default);border-radius:var(--radius-sm);
+        color:#fff;font-family:var(--font-body);font-size:.92rem;transition:.3s;
+      }
+      .newsletter-input:focus{outline:none;border-color:var(--accent-cyan);box-shadow:0 0 0 3px rgba(0,229,255,0.08)}
+      .newsletter-input::placeholder{color:var(--text-muted)}
+      .newsletter-submit{
+        padding:14px 28px;background:var(--gradient-hero);color:#fff;
+        border:none;border-radius:var(--radius-sm);font-weight:600;font-size:.92rem;
+        cursor:pointer;transition:.3s;font-family:var(--font-heading);
+        white-space:nowrap;
+      }
+      .newsletter-submit:hover{opacity:.92;transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,229,255,0.25)}
+
+      /* =============================================
+         11. ARTICLE VIEW (hidden by default)
+         ============================================= */
+      .article-view{display:none;position:relative;z-index:1;padding:0 0 80px}
+      .article-view.active{display:block}
+      .blog-content-area.hidden{display:none}
+
+      .article-back{
+        display:inline-flex;align-items:center;gap:8px;
+        color:var(--text-secondary);font-size:.9rem;font-weight:500;
+        margin-bottom:32px;transition:.25s;cursor:pointer;
+      }
+      .article-back:hover{color:var(--accent-cyan)}
+      .article-back svg{transition:transform .25s var(--ease-bounce)}
+      .article-back:hover svg{transform:translateX(-4px)}
+
+      .article-header{margin-bottom:40px}
+      .article-header .blog-card-category{position:static;display:inline-flex;margin-bottom:16px}
+      .article-header h1{
+        font-family:var(--font-heading);font-size:clamp(1.8rem,4vw,2.8rem);
+        font-weight:800;line-height:1.15;margin-bottom:20px;letter-spacing:-.02em;
+      }
+      .article-meta{
+        display:flex;flex-wrap:wrap;align-items:center;gap:16px;
+        color:var(--text-muted);font-size:.88rem;
+      }
+      .article-meta span{display:inline-flex;align-items:center;gap:6px}
+      .article-meta .dot{width:4px;height:4px;background:var(--accent-cyan);border-radius:50%;display:inline-block}
+
+      .article-hero-image{
+        width:100%;border-radius:var(--radius-lg);overflow:hidden;margin-bottom:40px;
+        border:1px solid var(--border-subtle);
+      }
+      .article-hero-image img{width:100%;height:auto;max-height:480px;object-fit:cover;filter:saturate(.9)}
+
+      .article-body{
+        max-width:760px;margin:0 auto;
+      }
+      .article-body h2{
+        font-family:var(--font-heading);font-size:1.6rem;font-weight:700;
+        margin:40px 0 16px;color:var(--text-primary);
+      }
+      .article-body h3{
+        font-family:var(--font-heading);font-size:1.2rem;font-weight:600;
+        margin:32px 0 12px;color:var(--text-primary);
+      }
+      .article-body p{
+        color:var(--text-secondary);font-size:1rem;line-height:1.85;
+        margin-bottom:20px;
+      }
+      .article-body ul,.article-body ol{
+        margin:16px 0;padding-left:24px;color:var(--text-secondary);
+      }
+      .article-body li{margin-bottom:8px;line-height:1.7}
+      .article-body code{
+        font-family:var(--font-mono);font-size:.88rem;
+        background:rgba(0,229,255,0.06);color:var(--accent-cyan);
+        padding:2px 8px;border-radius:var(--radius-xs);
+        border:1px solid rgba(0,229,255,0.1);
+      }
+      .article-body pre{
+        background:rgba(0,0,0,0.4);border:1px solid var(--border-default);
+        border-radius:var(--radius-md);padding:20px 24px;
+        margin:24px 0;overflow-x:auto;
+      }
+      .article-body pre code{
+        background:none;border:none;padding:0;color:var(--text-primary);
+        font-size:.85rem;line-height:1.7;
+      }
+      .article-body blockquote{
+        border-left:3px solid var(--accent-cyan);
+        padding:16px 20px;margin:24px 0;
+        background:rgba(0,229,255,0.03);border-radius:0 var(--radius-sm) var(--radius-sm) 0;
+      }
+      .article-body blockquote p{
+        color:var(--text-primary);font-style:italic;margin:0;
+      }
+      .article-body img{
+        width:100%;border-radius:var(--radius-md);margin:24px 0;
+        border:1px solid var(--border-subtle);
+      }
+
+      .article-tags{
+        display:flex;flex-wrap:wrap;gap:8px;margin-top:40px;padding-top:24px;
+        border-top:1px solid var(--border-subtle);
+      }
+      .article-tag-item{
+        padding:6px 14px;border-radius:var(--radius-full);
+        border:1px solid var(--border-default);font-size:.78rem;
+        font-weight:500;color:var(--text-secondary);transition:.25s;
+      }
+      .article-tag-item:hover{border-color:var(--accent-cyan);color:var(--accent-cyan)}
+
+      .article-share{
+        display:flex;align-items:center;gap:12px;margin-top:24px;
+      }
+      .article-share span{font-size:.88rem;color:var(--text-muted);font-weight:500}
+      .share-btn{
+        width:36px;height:36px;border-radius:50%;
+        background:rgba(255,255,255,0.04);border:1px solid var(--border-subtle);
+        display:flex;align-items:center;justify-content:center;
+        color:var(--text-secondary);transition:.3s;cursor:pointer;
+      }
+      .share-btn:hover{border-color:var(--accent-cyan);color:var(--accent-cyan);transform:translateY(-2px)}
+
+      /* Related articles */
+      .related-section{margin-top:64px;padding-top:48px;border-top:1px solid var(--border-subtle)}
+      .related-section h3{
+        font-family:var(--font-heading);font-size:1.5rem;font-weight:700;
+        margin-bottom:28px;
+      }
+      .related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
+
+      /* =============================================
+         12. FOOTER
+         ============================================= */
+      footer{
+        background:var(--bg-surface);border-top:1px solid var(--border-subtle);
+        padding:64px 0 24px;margin-top:64px;font-size:.92rem;
+        position:relative;z-index:1;
+      }
+      .footer-social-title{color:var(--text-muted);font-size:.82rem;text-transform:uppercase;letter-spacing:2px;display:block;text-align:center;margin-bottom:20px}
+      .footer-top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;padding-bottom:32px;margin-bottom:32px;border-bottom:1px solid var(--border-subtle);gap:24px}
+      .footer-logo-container{display:flex;align-items:center;gap:10px}
+      .footer-logo-img{width:36px;height:36px}
+      .footer-logo-text{font-family:var(--font-heading);font-size:1.4rem;font-weight:700}
+      .footer-logo-text span{color:var(--accent-cyan)}
+      .footer-links{display:flex;gap:28px}
+      .footer-link{color:var(--text-secondary);position:relative;padding:4px 0;font-size:.88rem;font-weight:500;transition:color .25s}
+      .footer-link::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--accent-cyan);transition:width .3s var(--ease-out);box-shadow:0 0 6px var(--accent-cyan)}
+      .footer-link:hover{color:#fff}
+      .footer-link:hover::after{width:100%}
+      .footer-social ul{display:flex;gap:12px}
+      .social-icon{
+        width:40px;height:40px;border-radius:50%;
+        background:rgba(255,255,255,0.04);display:flex;align-items:center;justify-content:center;
+        color:var(--text-secondary);transition:.3s;border:1px solid var(--border-subtle);
+      }
+      .social-icon.instagram:hover{background:radial-gradient(circle at 30% 107%,#fdf497 0%,#fd5949 45%,#d6249f 60%,#285aeb 90%);color:#fff;border-color:transparent;transform:translateY(-4px);box-shadow:0 4px 12px rgba(214,36,159,0.35)}
+      .social-icon.facebook:hover{background:#1877f2;color:#fff;border-color:#1877f2;transform:translateY(-4px);box-shadow:0 4px 12px rgba(24,119,242,0.35)}
+      .social-icon.tiktok:hover{background:#000;border-color:#00f2ea;color:#fff;transform:translateY(-4px);box-shadow:0 4px 12px rgba(0,242,234,0.25)}
+      .footer-bottom{display:flex;justify-content:space-between;color:var(--text-secondary);padding:16px 0 0;font-size:.82rem}
+
+      /* =============================================
+         13. WHATSAPP FLOAT
+         ============================================= */
+      .whatsapp-float{position:fixed;bottom:28px;right:28px;z-index:999}
+      .whatsapp-float a{
+        display:flex;width:56px;height:56px;background:#25d366;border-radius:50%;
+        align-items:center;justify-content:center;
+        box-shadow:0 4px 16px rgba(37,211,102,0.35);transition:.3s var(--ease-bounce);
+      }
+      .whatsapp-float a:hover{transform:scale(1.12) rotate(8deg);box-shadow:0 8px 24px rgba(37,211,102,0.5)}
+      .whatsapp-float .icon{width:28px;height:28px;color:#fff}
+
+      /* =============================================
+         14. SCROLL REVEAL
+         ============================================= */
+      .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s var(--ease-out),transform .6s var(--ease-out)}
+      .reveal.visible{opacity:1;transform:translateY(0)}
+      .reveal-delay-1{transition-delay:.1s}
+      .reveal-delay-2{transition-delay:.2s}
+      .reveal-delay-3{transition-delay:.3s}
+      .reveal-delay-4{transition-delay:.4s}
+      .reveal-delay-5{transition-delay:.5s}
+
+      /* =============================================
+         15. RESPONSIVE
+         ============================================= */
+      @media(max-width:992px){
+        .featured-card{grid-template-columns:1fr}
+        .featured-image{min-height:260px}
+        .featured-content{padding:28px 24px}
+      }
+      @media(max-width:768px){
+        .nav-links{display:none}
+        .menu-toggle{display:flex;align-items:center;height:var(--header-h)}
+        .nav-links.active{
+          display:flex;position:absolute;top:var(--header-h);left:0;width:100%;
+          background:rgba(5,10,24,0.98);backdrop-filter:blur(12px);
+          flex-direction:column;justify-content:flex-start;gap:0;z-index:99998;
+        }
+        .nav-links.active li{width:100%}
+        .nav-links.active a{
+          display:block;width:calc(100% - 32px);margin:0 16px;padding:13px 16px;
+          font-size:1rem;color:var(--text-primary);text-align:left;
+          background:rgba(11,18,40,0.9);border-radius:var(--radius-sm);
+          box-shadow:0 4px 16px rgba(0,0,0,0.3);
+        }
+        .nav-links.active a.active{color:var(--accent-cyan)}
+        .blog-grid{grid-template-columns:1fr}
+        .featured-content h2{font-size:1.35rem}
+        .newsletter-box{padding:36px 24px}
+        .newsletter-form{flex-direction:column}
+        .footer-top{flex-direction:column;text-align:center}
+        .footer-links,.footer-social ul{justify-content:center}
+        .footer-bottom{flex-direction:column;gap:8px;text-align:center}
+        .related-grid{grid-template-columns:1fr}
+        .article-header h1{font-size:1.6rem}
+      }
+      @media(max-width:480px){
+        .blog-hero{padding-top:calc(var(--header-h) + 30px);min-height:40vh}
+        .blog-hero h1{font-size:clamp(1.6rem,9vw,2.2rem)}
+        .terminal-badge{font-size:.72rem;padding:8px 14px}
+        .filter-btn{padding:8px 16px;font-size:.8rem}
+      }
+    </style>
   </head>
-<body>
-    <!-- Header y navegación -->
-    <header>
-        <nav>
-            <div class="logo">
-                <img src="logos/derejdoc.webp" alt="Logo DerejSoft" class="logo-img">
-                <div class="logo28">Derej<span>Soft</span></div>
-            </div>
-            <button class="menu-toggle" aria-label="Abrir menú">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="nav-links">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="index.html#servicios">Servicios</a></li>
-                <li><a href="nosotros2.html">Nosotros</a></li>
-                <li><a href="index.html#proyectos">Proyectos</a></li>
-                <li><a href="blog.html" class="active">Blog</a></li>
-                <li><a href="index.html#contacto">Contacto</a></li>
-            </ul>
-        </nav>
+  <body>
+    <!-- Background layers -->
+    <canvas id="bg-canvas"></canvas>
+    <div id="grid-overlay"></div>
+    <div id="ambient-glow"></div>
+
+    <!-- Header -->
+    <header class="site-header">
+      <nav>
+        <a href="index.html" class="logo">
+          <img src="logos/DerejLogo.webp" alt="Logo DerejSoft" class="logo-img" width="38" height="38" />
+          <div class="logo-text">Derej<span>Soft</span></div>
+        </a>
+        <button class="menu-toggle" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+        <ul class="nav-links">
+          <li><a href="index.html#inicio"><span class="link-text">Inicio</span></a></li>
+          <li><a href="index.html#servicios"><span class="link-text">Servicios</span></a></li>
+          <li><a href="nosotros.html"><span class="link-text">Nosotros</span></a></li>
+          <li><a href="index.html#proyectos"><span class="link-text">Proyectos</span></a></li>
+          <li><a href="blog.html" class="active"><span class="link-text">Blog</span></a></li>
+          <li><a href="index.html#contacto"><span class="link-text">Contacto</span></a></li>
+        </ul>
+      </nav>
     </header>
 
+    <!-- WhatsApp -->
     <div class="whatsapp-float">
-        <a href="https://wa.me/8294772269" target="_blank" aria-label="Abrir chat de WhatsApp">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" alt="WhatsApp">
-        </a>
+      <a href="https://wa.me/8294772269" target="_blank" aria-label="Abrir chat de WhatsApp">
+        <svg class="icon" width="28" height="28"><use href="/svg/icons.svg#icon-whatsapp"/></svg>
+      </a>
     </div>
 
     <main>
-        <!-- Hero Section del Blog -->
-        <section class="blog-hero">
-            <div class="hero-background">
-                <div class="gradient-overlay"></div>
-                <div class="floating-shapes">
-                    <div class="shape shape-1"></div>
-                    <div class="shape shape-2"></div>
-                    <div class="shape shape-3"></div>
-                    <div class="shape shape-4"></div>
-                </div>
+      <!-- BLOG HERO -->
+      <section class="blog-hero">
+        <div class="blog-hero-bg">
+          <div class="orb orb-1"></div>
+          <div class="orb orb-2"></div>
+        </div>
+        <div class="blog-hero-content">
+          <div class="terminal-badge fade-in-up">
+            <span class="prompt">root@derejsoft</span><span style="color:#5a6b8a">:</span><span class="path">~/blog</span><span style="color:#fff">$</span>
+            <span id="typed-text"></span><span class="cursor"></span>
+          </div>
+          <h1 class="fade-in-up" style="animation-delay:.12s">
+            <span class="gradient-text">Blog</span> &amp; Recursos Tech
+          </h1>
+          <p class="fade-in-up" style="animation-delay:.22s">
+            Artículos, tutoriales y tendencias sobre desarrollo de software, Python, Django y las tecnologías que mueven el mundo digital.
+          </p>
+        </div>
+      </section>
+
+      <div class="container">
+        <!-- CATEGORY FILTERS -->
+        <div class="blog-filters fade-in-up" style="animation-delay:.3s">
+          <div class="filter-bar">
+            <button class="filter-btn active" data-filter="todos">Todos <span class="filter-count" id="count-all">12</span></button>
+            <button class="filter-btn" data-filter="python">Python <span class="filter-count" id="count-python">4</span></button>
+            <button class="filter-btn" data-filter="django">Django <span class="filter-count" id="count-django">3</span></button>
+            <button class="filter-btn" data-filter="web">Desarrollo Web <span class="filter-count" id="count-web">3</span></button>
+            <button class="filter-btn" data-filter="tendencias">Tendencias <span class="filter-count" id="count-tendencias">3</span></button>
+            <button class="filter-btn" data-filter="negocio">Negocio <span class="filter-count" id="count-negocio">2</span></button>
+            <button class="filter-btn" data-filter="devops">DevOps <span class="filter-count" id="count-devops">2</span></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <!-- FEATURED POST -->
+        <div class="featured-section">
+          <div class="featured-card reveal" id="featured-card">
+            <div class="featured-image">
+              <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80" alt="Artículo destacado" loading="lazy" />
+              <div class="featured-overlay"></div>
+              <span class="featured-label">
+                <svg class="icon" style="width:.75em;height:.75em"><use href="/svg/icons.svg#icon-star"/></svg>
+                Destacado
+              </span>
             </div>
-            <div class="hero-content">
-                <div class="hero-badge">
-                    <i class="fas fa-newspaper"></i>
-                    <span>Blog Tecnológico</span>
-                </div>
-                <h1 class="hero-title">
-                    <span class="title-line">Noticias y</span>
-                    <span class="title-line gradient-text">Tendencias</span>
-                </h1>
-                <p class="hero-subtitle">
-                    Mantente al día con las últimas novedades en tecnología, desarrollo web e innovación digital
-                </p>
-                <div class="blog-stats">
-                    <div class="stat-item">
-                        <span class="stat-number" data-target="8">0</span>
-                        <span class="stat-label">Artículos</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number" data-target="6">0</span>
-                        <span class="stat-label">Categorías</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number" data-target="1000">0</span>
-                        <span class="stat-label">Lectores</span>
-                    </div>
-                </div>
+            <div class="featured-content">
+              <span class="featured-category cat-python">Python</span>
+              <div class="featured-meta">
+                <span>15 May 2026</span>
+                <span class="dot"></span>
+                <span>8 min de lectura</span>
+              </div>
+              <h2>Python en 2026: Por qué sigue siendo la lengua franca del desarrollo moderno</h2>
+              <p>Python ha consolidado su posición como el lenguaje más versátil del ecosistema tecnológico. Desde inteligencia artificial hasta desarrollo web con Django, exploramos por qué sigue siendo la elección principal para proyectos de alto impacto.</p>
+              <a href="#" class="featured-read-more" onclick="openArticle('featured');return false">
+                Leer artículo
+                <svg class="icon" style="width:1em;height:1em"><use href="/svg/icons.svg#icon-arrow-right"/></svg>
+              </a>
             </div>
-        </section>
+          </div>
+        </div>
 
-        <!-- Filtros de Categorías -->
-        <section class="blog-filters">
-            <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Categorías De<span class="gradient-text"> Artículo</span></h2>
+        <!-- BLOG CONTENT (Grid + Article) -->
+        <div class="blog-content-area" id="blog-content-area">
+          <!-- BLOG GRID -->
+          <section class="blog-section">
+            <div class="section-header reveal">
+              <h2 class="section-title">Últimos <span class="gradient-text">Artículos</span></h2>
+              <p class="section-subtitle">Explora nuestro contenido técnico, guías prácticas y análisis de tendencias del sector.</p>
             </div>
-            <div class="container">
-                <div class="filter-container">
-                    <button class="filter-btn active" data-filter="all">Todos</button>
-                    <button class="filter-btn" data-filter="desarrollo">Desarrollo Web</button>
-                    <button class="filter-btn" data-filter="ia">Inteligencia Artificial</button>
-                    <button class="filter-btn" data-filter="movil">Desarrollo Móvil</button>
-                    <button class="filter-btn" data-filter="tendencias">Tendencias</button>
-                    <button class="filter-btn" data-filter="noticias">Noticias</button>
-                    <button class="filter-btn" data-filter="tutoriales">Tutoriales</button>
-                </div>
+
+            <div class="blog-grid" id="blog-grid">
+              <!-- Cards generated by JS -->
             </div>
-        </section>
 
-        <!-- Artículo Destacado -->
-        <section class="featured-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Artículo <span class="gradient-text">Destacado</span></h2>
-                </div>
-                 <span class="blog-category">Tendencias</span>
-                
-                <article class="featured-article">
-                    <div class="featured-image">
-                        <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="El Futuro del Desarrollo Web">
-                        <span class="blog-category">Destacado</span>
-                    </div>
-                    <div class="featured-content">
-                        <h2>El Futuro del Desarrollo Web: Tendencias 2025</h2>
-                        <div class="featured-meta">
-                            <span><i class="fas fa-calendar"></i> 15 Enero 2025</span>
-                            <span><i class="fas fa-clock"></i> 8 min lectura</span>
-                            <span><i class="fas fa-user"></i> Equipo DerejSoft</span>
-                        </div>
-                        <p class="featured-excerpt">
-                            Descubre las tecnologías emergentes que están revolucionando el desarrollo web. Desde WebAssembly hasta la computación en el edge, exploramos las tendencias que definirán el futuro de la web.
-                        </p>
-                        <a href="alticulos/arti.html" class="featured-btn">
-                            <span>Leer Artículo Completo</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </article>
-                
+            <div class="load-more-container" id="load-more-container">
+              <button class="load-more-btn" id="load-more-btn">
+                <span>Ver más artículos</span>
+                <svg class="icon" style="width:1em;height:1em"><use href="/svg/icons.svg#icon-chevron-right"/></svg>
+              </button>
             </div>
-        </section>
+          </section>
 
-        <!-- Grid de Artículos -->
-        <section class="blog-section">
-            <div class="container">
-                <div class="blog-grid" id="blog-grid">
-                    <!-- Artículo 1 -->
-                    <article class="blog-card" data-aos="fade-up" data-category="desarrollo">
-                        <div class="blog-image">
-                            <img src="https://images.unsplash.com/photo-1627398242454-45a1465c2479?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="React 18">
-                            <span class="blog-category">Desarrollo</span>
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <span><i class="fas fa-calendar"></i> 12 Enero 2025</span>
-                                <span><i class="fas fa-clock"></i> 5 min</span>
-                            </div>
-                            <h3>Novedades de React 18: Concurrent Features</h3>
-                            <p class="blog-excerpt">
-                                Exploramos las nuevas características concurrentes de React 18 y cómo pueden mejorar la experiencia del usuario en aplicaciones web complejas.
-                            </p>
-                            <div class="blog-tags">
-                                <span class="blog-tag">React</span>
-                                <span class="blog-tag">JavaScript</span>
-                                <span class="blog-tag">Frontend</span>
-                            </div>
-                            <a href="alticulos/arti3.html" class="read-more">
-                                Leer más <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </article>
-
-                    <!-- Artículo 2 -->
-                    <article class="blog-card" data-aos="fade-up" data-aos-delay="200" data-category="ia">
-                        <div class="blog-image">
-                            <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="IA en Desarrollo">
-                            <span class="blog-category">IA</span>
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <span><i class="fas fa-calendar"></i> 10 Enero 2025</span>
-                                <span><i class="fas fa-clock"></i> 7 min</span>
-                            </div>
-                            <h3>IA Generativa en el Desarrollo de Software</h3>
-                            <p class="blog-excerpt">
-                                Cómo la inteligencia artificial está transformando la forma en que escribimos código y desarrollamos aplicaciones en 2025.
-                            </p>
-                            <div class="blog-tags">
-                                <span class="blog-tag">IA</span>
-                                <span class="blog-tag">ChatGPT</span>
-                                <span class="blog-tag">Automatización</span>
-                            </div>
-                            <a href="alticulos/arti2.html" class="read-more">
-                                Leer más <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </article>
-
-                    <!-- Artículo 3 -->
-                    <article class="blog-card" data-aos="fade-up" data-aos-delay="400" data-category="movil">
-                        <div class="blog-image">
-                            <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Flutter vs React Native">
-                            <span class="blog-category">Móvil</span>
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <span><i class="fas fa-calendar"></i> 8 Enero 2025</span>
-                                <span><i class="fas fa-clock"></i> 6 min</span>
-                            </div>
-                            <h3>Flutter vs React Native: Comparativa 2025</h3>
-                            <p class="blog-excerpt">
-                                Análisis detallado de las dos principales tecnologías para desarrollo móvil multiplataforma y cuál elegir para tu próximo proyecto.
-                            </p>
-                            <div class="blog-tags">
-                                <span class="blog-tag">Flutter</span>
-                                <span class="blog-tag">React Native</span>
-                                <span class="blog-tag">Móvil</span>
-                            </div>
-                            <a href="alticulos/arti3.html" class="read-more">
-                                Leer más <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </article>
-
-                    <!-- Artículo 4 -->
-                    <article class="blog-card" data-aos="fade-up" data-category="tendencias">
-                        <div class="blog-image">
-                            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%2Fid%2FOIP.2HiqVpyZDA-eK9SxruGdSgHaEc%3Fcb%3D12%26pid%3DApi&f=1&ipt=f4af845cb211a4e8e60068edc0637f5b7ed79337697ff7744448e6831f7977ba&ipo=images" alt="Web3 y Blockchain">
-                            <span class="blog-category">Tendencias</span>
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <span><i class="fas fa-calendar"></i> 5 Enero 2025</span>
-                                <span><i class="fas fa-clock"></i> 9 min</span>
-                            </div>
-                            <h3>Web3 y Blockchain: Más Allá del Hype</h3>
-                            <p class="blog-excerpt">
-                                Un análisis realista sobre las aplicaciones prácticas de Web3 y blockchain en el desarrollo de aplicaciones empresariales.
-                            </p>
-                            <div class="blog-tags">
-                                <span class="blog-tag">Web3</span>
-                                <span class="blog-tag">Blockchain</span>
-                                <span class="blog-tag">DApps</span>
-                            </div>
-                            <a href="alticulos/arti3.html" class="read-more">
-                                Leer más <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </article>
-
-                    <!-- Artículo 5 -->
-                    <article class="blog-card" data-aos="fade-up" data-aos-delay="200" data-category="tutoriales">
-                        <div class="blog-image">
-                            <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Tutorial CSS">
-                            <span class="blog-category">Tutorial</span>
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <span><i class="fas fa-calendar"></i> 3 Enero 2025</span>
-                                <span><i class="fas fa-clock"></i> 12 min</span>
-                            </div>
-                            <h3>CSS Grid y Flexbox: Guía Completa 2025</h3>
-                            <p class="blog-excerpt">
-                                Tutorial paso a paso para dominar CSS Grid y Flexbox, las herramientas esenciales para crear layouts modernos y responsivos.
-                            </p>
-                            <div class="blog-tags">
-                                <span class="blog-tag">CSS</span>
-                                <span class="blog-tag">Grid</span>
-                                <span class="blog-tag">Flexbox</span>
-                            </div>
-                            <a href="alticulos/arti2.html" class="read-more">
-                                Leer más <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </article>
-
-                    <!-- Artículo 6 -->
-                    <article class="blog-card" data-aos="fade-up" data-aos-delay="400" data-category="noticias">
-                        <div class="blog-image">
-                            <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Noticias Tech">
-                            <span class="blog-category">Noticias</span>
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <span><i class="fas fa-calendar"></i> 1 Enero 2025</span>
-                                <span><i class="fas fa-clock"></i> 4 min</span>
-                            </div>
-                            <h3>Resumen Tecnológico: Lo Mejor de 2024</h3>
-                            <p class="blog-excerpt">
-                                Repasamos los hitos más importantes del año en tecnología y desarrollo de software que marcaron tendencia en 2024.
-                            </p>
-                            <div class="blog-tags">
-                                <span class="blog-tag">Resumen</span>
-                                <span class="blog-tag">2024</span>
-                                <span class="blog-tag">Tecnología</span>
-                            </div>
-                            <a href="alticulos/arti2.html" class="read-more">
-                                Leer más <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </article>
-
-                    <!-- Artículo 7 -->
-                    <article class="blog-card" data-aos="fade-up" data-aos-delay="200" data-category="ia">
-                        <div class="blog-image">
-                            <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="IA en Desarrollo">
-                            <span class="blog-category">IA</span>
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <span><i class="fas fa-calendar"></i> 10 Enero 2025</span>
-                                <span><i class="fas fa-clock"></i> 7 min</span>
-                            </div>
-                            <h3>IA Generativa en el Desarrollo de Software</h3>
-                            <p class="blog-excerpt">
-                                Cómo la inteligencia artificial está transformando la forma en que escribimos código y desarrollamos aplicaciones en 2025.
-                            </p>
-                            <div class="blog-tags">
-                                <span class="blog-tag">IA</span>
-                                <span class="blog-tag">ChatGPT</span>
-                                <span class="blog-tag">Automatización</span>
-                            </div>
-                            <a href="alticulos/arti3.html" class="read-more">
-                                Leer más <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </article>
-
-                    <!-- Artículo 8 -->
-                    <article class="blog-card" data-aos="fade-up" data-aos-delay="400" data-category="movil">
-                        <div class="blog-image">
-                            <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Flutter vs React Native">
-                            <span class="blog-category">Móvil</span>
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <span><i class="fas fa-calendar"></i> 8 Enero 2025</span>
-                                <span><i class="fas fa-clock"></i> 6 min</span>
-                            </div>
-                            <h3>Flutter vs React Native: Comparativa 2025</h3>
-                            <p class="blog-excerpt">
-                                Análisis detallado de las dos principales tecnologías para desarrollo móvil multiplataforma y cuál elegir para tu próximo proyecto.
-                            </p>
-                            <div class="blog-tags">
-                                <span class="blog-tag">Flutter</span>
-                                <span class="blog-tag">React Native</span>
-                                <span class="blog-tag">Móvil</span>
-                            </div>
-                            <a href="alticulos/arti2.html" class="read-more">
-                                Leer más <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </article>
-                </div>
-
-                <!-- Controles de paginación -->
-                <div class="pagination-container" id="pagination-container"></div>
+          <!-- NEWSLETTER -->
+          <section class="newsletter-section">
+            <div class="newsletter-box reveal">
+              <h3>Recibe contenido <span class="gradient-text">exclusivo</span></h3>
+              <p>Tutoriales, guías y tendencias tech directamente en tu correo. Sin spam, solo valor.</p>
+              <form class="newsletter-form" id="newsletter-form">
+                <input type="email" class="newsletter-input" placeholder="tu@email.com" required aria-label="Correo electrónico" />
+                <button type="submit" class="newsletter-submit">Suscribirme</button>
+              </form>
             </div>
-        </section>
+          </section>
+        </div>
 
-        <!-- Newsletter Section -->
-        <section class="newsletter-section">
-            <div class="container">
-                <div class="newsletter-content">
-                    <h2>Suscríbete a nuestro <span class="gradient-text">Newsletter</span></h2>
-                    <p>Recibe las últimas noticias y artículos directamente en tu bandeja de entrada</p>
-                    <form class="newsletter-form" id="contact-form" action="https://formsubmit.co/derejsoft2003@gmail.com" method="POST">
-                        <input type="email" class="newsletter-input" placeholder="tu@email.com" required>
+        <!-- ARTICLE VIEW (hidden by default) -->
+        <div class="article-view" id="article-view">
+          <a class="article-back" href="#" onclick="closeArticle();return false">
+            <svg class="icon" style="width:1em;height:1em"><use href="/svg/icons.svg#icon-chevron-left"/></svg>
+            Volver al blog
+          </a>
 
-                        <!-- Campos ocultos para FormSubmit -->
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_subject" value="Nuevo mensaje desde el formulario">
-                        <input type="hidden" name="_next" value="">
-                        <button type="submit" class="newsletter-btn">Suscribirse</button>
-                    </form>
-                </div>
+          <div class="article-header">
+            <span class="featured-category cat-python" id="article-category">Python</span>
+            <h1 id="article-title">Título del artículo</h1>
+            <div class="article-meta">
+              <span id="article-author">DerejSoft</span>
+              <span class="dot"></span>
+              <span id="article-date">15 May 2026</span>
+              <span class="dot"></span>
+              <span id="article-readtime">8 min de lectura</span>
             </div>
-        </section>
+          </div>
+
+          <div class="article-hero-image">
+            <img id="article-hero-img" src="" alt="" />
+          </div>
+
+          <div class="article-body" id="article-body">
+            <!-- Content injected by JS -->
+          </div>
+
+          <div class="article-tags" id="article-tags"></div>
+
+          <div class="article-share">
+            <span>Compartir:</span>
+            <button class="share-btn" onclick="shareArticle('twitter')" aria-label="Compartir en Twitter">
+              <svg class="icon" style="width:.85em;height:.85em" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </button>
+            <button class="share-btn" onclick="shareArticle('linkedin')" aria-label="Compartir en LinkedIn">
+              <svg class="icon" style="width:.85em;height:.85em" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </button>
+            <button class="share-btn" onclick="shareArticle('copy')" aria-label="Copiar enlace">
+              <svg class="icon" style="width:.85em;height:.85em" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+            </button>
+          </div>
+
+          <div class="related-section">
+            <h3>Artículos <span class="gradient-text">relacionados</span></h3>
+            <div class="related-grid" id="related-grid"></div>
+          </div>
+        </div>
+      </div>
     </main>
 
+    <!-- Footer -->
     <footer>
-        <!-- <div class="footer-logo">Derej<span>Soft</span></div> -->
-        <nav>
-            <a href="Documentos_Legales/Terminos_de_Servicios.html" class="footer-link">Términos de Servicio</a>
-            <div class="redes">
-                <ul>
-                    <a href="https://www.instagram.com/derejsoft?utm_source=qr&igsh=djV2ZHVicjZ2eTFn" target="_blank" ><i class="fab fa-instagram" ></i></a>
-
-                    <a href="https://www.facebook.com/share/1JKws2oMEp" target="_blank" ><i class="fab fa-facebook" ></i></a>
-
-                    <a href="https://www.tiktok.com/@derejsoft2003?_r=1&_t=ZS-912JRDQSIcr" target="_blank" ><i class="fab fa-tiktok" ></i></a>
-                </ul>
-            </div>
-            <a href="Documentos_Legales/Politicas_de _privacidad.html" class="footer-link">Política de Privacidad</a>
-        </nav>
-        <div>
-            <div class="copyright-bar">© 2025 DerejSoft. Todos los derechos reservados.</div>
+      <div class="container">
+        <div class="footer-top">
+          <div class="footer-logo-container">
+            <img loading="lazy" src="logos/DerejLogo.webp" alt="Logo DerejSoft" class="footer-logo-img" width="36" height="36" />
+            <div class="footer-logo-text">Derej<span>Soft</span></div>
+          </div>
+          <div class="footer-links">
+            <a href="index.html#servicios" class="footer-link">Servicios</a>
+            <a href="blog.html" class="footer-link">Blog</a>
+            <a href="nosotros.html" class="footer-link">Nosotros</a>
+            <a href="index.html#contacto" class="footer-link">Contacto</a>
+          </div>
+          <div class="footer-social">
+            <span class="footer-social-title">Síguenos</span>
+            <ul>
+              <li><a href="https://www.instagram.com/derejsoft" target="_blank" class="social-icon instagram" aria-label="Instagram"><svg class="icon"><use href="/svg/icons.svg#icon-instagram"/></svg></a></li>
+              <li><a href="https://www.facebook.com/share/1JKws2oMEp" target="_blank" class="social-icon facebook" aria-label="Facebook"><svg class="icon"><use href="/svg/icons.svg#icon-facebook-f"/></svg></a></li>
+              <li><a href="https://www.tiktok.com/@derejsoft" target="_blank" class="social-icon tiktok" aria-label="TikTok"><svg class="icon"><use href="/svg/icons.svg#icon-tiktok"/></svg></a></li>
+            </ul>
+          </div>
         </div>
+        <div class="footer-bottom">
+          <div>&copy; 2025 <span style="color:var(--accent-cyan);font-weight:700">DerejSoft</span>. Todos los derechos reservados.</div>
+          <div>Hecho con <svg class="icon" style="color:#e11d48"><use href="/svg/icons.svg#icon-heart"/></svg> en República Dominicana</div>
+        </div>
+      </div>
     </footer>
 
     <script>
-        const ARTICLES_PER_PAGE = 5;
-        let currentPage = 1;
-        let currentFilter = 'all';
+    /* =============================================
+       BLOG DATA
+       ============================================= */
+    const blogPosts = [
+      {
+        id: 'python-2026',
+        title: 'Python en 2026: Por qué sigue siendo la lengua franca del desarrollo moderno',
+        excerpt: 'Python ha consolidado su posición como el lenguaje más versátil del ecosistema tecnológico. Desde inteligencia artificial hasta desarrollo web con Django, exploramos por qué sigue siendo la elección principal para proyectos de alto impacto.',
+        category: 'python',
+        categoryLabel: 'Python',
+        date: '15 May 2026',
+        readTime: '8 min',
+        author: 'DerejSoft',
+        image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&q=80',
+        tags: ['python', 'django', 'ia'],
+        featured: true,
+        content: `
+          <p>Python se ha convertido en el lenguaje de programación más influyente de la última década. En DerejSoft lo usamos diariamente para construir soluciones robustas, y hay razones de peso para ello.</p>
 
-        // JavaScript para funcionalidades del blog
-        document.addEventListener('DOMContentLoaded', function() {
-            // Inicializar todas las funcionalidades
-            initScrollAnimations();
-            initCounterAnimations();
-            initMenuToggle();
-            initSmoothScrolling();
-            initBlogFilters();
-            initNewsletterForm();
-            createParticleEffect();
-            renderPagination();
-            displayPage(1);
+          <h2>La evolución de Python</h2>
+          <p>Desde su creación por Guido van Rossum en 1991, Python ha pasado de ser un lenguaje脚本 simple a convertirse en el pilar fundamental de la inteligencia artificial, ciencia de datos y desarrollo web moderno.</p>
+          <p>En 2026, Python 3.13 trae mejoras significativas en rendimiento con el compilador experimental, mejor soporte para programación asíncrona y una experiencia de desarrollo aún más fluida.</p>
+
+          <h2>¿Por qué Python sigue creciendo?</h2>
+          <ul>
+            <li><strong>Ecosistema inigualable:</strong> Miles de librerías para cada caso de uso imaginable.</li>
+            <li><strong>Comunidad activa:</strong> Millones de desarrolladores contribuyendo cada día.</li>
+            <li><strong>Simplicidad sintáctica:</strong> Código legible que reduce tiempos de desarrollo.</li>
+            <li><strong>Versatilidad:</strong> Un solo lenguaje para web, IA, automatización y más.</li>
+          </ul>
+
+          <h2>Python en Django para desarrollo web</h2>
+          <p>En DerejSoft, nuestro stack principal incluye Django, el framework web de Python que sigue siendo sinónimo de seguridad, escalabilidad y desarrollo rápido.</p>
+
+          <blockquote>
+            <p>"Django nos permite construir aplicaciones web complejas en tiempo récord, sin sacrificar calidad ni seguridad."</p>
+          </blockquote>
+
+          <h3>El futuro es Python</h3>
+          <p>Con la integración creciente de Python en plataformas de cloud computing, Edge AI y aplicaciones empresariales, podemos estar seguros de que este lenguaje seguirá siendo relevante por muchos años.</p>
+
+          <pre><code># Ejemplo: Un endpoint Django REST moderno
+from rest_framework.views import APIView
+from rest_framework.response import Response
+
+class HealthCheck(APIView):
+    def get(self, request):
+        return Response({"status": "ok", "version": "2026.1"})</code></pre>
+        `
+      },
+      {
+        id: 'django-rest-api',
+        title: 'Construyendo APIs RESTful robustas con Django REST Framework',
+        excerpt: 'Guía completa para diseñar, implementar y documentar APIs profesionales con Django REST Framework. Autenticación, serializadores, viewsets y más.',
+        category: 'django',
+        categoryLabel: 'Django',
+        date: '10 May 2026',
+        readTime: '12 min',
+        author: 'DerejSoft',
+        image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80',
+        tags: ['django', 'python', 'api'],
+        content: `
+          <p>Las APIs REST son el backbone de cualquier aplicación moderna. En este artículo, te mostramos cómo construir APIs escalables con Django REST Framework.</p>
+
+          <h2>¿Qué es DRF?</h2>
+          <p>Django REST Framework (DRF) es un toolkit potente que facilita la creación de APIs web. Proporciona serializadores, viewsets, autenticación y documentación out of the box.</p>
+
+          <h2>Estructura de una API profesional</h2>
+          <p>En DerejSoft seguimos un patrón arquitectónico probado:</p>
+          <ul>
+            <li>Serializadores para validación de datos</li>
+            <li>ViewSets para lógica CRUD</li>
+            <li>Routers para URL routing automático</li>
+            <li>Middleware personalizado para logging y seguridad</li>
+          </ul>
+
+          <pre><code># serializers.py
+from rest_framework import serializers
+from .models import Project
+
+class ProjectSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Project
+        fields = ['id', 'name', 'description', 'tech_stack', 'created_at']</code></pre>
+
+          <h2>Autenticación y seguridad</h2>
+          <p>Implementar JWT tokens, permisos basados en roles y rate limiting son esenciales para cualquier API en producción.</p>
+
+          <blockquote>
+            <p>"Una API sin seguridad es como una puerta sin llave. DRF nos da las herramientas, pero la implementación depende de nosotros."</p>
+          </blockquote>
+        `
+      },
+      {
+        id: 'web-tendencias-2026',
+        title: 'Tendencias en desarrollo web para 2026: Lo que necesitas saber',
+        excerpt: 'Desde Server Components hasta edge computing, estas son las tendencias que están definiendo el desarrollo web este año y cómo aprovecharlas en tus proyectos.',
+        category: 'tendencias',
+        categoryLabel: 'Tendencias',
+        date: '5 May 2026',
+        readTime: '6 min',
+        author: 'DerejSoft',
+        image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80',
+        tags: ['javascript', 'css', 'html'],
+        content: `
+          <p>El desarrollo web evoluciona a un ritmo vertiginoso. Estas son las tendencias que todo desarrollador y empresa debe conocer en 2026.</p>
+
+          <h2>1. Server Components por defecto</h2>
+          <p>Los Server Components se han convertido en el estándar para frameworks modernos. Renderizado en servidor con hidratación selectiva reduce el JavaScript del cliente dramáticamente.</p>
+
+          <h2>2. CSS nativo más potente</h2>
+          <p>Con <code>@scope</code>, container queries y el视图 transitions API, CSS ha ganado capacidades que antes requerían JavaScript.</p>
+
+          <h2>3. Edge Computing</h2>
+          <p>Ejecutar lógica cerca del usuario reduce latencia y mejora la experiencia. Plataformas como Cloudflare Workers y Vercel Edge Functions lideran esta revolución.</p>
+
+          <h2>4. AI-Assisted Development</h2>
+          <p>La asistencia de IA en el desarrollo ya no es opcional. Herramientas de code generation, testing automatizado y debugging inteligente son parte del workflow diario.</p>
+
+          <blockquote>
+            <p>"No se trata de reemplazar al desarrollador, sino de amplificar sus capacidades."</p>
+          </blockquote>
+        `
+      },
+      {
+        id: 'django-security',
+        title: 'Seguridad en Django: 10 prácticas esenciales para proteger tu aplicación',
+        excerpt: 'Desde CSRF protection hasta headers de seguridad, aprende a blindar tu aplicación Django contra las vulnerabilidades más comunes del OWASP Top 10.',
+        category: 'django',
+        categoryLabel: 'Django',
+        date: '28 Abr 2026',
+        readTime: '10 min',
+        author: 'DerejSoft',
+        image: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&q=80',
+        tags: ['django', 'seguridad', 'python'],
+        content: `
+          <p>La seguridad no es un feature, es un requisito fundamental. En DerejSoft aplicamos estas prácticas en cada proyecto Django que desarrollamos.</p>
+
+          <h2>1. CSRF Protection</h2>
+          <p>Django incluye protección CSRF por defecto. Nunca la desactives en producción.</p>
+
+          <h2>2. HTTPS Everywhere</h2>
+          <p>Configura <code>SECURE_SSL_REDIRECT</code> y <code>SESSION_COOKIE_SECURE</code> en tu settings de producción.</p>
+
+          <h2>3. Content Security Policy</h2>
+          <p>Implementa CSP headers para prevenir ataques de inyección de contenido.</p>
+
+          <h2>4. Rate Limiting</h2>
+          <p>Limita las peticiones por IP para prevenir fuerza bruta y DDoS.</p>
+
+          <pre><code># settings.py - Seguridad esencial
+SECURE_HSTS_SECONDS = 31536000
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SECURE_BROWSER_XSS_FILTER = True</code></pre>
+
+          <blockquote>
+            <p>"El 90% de las brechas de seguridad se aprovechan de configuraciones por defecto que nadie cambió."</p>
+          </blockquote>
+        `
+      },
+      {
+        id: 'software-a-medida',
+        title: 'Software a medida vs soluciones genéricas: ¿Cuándo invertir en desarrollo custom?',
+        excerpt: 'Analizamos cuándo una empresa necesita software desarrollado a medida y cuándo una solución SaaS es suficiente. Casos reales de clientes de DerejSoft.',
+        category: 'negocio',
+        categoryLabel: 'Negocio',
+        date: '22 Abr 2026',
+        readTime: '7 min',
+        author: 'DerejSoft',
+        image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&q=80',
+        tags: ['negocio', 'django'],
+        content: `
+          <p>Como empresa de desarrollo de software, nos preguntan constantemente: "¿Necesito una solución a medida o me sirve lo que ya existe?" La respuesta no es simple.</p>
+
+          <h2>Cuándo elegir software a medida</h2>
+          <ul>
+            <li>Tu proceso de negocio es único y competitivo</li>
+            <li>Las soluciones genéricas limitan tu crecimiento</li>
+            <li>Necesitas integración con sistemas existentes</li>
+            <li>Los costos de licencias SaaS escalan rápidamente</li>
+          </ul>
+
+          <h2>Cuándo una solución SaaS es suficiente</h2>
+          <ul>
+            <li>Tu flujo de trabajo es estándar en tu industria</li>
+            <li>El presupuesto es limitado y urgente</li>
+            <li>No necesitas personalización profunda</li>
+          </ul>
+
+          <h2>Caso real: Sistema de gestión para una empresa dominicana</h2>
+          <p>Un cliente del sector logístico pasó de usar 4 herramientas SaaS separadas a un sistema Django unificado que redujo costos en un 40% y mejoró la productividad del equipo en un 60%.</p>
+
+          <blockquote>
+            <p>"El software a medida no es un gasto, es una inversión que se traduce en eficiencia y ventaja competitiva."</p>
+          </blockquote>
+        `
+      },
+      {
+        id: 'python-ia-ml',
+        title: 'Introducción a Machine Learning con Python: Guía práctica para principiantes',
+        excerpt: 'Aprende los fundamentos de machine learning usando Python, scikit-learn y TensorFlow. Tu primera modelo predictivo en 30 minutos.',
+        category: 'python',
+        categoryLabel: 'Python',
+        date: '18 Abr 2026',
+        readTime: '15 min',
+        author: 'DerejSoft',
+        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80',
+        tags: ['python', 'ia'],
+        content: `
+          <p>Machine Learning ya no es territorio exclusivo de investigadores. Con Python y las bibliotecas adecuadas, cualquier desarrollador puede crear modelos predictivos funcionales.</p>
+
+          <h2>El ecosistema ML de Python</h2>
+          <ul>
+            <li><strong>scikit-learn:</strong> Para modelos clásicos y pipeline de datos</li>
+            <li><strong>TensorFlow/PyTorch:</strong> Para deep learning</li>
+            <li><strong>pandas/numpy:</strong> Para manipulación de datos</li>
+            <li><strong>matplotlib/seaborn:</strong> Para visualización</li>
+          </ul>
+
+          <h2>Tu primer modelo en 10 líneas</h2>
+          <pre><code>from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+model = RandomForestClassifier(n_estimators=100)
+model.fit(X_train, y_train)
+print(f"Precisión: {accuracy_score(y_test, model.predict(X_test)):.2%}")</code></pre>
+
+          <h2>Aplicaciones en el mundo real</h2>
+          <p>En DerejSoft hemos implementado modelos de ML para predicción de demanda, detección de fraudes y sistemas de recomendación para clientes en República Dominicana.</p>
+        `
+      },
+      {
+        id: 'docker-deploy',
+        title: 'Containerizar tu aplicación Django con Docker: De desarrollo a producción',
+        excerpt: 'Tutorial paso a paso para dockerizar una aplicación Django, configurar Docker Compose para desarrollo y preparar el deploy con Nginx y Gunicorn.',
+        category: 'devops',
+        categoryLabel: 'DevOps',
+        date: '12 Abr 2026',
+        readTime: '11 min',
+        author: 'DerejSoft',
+        image: 'https://images.unsplash.com/photo-1605745341112-85968b19335b?w=600&q=80',
+        tags: ['docker', 'django', 'python'],
+        content: `
+          <p>Docker ha revolucionado la forma en que desplegamos aplicaciones. En este tutorial, veremos cómo containerizar una aplicación Django completa.</p>
+
+          <h2>El Dockerfile ideal para Django</h2>
+          <pre><code>FROM python:3.13-slim
+
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . .
+CMD ["gunicorn", "config.wsgi:application", "--bind", "0.0.0.0:8000"]</code></pre>
+
+          <h2>Docker Compose para desarrollo</h2>
+          <p>Configurar PostgreSQL, Redis y tu app Django con un solo comando es el poder de Docker Compose.</p>
+
+          <h2>Best practices en producción</h2>
+          <ul>
+            <li>Usa multi-stage builds para reducir el tamaño de imagen</li>
+            <li>Nunca guardes secretos en la imagen</li>
+            <li>Implementa health checks</li>
+            <li>Usa volúmenes para datos persistentes</li>
+          </ul>
+
+          <blockquote>
+            <p>"Si funciona en mi máquina, debe funcionar en producción. Docker hace eso realidad."</p>
+          </blockquote>
+        `
+      },
+      {
+        id: 'seo-web',
+        title: 'SEO técnico para sitios web: Guía completa para mejorar tu posicionamiento',
+        excerpt: 'Desde meta tags hasta Core Web Vitals, todo lo que necesitas saber para que tu sitio web posicione en los primeros resultados de Google.',
+        category: 'web',
+        categoryLabel: 'Desarrollo Web',
+        date: '5 Abr 2026',
+        readTime: '9 min',
+        author: 'DerejSoft',
+        image: 'https://images.unsplash.com/photo-1562577309-4932fdd64cd1?w=600&q=80',
+        tags: ['seo', 'html', 'css'],
+        content: `
+          <p>El SEO técnico es la base sobre la cual se construye toda estrategia de posicionamiento. Sin una buena técnica, ni el mejor contenido rankeará.</p>
+
+          <h2>Core Web Vitals en 2026</h2>
+          <p>Google evalúa LCP, INP y CLS como métricas principales. Tu sitio debe cargar en menos de 2.5 segundos y ser visualmente estable.</p>
+
+          <h2>Meta tags esenciales</h2>
+          <pre><code>&lt;!-- Open Graph --&gt;
+&lt;meta property="og:title" content="Tu Página" /&gt;
+&lt;meta property="og:description" content="Descripción optimizada" /&gt;
+&lt;meta property="og:image" content="url-a-imagen-1200x630.jpg" /&gt;
+
+&lt;!-- Schema.org --&gt;
+&lt;script type="application/ld+json"&gt;
+{ "@type": "WebSite", "name": "Tu Sitio" }
+&lt;/script&gt;</code></pre>
+
+          <h2>Estructura de URLs amigables</h2>
+          <p>URLs descriptivas y limpias no solo ayudan al SEO, sino que mejoran la experiencia del usuario significativamente.</p>
+        `
+      },
+      {
+        id: 'javascript-async',
+        title: 'Programación asíncrona en JavaScript: Promesas, Async/Await y patrones avanzados',
+        excerpt: 'Domina la programación asíncrona de JavaScript con ejemplos prácticos de promesas, async/await, manejo de errores y patrones de concurrencia.',
+        category: 'web',
+        categoryLabel: 'Desarrollo Web',
+        date: '28 Mar 2026',
+        readTime: '13 min',
+        author: 'DerejSoft',
+        image: 'https://images.unsplash.com/photo-1579468118864-1b9ea3c0db4a?w=600&q=80',
+        tags: ['javascript', 'html'],
+        content: `
+          <p>La programación asíncrona es el corazón de JavaScript moderno. Comprenderla a fondo es la diferencia entre código funcional y código profesional.</p>
+
+          <h2>De callbacks a async/await</h2>
+          <p>La evolución del asincronismo en JavaScript ha pasado de callbacks anidados a la elegancia de async/await.</p>
+
+          <pre><code>// Patrón moderno: Async/Await con error handling
+async function fetchData(url) {
+  try {
+    const response = await fetch(url);
+    if (!response.ok) throw new Error(response.statusText);
+    return await response.json();
+  } catch (error) {
+    console.error('Error:', error.message);
+    throw error;
+  }
+}</code></pre>
+
+          <h2>Concurrencia con Promise.all y Promise.allSettled</h2>
+          <p>Ejecutar múltiples operaciones asíncronas en paralelo es fundamental para el rendimiento.</p>
+
+          <h2>Patrones avanzados</h2>
+          <ul>
+            <li>Debounce y throttle para eventos</li>
+            <li>Worker threads para tareas pesadas</li>
+            <li>AbortController para cancelar peticiones</li>
+          </ul>
+        `
+      },
+      {
+        id: 'aws-desarrolladores',
+        title: 'AWS para desarrolladores de Django: Servicios esenciales que debes conocer',
+        excerpt: 'Un recorrido por los servicios de AWS más utilizados por los equipos de desarrollo: EC2, RDS, S3, Lambda y cómo integrarlos con Django.',
+        category: 'devops',
+        categoryLabel: 'DevOps',
+        date: '20 Mar 2026',
+        readTime: '10 min',
+        author: 'DerejSoft',
+        image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=80',
+        tags: ['aws', 'django', 'python'],
+        content: `
+          <p>AWS ofrece una suite completa de servicios que, combinados con Django, permiten construir aplicaciones escalables y resilientes.</p>
+
+          <h2>Los servicios imprescindibles</h2>
+          <ul>
+            <li><strong>EC2:</strong> Instancias para tu Django app</li>
+            <li><strong>RDS:</strong> PostgreSQL managed</li>
+            <li><strong>S3:</strong> Almacenamiento de archivos estáticos y media</li>
+            <li><strong>CloudFront:</strong> CDN global</li>
+            <li><strong>Lambda:</strong> Funciones serverless para tareas background</li>
+          </ul>
+
+          <h2>Configuración de Django con S3</h2>
+          <pre><code># settings.py - AWS S3 para archivos estáticos
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+AWS_STORAGE_BUCKET_NAME = 'derejsoft-media'
+AWS_S3_REGION_NAME = 'us-east-1'
+AWS_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'</code></pre>
+
+          <blockquote>
+            <p>"La nube no es magia, es infraestructura que debes entender para usarla correctamente."</p>
+          </blockquote>
+        `
+      },
+      {
+        id: 'landing-pages',
+        title: 'Cómo crear landing pages que convierten: Principios de diseño y desarrollo',
+        excerpt: 'Los principios de diseño UX, copywriting y desarrollo técnico que transforman visitantes en clientes. Ejemplos reales de landing pages exitosas.',
+        category: 'web',
+        categoryLabel: 'Desarrollo Web',
+        date: '14 Mar 2026',
+        readTime: '8 min',
+        author: 'DerejSoft',
+        image: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=600&q=80',
+        tags: ['html', 'css', 'negocio'],
+        content: `
+          <p>Una landing page efectiva no es solo bonita, es estratégica. Cada elemento debe guiar al visitante hacia la acción deseada.</p>
+
+          <h2>Los 5 principios de una landing page de alto rendimiento</h2>
+          <ul>
+            <li><strong>Claridad sobre creatividad:</strong> El mensaje debe entenderse en 3 segundos</li>
+            <li><strong>Social proof:</strong> Testimonios, logos de clientes, números</li>
+            <li><strong>Un solo CTA:</strong> No disperses la atención del visitante</li>
+            <li><strong>Velocidad:</strong> Cada segundo de carga pierde un 7% de conversiones</li>
+            <li><strong>Mobile-first:</strong> El 70% del tráfico es móvil</li>
+          </ul>
+
+          <h2>El framework de conversión</h2>
+          <p>En DerejSoft usamos un framework probado que combina copywriting persuasivo con diseño visual que dirige la atención.</p>
+
+          <blockquote>
+            <p>"El diseño no es solo cómo se ve, es cómo funciona." — Steve Jobs</p>
+          </blockquote>
+        `
+      },
+      {
+        id: 'python-automatizacion',
+        title: 'Automatización con Python: Scripts que ahorran horas de trabajo repetitivo',
+        excerpt: 'Aprende a crear scripts de Python para automatizar tareas de oficina, procesamiento de datos, scraping web y generación de reportes.',
+        category: 'python',
+        categoryLabel: 'Python',
+        date: '8 Mar 2026',
+        readTime: '9 min',
+        author: 'DerejSoft',
+        image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80',
+        tags: ['python', 'negocio'],
+        content: `
+          <p>Si realizas una tarea más de tres veces al mes, probablemente puedas automatizarla con Python. Veamos los escenarios más comunes.</p>
+
+          <h2>1. Procesamiento de archivos Excel/CSV</h2>
+          <pre><code>import pandas as pd
+
+# Leer, procesar y exportar en 5 líneas
+df = pd.read_excel('ventas.xlsx')
+resumen = df.groupby('region')['total'].sum()
+resumen.to_csv('reporte_ventas.csv')</code></pre>
+
+          <h2>2. Web Scraping con BeautifulSoup</h2>
+          <p>Extraer datos de páginas web de forma programática para análisis de mercado o monitoreo de precios.</p>
+
+          <h2>3. Envío automático de emails</h2>
+          <p>Generar reportes PDF y enviarlos por email automáticamente cada lunes a las 8am.</p>
+
+          <h2>El ROI de la automatización</h2>
+          <p>Un script que toma 2 horas desarrollar y ahorra 30 minutos semanales se paga solo en menos de un mes. Después de eso, es puro ahorro.</p>
+        `
+      },
+      {
+        id: 'django-caching',
+        title: 'Estrategias de caching en Django para aplicaciones de alto rendimiento',
+        excerpt: 'Domina el sistema de caching de Django:从 Memcached a Redis, desde template caching hasta cache a nivel de vista y query set.',
+        category: 'django',
+        categoryLabel: 'Django',
+        date: '1 Mar 2026',
+        readTime: '11 min',
+        author: 'DerejSoft',
+        image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80',
+        tags: ['django', 'python'],
+        content: `
+          <p>El caching es una de las herramientas más poderosas para mejorar el rendimiento de una aplicación Django. Aprender a usarlo correctamente puede reducir los tiempos de respuesta drásticamente.</p>
+
+          <h2>Niveles de caching en Django</h2>
+          <ul>
+            <li><strong>Low-level cache API:</strong> Para objetos individuales</li>
+            <li><strong>Template fragment caching:</strong> Para partes específicas del HTML</li>
+            <li><strong>View-level caching:</strong> Para respuestas completas</li>
+            <li><strong>QuerySet caching:</strong> Para resultados de base de datos</li>
+          </ul>
+
+          <pre><code>from django.core.cache import cache
+
+def get_dashboard_data(user_id):
+    cache_key = f'dashboard_{user_id}'
+    data = cache.get(cache_key)
+    if data is None:
+        data = expensive_db_query(user_id)
+        cache.set(cache_key, data, timeout=300)  # 5 minutos
+    return data</code></pre>
+
+          <h2>Redis como backend de cache</h2>
+          <p>Redis es la opción más popular para caching en Django, ofreciendo velocidad inigualable y funcionalidades adicionales como pub/sub.</p>
+
+          <blockquote>
+            <p>"Los dos problemas difíciles en computación son: invalidar caché y nombrar cosas."</p>
+          </blockquote>
+        `
+      }
+    ];
+
+    /* =============================================
+       BLOG LOGIC
+       ============================================= */
+    const POSTS_PER_PAGE = 6;
+    let currentPage = 1;
+    let currentFilter = 'todos';
+    let filteredPosts = [...blogPosts];
+
+    function getFilteredPosts(filter) {
+      if (filter === 'todos') return [...blogPosts];
+      return blogPosts.filter(p => p.category === filter);
+    }
+
+    function updateFilterCounts() {
+      document.getElementById('count-all').textContent = blogPosts.length;
+      document.getElementById('count-python').textContent = blogPosts.filter(p => p.category === 'python').length;
+      document.getElementById('count-django').textContent = blogPosts.filter(p => p.category === 'django').length;
+      document.getElementById('count-web').textContent = blogPosts.filter(p => p.category === 'web').length;
+      document.getElementById('count-tendencias').textContent = blogPosts.filter(p => p.category === 'tendencias').length;
+      document.getElementById('count-negocio').textContent = blogPosts.filter(p => p.category === 'negocio').length;
+      document.getElementById('count-devops').textContent = blogPosts.filter(p => p.category === 'devops').length;
+    }
+
+    function createBlogCard(post) {
+      return `
+        <article class="blog-card reveal" data-category="${post.category}" data-id="${post.id}">
+          <a href="#" onclick="openArticle('${post.id}');return false">
+            <div class="blog-card-image">
+              <img src="${post.image}" alt="${post.title}" loading="lazy" />
+              <div class="img-overlay"></div>
+              <span class="blog-card-category cat-${post.category}">${post.categoryLabel}</span>
+              <span class="blog-card-readtime">
+                <svg class="icon" style="width:.7em;height:.7em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z"/></svg>
+                ${post.readTime}
+              </span>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-card-date">${post.date}</div>
+              <h3 class="blog-card-title">${post.title}</h3>
+              <p class="blog-card-excerpt">${post.excerpt}</p>
+              <div class="blog-card-tags">
+                ${post.tags.map(t => `<span class="blog-tag ${t}">${t}</span>`).join('')}
+              </div>
+              <div class="blog-card-footer">
+                <div class="blog-card-author">
+                  <div class="blog-card-avatar">DS</div>
+                  <span class="blog-card-author-name">${post.author}</span>
+                </div>
+                <div class="blog-card-arrow">
+                  <svg class="icon" style="width:.85em;height:.85em" viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+                </div>
+              </div>
+            </div>
+          </a>
+        </article>
+      `;
+    }
+
+    function renderBlogGrid() {
+      const grid = document.getElementById('blog-grid');
+      const totalToShow = currentPage * POSTS_PER_PAGE;
+      const postsToShow = filteredPosts.slice(0, totalToShow);
+
+      grid.innerHTML = postsToShow.map(p => createBlogCard(p)).join('');
+
+      const loadMoreBtn = document.getElementById('load-more-btn');
+      const loadMoreContainer = document.getElementById('load-more-container');
+      if (totalToShow >= filteredPosts.length) {
+        loadMoreContainer.style.display = 'none';
+      } else {
+        loadMoreContainer.style.display = 'flex';
+      }
+
+      // Re-observe for scroll reveal
+      document.querySelectorAll('.blog-card.reveal').forEach(el => {
+        robs.observe(el);
+      });
+
+      // Re-apply mouse glow (disabled on touch/small screens for performance)
+      if (!('ontouchstart' in window) && window.innerWidth > 768) {
+        document.querySelectorAll('.blog-card').forEach(c => {
+          c.addEventListener('mousemove', e => {
+            c.style.setProperty('--mx', e.offsetX + 'px');
+            c.style.setProperty('--my', e.offsetY + 'px');
+          });
         });
+      }
+    }
 
-        // Sistema de animaciones al hacer scroll
-        function initScrollAnimations() {
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
+    function openArticle(id) {
+      const post = blogPosts.find(p => p.id === id);
+      if (!post) return;
 
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('aos-animate');
-                    }
-                });
-            }, observerOptions);
+      document.getElementById('blog-content-area').classList.add('hidden');
+      document.querySelector('.blog-filters').style.display = 'none';
+      document.querySelector('.featured-section').style.display = 'none';
+      document.querySelector('.newsletter-section').style.display = 'none';
+      const sectionHeader = document.querySelector('.blog-section .section-header');
+      if (sectionHeader) sectionHeader.style.display = 'none';
 
-            // Observar todos los elementos con data-aos
-            document.querySelectorAll('[data-aos]').forEach(el => {
-                observer.observe(el);
-            });
+      const view = document.getElementById('article-view');
+      view.classList.add('active');
+
+      document.getElementById('article-category').className = `featured-category cat-${post.category}`;
+      document.getElementById('article-category').textContent = post.categoryLabel;
+      document.getElementById('article-title').textContent = post.title;
+      document.getElementById('article-author').textContent = post.author;
+      document.getElementById('article-date').textContent = post.date;
+      document.getElementById('article-readtime').textContent = post.readTime;
+      document.getElementById('article-hero-img').src = post.image;
+      document.getElementById('article-hero-img').alt = post.title;
+      document.getElementById('article-body').innerHTML = post.content;
+
+      const tagsContainer = document.getElementById('article-tags');
+      tagsContainer.innerHTML = post.tags.map(t =>
+        `<span class="article-tag-item">${t}</span>`
+      ).join('');
+
+      // Related posts
+      const related = blogPosts.filter(p => p.id !== post.id && p.category === post.category).slice(0, 3);
+      const relatedFallback = blogPosts.filter(p => p.id !== post.id).slice(0, 3);
+      const relatedPosts = related.length >= 2 ? related : relatedFallback;
+
+      document.getElementById('related-grid').innerHTML = relatedPosts.map(p => `
+        <article class="blog-card" style="cursor:pointer" onclick="openArticle('${p.id}')">
+          <a href="#" onclick="openArticle('${p.id}');return false">
+            <div class="blog-card-image">
+              <img src="${p.image}" alt="${p.title}" loading="lazy" />
+              <div class="img-overlay"></div>
+              <span class="blog-card-category cat-${p.category}">${p.categoryLabel}</span>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-card-date">${p.date}</div>
+              <h3 class="blog-card-title">${p.title}</h3>
+              <p class="blog-card-excerpt">${p.excerpt}</p>
+            </div>
+          </a>
+        </article>
+      `).join('');
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      history.pushState({ article: id }, '', `#${id}`);
+    }
+
+    function closeArticle() {
+      document.getElementById('article-view').classList.remove('active');
+      document.getElementById('blog-content-area').classList.remove('hidden');
+      document.querySelector('.blog-filters').style.display = '';
+      document.querySelector('.featured-section').style.display = '';
+      document.querySelector('.newsletter-section').style.display = '';
+      const sectionHeader = document.querySelector('.blog-section .section-header');
+      if (sectionHeader) sectionHeader.style.display = '';
+      history.pushState({}, '', 'blog.html');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function shareArticle(platform) {
+      const url = encodeURIComponent(window.location.href);
+      const title = encodeURIComponent(document.getElementById('article-title').textContent);
+
+      switch (platform) {
+        case 'twitter':
+          window.open(`https://twitter.com/intent/tweet?url=${url}&text=${title}`, '_blank');
+          break;
+        case 'linkedin':
+          window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}`, '_blank');
+          break;
+        case 'copy':
+          navigator.clipboard.writeText(window.location.href).then(() => {
+            const btn = event.currentTarget;
+            btn.innerHTML = '<svg class="icon" style="width:.85em;height:.85em" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>';
+            setTimeout(() => {
+              btn.innerHTML = '<svg class="icon" style="width:.85em;height:.85em" viewBox="0 0 24 24" fill="currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>';
+            }, 2000);
+          });
+          break;
+      }
+    }
+
+    /* =============================================
+       INIT
+       ============================================= */
+    document.addEventListener('DOMContentLoaded', () => {
+      updateFilterCounts();
+      renderBlogGrid();
+
+      // Filter buttons
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          currentFilter = btn.dataset.filter;
+          currentPage = 1;
+          filteredPosts = getFilteredPosts(currentFilter);
+          renderBlogGrid();
+        });
+      });
+
+      // Load more
+      document.getElementById('load-more-btn').addEventListener('click', () => {
+        currentPage++;
+        renderBlogGrid();
+      });
+
+      // Newsletter form
+      document.getElementById('newsletter-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const fireSwal = () => {
+          Swal.fire({
+            title: '¡Suscrito!',
+            text: 'Gracias por suscribirte a nuestro blog. Recibirás contenido exclusivo.',
+            icon: 'success',
+            background: '#0b1228',
+            color: '#f0f4ff',
+            confirmButtonColor: '#3d7aed',
+            showConfirmButton: false,
+            timer: 2500,
+            timerProgressBar: true
+          });
+          e.target.reset();
+        };
+        if (typeof Swal === 'undefined') {
+          const s = document.createElement('script');
+          s.src = 'https://cdn.jsdelivr.net/npm/sweetalert2@11';
+          s.onload = fireSwal;
+          document.head.appendChild(s);
+        } else {
+          fireSwal();
         }
+      });
 
-        // Animación de contadores
-        function initCounterAnimations() {
-            const counters = document.querySelectorAll('.stat-number');
-            const counterObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        animateCounter(entry.target);
-                        counterObserver.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.5 });
+      // Check URL hash for article
+      if (window.location.hash && window.location.hash !== '#') {
+        const hashId = window.location.hash.slice(1);
+        const post = blogPosts.find(p => p.id === hashId);
+        if (post) openArticle(hashId);
+      }
+    });
 
-            counters.forEach(counter => {
-                counterObserver.observe(counter);
-            });
-        }
-
-        function animateCounter(element) {
-            const target = parseInt(element.getAttribute('data-target'));
-            const duration = 2000;
-            const start = performance.now();
-            const startValue = 0;
-
-            function updateCounter(currentTime) {
-                const elapsed = currentTime - start;
-                const progress = Math.min(elapsed / duration, 1);
-                const easeOutQuart = 1 - Math.pow(1 - progress, 4);
-                const current = Math.floor(startValue + (target - startValue) * easeOutQuart);
-                
-                element.textContent = current;
-                
-                if (progress < 1) {
-                    requestAnimationFrame(updateCounter);
-                } else {
-                    element.textContent = target;
-                }
+    /* =============================================
+       CANVAS PARTICLES
+       ============================================= */
+    (self.requestIdleCallback || setTimeout)(() => {
+      const isMobile = window.innerWidth < 768;
+      const c = document.getElementById('bg-canvas'), ctx = c.getContext('2d');
+      let W, H, pts = [];
+      function resize() { W = c.width = innerWidth; H = c.height = innerHeight }
+      resize(); addEventListener('resize', resize);
+      const N = isMobile ? Math.min(Math.floor(W*H/80000),15) : Math.min(Math.floor(W*H/25000),50);
+      for (let i = 0; i < N; i++) pts.push({
+        x: Math.random() * W, y: Math.random() * H,
+        vx: (Math.random() - .5) * .3, vy: (Math.random() - .5) * .3,
+        r: Math.random() * 1.5 + .5
+      });
+      function draw() {
+        ctx.clearRect(0, 0, W, H);
+        for (let i = 0; i < pts.length; i++) {
+          const p = pts[i];
+          p.x += p.vx; p.y += p.vy;
+          if (p.x < 0 || p.x > W) p.vx *= -1;
+          if (p.y < 0 || p.y > H) p.vy *= -1;
+          ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(0,229,255,0.35)'; ctx.fill();
+          if(!isMobile) for (let j = i + 1; j < pts.length; j++) {
+            const q = pts[j], dx = p.x - q.x, dy = p.y - q.y, d = Math.sqrt(dx * dx + dy * dy);
+            if (d < 150) {
+              ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(q.x, q.y);
+              ctx.strokeStyle = 'rgba(0,229,255,' + (0.08 * (1 - d / 150)) + ')';
+              ctx.lineWidth = .6; ctx.stroke();
             }
-            
-            requestAnimationFrame(updateCounter);
+          }
         }
+        requestAnimationFrame(draw);
+      }
+      draw();
+    });
 
-        // Menú móvil toggle
-        function initMenuToggle() {
-            const menuToggle = document.querySelector('.menu-toggle');
-            const navLinks = document.querySelector('.nav-links');
-            
-            if (menuToggle && navLinks) {
-                menuToggle.addEventListener('click', () => {
-                    navLinks.classList.toggle('active');
-                });
-            }
+    /* =============================================
+       TERMINAL TYPING
+       ============================================= */
+    (function () {
+      const el = document.getElementById('typed-text');
+      const cmds = ['cat blog.md', 'python manage.py runserver', 'git log --oneline -5', 'npm run build', 'docker compose up'];
+      let ci = 0, chi = 0, dir = 1;
+      function tick() {
+        const cmd = cmds[ci];
+        if (dir === 1) {
+          el.textContent = cmd.slice(0, ++chi);
+          if (chi >= cmd.length) { dir = 0; setTimeout(tick, 1800); return }
+        } else {
+          el.textContent = cmd.slice(0, --chi);
+          if (chi === 0) { dir = 1; ci = (ci + 1) % cmds.length; setTimeout(tick, 400); return }
         }
+        setTimeout(tick, dir ? 55 + Math.random() * 45 : 30);
+      }
+      setTimeout(tick, 600);
+    })();
 
-        // Scroll suave para enlaces internos
-        function initSmoothScrolling() {
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        const headerHeight = document.querySelector('header').offsetHeight;
-                        const targetPosition = target.offsetTop - headerHeight - 20;
-                        
-                        window.scrollTo({
-                            top: targetPosition,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
-        }
+    /* =============================================
+       HEADER SCROLL
+       ============================================= */
+    const hdr = document.querySelector('.site-header');
+    addEventListener('scroll', () => hdr.classList.toggle('scrolled', scrollY > 40));
 
-        // Filtros del blog
-        function initBlogFilters() {
-            const filterBtns = document.querySelectorAll('.filter-btn');
-            const blogCards = document.querySelectorAll('.blog-card');
+    /* =============================================
+       MOBILE MENU
+       ============================================= */
+    const mtoggle = document.querySelector('.menu-toggle'), nlinks = document.querySelector('.nav-links');
+    mtoggle.addEventListener('click', () => { nlinks.classList.toggle('active'); document.body.classList.toggle('menu-open') });
+    nlinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { nlinks.classList.remove('active'); document.body.classList.remove('menu-open') }));
 
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    // Remover clase active de todos los botones
-                    filterBtns.forEach(b => b.classList.remove('active'));
-                    // Agregar clase active al botón clickeado
-                    btn.classList.add('active');
-
-                    currentFilter = btn.getAttribute('data-filter');
-                    currentPage = 1;
-                    renderPagination();
-                    displayPage(1);
-                });
-            });
-        }
-
-        function getFilteredArticles() {
-            const allCards = document.querySelectorAll('.blog-card');
-            if (currentFilter === 'all') {
-                return Array.from(allCards);
-            }
-            return Array.from(allCards).filter(card => 
-                card.getAttribute('data-category') === currentFilter
-            );
-        }
-
-        function renderPagination() {
-            const filteredArticles = getFilteredArticles();
-            const totalPages = Math.ceil(filteredArticles.length / ARTICLES_PER_PAGE);
-            const paginationContainer = document.getElementById('pagination-container');
-            
-            paginationContainer.innerHTML = '';
-
-            if (totalPages <= 1) return;
-
-            // Botón anterior
-            const prevBtn = document.createElement('button');
-            prevBtn.className = 'pagination-btn';
-            prevBtn.textContent = '← Anterior';
-            prevBtn.disabled = currentPage === 1;
-            prevBtn.addEventListener('click', () => {
-                if (currentPage > 1) {
-                    currentPage--;
-                    displayPage(currentPage);
-                }
-            });
-            paginationContainer.appendChild(prevBtn);
-
-            // Botones de páginas
-            for (let i = 1; i <= totalPages; i++) {
-                const pageBtn = document.createElement('button');
-                pageBtn.className = 'pagination-btn';
-                if (i === currentPage) pageBtn.classList.add('active');
-                pageBtn.textContent = i;
-                pageBtn.addEventListener('click', () => {
-                    currentPage = i;
-                    displayPage(i);
-                });
-                paginationContainer.appendChild(pageBtn);
-            }
-
-            // Botón siguiente
-            const nextBtn = document.createElement('button');
-            nextBtn.className = 'pagination-btn';
-            nextBtn.textContent = 'Siguiente →';
-            nextBtn.disabled = currentPage === totalPages;
-            nextBtn.addEventListener('click', () => {
-                if (currentPage < totalPages) {
-                    currentPage++;
-                    displayPage(currentPage);
-                }
-            });
-            paginationContainer.appendChild(nextBtn);
-        }
-
-        function displayPage(pageNumber) {
-            const filteredArticles = getFilteredArticles();
-            const startIndex = (pageNumber - 1) * ARTICLES_PER_PAGE;
-            const endIndex = startIndex + ARTICLES_PER_PAGE;
-            const allCards = document.querySelectorAll('.blog-card');
-
-            allCards.forEach(card => {
-                card.style.display = 'none';
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(30px)';
-            });
-
-            const visibleArticles = filteredArticles.slice(startIndex, endIndex);
-            visibleArticles.forEach((card, index) => {
-                card.style.display = 'block';
-                setTimeout(() => {
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
-                }, index * 50);
-            });
-
-            // Actualizar botones de paginación
-            document.querySelectorAll('.pagination-btn').forEach(btn => {
-                btn.classList.remove('active');
-                if (btn.textContent === pageNumber.toString()) {
-                    btn.classList.add('active');
-                }
-            });
-
-            // Scroll suave a la sección
-            document.querySelector('.blog-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-
-        // Formulario de newsletter
-        function initNewsletterForm() {
-            const form = document.querySelector('.newsletter-form');
-            
-            if (form) {
-                form.addEventListener('submit', (e) => {
-                    e.preventDefault();
-                    const email = form.querySelector('.newsletter-input').value;
-                    
-                    // Aquí puedes agregar la lógica para enviar el email
-                    alert('¡Gracias por suscribirte! Te mantendremos informado.');
-                    form.reset();
-                });
-            }
-        }
-
-        // Efectos de partículas en el hero
-        function createParticleEffect() {
-            const hero = document.querySelector('.blog-hero');
-            const particleCount = 50;
-            
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                particle.style.cssText = `
-                    position: absolute;
-                    width: 2px;
-                    height: 2px;
-                    background: rgba(102, 102, 234, 0.5);
-                    border-radius: 50%;
-                    pointer-events: none;
-                    animation: float ${Math.random() * 20 + 10}s infinite linear;
-                    left: ${Math.random() * 100}%;
-                    top: ${Math.random() * 100}%;
-                    animation-delay: ${Math.random() * 20}s;
-                `;
-                hero.appendChild(particle);
-            }
-        }
+    /* =============================================
+       SCROLL REVEAL
+       ============================================= */
+    const robs = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); robs.unobserve(e.target) }
+    }), { threshold: .12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => robs.observe(el));
     </script>
-</body>
+  </body>
 </html>

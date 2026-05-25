@@ -671,7 +671,7 @@
     <header class="site-header">
       <nav>
         <a href="#inicio" class="logo">
-          <img src="logos/DerejLogo.webp" alt="Logo DerejSoft" class="logo-img" />
+          <img src="logos/DerejLogo.webp" alt="Logo DerejSoft" class="logo-img" width="38" height="38" />
           <div class="logo-text">Derej<span>Soft</span></div>
         </a>
         <button class="menu-toggle" aria-label="Abrir menú"><span></span><span></span><span></span></button>
@@ -680,6 +680,7 @@
           <li><a href="#servicios"><span class="link-text">Servicios</span></a></li>
           <li><a href="nosotros.html"><span class="link-text">Nosotros</span></a></li>
           <li><a href="#proyectos"><span class="link-text">Proyectos</span></a></li>
+          <li><a href="blog.html"><span class="link-text">Blog</span></a></li>
           <li><a href="#contacto"><span class="link-text">Contacto</span></a></li>
         </ul>
       </nav>
@@ -700,12 +701,12 @@
           <div class="orb orb-2"></div>
           <div class="orb orb-3"></div>
           <div class="tech-icons">
-            <img src="/svg/python-original.svg" alt="Python" class="tech-icon" />
-            <img src="/svg/django-plain.svg" alt="Django" class="tech-icon" />
-            <img src="/svg/javascript-original.svg" alt="JavaScript" class="tech-icon" />
-            <img src="/svg/react-original.svg" alt="React" class="tech-icon" />
-            <img src="/svg/docker-original.svg" alt="Docker" class="tech-icon" />
-            <img src="/svg/mysql-original.svg" alt="MySQL" class="tech-icon" />
+            <img src="/svg/python-original.svg" alt="Python" class="tech-icon" width="40" height="40" />
+            <img src="/svg/django-plain.svg" alt="Django" class="tech-icon" width="40" height="40" />
+            <img src="/svg/javascript-original.svg" alt="JavaScript" class="tech-icon" width="40" height="40" />
+            <img src="/svg/react-original.svg" alt="React" class="tech-icon" width="40" height="40" />
+            <img src="/svg/docker-original.svg" alt="Docker" class="tech-icon" width="40" height="40" />
+            <img src="/svg/mysql-original.svg" alt="MySQL" class="tech-icon" width="40" height="40" />
           </div>
         </div>
         <div class="hero-content">
@@ -741,27 +742,27 @@
           </div>
           <div class="services-grid">
             <div class="service-card reveal reveal-delay-1">
-              <div class="service-icon"><img loading="lazy" src="/imagenes/webD.webp" alt="Desarrollo Web" /></div>
+              <div class="service-icon"><img loading="lazy" src="/imagenes/webD.webp" alt="Desarrollo Web" width="36" height="36" /></div>
               <h3>Desarrollo Web</h3>
               <p>Diseñamos y desarrollamos sitios web modernos, seguros y totalmente adaptables. Convertimos tus ideas en experiencias digitales que inspiran confianza.</p>
             </div>
             <div class="service-card reveal reveal-delay-2">
-              <div class="service-icon"><img loading="lazy" src="/imagenes/soporte.webp" alt="Soporte" /></div>
+              <div class="service-icon"><img loading="lazy" src="/imagenes/soporte.webp" alt="Soporte" width="36" height="36" /></div>
               <h3>Mantenimiento y Soporte</h3>
               <p>Soporte técnico continuo y mantenimiento preventivo para garantizar que tus sistemas funcionen siempre al máximo rendimiento.</p>
             </div>
             <div class="service-card reveal reveal-delay-3">
-              <div class="service-icon"><img loading="lazy" src="/imagenes/database.webp" alt="Bases de Datos" /></div>
+              <div class="service-icon"><img loading="lazy" src="/imagenes/database.webp" alt="Bases de Datos" width="36" height="36" /></div>
               <h3>Bases de Datos</h3>
               <p>Diseñamos y gestionamos bases de datos seguras, estables y adaptadas a tus necesidades. Tu información siempre organizada y protegida.</p>
             </div>
             <div class="service-card reveal reveal-delay-4">
-              <div class="service-icon"><img loading="lazy" src="/imagenes/development.webp" alt="Aplicaciones" /></div>
+              <div class="service-icon"><img loading="lazy" src="/imagenes/development.webp" alt="Aplicaciones" width="36" height="36" /></div>
               <h3>Aplicaciones Web</h3>
               <p>Aplicaciones web potentes, intuitivas y seguras pensadas para crecer junto a tu negocio y mejorar la experiencia de tus usuarios.</p>
             </div>
             <div class="service-card reveal reveal-delay-5">
-              <div class="service-icon"><img loading="lazy" src="/imagenes/consul.webp" alt="Consultoría" /></div>
+              <div class="service-icon"><img loading="lazy" src="/imagenes/consul.webp" alt="Consultoría" width="36" height="36" /></div>
               <h3>Consultoría Tecnológica</h3>
               <p>Analizamos tus necesidades y diseñamos estrategias tecnológicas que impulsan tu crecimiento. Elegimos juntos la mejor solución.</p>
             </div>
@@ -824,7 +825,7 @@
       <div class="container">
         <div class="footer-top">
           <div class="footer-logo-container">
-            <img loading="lazy" src="/logos/DerejLogo.webp" alt="Logo DerejSoft" class="footer-logo-img" />
+            <img loading="lazy" src="/logos/DerejLogo.webp" alt="Logo DerejSoft" class="footer-logo-img" width="36" height="36" />
             <div class="footer-logo-text">Derej<span>Soft</span></div>
           </div>
           <div class="footer-links">
@@ -857,7 +858,8 @@
         let W,H,pts=[];
         function resize(){W=c.width=innerWidth;H=c.height=innerHeight}
         resize();addEventListener('resize',resize);
-        const N=Math.min(Math.floor(W*H/25000),50);
+        const isMobile = window.innerWidth < 768;
+        const N = isMobile ? Math.min(Math.floor(W*H/80000),15) : Math.min(Math.floor(W*H/25000),50);
         for(let i=0;i<N;i++) pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.3,vy:(Math.random()-.5)*.3,r:Math.random()*1.5+.5});
         function draw(){
           ctx.clearRect(0,0,W,H);
@@ -868,7 +870,7 @@
             if(p.y<0||p.y>H)p.vy*=-1;
             ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
             ctx.fillStyle='rgba(0,229,255,0.35)';ctx.fill();
-            for(let j=i+1;j<pts.length;j++){
+            if(!isMobile) for(let j=i+1;j<pts.length;j++){
               const q=pts[j],dx=p.x-q.x,dy=p.y-q.y,d=Math.sqrt(dx*dx+dy*dy);
               if(d<150){
                 ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);
@@ -932,9 +934,12 @@
       document.querySelectorAll('.reveal').forEach(el=>robs.observe(el));
 
       /* ---- Card mouse glow (service + project) ---- */
-      document.querySelectorAll('.service-card, .project-card').forEach(c=>{
-        c.addEventListener('mousemove',e=>{c.style.setProperty('--mx',e.offsetX+'px');c.style.setProperty('--my',e.offsetY+'px')});
-      });
+      // Disable on touch devices or small screens for performance
+      if (!('ontouchstart' in window) && window.innerWidth > 768) {
+        document.querySelectorAll('.service-card, .project-card').forEach(c=>{
+          c.addEventListener('mousemove',e=>{c.style.setProperty('--mx',e.offsetX+'px');c.style.setProperty('--my',e.offsetY+'px')});
+        });
+      }
 
       /* ---- Contact form ---- */
       const cf=document.getElementById('contact-form');
