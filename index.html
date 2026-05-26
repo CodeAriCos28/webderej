@@ -13,9 +13,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <!-- Optimized font loading: starts immediately but doesn't block render -->
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" />
-    <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" />
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" /></noscript>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@500;600&family=Space+Grotesk:wght@600;700&display=swap" />
+    <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@500;600&family=Space+Grotesk:wght@600;700&display=swap" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@500;600&family=Space+Grotesk:wght@600;700&display=swap" /></noscript>
 
     <link rel="preload" as="style" href="styles.css" />
     <link rel="preload" as="style" href="home.css" />
@@ -84,7 +84,7 @@
     <header class="site-header">
       <nav>
         <a href="#inicio" class="logo">
-          <img fetchpriority="high" src="logos/DerejLogo.webp" alt="Logo DerejSoft" class="logo-img" width="38" height="38" />
+          <img fetchpriority="high" decoding="async" src="logos/DerejLogo.webp" alt="Logo DerejSoft" class="logo-img" width="38" height="38" />
           <div class="logo-text">Derej<span>Soft</span></div>
         </a>
         <button class="menu-toggle" aria-label="Abrir menú"><span></span><span></span><span></span></button>
@@ -114,12 +114,12 @@
           <div class="orb orb-2"></div>
           <div class="orb orb-3"></div>
           <div class="tech-icons">
-            <img src="/svg/python-original.svg" alt="Python" class="tech-icon" width="40" height="40" />
-            <img src="/svg/django-plain.svg" alt="Django" class="tech-icon" width="40" height="40" />
-            <img src="/svg/javascript-original.svg" alt="JavaScript" class="tech-icon" width="40" height="40" />
-            <img src="/svg/react-original.svg" alt="React" class="tech-icon" width="40" height="40" />
-            <img src="/svg/docker-original.svg" alt="Docker" class="tech-icon" width="40" height="40" />
-            <img src="/svg/mysql-original.svg" alt="MySQL" class="tech-icon" width="40" height="40" />
+            <img loading="lazy" decoding="async" src="/svg/python-original.svg" alt="Python" class="tech-icon" width="40" height="40" />
+            <img loading="lazy" decoding="async" src="/svg/django-plain.svg" alt="Django" class="tech-icon" width="40" height="40" />
+            <img loading="lazy" decoding="async" src="/svg/javascript-original.svg" alt="JavaScript" class="tech-icon" width="40" height="40" />
+            <img loading="lazy" decoding="async" src="/svg/react-original.svg" alt="React" class="tech-icon" width="40" height="40" />
+            <img loading="lazy" decoding="async" src="/svg/docker-original.svg" alt="Docker" class="tech-icon" width="40" height="40" />
+            <img loading="lazy" decoding="async" src="/svg/mysql-original.svg" alt="MySQL" class="tech-icon" width="40" height="40" />
           </div>
         </div>
         <div class="hero-content">
@@ -147,7 +147,7 @@
       </section>
 
       <!-- SERVICIOS -->
-      <section id="servicios">
+      <section id="servicios" class="cv-auto">
         <div class="container">
           <div class="section-header reveal">
             <h2 class="section-title">Nuestros <span class="gradient-text">Servicios</span></h2>
@@ -184,7 +184,7 @@
       </section>
 
       <!-- PROYECTOS -->
-      <section id="proyectos">
+      <section id="proyectos" class="cv-auto">
         <div class="container">
           <div class="section-header reveal">
             <h2 class="section-title gradient-text">Proyectos Destacados</h2>
@@ -196,7 +196,7 @@
       </section>
 
       <!-- CONTACTO -->
-      <section id="contacto">
+      <section id="contacto" class="cv-auto">
         <div class="container">
           <div class="contact-content">
             <div class="contact-info reveal">
@@ -234,7 +234,7 @@
       </section>
     </main>
 
-    <footer>
+    <footer class="cv-auto">
       <div class="container">
         <div class="footer-top">
           <div class="footer-logo-container">

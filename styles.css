@@ -45,6 +45,7 @@ img{max-width:100%;display:block}
 .icon{fill:currentColor;display:inline-block;vertical-align:-.125em;width:1em;height:1em}
 .container{max-width:var(--container);margin:0 auto;padding:0 24px}
 .gradient-text{background:var(--gradient-text);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.cv-auto{content-visibility:auto;contain-intrinsic-size:1px 900px}
 
 /* ============================================
    3. BACKGROUND LAYERS
