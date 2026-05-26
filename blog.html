@@ -8,15 +8,15 @@
     <meta name="description" content="Blog de DerejSoft: artículos sobre desarrollo de software, Python, Django, diseño web, tendencias tecnológicas y consejos para tu negocio digital." />
     <meta name="keywords" content="DerejSoft blog, desarrollo web, software, Python, Django, tecnología, programación" />
     <meta name="theme-color" content="#050a18" />
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"></noscript>
 
-    <link rel="preload" as="style" href="styles.css">
-    <link rel="preload" as="style" href="blog.css">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" />
+    <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" /></noscript>
+
+    <link rel="preload" as="style" href="styles.css" />
+    <link rel="preload" as="style" href="blog.css" />
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="blog.css">
 
@@ -94,7 +94,7 @@
             <span class="prompt">root@derejsoft</span><span style="color:#5a6b8a">:</span><span class="path">~/blog</span><span style="color:#fff">$</span>
             <span id="typed-text"></span><span class="cursor"></span>
           </div>
-          <h1 class="fade-in-up" style="animation-delay:.12s">
+          <h1 class="fade-in-up">
             <span class="gradient-text">Blog</span> &amp; Recursos Tech
           </h1>
           <p class="fade-in-up" style="animation-delay:.22s">
@@ -255,7 +255,7 @@
           </div>
         </div>
         <div class="footer-bottom">
-          <div>&copy; 2025 <span style="color:var(--accent-cyan);font-weight:700">DerejSoft</span>. Todos los derechos reservados.</div>
+          <div>&copy; <script>document.write(new Date().getFullYear())</script> <span style="color:var(--accent-cyan);font-weight:700">DerejSoft</span>. Todos los derechos reservados.</div>
           <div>Hecho con <svg class="icon" style="color:#e11d48"><use href="/svg/icons.svg#icon-heart"/></svg> en República Dominicana</div>
         </div>
       </div>
@@ -1069,5 +1069,6 @@ def get_dashboard_data(user_id):
     }), { threshold: .12, rootMargin: '0px 0px -40px 0px' });
     document.querySelectorAll('.reveal').forEach(el => robs.observe(el));
     </script>
-  </body>
+  
+</body>
 </html>
