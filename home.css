@@ -183,14 +183,18 @@ textarea{min-height:120px;resize:vertical}
 }
 @media(max-width:768px){
   .hero{padding-top:40px}
+   .hero-bg .orb{animation:none;filter:blur(48px);opacity:.2}
+   .tech-icons{display:none}
   .hero h1{font-size:clamp(1.8rem,9vw,2.5rem)}
   .projects-grid{grid-template-columns:1fr}
 }
 @media(max-width:480px){
   .hero{padding-top:24px}
+   .hero-content{padding:0 12px}
   .cta-button{width:100%;justify-content:center}
   .hero h1{font-size:clamp(1.6rem,11vw,2.2rem)}
   #contact-form{padding:16px}
   .contact-info h2{font-size:1.6rem}
+   .terminal-badge{flex-wrap:wrap;justify-content:center;row-gap:6px}
   .terminal-badge{font-size:.72rem;padding:8px 14px}
 }
