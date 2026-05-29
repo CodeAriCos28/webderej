@@ -60,8 +60,6 @@
     <priority>0.4</priority>
   </url>
 
-</urlset>
-
   <!-- Blog Articles (dinámicos, generados por JS) -->
   <!-- <url>
     <loc>https://derejsoft.com/blog.html#python-2026</loc>
