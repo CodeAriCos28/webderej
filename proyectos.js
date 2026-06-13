@@ -75,22 +75,6 @@ const projectsData = [
     badgeIcon: 'shopping-cart',
     badgeText: 'Comercio',
     image: '/imagenes/derejmotium.webp',
-    title: 'DerejFood',
-    description: 'Sistema web para agencias de motocicletas que centraliza ventas de contado y crédito, controla clientes y suplidores, agiliza facturación y reduce errores.',
-    tech: [
-      { class: 'django', name: 'Django' },
-      { class: 'mysql', name: 'MySQL' },
-      { class: 'html', name: 'HTML' },
-      { class: 'css', name: 'CSS' },
-      { class: 'javascript', name: 'JavaScript' }
-    ]
-  },
-  {
-    link: '/proyectos/derejmotium.html',
-    badgeClass: 'comercio',
-    badgeIcon: 'shopping-cart',
-    badgeText: 'Comercio',
-    image: '/imagenes/derejmotium.webp',
     title: 'DerejAutix',
     description: 'Sistema web para agencias de motocicletas que centraliza ventas de contado y crédito, controla clientes y suplidores, agiliza facturación y reduce errores.',
     tech: [
