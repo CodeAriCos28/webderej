@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Programación asíncrona en JavaScript: Promesas, Async/Await y patrones avanzados | DerejSoft Blog</title>
+    <link rel="shortcut icon" href="../logos/logo2D(1).ico" />
+    <meta name="description" content="Domina la programación asíncrona de JavaScript con ejemplos prácticos de promesas, async/await, manejo de errores y patrones de concurrencia." />
+    <meta name="keywords" content="javascript, async, await, promesas, programación asíncrona, desarrollo web, DerejSoft" />
+    <meta name="theme-color" content="#050a18" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" />
+    <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" /></noscript>
+
+    <link rel="preload" as="style" href="../styles.css" />
+    <link rel="preload" as="style" href="../blog.css" />
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../blog.css">
+
+    <link rel="canonical" href="https://derejsoft.com/blog/javascript-async.html" />
+    <meta property="og:title" content="Programación asíncrona en JavaScript: Promesas, Async/Await y patrones avanzados | DerejSoft Blog" />
+    <meta property="og:description" content="Domina la programación asíncrona de JavaScript con ejemplos prácticos de promesas, async/await, manejo de errores y patrones de concurrencia." />
+    <meta property="og:url" content="https://derejsoft.com/blog/javascript-async.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="es_DO" />
+    <meta property="og:site_name" content="DerejSoft" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1579468118864-1b9ea3c0db4a?w=800&q=80" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Programación asíncrona en JavaScript: Promesas, Async/Await y patrones avanzados | DerejSoft Blog" />
+    <meta name="twitter:description" content="Domina la programación asíncrona de JavaScript con ejemplos prácticos de promesas, async/await, manejo de errores y patrones de concurrencia." />
+    <meta name="twitter:site" content="@derejsoft" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Programación asíncrona en JavaScript: Promesas, Async/Await y patrones avanzados",
+      "description": "Domina la programación asíncrona de JavaScript con ejemplos prácticos de promesas, async/await, manejo de errores y patrones de concurrencia.",
+      "image": "https://images.unsplash.com/photo-1579468118864-1b9ea3c0db4a?w=800&q=80",
+      "datePublished": "2026-03-28",
+      "dateModified": "2026-03-28",
+      "author": {
+        "@type": "Organization",
+        "name": "DerejSoft",
+        "url": "https://derejsoft.com"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "DerejSoft",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://derejsoft.com/logos/DerejSoft.webp"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://derejsoft.com/blog/javascript-async.html"
+      }
+    }
+    </script>
+
+  </head>
+  <body>
+    <canvas id="bg-canvas"></canvas>
+    <div id="grid-overlay"></div>
+    <div id="ambient-glow"></div>
+
+    <header class="site-header">
+      <nav>
+        <a href="../index.html" class="logo">
+          <img src="../logos/DerejLogo.webp" alt="Logo DerejSoft" class="logo-img" width="38" height="38" />
+          <div class="logo-text">Derej<span>Soft</span></div>
+        </a>
+        <button class="menu-toggle" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+        <ul class="nav-links">
+          <li><a href="../index.html#inicio"><span class="link-text">Inicio</span></a></li>
+          <li><a href="../index.html#servicios"><span class="link-text">Servicios</span></a></li>
+          <li><a href="../nosotros.html"><span class="link-text">Nosotros</span></a></li>
+          <li><a href="../index.html#proyectos"><span class="link-text">Proyectos</span></a></li>
+          <li><a href="../blog.html" class="active"><span class="link-text">Blog</span></a></li>
+          <li><a href="../index.html#contacto"><span class="link-text">Contacto</span></a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="whatsapp-float">
+      <a href="https://wa.me/8294772269" target="_blank" aria-label="Abrir chat de WhatsApp">
+        <svg class="icon" width="28" height="28"><use href="../svg/icons.svg#icon-whatsapp"/></svg>
+      </a>
+    </div>
+
+    <main>
+      <div class="container">
+        <div class="article-view active" id="article-view">
+          <a class="article-back" href="../blog.html">
+            <svg class="icon" style="width:1em;height:1em"><use href="../svg/icons.svg#icon-chevron-left"/></svg>
+            Volver al blog
+          </a>
+
+          <div class="article-header">
+            <span class="featured-category cat-web">Desarrollo Web</span>
+            <h1>Programación asíncrona en JavaScript: Promesas, Async/Await y patrones avanzados</h1>
+            <div class="article-meta">
+              <span>DerejSoft</span>
+              <span class="dot"></span>
+              <span>28 Mar 2026</span>
+              <span class="dot"></span>
+              <span>13 min de lectura</span>
+            </div>
+          </div>
+
+          <div class="article-hero-image">
+            <img src="https://images.unsplash.com/photo-1579468118864-1b9ea3c0db4a?w=800&q=80" alt="Programación asíncrona en JavaScript" />
+          </div>
+
+          <div class="article-body" id="article-body">
+            <p>La programación asíncrona es el corazón de JavaScript moderno. Comprenderla a fondo es la diferencia entre código funcional y código profesional.</p>
+            <h2>De callbacks a async/await</h2>
+            <p>La evolución del asincronismo en JavaScript ha pasado de callbacks anidados a la elegancia de async/await.</p>
+            <pre><code>// Patrón moderno: Async/Await con error handling
+async function fetchData(url) {
+  try {
+    const response = await fetch(url);
+    if (!response.ok) throw new Error(response.statusText);
+    return await response.json();
+  } catch (error) {
+    console.error('Error:', error.message);
+    throw error;
+  }
+}</code></pre>
+            <h2>Concurrencia con Promise.all y Promise.allSettled</h2>
+            <p>Ejecutar múltiples operaciones asíncronas en paralelo es fundamental para el rendimiento.</p>
+            <h2>Patrones avanzados</h2>
+            <ul>
+              <li>Debounce y throttle para eventos</li>
+              <li>Worker threads para tareas pesadas</li>
+              <li>AbortController para cancelar peticiones</li>
+            </ul>
+          </div>
+
+          <div class="article-tags" id="article-tags">
+            <span class="article-tag-item">javascript</span>
+            <span class="article-tag-item">html</span>
+          </div>
+
+          <div class="article-share">
+            <span>Compartir:</span>
+            <button class="share-btn" onclick="shareArticle('twitter')" aria-label="Compartir en Twitter">
+              <svg class="icon" style="width:.85em;height:.85em" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </button>
+            <button class="share-btn" onclick="shareArticle('linkedin')" aria-label="Compartir en LinkedIn">
+              <svg class="icon" style="width:.85em;height:.85em" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </button>
+            <button class="share-btn" onclick="shareArticle('copy')" aria-label="Copiar enlace">
+              <svg class="icon" style="width:.85em;height:.85em" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-top">
+          <div class="footer-logo-container">
+            <img loading="lazy" src="../logos/DerejLogo.webp" alt="Logo DerejSoft" class="footer-logo-img" width="36" height="36" />
+            <div class="footer-logo-text">Derej<span>Soft</span></div>
+          </div>
+          <div class="footer-links">
+            <a href="../index.html#servicios" class="footer-link">Servicios</a>
+            <a href="../blog.html" class="footer-link">Blog</a>
+            <a href="../nosotros.html" class="footer-link">Nosotros</a>
+            <a href="../index.html#contacto" class="footer-link">Contacto</a>
+          </div>
+          <div class="footer-social">
+            <span class="footer-social-title">Síguenos</span>
+            <ul>
+              <li><a href="https://www.instagram.com/derejsoft" target="_blank" class="social-icon instagram" aria-label="Instagram"><svg class="icon"><use href="../svg/icons.svg#icon-instagram"/></svg></a></li>
+              <li><a href="https://www.facebook.com/share/1JKws2oMEp" target="_blank" class="social-icon facebook" aria-label="Facebook"><svg class="icon"><use href="../svg/icons.svg#icon-facebook-f"/></svg></a></li>
+              <li><a href="https://www.tiktok.com/@derejsoft" target="_blank" class="social-icon tiktok" aria-label="TikTok"><svg class="icon"><use href="../svg/icons.svg#icon-tiktok"/></svg></a></li>
+              <li><a href="https://www.linkedin.com/in/derejsoft" target="_blank" class="social-icon linkedin" aria-label="LinkedIn"><svg class="icon"><use href="../svg/icons.svg#icon-linkedin"/></svg></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div>&copy; <script>document.write(new Date().getFullYear())</script> <span style="color:var(--accent-cyan);font-weight:700">DerejSoft</span>. Todos los derechos reservados.</div>
+          <div>Hecho con <svg class="icon" style="color:#e11d48"><use href="../svg/icons.svg#icon-heart"/></svg> en República Dominicana</div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+    function shareArticle(platform) {
+      const url = encodeURIComponent(window.location.href);
+      const title = encodeURIComponent(document.querySelector('.article-header h1').textContent);
+      switch (platform) {
+        case 'twitter':
+          window.open(`https://twitter.com/intent/tweet?url=${url}&text=${title}`, '_blank');
+          break;
+        case 'linkedin':
+          window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}`, '_blank');
+          break;
+        case 'copy':
+          navigator.clipboard.writeText(window.location.href).then(() => {
+            const btn = event.currentTarget;
+            btn.innerHTML = '<svg class="icon" style="width:.85em;height:.85em" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>';
+            setTimeout(() => {
+              btn.innerHTML = '<svg class="icon" style="width:.85em;height:.85em" viewBox="0 0 24 24" fill="currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>';
+            }, 2000);
+          });
+          break;
+      }
+    }
+    </script>
+
+  </body>
+</html>
