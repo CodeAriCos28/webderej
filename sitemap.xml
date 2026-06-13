@@ -60,96 +60,96 @@
     <priority>0.4</priority>
   </url>
 
-  <!-- Blog Articles (dinámicos, generados por JS) -->
-  <!-- <url>
-    <loc>https://derejsoft.com/blog.html#python-2026</loc>
-    <lastmod>2026-05-15</lastmod>
+  <!-- Blog -->
+  <url>
+    <loc>https://derejsoft.com/blog/python-2026.html</loc>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://derejsoft.com/blog.html#django-rest-api</loc>
-    <lastmod>2026-05-10</lastmod>
+    <loc>https://derejsoft.com/blog/django-rest-api.html</loc>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://derejsoft.com/blog.html#web-tendencias-2026</loc>
-    <lastmod>2026-05-05</lastmod>
+    <loc>https://derejsoft.com/blog/web-tendencias-2026.html</loc>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://derejsoft.com/blog.html#django-security</loc>
-    <lastmod>2026-04-28</lastmod>
+    <loc>https://derejsoft.com/blog/django-security.html</loc>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://derejsoft.com/blog.html#software-a-medida</loc>
-    <lastmod>2026-04-22</lastmod>
+    <loc>https://derejsoft.com/blog/software-a-medida.html</loc>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://derejsoft.com/blog.html#python-ia-ml</loc>
-    <lastmod>2026-04-18</lastmod>
+    <loc>https://derejsoft.com/blog/python-ia-ml.html</loc>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://derejsoft.com/blog.html#docker-deploy</loc>
-    <lastmod>2026-04-12</lastmod>
+    <loc>https://derejsoft.com/blog/docker-deploy.html</loc>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://derejsoft.com/blog.html#seo-web</loc>
-    <lastmod>2026-04-05</lastmod>
+    <loc>https://derejsoft.com/blog/seo-web.html</loc>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://derejsoft.com/blog.html#javascript-async</loc>
-    <lastmod>2026-03-28</lastmod>
+    <loc>https://derejsoft.com/blog/javascript-async.html</loc>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://derejsoft.com/blog.html#aws-desarrolladores</loc>
-    <lastmod>2026-03-20</lastmod>
+    <loc>https://derejsoft.com/blog/aws-desarrolladores.html</loc>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://derejsoft.com/blog.html#landing-pages</loc>
-    <lastmod>2026-03-14</lastmod>
+    <loc>https://derejsoft.com/blog/landing-pages.html</loc>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://derejsoft.com/blog.html#python-automatizacion</loc>
-    <lastmod>2026-03-08</lastmod>
+    <loc>https://derejsoft.com/blog/python-automatizacion.html</loc>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://derejsoft.com/blog.html#django-caching</loc>
-    <lastmod>2026-03-01</lastmod>
+    <loc>https://derejsoft.com/blog/django-caching.html</loc>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url> -->
+  </url>
 
 </urlset>
