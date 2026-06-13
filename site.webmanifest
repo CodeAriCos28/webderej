@@ -1,0 +1,26 @@
+{
+  "name": "DerejSoft",
+  "short_name": "DerejSoft",
+  "description": "Desarrollo de software a medida en República Dominicana. Especialistas en Python, Django, desarrollo web, apps y consultoría tecnológica.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050a18",
+  "theme_color": "#050a18",
+  "icons": [
+    {
+      "src": "/logos/logo32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/logos/logo180x180.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/logos/DerejSoft.webp",
+      "sizes": "1280x570",
+      "type": "image/webp"
+    }
+  ]
+}
