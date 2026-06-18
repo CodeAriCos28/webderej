@@ -26,7 +26,7 @@ const projectsData = [
     badgeClass: 'finanzas',
     badgeIcon: 'calculator',
     badgeText: 'Finanzas',
-    image: '/imagenes/derejstorange.webp',
+    image: '/imagenes/derejstorange-card.webp',
     title: 'DerejStorage',
     description: 'Software para molinos y agroquímicas que organiza facturas de entrada y salida, evita pérdida de documentos, agiliza búsquedas y se adapta a las necesidades de cada cliente.',
     tech: [
@@ -58,7 +58,7 @@ const projectsData = [
     badgeClass: 'finanzas',
     badgeIcon: 'calculator',
     badgeText: 'Finanzas',
-    image: '/imagenes/DF-Dashboard.webp',
+    image: '/imagenes/DF-Menu-card.webp',
     title: 'DerejFinance',
     description: 'Aplicación web para controlar tus finanzas con facilidad y mejorar la eficiencia de tu administración financiera personal.',
     tech: [
