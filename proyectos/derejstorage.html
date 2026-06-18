@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DerejStorage | DerejSoft — Proyecto</title>
     <link rel="shortcut icon" href="/logos/logo2D(1).ico" />
-    <meta name="description" content="DerejStorage — Sistema web de gestión de representantes y facturación de arroz. Controla ventas, métricas y rendimiento en una sola plataforma.">
+    <meta name="description" content="Descubre DerejStorage, sistema de gestión de representantes y facturación de arroz desarrollado por DerejSoft.">
     
     <!-- SEO & Open Graph -->
     <link rel="canonical" href="https://derejsoft.com/proyectos/derejstorage.html" />
     <meta property="og:title" content="DerejStorage | DerejSoft — Proyecto" />
-    <meta property="og:description" content="DerejStorage — Sistema web de gestión de representantes y facturación de arroz. Controla ventas, métricas y rendimiento en una sola plataforma." />
+    <meta property="og:description" content="DerejStorage — Sistema de gestión de representantes y facturación de arroz. Controla ventas, métricas y rendimiento." />
     <meta property="og:url" content="https://derejsoft.com/proyectos/derejstorage.html" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_DO" />
@@ -18,7 +18,7 @@
     <meta property="og:image" content="https://derejsoft.com/logos/DerejSoft.webp" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="DerejStorage | DerejSoft" />
-    <meta name="twitter:description" content="DerejStorage — Sistema web de gestión de representantes y facturación de arroz." />
+    <meta name="twitter:description" content="DerejStorage — Sistema de gestión de representantes y facturación de arroz." />
     <meta name="twitter:site" content="@derejsoft" />
     <script type="application/ld+json">
     {
@@ -26,7 +26,7 @@
       "@type": "Product",
       "name": "DerejStorage",
       "url": "https://derejsoft.com/proyectos/derejstorage.html",
-      "description": "Sistema web de gestión de representantes y facturación de arroz. Controla ventas, métricas y rendimiento en una sola plataforma.",
+      "description": "Sistema de gestión de representantes y facturación de arroz. Controla ventas, métricas y rendimiento en una sola plataforma.",
       "image": "https://derejsoft.com/imgproye/derejstorange/derejstorange.webp",
       "brand": {
         "@type": "Brand",
@@ -87,1854 +87,921 @@
         },
         "hasMerchantReturnPolicy": {
           "@type": "MerchantReturnPolicy",
-          "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+          "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+          "applicableCountry": "DO"
         }
       }
     }
     </script>
     
-    <!-- Fuentes y CSS externo -->
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
-<!-- FontAwesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-sOMEhashAQUI" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" />
     <style>
-        /* Variables CSS - Mismo esquema de colores que index2.html */
-                :root {
-            /* Colores principales CYBER/TECH */
-            --primary-color: #00f2fe;
-            --primary-dark: #00a8cc;
-            --primary-light: #66f5ff;
-            --secondary-color: #8b5cf6;
-            --accent-color: #10b981;
-            
-            /* Gradientes */
-            --gradient-primary: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
-            --gradient-secondary: linear-gradient(135deg, #4facfe 0%, #8b5cf6 100%);
-            --gradient-accent: linear-gradient(135deg, #00f2fe 0%, #8b5cf6 100%);
-            --gradient-warm: linear-gradient(135deg, #10b981 0%, #00f2fe 100%);
-            
-            /* Colores neutros */
-            --dark-bg: #050b14;
-            --dark-card: #0a1120;
-            --dark-accent: #0f172a;
-            --light-text: #e2e8f0;
-            --gray-text: #94a3b8;
-            --border-color: rgba(0, 242, 254, 0.15);
-            
-            /* Tipografía */
-            --font-primary: 'Outfit', 'Inter', sans-serif;
-            --font-display: 'JetBrains Mono', monospace;
-            --font-mono: 'JetBrains Mono', monospace;
-            
-            /* Espaciado */
-            --section-padding: 120px 0;
-            --container-padding: 0 20px;
-            --border-radius: 8px; /* HUD sharp corners */
-            --border-radius-sm: 4px;
-            
-            /* Sombras */
-            --shadow-soft: 0 10px 40px rgba(0, 242, 254, 0.1);
-            --shadow-medium: 0 20px 60px rgba(0, 242, 254, 0.15);
-            --shadow-strong: 0 30px 80px rgba(0, 242, 254, 0.2);
-            
-            /* Transiciones */
-            --transition-fast: 0.3s ease;
-            --transition-medium: 0.5s ease;
-            --transition-slow: 0.8s ease;
-        }
-
-        /* Animaciones globales */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes shimmer {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        @keyframes glow {
-            0%, 100% { box-shadow: 0 0 20px rgba(0, 242, 254, 0.3); }
-            50% { box-shadow: 0 0 40px rgba(0, 242, 254, 0.6), 0 0 60px rgba(139, 92, 246, 0.3); }
-        }
-
-        /* Reset y estilos base */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: var(--font-primary);
-            background: var(--dark-bg);
-            color: var(--light-text);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: var(--container-padding);
-        }
-
-        /* Header */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            background: rgba(15, 15, 35, 0.95);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .project-content {
-            display: flex;
-            gap: 40px;
-            align-items: flex-start;
-}
-
-        .project-info {
-            flex: 2;
-            /* ancho mayor */
-        }
-
-        .tech-specs {
-            flex: 1;
-            border-left: 1px solid #e8e8e8;
-            padding-left: 20px;
-        }
-
-
-
-        .logo28 {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--light-text);
-            text-decoration: none;
-        }
-
-        .logo28 span {
-            color: var(--primary-color);
-        }
-
-        .logo-img {
-            width: 40px;
-            height: 40px;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            color: var(--light-text);
-            text-decoration: none;
-            font-weight: 500;
-            transition: var(--transition-fast);
-            position: relative;
-            padding: 5px 0;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gradient-primary);
-            transition: var(--transition-fast);
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-color);
-        }
-
-        .back-button {
-            background: var(--gradient-primary);
-            color: white;
-            padding: 12px 24px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: var(--transition-medium);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .back-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: 0.5s;
-        }
-
-        .back-button:hover::before {
-            left: 100%;
-        }
-
-        .back-button:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 10px 30px rgba(0, 242, 254, 0.4);
-        }
-
-        .back-button i {
-            transition: var(--transition-fast);
-        }
-
-        .back-button:hover i {
-            transform: translateX(-5px);
-        }
-
-        /* Sección principal del proyecto */
-        .project-showcase {
-            padding: 140px 0 80px;
-            background: var(--dark-bg);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .project-showcase::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(ellipse at 20% 50%, rgba(0, 242, 254, 0.15) 0%, transparent 50%),
-                        radial-gradient(ellipse at 80% 50%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
-            animation: gradientMove 10s ease infinite alternate;
-            pointer-events: none;
-        }
-
-        @keyframes gradientMove {
-            0% { opacity: 0.5; transform: scale(1); }
-            100% { opacity: 1; transform: scale(1.1); }
-        }
-
-        .project-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .project-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(20px);
-            padding: 12px 24px;
-            border-radius: 50px;
-            border: 1px solid var(--border-color);
-            margin-bottom: 20px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            animation: fadeInUp 0.8s ease forwards;
-        }
-
-        .project-badge i {
-            color: var(--primary-color);
-            animation: pulse 2s ease infinite;
-        }
-
-        .project-title {
-            font-family: var(--font-display);
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
-            font-weight: 700;
-            margin-bottom: 20px;
-            background: linear-gradient(90deg, #667eea, #764ba2, #004e98, #667eea);
-            background-size: 300% 100%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: shimmer 5s ease infinite, fadeInUp 1s ease 0.2s both;
-        }
-
-        .project-subtitle {
-            font-size: 1.3rem;
-            color: var(--gray-text);
-            max-width: 700px;
-            margin: 0 auto 40px;
-            animation: fadeInUp 1s ease 0.4s both;
-        }
-
-        .project-price {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--accent-color);
-            margin-bottom: 10px;
-            animation: fadeInUp 1s ease 0.6s both, float 3s ease infinite;
-            text-shadow: 0 0 30px rgba(16, 185, 129, 0.4);
-        }
-
-        .price-note {
-            color: var(--gray-text);
-            font-size: 1rem;
-        }
-
-        /* Carrusel de imágenes */
-        .carousel-container {
-            position: relative;
-            max-width: 900px;
-            margin: 0 auto 60px;
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--shadow-strong);
-            animation: fadeInUp 1s ease 0.8s both, glow 4s ease infinite;
-            border: 2px solid rgba(0, 242, 254, 0.3);
-        }
-
-        .carousel-wrapper {
-            position: relative;
-            width: 100%;
-            height: 500px;
-            overflow: hidden;
-            background: var(--dark-card);
-        }
-
-        .carousel-slide {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            transition: opacity 0.8s ease-in-out, transform 0.8s ease;
-            transform: scale(1.05);
-        }
-
-        .carousel-slide.active {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        .carousel-slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .carousel-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.7);
-            color: white;
-            border: none;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 1.2rem;
-            transition: var(--transition-fast);
-            z-index: 10;
-        }
-
-        .carousel-nav:hover {
-            background: var(--primary-color);
-            transform: translateY(-50%) scale(1.1);
-        }
-
-        .carousel-prev {
-            left: 20px;
-        }
-
-        .carousel-next {
-            right: 20px;
-        }
-
-        .carousel-indicators {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 10px;
-            z-index: 10;
-        }
-
-        .indicator {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.5);
-            cursor: pointer;
-            transition: var(--transition-fast);
-        }
-
-        .indicator.active {
-            background: var(--primary-color);
-            transform: scale(1.2);
-            box-shadow: 0 0 10px var(--primary-color);
-        }
-
-        /* Contenido del proyecto */
-        .project-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            margin-bottom: 80px;
-            position: relative;
-        }
-
-        .project-info h3 {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: var(--light-text);
-            position: relative;
-            display: inline-block;
-        }
-
-        .project-info h3::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 80px;
-            height: 4px;
-            background: var(--gradient-primary);
-            border-radius: 2px;
-        }
-
-        .project-description {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--gray-text);
-            margin-bottom: 30px;
-            padding-left: 15px;
-            border-left: 3px solid var(--primary-color);
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-
-        .feature-item {
-            background: var(--dark-card);
-            padding: 25px;
-            border-radius: var(--border-radius-sm);
-            border: 1px solid var(--border-color);
-            transition: var(--transition-medium);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .feature-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0, 242, 254, 0.1), transparent);
-            transition: 0.5s;
-        }
-
-        .feature-item:hover::before {
-            left: 100%;
-        }
-
-        .feature-item:hover {
-            border-color: var(--primary-color);
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(0, 242, 254, 0.2);
-        }
-
-        .feature-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--gradient-primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 15px;
-            font-size: 1.2rem;
-            color: white;
-            transition: var(--transition-medium);
-            animation: float 3s ease infinite;
-        }
-
-        .feature-item:hover .feature-icon {
-            transform: scale(1.2) rotate(10deg);
-            box-shadow: 0 10px 30px rgba(0, 242, 254, 0.4);
-        }
-
-        .feature-item h4 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 10px;
-            color: var(--light-text);
-        }
-
-        .feature-item p {
-            color: var(--gray-text);
-            font-size: 0.95rem;
-        }
-
-        /* Especificaciones técnicas */
-        .tech-specs {
-            background: var(--dark-card);
-            padding: 40px;
-            border-radius: var(--border-radius);
-            border: 1px solid var(--border-color);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .tech-specs::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(0, 242, 254, 0.05) 0%, transparent 50%);
-            animation: rotate 20s linear infinite;
-        }
-
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        .tech-specs h3 {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 25px;
-            color: var(--light-text);
-            position: relative;
-            display: inline-block;
-        }
-
-        .tech-specs h3::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 60px;
-            height: 3px;
-            background: var(--gradient-primary);
-            border-radius: 2px;
-        }
-
-        .specs-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            position: relative;
-        }
-
-        .spec-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 15px;
-            background: var(--dark-bg);
-            border-radius: var(--border-radius-sm);
-            transition: var(--transition-medium);
-            border: 1px solid transparent;
-        }
-
-        .spec-item:hover {
-            border-color: var(--primary-color);
-            transform: translateX(10px);
-            background: rgba(0, 242, 254, 0.1);
-        }
-
-        .spec-item i {
-            color: var(--primary-color);
-            font-size: 1.1rem;
-            transition: var(--transition-fast);
-        }
-
-        .spec-item:hover i {
-            transform: scale(1.3);
-            color: var(--accent-color);
-        }
-
-        .spec-item span {
-            color: var(--light-text);
-            font-weight: 500;
-        }
-
-        /* Call to Action */
-        .cta-section {
-            text-align: center;
-            padding: 100px 0;
-            background: linear-gradient(135deg, var(--dark-card) 0%, var(--dark-accent) 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="rgba(99,102,241,0.1)"/></svg>');
-            background-size: 50px 50px;
-            animation: movePattern 20s linear infinite;
-        }
-
-        @keyframes movePattern {
-            from { background-position: 0 0; }
-            to { background-position: 100px 100px; }
-        }
-
-        .cta-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .cta-content h2 {
-            font-family: var(--font-display);
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            background: linear-gradient(90deg, #667eea, #764ba2, #004e98, #667eea);
-            background-size: 300% 100%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: shimmer 5s ease infinite;
-        }
-
-        .cta-content p {
-            font-size: 1.2rem;
-            color: var(--gray-text);
-            margin-bottom: 40px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .cta-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 18px 36px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            text-decoration: none;
-            transition: var(--transition-medium);
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: 0.5s;
-        }
-
-        .btn:hover::before {
-            left: 100%;
-        }
-
-        .btn-primary {
-            background: var(--gradient-primary);
-            color: white;
-            box-shadow: var(--shadow-medium);
-            animation: glow 3s ease infinite;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 20px 40px rgba(0, 242, 254, 0.4);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--primary-color);
-            border: 2px solid var(--primary-color);
-        }
-
-        .btn-secondary:hover {
-            background: var(--primary-color);
-            color: white;
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 15px 30px rgba(0, 242, 254, 0.3);
-        }
-
-            /* Preview Button Hover */
-            .btn-tertiary {
-                background: transparent;
-                border: 1.5px dashed var(--primary-color);
-                color: var(--primary-color);
-            }
-            .btn-tertiary:hover {
-                background: var(--primary-color);
-                color: #fff;
-                border-color: var(--primary-dark);
-                box-shadow: 0 10px 30px rgba(0, 242, 254, 0.2);
-                transform: translateY(-3px) scale(1.04);
-            }
-
-        /* WhatsApp Float */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 1000;
-        }
-
-        .whatsapp-float a {
-            display: block;
-            width: 65px;
-            height: 65px;
-            background: linear-gradient(135deg, #25d366 0%, #128C7E 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
-            transition: var(--transition-fast);
-            animation: whatsappPulse 2s ease-in-out infinite;
-        }
-
-        @keyframes whatsappPulse {
-            0%, 100% { 
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
-            }
-            50% { 
-                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0), 0 8px 25px rgba(37, 211, 102, 0.4);
-            }
-        }
-
-        .whatsapp-float a:hover {
-            transform: scale(1.15) rotate(10deg);
-            animation: none;
-            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.5);
-        }
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border: 0;
-        }
-
-        .whatsapp-float a:hover {
-            transform: scale(1.1);
-            box-shadow: var(--shadow-strong);
-            animation: none;
-        }
-
-        .whatsapp-float img {
-            width: 35px;
-            height: 35px;
-        }
-
-        @media(max-width: 900px){
-            .project-content{
-                flex-direction: column;
-            }
-            .tech-specs{
-                border-left: none;
-                padding-left: 0;
-            }
-}
-        .project-header small.price-note{
-            display: block;
-            font-size: 1rem;
-            opacity: .75;
-            margin-top: 6px;
-        }
-
-
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .project-content {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .carousel-wrapper {
-                height: 300px;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .specs-list {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .project-title {
-                font-size: 2.5rem;
-            }
-
-            .project-price {
-                font-size: 2rem;
-            }
-
-            .cta-content h2 {
-                font-size: 2rem;
-            }
-
-            .carousel-nav {
-                width: 40px;
-                height: 40px;
-                font-size: 1rem;
-            }
-        }
-   
-        /* Footer */
-        /* Footer */
-        footer {
-            background: linear-gradient(180deg, var(--dark-card) 0%, rgba(10, 10, 25, 0.98) 100%);
-            padding: 80px 20px 30px;
-            border-top: 1px solid var(--border-color);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(ellipse at 20% 0%, rgba(0, 242, 254, 0.08) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 100%, rgba(118, 75, 162, 0.08) 0%, transparent 50%);
-            pointer-events: none;
-        }
-        
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .footer-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 40px;
-            padding-bottom: 40px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .footer-logo {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .footer-logo-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--gradient-primary);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: white;
-            box-shadow: 0 5px 20px rgba(0, 242, 254, 0.3);
-            overflow: hidden;
-        }
-        
-        .footer-logo-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .footer-logo-text {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--light-text);
-        }
-
-        .footer-logo-text span {
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .footer-links {
-            display: flex;
-            gap: 40px;
-            flex-wrap: wrap;
-        }
-
-        .footer-link {
-            color: var(--gray-text);
-            text-decoration: none;
-            transition: all 0.3s ease;
-            position: relative;
-            padding: 5px 0;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .footer-link i {
-            font-size: 0.9rem;
-            color: var(--primary-color);
-            opacity: 0.7;
-        }
-        
-        .footer-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gradient-primary);
-            transition: width 0.3s ease;
-        }
-
-        .footer-link:hover {
-            color: var(--light-text);
-        }
-        
-        .footer-link:hover::after {
-            width: 100%;
-        }
-        
-        .footer-link:hover i {
-            opacity: 1;
-        }
-        
-        /* Redes Sociales */
-        .footer-social {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-        }
-        
-        .footer-social-title {
-            color: var(--gray-text);
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .redes ul {
-            display: flex;
-            list-style: none;
-            gap: 15px;
-            padding: 0;
-            margin: 0;
-        }
-        
-        .redes li {
-            list-style: none;
-        }
-        
-        .social-icon {
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-            text-decoration: none !important;
-        }
-        
-        .social-icon::after {
-            display: none !important;
-        }
-        
-        .social-icon::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: var(--gradient-primary);
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-
-        .social-icon i {
-            font-size: 1.3rem;
-            color: var(--gray-text);
-            transition: all 0.4s ease;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .social-icon:hover {
-            transform: translateY(-5px) scale(1.1);
-            border-color: var(--primary-color);
-            box-shadow: 0 10px 30px rgba(0, 242, 254, 0.3);
-        }
-        
-        .social-icon:hover::before {
-            opacity: 1;
-        }
-
-        .social-icon:hover i {
-            color: white;
-        }
-        
-        /* Colores específicos por red social */
-        .social-icon.instagram:hover {
-            border-color: #E4405F;
-            box-shadow: 0 10px 30px rgba(228, 64, 95, 0.3);
-        }
-        .social-icon.instagram:hover::before {
-            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-        }
-        
-        .social-icon.facebook:hover {
-            border-color: #1877F2;
-            box-shadow: 0 10px 30px rgba(24, 119, 242, 0.3);
-        }
-        .social-icon.facebook:hover::before {
-            background: #1877F2;
-        }
-        
-        .social-icon.tiktok:hover {
-            border-color: #00f2ea;
-            box-shadow: 0 10px 30px rgba(0, 242, 234, 0.3);
-        }
-        .social-icon.tiktok:hover::before {
-            background: linear-gradient(45deg, #00f2ea, #ff0050);
-        }
-        
-        /* Footer Bottom */
-        .footer-bottom {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            padding-top: 30px;
-        }
-
-        .copyright-bar {
-            color: var(--gray-text);
-            font-size: 0.9rem;
-        }
-        
-        .copyright-bar span {
-            color: var(--primary-color);
-        }
-        
-        .footer-credits {
-            color: rgba(255, 255, 255, 0.4);
-            font-size: 0.8rem;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-        
-        .footer-credits i {
-            color: #e25555;
-            animation: heartBeat 1.5s ease-in-out infinite;
-        }
-        
-        @keyframes heartBeat {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.2); }
-        }
-        .modulos-titulo {
-            margin-top: 40px;
-        }
-
-    
-      /* ESTILOS FUTURISTAS AÑADIDOS */
-      #fixed-background::after {
-        content: "";
-        position: absolute;
-        top: 0; left: 0; width: 100%; height: 100%;
-        background-image: 
-          linear-gradient(rgba(0, 242, 254, 0.03) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(0, 242, 254, 0.03) 1px, transparent 1px);
-        background-size: 40px 40px;
-        z-index: 1;
-        pointer-events: none;
-      }
-      .terminal-badge {
-        font-family: var(--font-mono) !important;
-        background: rgba(0, 0, 0, 0.5) !important;
-        border: 1px solid var(--primary) !important;
-        color: var(--primary) !important;
-        box-shadow: 0 0 15px rgba(0, 242, 254, 0.3) !important;
-        border-radius: 4px !important;
-        text-transform: lowercase;
-      }
-      .typewriter {
-        overflow: hidden;
-        border-right: .15em solid var(--primary);
-        white-space: nowrap;
-        margin: 0 auto;
-        letter-spacing: .1em;
-        animation: typing 3s steps(40, end), blink-caret .75s step-end infinite;
-      }
-      @keyframes typing { from { width: 0 } to { width: 100% } }
-      @keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: var(--primary); } }
-      
-      .service-card, .project-card, .article-card {
-        border-radius: 8px !important; /* Más angular */
-        border-top: 2px solid var(--border-light) !important;
-        border-bottom: 2px solid transparent !important;
-        background: linear-gradient(180deg, rgba(10,17,32,0.9) 0%, rgba(5,11,20,0.95) 100%) !important;
-        position: relative;
-      }
-      .service-card::after, .project-card::after, .article-card::after {
-        content: '';
-        position: absolute;
-        bottom: 0; left: 0; width: 0; height: 2px;
-        background: var(--gradient-main);
-        transition: width 0.4s ease;
-      }
-      .service-card:hover::after, .project-card:hover::after, .article-card:hover::after {
-        width: 100%;
-      }
-      .tech-tag {
-        font-family: var(--font-mono) !important;
-        background: rgba(0, 0, 0, 0.6) !important;
-        border: 1px solid var(--border-light) !important;
-        color: var(--primary) !important;
-        border-radius: 4px !important;
-        font-size: 0.75rem !important;
-        padding: 4px 8px !important;
-        text-transform: uppercase;
-      }
-      .project-badge {
-        font-family: var(--font-mono) !important;
-        border-radius: 0 0 8px 0 !important;
-      }
-      .section-title {
-        font-family: var(--font-mono) !important;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-      }
-      .section-title::before {
-        content: "> ";
-        color: var(--primary);
-      }
-      .section-title::after {
-        content: "_";
-        color: var(--primary);
-        animation: blink-caret 1s step-end infinite;
+      /* =============================================
+         0. RESET & ACCESSIBILITY
+         ============================================= */
+      .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+      *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+      html{scroll-behavior:smooth;scroll-padding-top:80px;overflow-x:hidden}
+
+      /* =============================================
+         1. DESIGN TOKENS
+         ============================================= */
+      :root{
+        --bg-base:#050a18;
+        --bg-surface:#0b1228;
+        --bg-elevated:#111d3a;
+        --bg-glass:rgba(11,18,40,0.65);
+        --bg-glass-hover:rgba(11,18,40,0.85);
+
+        --accent-cyan:#00e5ff;
+        --accent-blue:#3d7aed;
+        --accent-violet:#7c3aed;
+        --accent-emerald:#10b981;
+        --accent-pink:#ec4899;
+        --accent-amber:#f59e0b;
+
+        --gradient-hero:linear-gradient(135deg,#00e5ff 0%,#3d7aed 40%,#7c3aed 100%);
+        --gradient-text:linear-gradient(90deg,#00e5ff,#3d7aed,#7c3aed);
+        --gradient-card:linear-gradient(180deg,rgba(17,29,58,0.9) 0%,rgba(5,10,24,0.95) 100%);
+        --gradient-glow:radial-gradient(circle,rgba(0,229,255,0.12) 0%,transparent 70%);
+
+        --text-primary:#f0f4ff;
+        --text-secondary:#94a3c8;
+        --text-muted:#5a6b8a;
+
+        --border-subtle:rgba(0,229,255,0.08);
+        --border-default:rgba(0,229,255,0.12);
+        --border-hover:rgba(0,229,255,0.35);
+
+        --shadow-sm:0 2px 8px rgba(0,0,0,0.3);
+        --shadow-md:0 8px 24px rgba(0,0,0,0.4);
+        --shadow-lg:0 16px 48px rgba(0,0,0,0.5);
+        --shadow-glow:0 0 30px rgba(0,229,255,0.15);
+        --shadow-glow-strong:0 0 60px rgba(0,229,255,0.25);
+
+        --font-heading:'Space Grotesk',sans-serif;
+        --font-body:'Inter',sans-serif;
+        --font-mono:'JetBrains Mono',monospace;
+
+        --radius-xs:6px;
+        --radius-sm:10px;
+        --radius-md:14px;
+        --radius-lg:20px;
+        --radius-xl:28px;
+        --radius-full:9999px;
+
+        --header-h:72px;
+        --container:1200px;
+
+        --ease-out:cubic-bezier(0.16,1,0.3,1);
+        --ease-bounce:cubic-bezier(0.34,1.56,0.64,1);
+        --ease-spring:cubic-bezier(0.22,1,0.36,1);
       }
 
-    
-        /* HUD y Cyber Tech Extras */
-        body { background-image: linear-gradient(rgba(0, 242, 254, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 242, 254, 0.03) 1px, transparent 1px); background-size: 40px 40px; }
-        .feature-item, .tech-specs, .spec-item {
-            border-top: 2px solid var(--border-color) !important;
-            border-bottom: 2px solid transparent !important;
-            border-radius: 8px !important;
-        }
-        .feature-item::after, .tech-specs::after {
-            content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px;
-            background: var(--gradient-primary); transition: width 0.4s ease;
-        }
-        .feature-item:hover::after, .tech-specs:hover::after { width: 100%; }
-        .project-badge { font-family: var(--font-mono); text-transform: uppercase; border-radius: 4px !important; }
-        .project-title { font-family: var(--font-display) !important; letter-spacing: -1px; }
-        .project-title::before { content: ">_"; color: var(--primary-color); margin-right: 10px; }
-        .btn { font-family: var(--font-mono); text-transform: uppercase; border-radius: 4px !important; }
+      /* =============================================
+         2. BASE STYLES
+         ============================================= */
+      body{
+        font-family:var(--font-body);
+        color:var(--text-primary);
+        line-height:1.7;
+        background:var(--bg-base);
+        overflow-x:hidden;
+        -webkit-font-smoothing:antialiased;
+      }
+      a{text-decoration:none;color:inherit;transition:color .25s var(--ease-out)}
+      ul{list-style:none}
+      img{max-width:100%;display:block}
 
+      .container{max-width:var(--container);margin:0 auto;padding:0 24px}
+      .gradient-text{background:var(--gradient-text);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+      /* =============================================
+         3. BACKGROUND CANVAS + GRID
+         ============================================= */
+      #bg-canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none}
+      #grid-overlay{
+        position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;
+        background-image:
+          linear-gradient(rgba(0,229,255,0.025) 1px,transparent 1px),
+          linear-gradient(90deg,rgba(0,229,255,0.025) 1px,transparent 1px);
+        background-size:60px 60px;
+        mask-image:radial-gradient(ellipse 80% 60% at 50% 40%,black 30%,transparent 100%);
+        -webkit-mask-image:radial-gradient(ellipse 80% 60% at 50% 40%,black 30%,transparent 100%);
+      }
+      #ambient-glow{
+        position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;
+        background:
+          radial-gradient(ellipse 50% 40% at 20% 50%,rgba(0,229,255,0.06),transparent),
+          radial-gradient(ellipse 50% 40% at 80% 30%,rgba(124,58,237,0.06),transparent),
+          radial-gradient(ellipse 40% 30% at 50% 80%,rgba(16,185,129,0.04),transparent);
+      }
+
+      /* =============================================
+         4. HEADER
+         ============================================= */
+      .site-header{
+        position:fixed;top:0;left:0;width:100%;height:var(--header-h);z-index:10000;
+        background:rgba(5,10,24,0.7);
+        backdrop-filter:blur(20px) saturate(1.4);
+        -webkit-backdrop-filter:blur(20px) saturate(1.4);
+        border-bottom:1px solid var(--border-subtle);
+        transition:all .4s var(--ease-out);
+      }
+      .site-header.scrolled{
+        background:rgba(5,10,24,0.95);
+        box-shadow:0 4px 30px rgba(0,0,0,0.4);
+        border-bottom-color:rgba(61,122,237,0.2);
+      }
+      .site-header nav{
+        display:flex;justify-content:space-between;align-items:center;
+        height:100%;max-width:var(--container);margin:0 auto;padding:0 24px;
+      }
+      .logo{display:flex;align-items:center;gap:10px;font-family:var(--font-heading);font-weight:700;font-size:1.4rem;line-height:1}
+      .logo-img{width:38px;height:38px;filter:drop-shadow(0 0 10px rgba(0,229,255,0.4));transition:transform .3s var(--ease-bounce)}
+      .logo:hover .logo-img{transform:rotate(8deg) scale(1.1)}
+      .logo-text span{color:var(--accent-cyan)}
+
+      .nav-links{display:flex;gap:36px;align-items:center;height:100%}
+      .nav-links a{font-size:.9rem;font-weight:500;color:var(--text-secondary);position:relative;padding:6px 0;transition:color .25s}
+      .nav-links a .link-text{position:relative;display:inline-block}
+      .nav-links a .link-text::after{
+        content:'';display:block;height:2px;width:100%;
+        background:var(--accent-cyan);transform-origin:left;transform:scaleX(0);
+        transition:transform .28s var(--ease-out);margin-top:5px;
+        box-shadow:0 0 8px rgba(0,229,255,0.5);
+      }
+      .nav-links a:hover,.nav-links a.active{color:var(--text-primary)}
+      .nav-links a:hover .link-text::after,.nav-links a.active .link-text::after{transform:scaleX(1)}
+
+      .menu-toggle{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;background:none;border:none;cursor:pointer;padding:0 8px;z-index:100001;height:var(--header-h);min-width:48px}
+      .menu-toggle span{width:24px;height:2px;background:var(--text-primary);border-radius:2px;transition:.3s;display:block}
+      body.menu-open{overflow:hidden}
+
+      /* =============================================
+         5. PROJECT SHOWCASE
+         ============================================= */
+      .project-showcase{
+        min-height:100vh;
+        padding:calc(var(--header-h) + 60px) 0 80px;
+        position:relative;z-index:1;
+        overflow:hidden;
+      }
+      .project-showcase::before{
+        content:'';
+        position:absolute;top:0;left:0;width:100%;height:100%;
+        background:
+          radial-gradient(ellipse 60% 40% at 20% 30%,rgba(0,229,255,0.08),transparent),
+          radial-gradient(ellipse 50% 40% at 80% 70%,rgba(124,58,237,0.06),transparent);
+        pointer-events:none;z-index:0;
+      }
+
+      /* Floating orbs */
+      .project-orbs{position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none}
+      .project-orbs .orb{
+        position:absolute;border-radius:50%;filter:blur(80px);opacity:.3;
+        animation:orbFloat 20s ease-in-out infinite alternate;
+      }
+      .project-orbs .orb-1{width:400px;height:400px;background:rgba(0,229,255,0.12);top:-5%;left:-5%;animation-delay:0s}
+      .project-orbs .orb-2{width:350px;height:350px;background:rgba(124,58,237,0.1);bottom:-5%;right:-5%;animation-delay:-7s}
+      @keyframes orbFloat{
+        0%{transform:translate(0,0) scale(1)}
+        33%{transform:translate(30px,-20px) scale(1.05)}
+        66%{transform:translate(-20px,15px) scale(0.95)}
+        100%{transform:translate(10px,-10px) scale(1.02)}
+      }
+
+      /* Project Header */
+      .project-header{text-align:center;margin-bottom:56px;position:relative;z-index:2}
+      .project-title{
+        font-family:var(--font-heading);font-size:clamp(2.6rem,7vw,4.5rem);
+        font-weight:800;line-height:1.05;margin-bottom:20px;letter-spacing:-.03em;
+      }
+      .project-title::before{content:'> ';color:var(--accent-cyan);font-family:var(--font-mono)}
+      .project-title::after{content:'_';color:var(--accent-cyan);animation:blink 1s step-end infinite;font-family:var(--font-mono)}
+      @keyframes blink{50%{opacity:0}}
+
+      .project-subtitle{
+        font-size:clamp(1rem,2vw,1.15rem);color:var(--text-secondary);
+        max-width:700px;margin:0 auto 32px;line-height:1.8;
+      }
+      .project-price{
+        font-family:var(--font-heading);font-size:2rem;font-weight:700;
+        color:var(--accent-emerald);margin-bottom:8px;
+        text-shadow:0 0 30px rgba(16,185,129,0.3);
+      }
+      .price-note{
+        font-size:.92rem;color:var(--text-muted);margin-bottom:4px;
+      }
+
+      /* =============================================
+         6. CAROUSEL
+         ============================================= */
+      .carousel-container{
+        position:relative;max-width:920px;margin:0 auto 72px;
+        border-radius:var(--radius-md);overflow:hidden;
+        box-shadow:var(--shadow-lg);
+        border:1px solid var(--border-default);
+        z-index:2;
+      }
+      .carousel-container::before{
+        content:'';position:absolute;top:0;left:0;width:100%;height:100%;
+        box-shadow:inset 0 0 60px rgba(0,229,255,0.05);
+        z-index:5;pointer-events:none;border-radius:var(--radius-md);
+      }
+      .carousel-wrapper{
+        position:relative;width:100%;height:500px;overflow:hidden;background:var(--bg-surface);
+      }
+      .carousel-slide{
+        position:absolute;top:0;left:0;width:100%;height:100%;
+        opacity:0;transition:opacity .8s ease-in-out,transform .8s var(--ease-out);
+        transform:scale(1.04);
+      }
+      .carousel-slide.active{opacity:1;transform:scale(1)}
+      .carousel-slide img{width:100%;height:100%;object-fit:cover}
+
+      .carousel-nav{
+        position:absolute;top:50%;transform:translateY(-50%);
+        background:rgba(5,10,24,0.75);color:var(--text-primary);
+        border:1px solid var(--border-default);width:48px;height:48px;
+        border-radius:50%;cursor:pointer;font-size:1.1rem;
+        transition:all .3s var(--ease-out);z-index:10;
+        backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;
+      }
+      .carousel-nav:hover{
+        background:var(--accent-cyan);color:var(--bg-base);
+        border-color:var(--accent-cyan);
+        transform:translateY(-50%) scale(1.1);
+        box-shadow:0 0 20px rgba(0,229,255,0.35);
+      }
+      .carousel-prev{left:16px}
+      .carousel-next{right:16px}
+
+      .carousel-indicators{
+        position:absolute;bottom:18px;left:50%;transform:translateX(-50%);
+        display:flex;gap:10px;z-index:10;
+      }
+      .indicator{
+        width:10px;height:10px;border-radius:50%;
+        background:rgba(255,255,255,0.3);cursor:pointer;
+        transition:all .3s var(--ease-out);border:1px solid transparent;
+      }
+      .indicator.active{
+        background:var(--accent-cyan);transform:scale(1.25);
+        box-shadow:0 0 12px rgba(0,229,255,0.5);
+      }
+      .indicator:hover{background:rgba(255,255,255,0.6)}
+
+      /* =============================================
+         7. PROJECT CONTENT
+         ============================================= */
+      .project-body{
+        display:grid;grid-template-columns:1.4fr 1fr;gap:56px;
+        align-items:start;position:relative;z-index:2;
+      }
+
+      .project-info h3{
+        font-family:var(--font-heading);font-size:1.7rem;font-weight:700;
+        margin-bottom:20px;color:var(--text-primary);
+      }
+      .project-info h3::after{
+        content:'';display:block;width:60px;height:3px;
+        background:var(--gradient-hero);border-radius:2px;margin-top:10px;
+      }
+
+      .project-description{
+        font-size:1rem;line-height:1.85;color:var(--text-secondary);
+        margin-bottom:24px;padding-left:16px;
+        border-left:2px solid var(--accent-cyan);
+      }
+
+      /* Features Grid */
+      .features-grid{
+        display:grid;grid-template-columns:repeat(2,1fr);gap:20px;
+        margin-top:36px;
+      }
+      .feature-item{
+        background:var(--gradient-card);
+        backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+        border:1px solid var(--border-default);border-radius:var(--radius-sm);
+        padding:24px;transition:all .4s var(--ease-out);
+        position:relative;overflow:hidden;
+      }
+      .feature-item::before{
+        content:'';position:absolute;top:0;left:0;right:0;bottom:0;
+        background:radial-gradient(400px circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,0.03),transparent 40%);
+        z-index:1;opacity:0;transition:opacity .4s;pointer-events:none;
+      }
+      .feature-item::after{
+        content:'';position:absolute;bottom:0;left:0;width:0;height:2px;
+        background:var(--gradient-hero);transition:width .4s var(--ease-out);
+      }
+      .feature-item:hover::before{opacity:1}
+      .feature-item:hover::after{width:100%}
+      .feature-item:hover{
+        transform:translateY(-5px);border-color:var(--border-hover);
+        box-shadow:var(--shadow-glow);
+      }
+      .feature-icon{
+        width:48px;height:48px;
+        background:linear-gradient(135deg,rgba(0,229,255,0.1),rgba(124,58,237,0.1));
+        border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;
+        margin-bottom:14px;color:var(--accent-cyan);font-size:1.2rem;
+        transition:.35s var(--ease-out);position:relative;z-index:2;
+        border:1px solid var(--border-subtle);
+      }
+      .feature-item:hover .feature-icon{
+        background:var(--gradient-hero);transform:scale(1.08) rotate(-4deg);
+        box-shadow:0 6px 18px rgba(0,229,255,0.25);color:#fff;border-color:transparent;
+      }
+      .feature-item h4{
+        font-family:var(--font-heading);font-size:1.05rem;font-weight:600;
+        margin-bottom:8px;color:var(--text-primary);position:relative;z-index:2;
+      }
+      .feature-item p{
+        color:var(--text-secondary);font-size:.87rem;line-height:1.65;
+        position:relative;z-index:2;
+      }
+
+      /* =============================================
+         8. TECH SPECS SIDEBAR
+         ============================================= */
+      .tech-specs{
+        background:var(--gradient-card);
+        backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+        border:1px solid var(--border-default);border-radius:var(--radius-md);
+        padding:36px 28px;position:relative;overflow:hidden;
+      }
+      .tech-specs::before{
+        content:'';position:absolute;top:-60%;right:-60%;width:200%;height:200%;
+        background:radial-gradient(circle,rgba(0,229,255,0.04) 0%,transparent 50%);
+        animation:rotateBg 25s linear infinite;pointer-events:none;
+      }
+      @keyframes rotateBg{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+      .tech-specs::after{
+        content:'';position:absolute;bottom:0;left:0;width:0;height:2px;
+        background:var(--gradient-hero);transition:width .4s var(--ease-out);
+      }
+      .tech-specs:hover::after{width:100%}
+
+      .tech-specs h3{
+        font-family:var(--font-heading);font-size:1.3rem;font-weight:700;
+        margin-bottom:24px;color:var(--text-primary);position:relative;z-index:2;
+      }
+      .tech-specs h3::before{content:'> ';color:var(--accent-cyan);font-family:var(--font-mono)}
+      .tech-specs h3::after{content:'_';color:var(--accent-cyan);animation:blink 1s step-end infinite;font-family:var(--font-mono)}
+
+      .specs-list{
+        display:flex;flex-direction:column;gap:12px;position:relative;z-index:2;
+      }
+      .spec-item{
+        display:flex;align-items:center;gap:14px;padding:14px;
+        background:rgba(0,0,0,0.2);border-radius:var(--radius-xs);
+        border:1px solid transparent;transition:all .3s var(--ease-out);
+      }
+      .spec-item:hover{
+        border-color:var(--accent-cyan);transform:translateX(6px);
+        background:rgba(0,229,255,0.04);
+      }
+      .spec-item i{
+        color:var(--accent-cyan);font-size:1rem;width:24px;text-align:center;
+        transition:.3s var(--ease-out);
+      }
+      .spec-item:hover i{transform:scale(1.2);color:var(--accent-emerald)}
+      .spec-item span{
+        color:var(--text-primary);font-weight:500;font-size:.92rem;
+      }
+
+      /* Tech Tags */
+      .specs-tags{
+        display:flex;flex-wrap:wrap;gap:8px;margin-top:24px;position:relative;z-index:2;
+      }
+      .tech-tag{
+        font-size:.7rem;padding:5px 12px;border-radius:var(--radius-xs);
+        font-weight:600;font-family:var(--font-mono);
+        transition:.25s var(--ease-out);text-transform:uppercase;
+        letter-spacing:.4px;position:relative;overflow:hidden;
+      }
+      .tech-tag::before{
+        content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;
+        background:linear-gradient(90deg,transparent,rgba(255,255,255,0.1),transparent);
+        transition:left .5s;
+      }
+      .tech-tag:hover::before{left:100%}
+      .tech-tag:hover{transform:translateY(-2px)}
+      .tech-tag.python{background:rgba(55,118,171,0.2);color:#6baed6;border:1px solid rgba(55,118,171,0.25)}
+      .tech-tag.python:hover{border-color:#6baed6;box-shadow:0 0 10px rgba(55,118,171,0.2)}
+      .tech-tag.django{background:rgba(9,46,32,0.7);color:#44b78b;border:1px solid rgba(68,183,139,0.25)}
+      .tech-tag.django:hover{border-color:#44b78b;box-shadow:0 0 10px rgba(68,183,139,0.2)}
+      .tech-tag.mysql{background:rgba(0,117,143,0.2);color:#4dd0e1;border:1px solid rgba(0,117,143,0.25)}
+      .tech-tag.mysql:hover{border-color:#4dd0e1;box-shadow:0 0 10px rgba(0,117,143,0.2)}
+      .tech-tag.html{background:rgba(227,76,38,0.2);color:#ff7043;border:1px solid rgba(227,76,38,0.25)}
+      .tech-tag.html:hover{border-color:#ff7043;box-shadow:0 0 10px rgba(227,76,38,0.2)}
+      .tech-tag.css{background:rgba(21,114,182,0.2);color:#64b5f6;border:1px solid rgba(21,114,182,0.25)}
+      .tech-tag.css:hover{border-color:#64b5f6;box-shadow:0 0 10px rgba(21,114,182,0.2)}
+      .tech-tag.javascript{background:rgba(247,223,30,0.12);color:#ffd54f;border:1px solid rgba(247,223,30,0.2)}
+      .tech-tag.javascript:hover{border-color:#ffd54f;box-shadow:0 0 10px rgba(247,223,30,0.15)}
+      .tech-tag.bootstrap{background:rgba(121,82,179,0.2);color:#ce93d8;border:1px solid rgba(121,82,179,0.25)}
+      .tech-tag.bootstrap:hover{border-color:#ce93d8;box-shadow:0 0 10px rgba(121,82,179,0.2)}
+      .tech-tag.git{background:rgba(240,80,50,0.15);color:#ff8a65;border:1px solid rgba(240,80,50,0.2)}
+      .tech-tag.git:hover{border-color:#ff8a65;box-shadow:0 0 10px rgba(240,80,50,0.15)}
+
+      /* =============================================
+         9. CTA SECTION
+         ============================================= */
+      .cta-section{
+        text-align:center;padding:100px 0;
+        position:relative;z-index:1;overflow:hidden;
+      }
+      .cta-section::before{
+        content:'';position:absolute;top:0;left:0;width:100%;height:100%;
+        background:
+          radial-gradient(ellipse at center,rgba(0,229,255,0.04),transparent 70%),
+          linear-gradient(180deg,var(--bg-base) 0%,var(--bg-surface) 50%,var(--bg-base) 100%);
+        pointer-events:none;z-index:0;
+      }
+      .cta-content{position:relative;z-index:2}
+      .cta-content h2{
+        font-family:var(--font-heading);font-size:clamp(2rem,5vw,3rem);
+        font-weight:700;margin-bottom:20px;letter-spacing:-.02em;
+      }
+      .cta-content p{
+        font-size:1.1rem;color:var(--text-secondary);margin-bottom:40px;
+        max-width:600px;margin-left:auto;margin-right:auto;line-height:1.8;
+      }
+      .cta-buttons{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;position:relative;z-index:2}
+
+      .btn{
+        display:inline-flex;align-items:center;gap:12px;
+        padding:16px 32px;font-family:var(--font-heading);font-weight:600;
+        font-size:1rem;border-radius:var(--radius-full);border:none;
+        cursor:pointer;text-decoration:none;
+        transition:all .4s var(--ease-bounce);position:relative;overflow:hidden;
+      }
+      .btn::before{
+        content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;
+        background:linear-gradient(90deg,transparent,rgba(255,255,255,0.15),transparent);
+        transition:left .6s var(--ease-out);
+      }
+      .btn:hover::before{left:100%}
+
+      .btn-primary{
+        background:var(--gradient-hero);color:#fff;
+        box-shadow:0 8px 32px rgba(0,229,255,0.2);
+      }
+      .btn-primary:hover{
+        transform:translateY(-3px);
+        box-shadow:0 16px 48px rgba(0,229,255,0.3);
+      }
+
+      .btn-secondary{
+        background:transparent;color:var(--accent-cyan);
+        border:2px solid var(--accent-cyan);
+      }
+      .btn-secondary:hover{
+        background:var(--accent-cyan);color:var(--bg-base);
+        transform:translateY(-3px);
+        box-shadow:0 12px 36px rgba(0,229,255,0.25);
+      }
+
+      .btn-tertiary{
+        background:transparent;color:var(--accent-cyan);
+        border:1.5px dashed var(--accent-cyan);
+      }
+      .btn-tertiary:hover{
+        background:rgba(0,229,255,0.08);color:var(--text-primary);
+        border-style:solid;border-color:var(--accent-blue);
+        transform:translateY(-3px);
+        box-shadow:0 8px 28px rgba(0,229,255,0.15);
+      }
+
+      /* =============================================
+         10. FOOTER
+         ============================================= */
+      footer{
+        background:var(--bg-surface);border-top:1px solid var(--border-subtle);
+        padding:64px 0 24px;margin-top:64px;font-size:.92rem;position:relative;z-index:1;
+      }
+      .footer-social-title{color:var(--text-muted);font-size:.82rem;text-transform:uppercase;letter-spacing:2px;display:block;text-align:center;margin-bottom:20px}
+      .footer-top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;padding-bottom:32px;margin-bottom:32px;border-bottom:1px solid var(--border-subtle);gap:24px}
+      .footer-logo-container{display:flex;align-items:center;gap:10px}
+      .footer-logo-img{width:36px;height:36px}
+      .footer-logo-text{font-family:var(--font-heading);font-size:1.4rem;font-weight:700}
+      .footer-logo-text span{color:var(--accent-cyan)}
+      .footer-links{display:flex;gap:28px}
+      .footer-link{color:var(--text-secondary);position:relative;padding:4px 0;font-size:.88rem;font-weight:500;transition:color .25s}
+      .footer-link::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--accent-cyan);transition:width .3s var(--ease-out);box-shadow:0 0 6px var(--accent-cyan)}
+      .footer-link:hover{color:#fff}
+      .footer-link:hover::after{width:100%}
+      .footer-social ul{display:flex;gap:12px}
+      .social-icon{
+        width:40px;height:40px;border-radius:50%;
+        background:rgba(255,255,255,0.04);display:flex;align-items:center;justify-content:center;
+        color:var(--text-secondary);transition:.3s;border:1px solid var(--border-subtle);
+      }
+      .social-icon.instagram:hover{background:radial-gradient(circle at 30% 107%,#fdf497 0%,#fd5949 45%,#d6249f 60%,#285aeb 90%);color:#fff;border-color:transparent;transform:translateY(-4px);box-shadow:0 4px 12px rgba(214,36,159,0.35)}
+      .social-icon.facebook:hover{background:#1877f2;color:#fff;border-color:#1877f2;transform:translateY(-4px);box-shadow:0 4px 12px rgba(24,119,242,0.35)}
+      .social-icon.tiktok:hover{background:#000;border-color:#00f2ea;color:#fff;transform:translateY(-4px);box-shadow:0 4px 12px rgba(0,242,234,0.25)}
+      .social-icon.tiktok:hover i{background:linear-gradient(45deg,#00f2ea,#ff0050);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+      .footer-bottom{display:flex;justify-content:space-between;color:var(--text-secondary);padding:16px 0 0;font-size:.82rem}
+
+      /* =============================================
+         11. WHATSAPP FLOAT
+         ============================================= */
+      .whatsapp-float{position:fixed;bottom:28px;right:28px;z-index:9999}
+      .whatsapp-float a{
+        display:flex;width:56px;height:56px;background:#25d366;border-radius:50%;
+        align-items:center;justify-content:center;
+        box-shadow:0 4px 16px rgba(37,211,102,0.35);transition:.3s var(--ease-bounce);
+      }
+      .whatsapp-float a:hover{transform:scale(1.12) rotate(8deg);box-shadow:0 8px 24px rgba(37,211,102,0.5)}
+      .whatsapp-float .icon{width:28px;height:28px;color:#fff}
+
+      /* =============================================
+         12. SCROLL REVEAL
+         ============================================= */
+      .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s var(--ease-out),transform .6s var(--ease-out)}
+      .reveal.visible{opacity:1;transform:translateY(0)}
+      .reveal-delay-1{transition-delay:.1s}
+      .reveal-delay-2{transition-delay:.2s}
+      .reveal-delay-3{transition-delay:.3s}
+
+      /* =============================================
+         13. RESPONSIVE
+         ============================================= */
+      @media(max-width:992px){
+        .project-body{grid-template-columns:1fr;gap:36px}
+        .carousel-wrapper{height:380px}
+        .features-grid{grid-template-columns:1fr 1fr}
+      }
+      @media(max-width:768px){
+        .nav-links{display:none}
+        .menu-toggle{display:flex;align-items:center;height:var(--header-h)}
+        .nav-links.active{
+          display:flex;position:absolute;top:var(--header-h);left:0;width:100%;
+          background:rgba(5,10,24,0.98);backdrop-filter:blur(12px);
+          flex-direction:column;justify-content:flex-start;gap:0;z-index:99998;
+        }
+        .nav-links.active li{width:100%}
+        .nav-links.active a{
+          display:block;width:calc(100% - 32px);margin:0 16px;padding:13px 16px;
+          font-size:1rem;color:var(--text-primary);text-align:left;
+          background:rgba(11,18,40,0.9);border-radius:var(--radius-sm);
+          box-shadow:0 4px 16px rgba(0,0,0,0.3);
+        }
+        .features-grid{grid-template-columns:1fr}
+        .carousel-wrapper{height:280px}
+        .footer-top{flex-direction:column;text-align:center}
+        .footer-links,.footer-social ul{justify-content:center}
+        .footer-bottom{flex-direction:column;gap:8px;text-align:center}
+        .cta-buttons{flex-direction:column;align-items:center}
+      }
+      @media(max-width:480px){
+        .project-showcase{padding-top:calc(var(--header-h) + 32px)}
+        .project-title{font-size:clamp(1.8rem,11vw,2.6rem)}
+        .carousel-wrapper{height:220px}
+        .carousel-nav{width:38px;height:38px;font-size:.9rem}
+        .btn{width:100%;justify-content:center}
+        .project-price{font-size:1.5rem}
+      }
     </style>
 </head>
 <body>
+
+    <!-- Background layers -->
+    <canvas id="bg-canvas"></canvas>
+    <div id="grid-overlay"></div>
+    <div id="ambient-glow"></div>
+
     <!-- Header -->
-    <header>
-        <nav>
-            <a href="/index.html" class="logo28">
-                <img src="/logos/DerejLogo.ico" alt="Logo DerejSoft" class="logo-img">
-                <div>Derej<span>Soft</span></div>
-            </a>
-            <ul class="nav-links">
-                <li><a href="/index.html">Inicio</a></li>
-                <li><a href="/index.html#proyectos">Proyectos</a></li>
-                <li><a href="/index.html#contacto">Contacto</a></li>
-            </ul>
-            <a href="/index.html" class="back-button">
-                <i class="fas fa-arrow-left"></i>
-                <span>Volver</span>
-            </a>
-        </nav>
+    <header class="site-header">
+      <nav>
+        <a href="index.html" class="logo">
+          <img src="/logos/DerejLogo.ico" alt="Logo DerejSoft" class="logo-img" />
+          <div class="logo-text">Derej<span>Soft</span></div>
+        </a>
+        <button class="menu-toggle" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+        <ul class="nav-links">
+          <li><a href="/index.html"><span class="link-text">Inicio</span></a></li>
+          <li><a href="/index.html#servicios"><span class="link-text">Servicios</span></a></li>
+          <li><a href="/nosotros.html"><span class="link-text">Nosotros</span></a></li>
+          <li><a href="/index.html#proyectos" class="active"><span class="link-text">Proyectos</span></a></li>
+          <li><a href="/index.html#contacto"><span class="link-text">Contacto</span></a></li>
+        </ul>
+      </nav>
     </header>
 
-    <!-- WhatsApp Float -->
+    <!-- WhatsApp -->
     <div class="whatsapp-float">
-        <a href="https://wa.me/8294772269" target="_blank" aria-label="Abrir chat de WhatsApp">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" alt="WhatsApp">
-        </a>
+      <a href="https://wa.me/8294772269" target="_blank" aria-label="Abrir chat de WhatsApp">
+        <svg class="icon" width="28" height="28"><use href="/svg/icons.svg#icon-whatsapp"/></svg>
+      </a>
     </div>
 
-    <!-- Sección principal del proyecto -->
-    <section class="project-showcase">
-        <div class="container">
-            <!-- Header del proyecto -->
-            <div class="project-header">
-                <div class="project-badge">
-                    <i class="fas fa-crown"></i>
-                    <span>Proyecto Exclusivo Prestamos</span>
-                </div>
-                <h1 class="project-title">DerejStorage</h1>
-                <p class="project-subtitle">
-                     DerejStorage simplifica la gestión de representantes y facturación de arroz en una sola Aplicación web. Obtén métricas claras, controla tus ventas y toma decisiones seguras para impulsar el crecimiento de tu operación.
-                </p>
-                <div class="project-price">RD$ 20,000 - RD$ 45,000</div>
-                 <small class="price-note">El precio varía según las funciones adicionales que necesite tu negocio.</small>
-               <!-- <p class="price-note">Licencia perpetua (pago único) + 6 Meses de soporte incluido</p> -->
-                <p class="price-note">Licencia por pago unico + Soporte y garantia por 6 meses</p>
-            </div>
-            <!-- Carrusel de imágenes -->
-            <div class="carousel-container">
-                <div class="carousel-wrapper">
-                    <div class="carousel-slide active">
-                        <img src="/imgproye/derejfinance/DF-Login.webp" alt="Login12">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="/imgproye/derejfinance/DF-Convertidor.webp" alt="Dashboard principal1">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="/imgproye/derejfinance/DF-Gastos.webp" alt="registrar clientes2">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="/imgproye/derejfinance/DF-Servicios.webp" alt="cliente3">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="/imgproye/derejfinance/DF-Dashboard.webp" alt="detalle cliente4">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="/imgproye/derejfinance/DF-Dashboard2.webp" alt="detalle cliente">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="/imgproye/derejfinance/DF-Menu.webp" alt="detalle cliente4">
-                    </div>
-                </div>
-                
-                <button class="carousel-nav carousel-prev">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button class="carousel-nav carousel-next">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-                
-                <div class="carousel-indicators">
-                    <div class="indicator active" data-slide="0"></div>
-                    <div class="indicator" data-slide="1"></div>
-                    <div class="indicator" data-slide="2"></div>
-                    <div class="indicator" data-slide="3"></div>
-                    <div class="indicator" data-slide="4"></div>
-                    <div class="indicator" data-slide="5"></div>
-                    <div class="indicator" data-slide="6"></div>
-                  
-                </div>
-            </div>
-
-            <!-- Contenido del proyecto -->
-            <div class="project-content">
-                <div class="project-info">
-                    <h3>La Forma Inteligente de Gestionar Representantes y Facturación de Arroz</h3>
-                    <p class="project-description">
-                        DerejStorage es una aplicación web diseñada para centralizar la gestión de representantes, facturación y ventas de arroz en una sola plataforma organizada y fácil de usar. Permite registrar facturas, controlar sacos vendidos, asociar ventas a representantes y visualizar métricas clave que reflejan el rendimiento real del negocio. Todo el sistema está pensado para mantener la información clara, ordenada y accesible, permitiendo importar datos desde archivos Excel, analizar resultados mediante gráficos interactivos y consultar reportes detallados. Con DerejStorage puedes tomar decisiones comerciales con datos confiables, optimizar la gestión de ventas y mantener un control completo de la operación desde cualquier dispositivo con acceso a internet.
-                    </p>
-                    <p class="project-description">
-                        Surge como respuesta a los problemas comunes en la gestión manual de facturas, el desorden en los registros de ventas y la falta de visibilidad sobre el desempeño de los representantes. Con información centralizada, dashboards visuales y herramientas de análisis integradas, reduce errores administrativos, mejora el control de la facturación y facilita la evaluación del rendimiento comercial. Es una solución flexible que se adapta a la dinámica real del negocio arrocero y permite administrar la operación con mayor eficiencia, claridad y control.
-                    </p>
-
-                    <div class="features-grid">
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <i class="fas fa-file-invoice"></i>
-                        </div>
-                            <h4>Gestión de Facturas</h4>
-                            <p>Registra, edita y controla facturas de manera organizada para mantener un seguimiento claro de cada venta realizada.</p>
-                        </div>
-
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fa-solid fa-users"></i>
-                            </div>
-                            <h4>Control de Representantes</h4>
-                            <p>Administra representantes, consulta su rendimiento y vincula cada factura a su responsable comercial.</p>
-                    </div>
-
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <i class="fa-solid fa-chart-line"></i>
-                        </div>
-                        <h4>Reportes y Análisis</h4>
-                        <p>Visualiza métricas y gráficos de ventas para entender el desempeño del negocio y tomar mejores decisiones.</p>
-                    </div>
-
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <i class="fa-solid fa-file-excel"></i>
-                        </div>
-                        <h4>Importación desde Excel</h4>
-                        <p>Carga grandes volúmenes de facturas rápidamente mediante archivos Excel, reduciendo tiempo y errores manuales.</p>
-                    </div>
-
-                    </div>
-                </div>
-
-                <aside class="tech-specs">
-                <!-- <div class="tech-specs"> -->
-                    <h3>Especificaciones Técnicas</h3>
-                    <div class="specs-list">
-                        <div class="spec-item">
-                            <i class="fa-brands fa-python"></i>
-                            <span>Django + Html + CSS + JavaScript</span>
-                        </div>
-                        <div class="spec-item">
-                            <i class="fas fa-database"></i>
-                            <span>Mysql</span>
-                        </div>
-                        <div class="spec-item">
-                            <i class="fas fa-cloud"></i>
-                            <span>VPS</span>
-                        </div>
-                        <div class="spec-item">
-                            <i class="fas fa-shield-alt"></i>
-                            <span>SSL + Cifrado AES-256</span>
-                        </div>
-                        <div class="spec-item">
-                            <i class="fas fa-tachometer-alt"></i>
-                            <span>CDN Global</span>
-                        </div>
-                        <div class="spec-item">
-                            <i class="fas fa-search"></i>
-                            <span>SEO Optimizado</span>
-                        </div>
-                        <div class="spec-item">
-                            <i class="fas fa-language"></i>
-                            <span>Multi-idioma</span>
-                        </div>
-                        <div class="spec-item">
-                            <i class="fas fa-coins"></i>
-                            <span>Multi-moneda</span>
-                        </div>
-                        <div class="spec-item">
-                            <i class="fas fa-headset"></i>
-                            <span>Soporte 24/7</span>
-                        </div>
-                        <div class="spec-item">
-                            <i class="fas fa-sync"></i>
-                            <span>Auto-updates</span>
-                        </div>
-                    </div>
-                   <h3 class="modulos-titulo">Modulos Del Software</h3>
-
-                        <div class="specs-list">
-
-                        <div class="spec-item">
-                            <i class="fa-solid fa-house"></i>
-                            <span>Inicio</span>
-                        </div>
-
-                        <div class="spec-item">
-                            <i class="fa-solid fa-chart-pie"></i>
-                            <span>Dashboard</span>
-                        </div>
-
-                        <div class="spec-item">
-                            <i class="fa-solid fa-users"></i>
-                            <span>Representantes</span>
-                        </div>
-
-                        <div class="spec-item">
-                            <i class="fa-solid fa-user-gear"></i>
-                            <span>Gestión de Representantes</span>
-                        </div>
-
-                        <div class="spec-item">
-                            <i class="fa-solid fa-file-invoice"></i>
-                            <span>Registro de Facturas</span>
-                        </div>
-
-                        <div class="spec-item">
-                            <i class="fa-solid fa-file-excel"></i>
-                            <span>Importación desde Excel</span>
-                        </div>
-
-                        <div class="spec-item">
-                            <i class="fa-solid fa-filter"></i>
-                            <span>Filtros y Análisis</span>
-                        </div>
-
-                        <div class="spec-item">
-                            <i class="fa-solid fa-chart-line"></i>
-                            <span>Estadísticas de Ventas</span>
-                        </div>
-
-                        <div class="spec-item">
-                            <i class="fa-solid fa-right-to-bracket"></i>
-                            <span>Login</span>
-                        </div>
-
-                        <div class="spec-item">
-                            <i class="fa-solid fa-power-off"></i>
-                            <span>Cerrar Sesión</span>
-                        </div>
-
-                        </div>
-                        
-                </aside>
-            </div>
+    <main>
+      <!-- PROJECT SHOWCASE -->
+      <section class="project-showcase">
+        <div class="project-orbs">
+          <div class="orb orb-1"></div>
+          <div class="orb orb-2"></div>
         </div>
-       
-    </section>
 
-    <!-- Call to Action -->
-    <section class="cta-section">
         <div class="container">
-                <div class="cta-content">
-                    <h2>¿Listo para gestionar tu negocio arrocero con datos reales?</h2>
-                    <p>Centraliza representantes, facturas y ventas en una sola plataforma. Con DerejStorage obtienes control total, análisis claros y decisiones comerciales más inteligentes.</p>
-                </div>
 
-                <div class="cta-buttons">
-                    <a href="https://wa.me/8294772269?text=Hola,%20estoy%20interesado%20en%20DerejStorage" class="btn btn-primary" target="_blank" aria-label="Solicitar Demo">
-                        <i class="fab fa-whatsapp"></i>
-                        <span>Solicitar Demo</span>
-                    </a>
+          <!-- Header -->
+          <div class="project-header reveal">
+            <h1 class="project-title gradient-text">DerejStorage</h1>
+            <p class="project-subtitle">
+              DerejStorage simplifica la gestión de representantes y facturación de arroz en una sola aplicación web. Obtén métricas claras, controla tus ventas y toma decisiones seguras para impulsar el crecimiento de tu operación.
+            </p>
+            <div class="project-price">RD$ 20,000 - RD$ 45,000</div>
+            <p class="price-note">El precio varía según las funciones adicionales que necesite tu negocio.</p>
+            <p class="price-note">Licencia por pago único + Soporte y garantía por 6 meses</p>
+          </div>
 
-                    <a href="#" class="btn btn-secondary" onclick="showPricing()" aria-label="Ver Precios">
-                        <i class="fas fa-coins" aria-label="Ver Precios"></i>
-                        <span>Ver Precios</span>
-                    </a>
-
-                </div>
-                    <!-- <a href="https://codearicos28.github.io/mlanfinance/" class="btn btn-tertiary" target="_blank" style="background:transparent;border:1.5px dashed var(--primary-color);color:var(--primary-color);">
-                        <i class="fa-solid fa-object-group"></i>
-                        <span>Preview</span> -->
-                    </a>
-                </div>
+          <!-- Carousel -->
+          <div class="carousel-container reveal reveal-delay-1">
+            <div class="carousel-wrapper">
+              <div class="carousel-slide active">
+                <img src="/imgproye/derejstorange/derejstorange.webp" alt="DerejStorage — Panel Principal">
+              </div>
             </div>
+            <button class="carousel-nav carousel-prev" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
+            <button class="carousel-nav carousel-next" aria-label="Siguiente"><i class="fas fa-chevron-right"></i></button>
+            <div class="carousel-indicators">
+              <div class="indicator active" data-slide="0"></div>
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div class="project-body">
+            <div class="project-info reveal">
+              <h3>La Forma Inteligente de Gestionar Representantes y Facturación de Arroz</h3>
+
+              <p class="project-description">
+                DerejStorage es una aplicación web diseñada para centralizar la gestión de representantes, facturación y ventas de arroz en una sola plataforma organizada y fácil de usar. Permite registrar facturas, controlar sacos vendidos, asociar ventas a representantes y visualizar métricas clave que reflejan el rendimiento real del negocio. Todo el sistema está pensado para mantener la información clara, ordenada y accesible, permitiendo importar datos desde archivos Excel, analizar resultados mediante gráficos interactivos y consultar reportes detallados.
+              </p>
+              <p class="project-description">
+                Surge como respuesta a los problemas comunes en la gestión manual de facturas, el desorden en los registros de ventas y la falta de visibilidad sobre el desempeño de los representantes. Con información centralizada, dashboards visuales y herramientas de análisis integradas, reduce errores administrativos, mejora el control de la facturación y facilita la evaluación del rendimiento comercial.
+              </p>
+
+              <div class="features-grid">
+                <div class="feature-item reveal reveal-delay-1">
+                  <div class="feature-icon"><i class="fas fa-file-invoice"></i></div>
+                  <h4>Gestión de Facturas</h4>
+                  <p>Registra, edita y controla facturas de manera organizada para mantener un seguimiento claro de cada venta realizada.</p>
+                </div>
+                <div class="feature-item reveal reveal-delay-2">
+                  <div class="feature-icon"><i class="fa-solid fa-users"></i></div>
+                  <h4>Control de Representantes</h4>
+                  <p>Administra representantes, consulta su rendimiento y vincula cada factura a su responsable comercial.</p>
+                </div>
+                <div class="feature-item reveal reveal-delay-3">
+                  <div class="feature-icon"><i class="fa-solid fa-chart-line"></i></div>
+                  <h4>Reportes y Análisis</h4>
+                  <p>Visualiza métricas y gráficos de ventas para entender el desempeño del negocio y tomar mejores decisiones.</p>
+                </div>
+                <div class="feature-item reveal reveal-delay-1">
+                  <div class="feature-icon"><i class="fa-solid fa-file-excel"></i></div>
+                  <h4>Importación desde Excel</h4>
+                  <p>Carga grandes volúmenes de facturas rápidamente mediante archivos Excel, reduciendo tiempo y errores manuales.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tech Specs -->
+            <aside class="tech-specs reveal reveal-delay-2">
+              <h3>Especificaciones Técnicas</h3>
+              <div class="specs-list">
+                <div class="spec-item">
+                  <i class="fab fa-python"></i>
+                  <span>Python 3.11+</span>
+                </div>
+                <div class="spec-item">
+                  <i class="devicon-django-plain"></i>
+                  <span>Django 5.x</span>
+                </div>
+                <div class="spec-item">
+                  <i class="devicon-mysql-plain"></i>
+                  <span>MySQL</span>
+                </div>
+                <div class="spec-item">
+                  <i class="devicon-html5-plain"></i>
+                  <span>HTML5 + CSS3</span>
+                </div>
+                <div class="spec-item">
+                  <i class="devicon-javascript-plain"></i>
+                  <span>JavaScript</span>
+                </div>
+                <div class="spec-item">
+                  <i class="fas fa-cloud"></i>
+                  <span>VPS</span>
+                </div>
+                <div class="spec-item">
+                  <i class="fas fa-shield-alt"></i>
+                  <span>SSL + Cifrado AES-256</span>
+                </div>
+                <div class="spec-item">
+                  <i class="fas fa-tachometer-alt"></i>
+                  <span>CDN Global</span>
+                </div>
+                <div class="spec-item">
+                  <i class="fas fa-coins"></i>
+                  <span>Multi-moneda</span>
+                </div>
+                <div class="spec-item">
+                  <i class="fas fa-sync"></i>
+                  <span>Auto-updates</span>
+                </div>
+              </div>
+              <div class="specs-tags">
+                <span class="tech-tag python">Python</span>
+                <span class="tech-tag django">Django</span>
+                <span class="tech-tag mysql">MySQL</span>
+                <span class="tech-tag html">HTML5</span>
+                <span class="tech-tag css">CSS3</span>
+                <span class="tech-tag javascript">JavaScript</span>
+                <span class="tech-tag git">Git</span>
+              </div>
+            </aside>
+          </div>
+
         </div>
-    </section>
+      </section>
+
+      <!-- CTA -->
+      <section class="cta-section">
+        <div class="container">
+          <div class="cta-content reveal">
+            <h2><span class="gradient-text">¿Listo para tener control real</span> de tu facturación de arroz?</h2>
+            <p>Deja atrás el desorden en libretas y la falta de control. Con DerejStorage gestionas tu facturación y representantes con precisión y claridad.</p>
+          </div>
+          <div class="cta-buttons reveal reveal-delay-2">
+            <a href="https://wa.me/8294772269?text=Hola,%20estoy%20interesado%20en%20DerejStorage" class="btn btn-primary" target="_blank">
+              <svg class="icon" width="22" height="22"><use href="/svg/icons.svg#icon-whatsapp"/></svg>
+              <span>Solicitar Demo</span>
+            </a>
+            <a href="#" class="btn btn-secondary" onclick="showPricing();return false;">
+              <i class="fas fa-calculator"></i>
+              <span>Ver Precios</span>
+            </a>
+            <a href="#" class="btn btn-tertiary" target="_blank">
+              <i class="fa-solid fa-object-group"></i>
+              <span>Preview</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
     <footer>
-        <div class="footer-container">
-            <!-- Footer Top -->
-            <div class="footer-top">
-                <div class="footer-logo">
-                    <div class="footer-logo-icon">
-                        <img src="/logos/DerejLogo.ico" alt="DerejSoft Logo" class="footer-logo-img">
-                    </div>
-                    <div class="footer-logo-text">Derej<span>Soft</span></div>
-                </div>
-                
-                <div class="footer-links">
-                    <a href="/documentos-legales/terminos-de-servicio.html" class="footer-link">
-                        <i class="fas fa-file-contract" aria-label="Términos y Servicios"></i>
-                        Términos de Servicio
-                    </a>
-                    <a href="/documentos-legales/politica-de-privacidad.html" class="footer-link">
-                        <i class="fas fa-shield-alt" aria-label="Política de Privacidad"></i>
-                        Política de Privacidad
-                    </a>
-                    <a href="/index.html#contacto" class="footer-link">
-                        <i class="fas fa-envelope" aria-label="Contacto"></i>
-                        Contacto
-                    </a>
-                </div>
-                
-                <div class="footer-social">
-                    <span class="footer-social-title">Síguenos</span>
-                    <div class="redes">
-                        <ul>
-                            <li>
-                                <a href="https://www.instagram.com/derejsoft?utm_source=qr&igsh=djV2ZHVicjZ2eTFn" target="_blank" class="social-icon instagram" aria-label="Instagram de DerejSoft" title="Instagram de DerejSoft">
-                                    <i class="fab fa-instagram" aria-hidden="true"></i>
-                                    <span class="sr-only">Instagram</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.facebook.com/share/1JKws2oMEp" target="_blank" class="social-icon facebook" aria-label="Facebook de DerejSoft" title="Facebook de DerejSoft">
-                                    <i class="fab fa-facebook-f" aria-hidden="true"></i>
-                                    <span class="sr-only">Facebook</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.tiktok.com/@derejsoft2003?_r=1&_t=ZS-912JRDQSIcr" target="_blank" class="social-icon tiktok" aria-label="TikTok de DerejSoft" title="TikTok de DerejSoft">
-                                    <i class="fab fa-tiktok" aria-hidden="true"></i>
-                                    <span class="sr-only">TikTok</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Footer Bottom -->
-            <div class="footer-bottom">
-                <div class="copyright-bar">© <script>document.write(new Date().getFullYear())</script> <span>DerejSoft</span>. Todos los derechos reservados.</div>
-                <div class="footer-credits">
-                    Hecho con <i class="fas fa-heart"></i> en República Dominicana
-                </div>
-            </div>
+      <div class="container">
+        <div class="footer-top">
+          <div class="footer-logo-container">
+            <img src="/logos/DerejLogo.ico" alt="Logo DerejSoft" class="footer-logo-img" />
+            <div class="footer-logo-text">Derej<span>Soft</span></div>
+          </div>
+          <div class="footer-links">
+            <a href="/documentos-legales/terminos-de-servicio.html" class="footer-link">Términos de Servicio</a>
+            <a href="/documentos-legales/politica-de-privacidad.html" class="footer-link">Privacidad</a>
+            <a href="/index.html#contacto" class="footer-link">Contacto</a>
+          </div>
+          <div class="footer-social">
+            <span class="footer-social-title">Síguenos</span>
+            <ul>
+              <li><a href="https://www.instagram.com/derejsoft" target="_blank" class="social-icon instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+              <li><a href="https://www.facebook.com/share/1JKws2oMEp" target="_blank" class="social-icon facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+              <li><a href="https://www.tiktok.com/@derejsoft" target="_blank" class="social-icon tiktok" aria-label="TikTok"><i class="fab fa-tiktok"></i></a></li>
+            </ul>
+          </div>
         </div>
+        <div class="footer-bottom">
+          <div>&copy; <script>document.write(new Date().getFullYear())</script> <span style="color:var(--accent-cyan);font-weight:700">DerejSoft</span>. Todos los derechos reservados.</div>
+          <div>Hecho con <i class="fas fa-heart" style="color:#e11d48"></i> en República Dominicana</div>
+        </div>
+      </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
-        // Carrusel de imágenes
-        class ImageCarousel {
-            constructor() {
-                this.currentSlide = 0;
-                this.slides = document.querySelectorAll('.carousel-slide');
-                this.indicators = document.querySelectorAll('.indicator');
-                this.prevBtn = document.querySelector('.carousel-prev');
-                this.nextBtn = document.querySelector('.carousel-next');
-                this.autoSlideInterval = null;
-                
-                this.init();
+      /* ---- Canvas Particles ---- */
+      (function(){
+        const c=document.getElementById('bg-canvas'),ctx=c.getContext('2d');
+        let W,H,pts=[];
+        function resize(){W=c.width=innerWidth;H=c.height=innerHeight}
+        resize();addEventListener('resize',resize);
+        const N=Math.min(Math.floor(W*H/18000),80);
+        for(let i=0;i<N;i++) pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.3,vy:(Math.random()-.5)*.3,r:Math.random()*1.5+.5});
+        function draw(){
+          ctx.clearRect(0,0,W,H);
+          for(let i=0;i<pts.length;i++){
+            const p=pts[i];
+            p.x+=p.vx;p.y+=p.vy;
+            if(p.x<0||p.x>W)p.vx*=-1;
+            if(p.y<0||p.y>H)p.vy*=-1;
+            ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+            ctx.fillStyle='rgba(0,229,255,0.35)';ctx.fill();
+            for(let j=i+1;j<pts.length;j++){
+              const q=pts[j],dx=p.x-q.x,dy=p.y-q.y,d=Math.sqrt(dx*dx+dy*dy);
+              if(d<150){
+                ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);
+                ctx.strokeStyle='rgba(0,229,255,'+(0.08*(1-d/150))+')';
+                ctx.lineWidth=.6;ctx.stroke();
+              }
             }
-            
-            init() {
-                // Event listeners para navegación
-                this.prevBtn.addEventListener('click', () => this.prevSlide());
-                this.nextBtn.addEventListener('click', () => this.nextSlide());
-                
-                // Event listeners para indicadores
-                this.indicators.forEach((indicator, index) => {
-                    indicator.addEventListener('click', () => this.goToSlide(index));
-                });
-                
-                // Auto-slide
-                this.startAutoSlide();
-                
-                // Pausar auto-slide al hover
-                const carouselContainer = document.querySelector('.carousel-container');
-                carouselContainer.addEventListener('mouseenter', () => this.stopAutoSlide());
-                carouselContainer.addEventListener('mouseleave', () => this.startAutoSlide());
-            }
-            
-            goToSlide(slideIndex) {
-                // Remover clase active de slide actual
-                this.slides[this.currentSlide].classList.remove('active');
-                this.indicators[this.currentSlide].classList.remove('active');
-                
-                // Actualizar índice
-                this.currentSlide = slideIndex;
-                
-                // Agregar clase active al nuevo slide
-                this.slides[this.currentSlide].classList.add('active');
-                this.indicators[this.currentSlide].classList.add('active');
-            }
-            
-            nextSlide() {
-                const nextIndex = (this.currentSlide + 1) % this.slides.length;
-                this.goToSlide(nextIndex);
-            }
-            
-            prevSlide() {
-                const prevIndex = (this.currentSlide - 1 + this.slides.length) % this.slides.length;
-                this.goToSlide(prevIndex);
-            }
-            
-            startAutoSlide() {
-                this.autoSlideInterval = setInterval(() => {
-                    this.nextSlide();
-                }, 4000); // Cambiar cada 4 segundos
-            }
-            
-            stopAutoSlide() {
-                if (this.autoSlideInterval) {
-                    clearInterval(this.autoSlideInterval);
-                    this.autoSlideInterval = null;
-                }
-            }
+          }
+          requestAnimationFrame(draw);
         }
-        
- // Función para mostrar precios
-function showPricing() {
-    Swal.fire({
-        title: '',
-        html: `
-        <div style="padding: 20px 0;">
-            <!-- Header con icono -->
-            <div style="text-align: center; margin-bottom: 30px;">
-                <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #10b981 0%, #0ea5a4 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; box-shadow: 0 10px 30px rgba(16, 185, 129, 0.25);">
-                  <i class="fas fa-file-invoice" style="font-size: 2rem; color: white;"></i>
-                </div>
-                <h2 style="font-size: 2rem; font-weight: 700; background: linear-gradient(90deg, #10b981, #0ea5a4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 10px;">DerejStorage</h2>
-                <p style="color: #a1a1aa; font-size: 1rem;">Licencia por pago único + Soporte y garantía por 6 meses</p>
-            </div>
+        draw();
+      })();
 
-            <!-- Plan Básico (mejorada visualmente) -->
-            <div style="margin-bottom: 30px; position: relative;">
-                <div style="position: absolute; top: 0; right: 0; background: linear-gradient(135deg, #4facfe, #00f2fe); padding: 5px 15px; border-radius: 0 16px 0 16px; font-size: 0.75rem; font-weight: 600; color: white;"><i class="fas fa-users"></i>POPULAR</div>
+      /* ---- Header scroll ---- */
+      const hdr=document.querySelector('.site-header');
+      addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>40));
 
-                <div style="display:flex; justify-content:space-between; align-items:center; gap:18px; padding:16px 18px; background: linear-gradient(135deg, #0f1724 0%, #111827 100%); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px;">
-                    <div style="display:flex; gap:14px; align-items:center;">
-                        <div style="width:52px; height:52px; border-radius:10px; display:flex; align-items:center; justify-content:center; background: rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.02);">
-                            <i class="fas fa-money-bill-wave" style="color:#10b981; font-size:1.4rem;"></i>
-                        </div>
-                        <div>
-                            <h3 style="color:white; font-size:1.05rem; margin:0;">Plan Básico</h3>
-                            <p style="color:#a1a1aa; font-size:0.9rem; margin:4px 0 0;">Licencia de pago único</p>
-                        </div>
-                    </div>
+      /* ---- Mobile menu ---- */
+      const mtoggle=document.querySelector('.menu-toggle'),nlinks=document.querySelector('.nav-links');
+      mtoggle.addEventListener('click',()=>{nlinks.classList.toggle('active');document.body.classList.toggle('menu-open')});
+      nlinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nlinks.classList.remove('active');document.body.classList.remove('menu-open')}));
 
-                    <div style="text-align:right; min-width:120px; margin-top:8px;">
-                        <div style="font-size:1.8rem; font-weight:700; color:#10b981;">RD$20,000</div>
-                        <div style="color:#a1a1aa; font-size:0.85rem;">Único</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Plan Profesional (mejorada visualmente) -->
-            <div style="margin-bottom: 30px; position: relative;">
-                <div style="position: absolute; top: 0; right: 0; background: linear-gradient(135deg, #4f46e5, #6366f1); padding: 5px 15px; border-radius: 0 16px 0 16px; font-size: 0.75rem; font-weight: 600; color: white;"><i class="fas fa-briefcase"></i> RECOMENDADO</div>
-
-                <div style="display:flex; justify-content:space-between; align-items:center; gap:18px; padding:16px 18px; background: linear-gradient(135deg, #0f1724 0%, #111827 100%); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px;">
-                    <div style="display:flex; gap:14px; align-items:center;">
-                        <div style="width:52px; height:52px; border-radius:10px; display:flex; align-items:center; justify-content:center; background: rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.02);">
-                            <i class="fas fa-sliders-h" style="color:#10b981; font-size:1.4rem;"></i>
-                        </div>
-                        <div>
-                            <h3 style="color:white; font-size:1.05rem; margin:0;">Plan Profesional</h3>
-                            <p style="color:#a1a1aa; font-size:0.9rem; margin:4px 0 0;">Software a medida</p>
-                        </div>
-                    </div>
-
-                    <div style="text-align:right; min-width:120px; margin-top:8px;">
-                        <div style="font-size:1.8rem; font-weight:700; color:#10b981;">RD 30,000$</div>
-                        <div style="color:#a1a1aa; font-size:0.85rem;">Único</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Plan Empresarial (mejorada visualmente) -->
-            <div style="margin-bottom: 30px; position: relative;">
-                <div style="position: absolute; top: 0; right: 0; background: #f59e0b; padding: 5px 15px; border-radius: 0 16px 0 16px; font-size: 0.75rem; font-weight: 600; color: white;"><i class="fas fa-gem"></i> PRIMIUM</div>
-
-                <div style="display:flex; justify-content:space-between; align-items:center; gap:18px; padding:16px 18px; background: linear-gradient(135deg, #0f1724 0%, #111827 100%); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px;">
-                    <div style="display:flex; gap:14px; align-items:center;">
-                        <div style="width:52px; height:52px; border-radius:10px; display:flex; align-items:center; justify-content:center; background: rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.02);">
-                            <i class="fas fa-sliders-h" style="color:#10b981; font-size:1.4rem;"></i>
-                        </div>
-                        <div>
-                            <h3 style="color:white; font-size:1.05rem; margin:0;">Plan Empresarial</h3>
-                            <p style="color:#a1a1aa; font-size:0.9rem; margin:4px 0 0;">Software Personalizado</p>
-                        </div>
-                    </div>
-
-                    <div style="text-align:right; min-width:120px; margin-top:8px;">
-                        <div style="font-size:1.8rem; font-weight:700; color:#10b981;">RD 45,000$</div>
-                        <div style="color:#a1a1aa; font-size:0.85rem;">Único</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Beneficios incluidos -->
-            <div style="background: rgba(16, 185, 129, 0.06); border: 1px solid rgba(16, 185, 129, 0.18); border-radius: 12px; padding: 20px; margin-bottom: 20px;">
-                <h4 style="color: #10b981; font-size: 1rem; margin-bottom: 15px; text-align: center;">✨ Beneficios incluidos</h4>
-                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
-                    <div style="display: flex; align-items: center; gap: 8px;">
-                        <i class="fas fa-check-circle" style="color: #10b981;"></i>
-                        <span style="color: #e5e5e5; font-size: 0.85rem;">Hosting por 1 meses</span>
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 8px;">
-                        <i class="fas fa-check-circle" style="color: #10b981;"></i>
-                        <span style="color: #e5e5e5; font-size: 0.85rem;">Dominio gratis (1 año)</span>
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 8px;">
-                        <i class="fas fa-check-circle" style="color: #10b981;"></i>
-                        <span style="color: #e5e5e5; font-size: 0.85rem;">Soporte técnico (6 meses)</span>
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 8px;">
-                        <i class="fas fa-check-circle" style="color: #10b981;"></i>
-                        <span style="color: #e5e5e5; font-size: 0.85rem;">Actualizaciones</span>
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 8px;">
-                        <i class="fas fa-check-circle" style="color: #10b981;"></i>
-                        <span style="color: #e5e5e5; font-size: 0.85rem;">SSL incluido</span>
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 8px;">
-                        <i class="fas fa-check-circle" style="color: #10b981;"></i>
-                        <span style="color: #e5e5e5; font-size: 0.85rem;">Backups diarios</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Urgencia / Oferta -->
-            <div style="text-align: center; padding: 15px; background: linear-gradient(90deg, rgba(0, 242, 254, 0.06), rgba(0, 242, 254, 0.12), rgba(0, 242, 254, 0.06)); border-radius: 8px; margin-bottom: 10px;">
-                <p style="color: #8b5cf6; font-size: 0.9rem; margin: 0;">
-                    <i class="fas fa-gift" style="margin-right: 5px; color: #e11d48;"></i>
-                    <strong> Oferta limitada:</strong> 10% de descuento en pago único si contratas esta semana.
-                </p>
-            </div>
-        </div>
-        `,
-        showCancelButton: true,
-        confirmButtonText: '<i class="fab fa-whatsapp"></i> Cotizar por WhatsApp',
-        cancelButtonText: 'Cerrar',
-        confirmButtonColor: '#25d366',
-        cancelButtonColor: '#6b7280',
-        width: '550px',
-        background: '#0f0f23',
-        color: '#ffffff',
-        customClass: {
-            popup: 'pricing-popup',
-            confirmButton: 'pricing-confirm-btn',
-            cancelButton: 'pricing-cancel-btn'
-        }
-    }).then((result) => {
-        if (result.isConfirmed) {
-            window.open('https://wa.me/8294772269?text=Hola,%20quiero%20informaci%C3%B3n%20sobre%20DerejStorage%20y%20sus%20planes%20de%20precios', '_blank');
-        }
-    });
-}
-        
-        // Animaciones al scroll
-        function initScrollAnimations() {
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, observerOptions);
-            
-            // Observar elementos que necesitan animación
-            document.querySelectorAll('.feature-item, .spec-item').forEach(el => {
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(30px)';
-                el.style.transition = 'all 0.6s ease';
-                observer.observe(el);
-            });
-        }
-        
-        // Inicializar cuando el DOM esté listo
-        document.addEventListener('DOMContentLoaded', function() {
-            new ImageCarousel();
-            initScrollAnimations();
-            
-            // Efecto de typing en el título
-            const title = document.querySelector('.project-title');
-            const text = title.textContent;
-            title.textContent = '';
-            title.style.borderRight = '2px solid #6366f1';
-            
-            let i = 0;
-            const typeWriter = () => {
-                if (i < text.length) {
-                    title.textContent += text.charAt(i);
-                    i++;
-                    setTimeout(typeWriter, 100);
-                } else {
-                    setTimeout(() => {
-                        title.style.borderRight = 'none';
-                    }, 1000);
-                }
-            };
-            
-            setTimeout(typeWriter, 500);
+      /* ---- Smooth scroll for anchor links ---- */
+      document.querySelectorAll('a[href^="#"]').forEach(a=>{
+        a.addEventListener('click',function(e){
+          e.preventDefault();
+          const t=document.querySelector(this.getAttribute('href'));
+          if(t){const h=document.querySelector('.site-header').offsetHeight;window.scrollTo({top:t.offsetTop-h-16,behavior:'smooth'})}
         });
+      });
+
+      /* ---- Scroll reveal ---- */
+      const robs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');robs.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+      document.querySelectorAll('.reveal').forEach(el=>robs.observe(el));
+
+      /* ---- Card mouse glow ---- */
+      document.querySelectorAll('.feature-item, .tech-specs').forEach(c=>{
+        c.addEventListener('mousemove',e=>{const r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')});
+      });
+
+      /* ---- Carousel ---- */
+      (function(){
+        const slides=document.querySelectorAll('.carousel-slide');
+        const indicators=document.querySelectorAll('.indicator');
+        const prev=document.querySelector('.carousel-prev');
+        const next=document.querySelector('.carousel-next');
+        let current=0,total=slides.length;
+        function goTo(n){
+          slides[current].classList.remove('active');
+          indicators[current].classList.remove('active');
+          current=(n+total)%total;
+          slides[current].classList.add('active');
+          indicators[current].classList.add('active');
+        }
+        prev.addEventListener('click',()=>goTo(current-1));
+        next.addEventListener('click',()=>goTo(current+1));
+        indicators.forEach(ind=>ind.addEventListener('click',()=>goTo(parseInt(ind.dataset.slide))));
+        let auto=setInterval(()=>goTo(current+1),5000);
+        document.querySelector('.carousel-container').addEventListener('mouseenter',()=>clearInterval(auto));
+        document.querySelector('.carousel-container').addEventListener('mouseleave',()=>{auto=setInterval(()=>goTo(current+1),5000)});
+      })();
+
+      /* ---- Pricing Modal ---- */
+      function showPricing(){
+        Swal.fire({
+          title:'<span style="font-family:var(--font-heading);font-size:1.4rem">Precios — DerejStorage</span>',
+          html:`
+            <div style="text-align:left;font-family:var(--font-body);line-height:1.8;color:#94a3c8">
+              <div style="background:rgba(0,229,255,0.06);border:1px solid rgba(0,229,255,0.15);border-radius:10px;padding:20px;margin-bottom:16px">
+                <div style="font-family:var(--font-heading);font-size:1.2rem;color:#f0f4ff;font-weight:700;margin-bottom:8px">Plan Base</div>
+                <div style="font-size:1.8rem;font-weight:700;color:#10b981;margin-bottom:6px">RD$ 20,000 - RD$ 45,000</div>
+                <div style="font-size:.85rem;color:#5a6b8a">Licencia por pago único + 6 meses de soporte y garantía incluidos</div>
+              </div>
+              <div style="background:rgba(124,58,237,0.06);border:1px solid rgba(124,58,237,0.15);border-radius:10px;padding:20px">
+                <div style="font-family:var(--font-heading);font-size:1.2rem;color:#f0f4ff;font-weight:700;margin-bottom:8px">Funciones Adicionales</div>
+                <div style="font-size:.9rem">El precio final varía según las funciones adicionales que necesite tu negocio. Contáctanos para una cotización personalizada.</div>
+              </div>
+            </div>
+          `,
+          background:'#0b1228',
+          color:'#f0f4ff',
+          confirmButtonText:'Solicitar Cotización',
+          confirmButtonColor:'#3d7aed',
+          showCloseButton:true,
+          closeButtonAriaLabel:'Cerrar',
+          customClass:{
+            popup:'swal2-dark-custom'
+          }
+        }).then((result)=>{
+          if(result.isConfirmed){
+            window.open('https://wa.me/8294772269?text=Hola,%20estoy%20interesado%20en%20una%20cotización%20para%20DerejStorage','_blank');
+          }
+        });
+      }
     </script>
 </body>
 </html>

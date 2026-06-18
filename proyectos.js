@@ -70,11 +70,11 @@ const projectsData = [
     ]
   },
   {
-    link: '/proyectos/derejmotium.html',
+    link: '/proyectos/derejautix.html',
     badgeClass: 'comercio',
     badgeIcon: 'shopping-cart',
     badgeText: 'Comercio',
-    image: '/imagenes/derejmotium.webp',
+    image: '/imagenes/derejautix.webp',
     title: 'DerejAutix',
     description: 'Sistema web para agencias de motocicletas que centraliza ventas de contado y crédito, controla clientes y suplidores, agiliza facturación y reduce errores.',
     tech: [
@@ -86,11 +86,11 @@ const projectsData = [
     ]
   },
   {
-    link: '/proyectos/derejmotium.html',
+    link: '/proyectos/derejagro.html',
     badgeClass: 'comercio',
     badgeIcon: 'shopping-cart',
     badgeText: 'Comercio',
-    image: '/imagenes/derejmotium.webp',
+    image: '/imagenes/derejagro.webp',
     title: 'DerejAgro',
     description: 'Sistema web para agencias de motocicletas que centraliza ventas de contado y crédito, controla clientes y suplidores, agiliza facturación y reduce errores.',
     tech: [
@@ -102,11 +102,11 @@ const projectsData = [
     ]
   },
   {
-    link: '/proyectos/derejmotium.html',
+    link: '/proyectos/derejcitas.html',
     badgeClass: 'comercio',
     badgeIcon: 'tasks',
     badgeText: 'Gestión',
-    image: '/imagenes/derejmotium.webp',
+    image: '/imagenes/derejcitas.webp',
     title: 'DerejCitas',
     description: 'Sistema web para agencias de motocicletas que centraliza ventas de contado y crédito, controla clientes y suplidores, agiliza facturación y reduce errores.',
     tech: [
@@ -118,11 +118,11 @@ const projectsData = [
     ]
   },
   {
-    link: '/proyectos/derejmotium.html',
+    link: '/proyectos/derejturnos.html',
     badgeClass: 'automotriz',
     badgeIcon: 'tasks',
     badgeText: 'Gestión',
-    image: '/imagenes/derejmotium.webp',
+    image: '/imagenes/derejturnos.webp',
     title: 'DerejTurnos',
     description: 'Sistema web para agencias de motocicletas que centraliza ventas de contado y crédito, controla clientes y suplidores, agiliza facturación y reduce errores.',
     tech: [
@@ -133,14 +133,14 @@ const projectsData = [
       { class: 'javascript', name: 'JavaScript' }
     ]
   },
-   {
-    link: '/proyectos/derejstorage.html',
-    badgeClass: 'finanzas',
-    badgeIcon: 'calculator',
-    badgeText: 'Finanzas',
-    image: '/imagenes/derejstorange.webp',
-    title: 'DerejStorage',
-    description: 'Software para molinos y agroquímicas que organiza facturas de entrada y salida, evita pérdida de documentos, agiliza búsquedas y se adapta a las necesidades de cada cliente.',
+  {
+    link: '/proyectos/derejkonix.html',
+    badgeClass: 'comercio',
+    badgeIcon: 'shopping-cart',
+    badgeText: 'Comercio',
+    image: '/imagenes/derejkonix.webp',
+    title: 'DerejKonix',
+    description: 'Sistema web para agencias de motocicletas que centraliza ventas de contado y crédito, controla clientes y suplidores, agiliza facturación y reduce errores.',
     tech: [
       { class: 'django', name: 'Django' },
       { class: 'mysql', name: 'MySQL' },
@@ -150,13 +150,13 @@ const projectsData = [
     ]
   },
   {
-    link: '/proyectos/derejmotium.html',
+    link: '/proyectos/derejfood.html',
     badgeClass: 'comercio',
     badgeIcon: 'shopping-cart',
     badgeText: 'Comercio',
-    image: '/imagenes/derejmotium.webp',
-    title: 'DerejKonix',
-    description: 'Sistema web para agencias de motocicletas que centraliza ventas de contado y crédito, controla clientes y suplidores, agiliza facturación y reduce errores.',
+    image: '/imagenes/derejfood.webp',
+    title: 'DerejFood',
+    description: 'Sistema web para restaurantes que centraliza ventas, inventario y pedidos. Gestiona tu restaurante de forma eficiente desde cualquier dispositivo.',
     tech: [
       { class: 'django', name: 'Django' },
       { class: 'mysql', name: 'MySQL' },

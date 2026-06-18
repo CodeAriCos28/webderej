@@ -87,7 +87,8 @@
         },
         "hasMerchantReturnPolicy": {
           "@type": "MerchantReturnPolicy",
-          "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+          "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+          "applicableCountry": "DO"
         }
       }
     }
@@ -275,17 +276,6 @@
 
       /* Project Header */
       .project-header{text-align:center;margin-bottom:56px;position:relative;z-index:2}
-      .project-badge{
-        display:inline-flex;align-items:center;gap:10px;
-        padding:10px 22px;font-family:var(--font-mono);font-size:.82rem;
-        background:rgba(0,0,0,0.5);border:1px solid rgba(0,229,255,0.3);
-        border-radius:var(--radius-xs);color:var(--accent-cyan);
-        box-shadow:0 0 20px rgba(0,229,255,0.12);margin-bottom:28px;
-        backdrop-filter:blur(8px);text-transform:uppercase;letter-spacing:.5px;
-        font-weight:600;
-      }
-      .project-badge i{font-size:.75rem;color:var(--accent-cyan)}
-
       .project-title{
         font-family:var(--font-heading);font-size:clamp(2.6rem,7vw,4.5rem);
         font-weight:800;line-height:1.05;margin-bottom:20px;letter-spacing:-.03em;
@@ -485,8 +475,6 @@
         margin:32px 0 18px;color:var(--text-primary);position:relative;z-index:2;
         padding-top:24px;border-top:1px solid var(--border-subtle);
       }
-      .module-title::before{content:'> ';color:var(--accent-cyan);font-family:var(--font-mono)}
-      .module-title::after{content:'_';color:var(--accent-cyan);animation:blink 1s step-end infinite;font-family:var(--font-mono)}
 
       /* =============================================
          9. CTA SECTION
@@ -586,7 +574,7 @@
         box-shadow:0 4px 16px rgba(37,211,102,0.35);transition:.3s var(--ease-bounce);
       }
       .whatsapp-float a:hover{transform:scale(1.12) rotate(8deg);box-shadow:0 8px 24px rgba(37,211,102,0.5)}
-      .whatsapp-float i{font-size:28px;color:#fff}
+      .whatsapp-float .icon{width:28px;height:28px;color:#fff}
 
       /* =============================================
          12. SCROLL REVEAL
@@ -665,7 +653,7 @@
     <!-- WhatsApp -->
     <div class="whatsapp-float">
       <a href="https://wa.me/8294772269" target="_blank" aria-label="Abrir chat de WhatsApp">
-        <i class="fab fa-whatsapp"></i>
+        <svg class="icon" width="28" height="28"><use href="/svg/icons.svg#icon-whatsapp"/></svg>
       </a>
     </div>
 
@@ -681,10 +669,6 @@
 
           <!-- Header -->
           <div class="project-header reveal">
-            <div class="project-badge">
-              <i class="fas fa-crown"></i>
-              <span>Proyecto Exclusivo — Préstamos</span>
-            </div>
             <h1 class="project-title gradient-text">DerejPres</h1>
             <p class="project-subtitle">
               DerejPres organiza préstamos, pagos y financiamientos evitando desorden en libretas físicas. Controla cuánto debe cada cliente y se adapta a cualquier tipo de negocio.
@@ -909,7 +893,7 @@
           </div>
           <div class="cta-buttons reveal reveal-delay-2">
             <a href="https://wa.me/8294772269?text=Hola,%20estoy%20interesado%20en%20DerejPres" class="btn btn-primary" target="_blank">
-              <i class="fab fa-whatsapp"></i>
+              <svg class="icon" width="22" height="22"><use href="/svg/icons.svg#icon-whatsapp"/></svg>
               <span>Solicitar Demo</span>
             </a>
             <a href="#" class="btn btn-secondary" onclick="showPricing();return false;">
