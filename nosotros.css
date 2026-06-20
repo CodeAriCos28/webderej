@@ -91,7 +91,7 @@ section{padding:100px 0;position:relative;z-index:1}
 .orbit-item-inner i{color:inherit!important}
 .orbit-item-inner:hover{border-color:var(--accent-cyan);box-shadow:0 0 25px rgba(0,229,255,.25),0 0 60px rgba(0,229,255,.1);transform:scale(1.2)}
 .orbit-item:nth-child(2){animation-delay:0s}
-.orbit-item:nth-child(2) .orbit-item-inner{color:#092e20}
+.orbit-item:nth-child(2) .orbit-item-inner{color:#51bf87}
 .orbit-item:nth-child(3){animation-delay:-5s}
 .orbit-item:nth-child(3) .orbit-item-inner{color:#f7df1e}
 .orbit-item:nth-child(4){animation-delay:-10s}
