@@ -93,9 +93,9 @@ section{padding:100px 0;position:relative;z-index:1}
 .orbit-item:nth-child(2){animation-delay:0s}
 .orbit-item:nth-child(2) .orbit-item-inner{color:#51bf87}
 .orbit-item:nth-child(3){animation-delay:-5s}
-.orbit-item:nth-child(3) .orbit-item-inner{color:#f7df1e}
+.orbit-item:nth-child(3) .orbit-item-inner{color:#f0db4f}
 .orbit-item:nth-child(4){animation-delay:-10s}
-.orbit-item:nth-child(4) .orbit-item-inner{color:#3776ab}
+.orbit-item:nth-child(4) .orbit-item-inner{color:#ffd43b}
 .orbit-item:nth-child(5){animation-delay:-15s}
 .orbit-item:nth-child(5) .orbit-item-inner{color:#00758f}
 @keyframes orbit-spin{to{transform:rotate(360deg)}}
