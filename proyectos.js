@@ -156,7 +156,7 @@ const projectsData = [
     badgeText: 'Comercio',
     image: '/imagenes/proyecto/df-dashboard-card.webp',
     title: 'DerejFood',
-    description: 'Sistema web para restaurantes que centraliza ventas, inventario y pedidos. Gestiona tu restaurante de forma eficiente desde cualquier dispositivo.',
+    description: 'Software para restaurantes que centraliza ventas, inventario y pedidos en un solo lugar. Controla tu cocina, reduce pérdidas y toma decisiones con datos reales desde cualquier dispositivo.',
     tech: [
       { class: 'django', name: 'Django' },
       { class: 'mysql', name: 'MySQL' },
