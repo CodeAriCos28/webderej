@@ -12,7 +12,7 @@ const projectsData = [
     badgeText: 'Finanzas',
     image: '/imagenes/proyecto/DerejPres.webp',
     title: 'DerejPres',
-    description: 'Software web para negocios que necesitan controlar financiamientos, pagos y deudas. Organiza clientes, calcula cuotas, evita errores y se adapta a cualquier modelo de negocio.',
+    description: 'Software web que automatiza el control de financiamientos, calcula cuotas y organiza deudas de tus clientes.',
     tech: [
       { class: 'django', name: 'Django' },
       { class: 'mysql', name: 'MySQL' },
@@ -28,7 +28,7 @@ const projectsData = [
     badgeText: 'Finanzas',
     image: '/imagenes/proyecto/ds-dashboard-card.webp',
     title: 'DerejStorage',
-    description: 'Software para molinos y agroquímicas que organiza facturas de entrada y salida, evita pérdida de documentos, agiliza búsquedas y se adapta a las necesidades de cada cliente.',
+    description: 'Software de gestión para molinos que centraliza facturas de entrada/salida, elimina el papel y agiliza datos.',
     tech: [
       { class: 'django', name: 'Django' },
       { class: 'mysql', name: 'MySQL' },
@@ -156,7 +156,7 @@ const projectsData = [
     badgeText: 'Comercio',
     image: '/imagenes/proyecto/df-dashboard-card.webp',
     title: 'DerejFood',
-    description: 'Software para restaurantes que centraliza ventas, inventario y pedidos en un solo lugar. Controla tu cocina, reduce pérdidas y toma decisiones con datos reales desde cualquier dispositivo.',
+    description: 'Software web que automatiza el control de ventas de tu restaurante, organiza el inventario y reduce pérdidas.',
     tech: [
       { class: 'django', name: 'Django' },
       { class: 'mysql', name: 'MySQL' },
