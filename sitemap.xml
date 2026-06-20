@@ -32,7 +32,7 @@
   </url>
 
   <url>
-    <loc>https://derejsoft.com/proyectos/derejmotium.html</loc>
+    <loc>https://derejsoft.com/proyectos/derejfood.html</loc>
     <lastmod>2026-05-26</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
@@ -45,23 +45,9 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Documentos Legales -->
-  <url>
-    <loc>https://derejsoft.com/documentos-legales/terminos-de-servicio.html</loc>
-    <lastmod>2026-05-09</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
-  </url>
-
-  <url>
-    <loc>https://derejsoft.com/documentos-legales/politica-de-privacidad.html</loc>
-    <lastmod>2026-05-09</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
-  </url>
 
   <!-- Blog -->
-  <url>
+  <!-- <url>
     <loc>https://derejsoft.com/blog/python-2026.html</loc>
     <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
@@ -150,6 +136,6 @@
     <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>
+  </url> -->
 
 </urlset>
