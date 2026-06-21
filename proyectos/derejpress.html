@@ -281,10 +281,6 @@
         font-family:var(--font-heading);font-size:clamp(2.6rem,7vw,4.5rem);
         font-weight:800;line-height:1.05;margin-bottom:20px;letter-spacing:-.03em;
       }
-      .project-title::before{content:'> ';color:var(--accent-cyan);font-family:var(--font-mono)}
-      .project-title::after{content:'_';color:var(--accent-cyan);animation:blink 1s step-end infinite;font-family:var(--font-mono)}
-      @keyframes blink{50%{opacity:0}}
-
       .project-subtitle{
         font-size:clamp(1rem,2vw,1.15rem);color:var(--text-secondary);
         max-width:700px;margin:0 auto 32px;line-height:1.8;
@@ -675,7 +671,7 @@
             <p class="project-subtitle">
               DerejPres organiza préstamos, pagos y financiamientos evitando desorden en libretas físicas. Controla cuánto debe cada cliente y se adapta a cualquier tipo de negocio.
             </p>
-            <div class="project-price">RD$ 4,000 - 15,000</div>
+            <div class="project-price">Desde RD$ 4,000</div>
             <p class="price-note">El precio varía según las funciones adicionales que necesite tu negocio.</p>
             <p class="price-note">Licencia por suscripción (mensual o anual) + Soporte activo mientras tengas la licencia</p>
           </div>
@@ -684,43 +680,57 @@
           <div class="carousel-container reveal reveal-delay-1">
             <div class="carousel-wrapper">
               <div class="carousel-slide active">
-                <img src="/imgproye/derejpress/DP-login.webp" alt="DerejPres — Login">
+                <img src="/imgproye/derejpress/DP-login.webp"
+                    alt="Pantalla de inicio de sesión del sistema DerejPres">
+              </div>
+
+              <div class="carousel-slide">
+                <img src="/imgproye/derejpress/DerejPres.webp"
+                    alt="Panel principal de DerejPres con resumen y acceso a las funciones del sistema">
               </div>
               <div class="carousel-slide">
-                <img src="/imgproye/derejpress/DerejPres.webp" alt="DerejPres — Dashboard Principal">
+                <img src="/imgproye/derejpress/DP-regcliente.webp"
+                    alt="Formulario para registrar un nuevo cliente en DerejPres">
               </div>
               <div class="carousel-slide">
-                <img src="/imgproye/derejpress/DP-regcliente.webp" alt="DerejPres — Registrar Cliente">
+                <img src="/imgproye/derejpress/DP-cliente.webp"
+                    alt="Listado general de clientes registrados en el sistema DerejPres">
               </div>
               <div class="carousel-slide">
-                <img src="/imgproye/derejpress/DP-cliente.webp" alt="DerejPres — Cliente">
+                <img src="/imgproye/derejpress/DP-detcliente.webp"
+                    alt="Vista detallada de la información y movimientos de un cliente">
               </div>
               <div class="carousel-slide">
-                <img src="/imgproye/derejpress/DP-detcliente.webp" alt="DerejPres — Detalle Cliente">
+                <img src="/imgproye/derejpress/DP-inipres.webp"
+                    alt="Pantalla de gestión inicial de préstamos en DerejPres">
               </div>
               <div class="carousel-slide">
-                <img src="/imgproye/derejpress/DP-inipres.webp" alt="DerejPres — Inicial Préstamos">
+                <img src="/imgproye/derejpress/DP-presabo.webp"
+                    alt="Módulo de préstamos y registro de abonos realizados por los clientes">
               </div>
               <div class="carousel-slide">
-                <img src="/imgproye/derejpress/DP-presabo.webp" alt="DerejPres — Préstamos y Abonos">
+                <img src="/imgproye/derejpress/DP-prespago.webp"
+                    alt="Listado de préstamos pagados y finalizados en DerejPres">
               </div>
               <div class="carousel-slide">
-                <img src="/imgproye/derejpress/DP-prespago.webp" alt="DerejPres — Préstamos Pagados">
+                <img src="/imgproye/derejpress/DP-recliente.webp"
+                    alt="Formulario para editar y actualizar la información de un cliente">
               </div>
               <div class="carousel-slide">
-                <img src="/imgproye/derejpress/DP-recliente.webp" alt="DerejPres — Editar Cliente">
+                <img src="/imgproye/derejpress/DP-estcuenta.webp"
+                    alt="Estado de cuenta con historial y balance del cliente en DerejPres">
               </div>
               <div class="carousel-slide">
-                <img src="/imgproye/derejpress/DP-estcuenta.webp" alt="DerejPres — Estado de Cuenta">
+                <img src="/imgproye/derejpress/DP-anufat.webp"
+                    alt="Módulo para anular facturas emitidas en el sistema DerejPres">
               </div>
               <div class="carousel-slide">
-                <img src="/imgproye/derejpress/DP-anufat.webp" alt="DerejPres — Anulación de Factura">
+                <img src="/imgproye/derejpress/DP-anurec.webp"
+                    alt="Pantalla para anular recibos registrados en DerejPres">
               </div>
               <div class="carousel-slide">
-                <img src="/imgproye/derejpress/DP-anurec.webp" alt="DerejPres — Anulación de Recibos">
-              </div>
-              <div class="carousel-slide">
-                <img src="/imgproye/derejpress/DP-reimp.webp" alt="DerejPres — Reimprimir Factura">
+                <img src="/imgproye/derejpress/DP-reimp.webp"
+                    alt="Opción para reimprimir facturas y documentos emitidos por DerejPres">
               </div>
             </div>
             <button class="carousel-nav carousel-prev" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>

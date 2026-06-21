@@ -10,7 +10,7 @@ const projectsData = [
     badgeClass: 'finanzas',
     badgeIcon: 'calculator',
     badgeText: 'Finanzas',
-    image: '/imagenes/proyecto/DerejPres.webp',
+    image: '/imagenes/proyecto/dp-dashboard-card.webp',
     title: 'DerejPres',
     description: 'Software web que automatiza el control de financiamientos, calcula cuotas y organiza deudas de tus clientes.',
     tech: [
@@ -58,7 +58,7 @@ const projectsData = [
     badgeClass: 'finanzas',
     badgeIcon: 'calculator',
     badgeText: 'Finanzas',
-    image: '/imagenes/proyecto/DF-Menu-card.webp',
+    image: '/imagenes/proyecto/df-menu-card.webp',
     title: 'DerejFinance',
     description: 'Aplicación web para controlar tus finanzas con facilidad y mejorar la eficiencia de tu administración financiera personal.',
     tech: [
@@ -154,7 +154,7 @@ const projectsData = [
     badgeClass: 'comercio',
     badgeIcon: 'shopping-cart',
     badgeText: 'Comercio',
-    image: '/imagenes/proyecto/df-dashboard-card.webp',
+    image: '/imagenes/proyecto/dfd-dashboard-card.webp',
     title: 'DerejFood',
     description: 'Software web que automatiza el control de ventas de tu restaurante, organiza el inventario y reduce pérdidas.',
     tech: [
