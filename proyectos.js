@@ -44,7 +44,7 @@ const projectsData = [
     badgeText: 'Comercio',
     image: '/imagenes/proyecto/dm-dashboard-card.webp',
     title: 'DerejMotium',
-    description: 'Sistema web para agencias de motocicletas que centraliza ventas de contado y crédito, controla clientes y suplidores, agiliza facturación y reduce errores.',
+    description: 'Software web que automatiza las ventas a crédito y contado de tu agencia de motos, controlando clientes y deudas.',
     tech: [
       { class: 'django', name: 'Django' },
       { class: 'mysql', name: 'MySQL' },
