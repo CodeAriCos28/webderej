@@ -58,7 +58,7 @@ const projectsData = [
     badgeClass: 'finanzas',
     badgeIcon: 'calculator',
     badgeText: 'Finanzas',
-    image: '/imagenes/proyecto/df-menu-card.webp',
+    image: '/imagenes/proyecto/df-dashboard-card.webp',
     title: 'DerejFinance',
     description: 'Aplicación web para controlar tus finanzas con facilidad y mejorar la eficiencia de tu administración financiera personal.',
     tech: [
