@@ -72,9 +72,34 @@
             "availableLanguage": "Spanish"
           },
           "customer": [
-            {"@type": "Organization", "name": "DDMax Moto Impor"},
+            {"@type": "Organization", "name": "DD Max Moto Import"},
             {"@type": "Organization", "name": "402 Fast Food"},
             {"@type": "Organization", "name": "Super Bestia"}
+          ],
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5",
+            "reviewCount": "3"
+          },
+          "review": [
+            {
+              "@type": "Review",
+              "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+              "author": {"@type": "Person", "name": "Leopoldo Rodríguez", "affiliation": {"@type": "Organization", "name": "DD Max Moto Import"}},
+              "reviewBody": "Antes de DerejSoft llevábamos las ventas a crédito en libretas y perdíamos el hilo de las deudas de los clientes. Hoy todo está centralizado: sabemos exactamente quién debe, cuánto y desde cuándo. El control que tenemos ahora no tiene comparación."
+            },
+            {
+              "@type": "Review",
+              "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+              "author": {"@type": "Person", "name": "Joaquín Méndez", "affiliation": {"@type": "Organization", "name": "Super Bestia"}},
+              "reviewBody": "Con un inventario tan amplio como el nuestro, los errores eran inevitables. DerejSoft desarrolló un sistema que se adapta a cómo trabajamos nosotros, no al revés. Hoy gestionamos ventas, stock y reportes desde un solo lugar, sin perder tiempo buscando información."
+            },
+            {
+              "@type": "Review",
+              "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+              "author": {"@type": "Person", "name": "Claudia Fernández", "affiliation": {"@type": "Organization", "name": "402 Fast Food"}},
+              "reviewBody": "En un restaurante cada segundo cuenta. El sistema que desarrolló DerejSoft redujo el tiempo de toma de pedidos y eliminó los errores de caja que teníamos antes. La operación es más rápida y el equipo lo adoptó sin dificultad desde el primer día."
+            }
           ]
         },
         {
@@ -83,25 +108,57 @@
           "url": "https://derejsoft.com"
         },
         {
-          "@type": "Review",
-          "itemReviewed": {"@type": "Organization", "name": "DerejSoft"},
-          "reviewRating": {"@type": "Rating", "ratingValue": "5"},
-          "author": {"@type": "Person", "name": "Leopoldo Rodríguez", "affiliation": {"@type": "Organization", "name": "DD Max Moto Import"}},
-          "reviewBody": "Antes de DerejSoft llevábamos las ventas a crédito en libretas y perdíamos el hilo de las deudas de los clientes. Hoy todo está centralizado: sabemos exactamente quién debe, cuánto y desde cuándo. El control que tenemos ahora no tiene comparación."
-        },
-        {
-          "@type": "Review",
-          "itemReviewed": {"@type": "Organization", "name": "DerejSoft"},
-          "reviewRating": {"@type": "Rating", "ratingValue": "5"},
-          "author": {"@type": "Person", "name": "Joaquín Méndez", "affiliation": {"@type": "Organization", "name": "Super Bestia"}},
-          "reviewBody": "Con un inventario tan amplio como el nuestro, los errores eran inevitables. DerejSoft desarrolló un sistema que se adapta a cómo trabajamos nosotros, no al revés. Hoy gestionamos ventas, stock y reportes desde un solo lugar, sin perder tiempo buscando información."
-        },
-        {
-          "@type": "Review",
-          "itemReviewed": {"@type": "Organization", "name": "DerejSoft"},
-          "reviewRating": {"@type": "Rating", "ratingValue": "5"},
-          "author": {"@type": "Person", "name": "Claudia Fernández", "affiliation": {"@type": "Organization", "name": "402 Fast Food"}},
-          "reviewBody": "En un restaurante cada segundo cuenta. El sistema que desarrolló DerejSoft redujo el tiempo de toma de pedidos y eliminó los errores de caja que teníamos antes. La operación es más rápida y el equipo lo adoptó sin dificultad desde el primer día."
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "¿Cuánto cuesta desarrollar un software a medida?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "El costo depende de los requerimientos de tu proyecto. Como referencia: proyectos sencillos parten desde RD$ 25,000, proyectos de complejidad media desde RD$ 40,000 y proyectos avanzados desde RD$ 80,000. Solicita una consulta gratuita y te enviamos una propuesta en menos de 24 horas."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Cuánto tiempo tarda en estar listo mi sistema?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Depende de la complejidad. Un proyecto sencillo se entrega en 1 a 2 meses, uno de complejidad media entre 3 y 6 meses, y uno avanzado en 6 meses en adelante. Desde el primer día te damos un cronograma claro con fechas de entrega."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Qué soporte recibo después de que me entreguen el sistema?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Todo proyecto incluye 6 meses de soporte técnico gratuito después de la entrega. Si contratas una plataforma SaaS, el soporte es continuo sin costo adicional mientras uses el servicio."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿El sistema funciona desde el celular?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sí. Todos nuestros sistemas son aplicaciones web con tecnología PWA, lo que significa que funcionan desde cualquier dispositivo — celular, tablet o computadora — sin necesidad de descargar una app."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Puedo pedir cambios después de que el sistema esté terminado?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sí. Durante los 6 meses de soporte gratuito atendemos ajustes y correcciones. Cambios mayores o nuevos módulos se cotizan según el alcance."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Necesito saber de tecnología para trabajar con DerejSoft?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. Nos encargamos de toda la parte técnica. Tú nos explicas cómo funciona tu negocio y nosotros diseñamos la solución. El proceso es claro y te mantenemos informado en cada etapa."
+              }
+            }
+          ]
         }
       ]
     }
@@ -246,22 +303,52 @@
           </div>
           <div class="testimonios-grid">
             <div class="testimonio-card reveal reveal-delay-1">
-              <div class="testimonio-quote" aria-hidden="true">&ldquo;</div>
-              <blockquote>Antes de DerejSoft llevábamos las ventas a crédito en libretas y perdíamos el hilo de las deudas de los clientes. Hoy todo está centralizado: sabemos exactamente quién debe, cuánto y desde cuándo. El control que tenemos ahora no tiene comparación.</blockquote>
-              <div class="testimonio-divider"></div>
-              <cite>— Leopoldo Rodríguez, DD Max Moto Import, Santiago, RD</cite>
+              <div class="testimonio-quote" aria-hidden="true">“</div>
+              <div class="testimonio-text">“Antes de DerejSoft llevábamos las ventas a crédito en libretas y perdíamos el hilo de las deudas de los clientes. Hoy todo está centralizado: sabemos exactamente quién debe, cuánto y desde cuándo. El control que tenemos ahora no tiene comparación.”</div>
+              <div class="testimonio-author">
+                <div class="testimonio-avatar"><span class="avatar-initials">LR</span></div>
+                <div class="testimonio-bio">
+                  <span class="testimonio-name">Leopoldo Rodríguez</span>
+                  <div class="testimonio-meta">
+                    <span>DDMax Moto Import</span>
+                    <span class="dot"></span>
+                    <span>Castanuelas, RD</span>
+                  </div>
+                </div>
+              </div>
+              <div class="testimonio-brand">DEREJSOFT</div>
             </div>
             <div class="testimonio-card reveal reveal-delay-2">
-              <div class="testimonio-quote" aria-hidden="true">&ldquo;</div>
-              <blockquote>Con un inventario tan amplio como el nuestro, los errores eran inevitables. DerejSoft desarrolló un sistema que se adapta a cómo trabajamos nosotros, no al revés. Hoy gestionamos ventas, stock y reportes desde un solo lugar, sin perder tiempo buscando información.</blockquote>
-              <div class="testimonio-divider"></div>
-              <cite>— Joaquín Méndez, Super Bestia, Santiago, RD</cite>
+              <div class="testimonio-quote" aria-hidden="true">“</div>
+              <div class="testimonio-text">“Con un inventario tan amplio como el nuestro, los errores eran inevitables. DerejSoft desarrolló un sistema que se adapta a cómo trabajamos nosotros, no al revés. Hoy gestionamos ventas, stock y reportes desde un solo lugar, sin perder tiempo buscando información.”</div>
+              <div class="testimonio-author">
+                <div class="testimonio-avatar"><span class="avatar-initials">JM</span></div>
+                <div class="testimonio-bio">
+                  <span class="testimonio-name">Joaquín Méndez</span>
+                  <div class="testimonio-meta">
+                    <span>Super Bestia</span>
+                    <span class="dot"></span>
+                    <span>Castanuelas, RD</span>
+                  </div>
+                </div>
+              </div>
+              <div class="testimonio-brand">DEREJSOFT</div>
             </div>
             <div class="testimonio-card reveal reveal-delay-3">
-              <div class="testimonio-quote" aria-hidden="true">&ldquo;</div>
-              <blockquote>En un restaurante cada segundo cuenta. El sistema que desarrolló DerejSoft redujo el tiempo de toma de pedidos y eliminó los errores de caja que teníamos antes. La operación es más rápida y el equipo lo adoptó sin dificultad desde el primer día.</blockquote>
-              <div class="testimonio-divider"></div>
-              <cite>— Claudia Fernández, 402 Fast Food, Santiago, RD</cite>
+              <div class="testimonio-quote" aria-hidden="true">“</div>
+              <div class="testimonio-text">“En un restaurante cada segundo cuenta. El sistema que desarrolló DerejSoft redujo el tiempo de toma de pedidos y eliminó los errores de caja que teníamos antes. La operación es más rápida y el equipo lo adoptó sin dificultad desde el primer día.”</div>
+              <div class="testimonio-author">
+                <div class="testimonio-avatar"><span class="avatar-initials">CF</span></div>
+                <div class="testimonio-bio">
+                  <span class="testimonio-name">Claudia Fernández</span>
+                  <div class="testimonio-meta">
+                    <span>402 Fast Food</span>
+                    <span class="dot"></span>
+                    <span>Castanuelas, RD</span>
+                  </div>
+                </div>
+              </div>
+              <div class="testimonio-brand">DEREJSOFT</div>
             </div>
           </div>
         </div>
@@ -276,6 +363,72 @@
           </div>
           <div class="projects-grid" id="projects-grid"></div>
           <div class="pagination-container" id="pagination-container"></div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq" class="cv-auto">
+        <div class="container">
+          <div class="section-header reveal">
+            <h2 class="section-title">Preguntas <span class="gradient-text">Frecuentes</span></h2>
+            <p class="section-subtitle">Todo lo que necesitas saber antes de comenzar</p>
+          </div>
+          <div class="faq-list">
+            <div class="faq-item">
+              <div class="faq-question" role="button" tabindex="0">
+                <h3>¿Cuánto cuesta desarrollar un software a medida?</h3>
+                <span class="faq-toggle">+</span>
+              </div>
+              <div class="faq-answer">
+                <p>El costo depende de los requerimientos de tu proyecto. Como referencia: proyectos sencillos parten desde RD$ 25,000, proyectos de complejidad media desde RD$ 40,000 y proyectos avanzados desde RD$ 80,000. Solicita una consulta gratuita y te enviamos una propuesta en menos de 24 horas.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question" role="button" tabindex="0">
+                <h3>¿Cuánto tiempo tarda en estar listo mi sistema?</h3>
+                <span class="faq-toggle">+</span>
+              </div>
+              <div class="faq-answer">
+                <p>Depende de la complejidad. Un proyecto sencillo se entrega en 1 a 2 meses, uno de complejidad media entre 3 y 6 meses, y uno avanzado en 6 meses en adelante. Desde el primer día te damos un cronograma claro con fechas de entrega.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question" role="button" tabindex="0">
+                <h3>¿Qué soporte recibo después de que me entreguen el sistema?</h3>
+                <span class="faq-toggle">+</span>
+              </div>
+              <div class="faq-answer">
+                <p>Todo proyecto incluye 6 meses de soporte técnico gratuito después de la entrega. Si contratas una plataforma SaaS, el soporte es continuo sin costo adicional mientras uses el servicio.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question" role="button" tabindex="0">
+                <h3>¿El sistema funciona desde el celular?</h3>
+                <span class="faq-toggle">+</span>
+              </div>
+              <div class="faq-answer">
+                <p>Sí. Todos nuestros sistemas son aplicaciones web con tecnología PWA, lo que significa que funcionan desde cualquier dispositivo — celular, tablet o computadora — sin necesidad de descargar una app.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question" role="button" tabindex="0">
+                <h3>¿Puedo pedir cambios después de que el sistema esté terminado?</h3>
+                <span class="faq-toggle">+</span>
+              </div>
+              <div class="faq-answer">
+                <p>Sí. Durante los 6 meses de soporte gratuito atendemos ajustes y correcciones. Cambios mayores o nuevos módulos se cotizan según el alcance.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question" role="button" tabindex="0">
+                <h3>¿Necesito saber de tecnología para trabajar con DerejSoft?</h3>
+                <span class="faq-toggle">+</span>
+              </div>
+              <div class="faq-answer">
+                <p>No. Nos encargamos de toda la parte técnica. Tú nos explicas cómo funciona tu negocio y nosotros diseñamos la solución. El proceso es claro y te mantenemos informado en cada etapa.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -429,6 +582,16 @@
       /* ---- Scroll reveal ---- */
       const robs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');robs.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -40px 0px'});
       document.querySelectorAll('.reveal').forEach(el=>robs.observe(el));
+
+      /* ---- FAQ accordion ---- */
+      document.querySelectorAll('.faq-question').forEach(q => {
+        q.addEventListener('click', function() {
+          const parent = this.closest('.faq-item');
+          const wasOpen = parent.classList.contains('active');
+          document.querySelectorAll('.faq-item.active').forEach(item => item.classList.remove('active'));
+          if (!wasOpen) parent.classList.add('active');
+        });
+      });
 
       /* ---- Card mouse glow (service + project) ---- */
       // Disable on touch devices or small screens for performance

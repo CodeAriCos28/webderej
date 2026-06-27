@@ -211,43 +211,183 @@ textarea{min-height:120px;resize:vertical}
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--border-default);
   border-radius: var(--radius-md);
-  padding: 36px 28px;
+  padding: 36px 28px 32px;
   position: relative;
   overflow: hidden;
   transition: all .45s var(--ease-out);
+}
+.testimonio-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--accent-cyan);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .5s var(--ease-out);
+}
+.testimonio-card:hover::after {
+  transform: scaleX(1);
 }
 .testimonio-card:hover {
   transform: translateY(-6px);
   border-color: var(--border-hover);
   box-shadow: var(--shadow-glow);
 }
+/* Quotation mark - top right */
 .testimonio-quote {
-  font-size: 4rem;
+  position: absolute;
+  top: 8px;
+  right: 20px;
+  font-size: 120px;
   line-height: 1;
-  color: var(--accent-cyan);
-  opacity: 0.3;
-  margin-bottom: -12px;
   font-family: Georgia, serif;
+  color: var(--accent-cyan);
+  opacity: 0.12;
+  user-select: none;
+  pointer-events: none;
 }
-.testimonio-card blockquote {
+/* Text */
+.testimonio-text {
   font-style: italic;
   color: var(--text-secondary);
   line-height: 1.7;
   font-size: .95rem;
-  margin: 0;
-  padding: 0;
+  max-width: 90%;
+  position: relative;
+  z-index: 1;
 }
-.testimonio-divider {
-  width: 40px;
-  height: 2px;
+/* Author section */
+.testimonio-author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-subtle);
+}
+.testimonio-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
   background: var(--gradient-hero);
-  margin: 20px 0 12px;
-}
-.testimonio-card cite {
-  font-style: normal;
-  color: var(--accent-cyan);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
   font-size: .85rem;
+  color: #fff;
+  font-family: var(--font-heading);
+  flex-shrink: 0;
+}
+.testimonio-name {
+  font-weight: 700;
+  color: var(--accent-cyan);
+  font-size: .95rem;
+}
+.testimonio-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-secondary);
+  font-size: .82rem;
+}
+.dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--border-default);
+}
+/* Brand tag */
+.testimonio-brand {
+  position: absolute;
+  bottom: 12px;
+  right: 20px;
+  font-size: .65rem;
+  font-family: var(--font-mono);
+  letter-spacing: 3px;
+  color: var(--text-secondary);
+  opacity: 0.3;
+  transition: opacity .35s;
   font-weight: 600;
+}
+.testimonio-card:hover .testimonio-brand {
+  opacity: 0.8;
+}
+
+/* ============================================
+   FAQ
+   ============================================ */
+#faq {
+  background: linear-gradient(180deg, rgba(11,18,40,0) 0%, rgba(11,18,40,0.3) 100%);
+}
+.faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.faq-item {
+  background: var(--gradient-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: all .45s var(--ease-out);
+  border-left: 3px solid transparent;
+}
+.faq-item.active {
+  border-left-color: var(--accent-cyan);
+}
+.faq-item:hover {
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-glow);
+}
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 24px;
+  cursor: pointer;
+  user-select: none;
+}
+.faq-question h3 {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  color: var(--text-primary);
+  font-weight: 600;
+  line-height: 1.4;
+}
+.faq-toggle {
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: var(--accent-cyan);
+  flex-shrink: 0;
+  transition: transform .35s var(--ease-out);
+  line-height: 1;
+}
+.faq-item.active .faq-toggle {
+  transform: rotate(45deg);
+}
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .45s var(--ease-out), padding .45s var(--ease-out);
+}
+.faq-item.active .faq-answer {
+  max-height: 300px;
+}
+.faq-answer p {
+  padding: 0 24px 20px;
+  color: var(--text-secondary);
+  font-size: .95rem;
+  line-height: 1.7;
 }
 
 /* ============================================
