@@ -414,10 +414,10 @@ textarea{min-height:120px;resize:vertical}
   border-radius: var(--radius-md);
   overflow: hidden;
   transition: all .45s var(--ease-out);
-  border-left: 3px solid transparent;
+  box-shadow: inset 3px 0 0 transparent;
 }
 .faq-item.active {
-  border-left-color: var(--accent-cyan);
+  box-shadow: inset 3px 0 0 var(--accent-cyan);
 }
 .faq-item:hover {
   border-color: var(--border-hover);
@@ -486,7 +486,7 @@ textarea{min-height:120px;resize:vertical}
   .projects-grid{grid-template-columns:1fr}
   .clientes-grid{grid-template-columns:repeat(2, 1fr);gap:24px}
   .cliente-item img{height:36px}
-  .testimonios-grid{grid-template-columns:1fr}
+  .testimonios-grid{grid-template-columns:repeat(2, 1fr)}
 }
 @media(max-width:480px){
   .hero{padding-top:24px}
@@ -497,4 +497,5 @@ textarea{min-height:120px;resize:vertical}
   .contact-info h2{font-size:1.6rem}
    .terminal-badge{flex-wrap:wrap;justify-content:center;row-gap:6px}
   .terminal-badge{font-size:.72rem;padding:8px 14px}
+  .testimonios-grid{grid-template-columns:1fr}
 }
