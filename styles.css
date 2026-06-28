@@ -138,3 +138,22 @@ footer{background:var(--bg-surface);border-top:1px solid var(--border-subtle);pa
   .footer-links,.footer-social ul{justify-content:center}
   .footer-bottom{flex-direction:column;gap:8px;text-align:center}
 }
+
+/* ============================================
+   FLAG TEXT (Dominican Republic)
+   ============================================ */
+.flag-text {
+  background: linear-gradient(
+    to bottom,
+    #002D62 0%,
+    #002D62 33.33%,
+    #FFFFFF 33.33%,
+    #FFFFFF 66.66%,
+    #CE1126 66.66%,
+    #CE1126 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
