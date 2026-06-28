@@ -176,18 +176,29 @@ textarea{min-height:120px;resize:vertical}
   background: linear-gradient(180deg, rgba(11,18,40,0) 0%, rgba(11,18,40,0.3) 50%, rgba(11,18,40,0.5) 100%);
   padding-bottom: 40px;
 }
+.clientes-carousel {
+  position: relative;
+}
 .clientes-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
   align-items: center;
-  gap: 56px;
+  justify-items: center;
+}
+.cliente-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 .cliente-item img {
   height: 50px;
   width: auto;
+  max-width: 100%;
   filter: grayscale(1) opacity(0.6);
   transition: filter 0.35s ease, opacity 0.35s ease;
+  object-fit: contain;
 }
 .cliente-item:hover img {
   filter: none;
@@ -195,10 +206,62 @@ textarea{min-height:120px;resize:vertical}
 }
 
 /* ============================================
+   CAROUSEL CONTROLS (shared: testimonios + clients)
+   ============================================ */
+.carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 36px;
+}
+.carousel-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--border-default);
+  background: var(--gradient-card);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: var(--text-secondary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .35s var(--ease-out);
+  font-size: .85rem;
+}
+.carousel-btn .icon {
+  width: 14px;
+  height: 14px;
+}
+.carousel-btn:hover:not(:disabled) {
+  border-color: var(--accent-cyan);
+  color: var(--accent-cyan);
+  box-shadow: var(--shadow-glow);
+  transform: scale(1.1);
+}
+.carousel-btn:disabled {
+  opacity: .25;
+  cursor: default;
+}
+.carousel-counter {
+  font-family: var(--font-mono);
+  font-size: .85rem;
+  color: var(--text-secondary);
+  min-width: 36px;
+  text-align: center;
+  letter-spacing: .5px;
+}
+
+/* ============================================
    TESTIMONIOS
    ============================================ */
 #testimonios {
   background: linear-gradient(180deg, rgba(11,18,40,0.5) 0%, rgba(11,18,40,0) 100%);
+}
+.testimonios-carousel {
+  position: relative;
 }
 .testimonios-grid {
   display: grid;
@@ -415,6 +478,7 @@ textarea{min-height:120px;resize:vertical}
   .contact-info h2{font-size:2rem}
   .faq-grid{grid-template-columns:1fr;gap:32px}
   .faq-image{position:static;max-width:400px;margin:0 auto}
+  .clientes-grid{grid-template-columns:repeat(3, 1fr)}
 }
 @media(max-width:768px){
   .hero{padding-top:40px}
@@ -422,8 +486,8 @@ textarea{min-height:120px;resize:vertical}
    .tech-icons{display:none}
   .hero h1{font-size:clamp(1.8rem,9vw,2.5rem)}
   .projects-grid{grid-template-columns:1fr}
-  .clientes-grid{gap:32px}
-  .cliente-item{flex:0 0 calc(50% - 32px);display:flex;justify-content:center}
+  .clientes-grid{grid-template-columns:repeat(2, 1fr);gap:24px}
+  .cliente-item img{height:36px}
   .testimonios-grid{grid-template-columns:1fr}
 }
 @media(max-width:480px){
