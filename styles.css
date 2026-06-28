@@ -20,7 +20,7 @@ html{scroll-behavior:smooth;scroll-padding-top:80px;overflow-x:hidden}
   --accent-emerald:#10b981;--accent-pink:#ec4899;--accent-amber:#f59e0b;
   --gradient-hero:linear-gradient(135deg,#00e5ff 0%,#3d7aed 40%,#7c3aed 100%);
   --gradient-text:linear-gradient(90deg,#00e5ff,#3d7aed,#7c3aed);
-  --gradient-card:linear-gradient(180deg,rgba(17,29,58,0.9) 0%,rgba(5,10,24,0.95) 100%);
+  --gradient-card:linear-gradient(180deg,#111d3a 0%,#050a18 100%);
   --gradient-glow:radial-gradient(circle,rgba(0,229,255,0.12) 0%,transparent 70%);
   --text-primary:#f0f4ff;--text-secondary:#a6b4d4;--text-muted:#8f9db9;
   --border-subtle:rgba(0,229,255,0.08);--border-default:rgba(0,229,255,0.12);--border-hover:rgba(0,229,255,0.35);
