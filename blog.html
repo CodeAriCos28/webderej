@@ -46,7 +46,19 @@
         "@type": "Organization",
         "name": "DerejSoft",
         "logo": "https://derejsoft.com/logos/DerejSoft.webp"
-      }
+      },
+      "blogPost": [
+        {
+          "@type": "BlogPosting",
+          "headline": "Cómo digitalizamos la operación de un restaurante en Castañuelas y mejoramos sus ganancias hasta un 50%",
+          "datePublished": "2026-06-20",
+          "author": {
+            "@type": "Organization",
+            "name": "DerejSoft"
+          },
+          "description": "Caso de estudio: cómo DerejSoft desarrolló un sistema Django para 402 Fast Food que redujo tiempos de atención y mejoró las ganancias entre un 30% y 50%."
+        }
+      ]
     }
     </script>
 
@@ -109,12 +121,12 @@
         <!-- CATEGORY FILTERS -->
         <div class="blog-filters fade-in-up" style="animation-delay:.3s">
           <div class="filter-bar">
-            <button class="filter-btn active" data-filter="todos">Todos <span class="filter-count" id="count-all">12</span></button>
+            <button class="filter-btn active" data-filter="todos">Todos <span class="filter-count" id="count-all">13</span></button>
             <button class="filter-btn" data-filter="python">Python <span class="filter-count" id="count-python">4</span></button>
             <button class="filter-btn" data-filter="django">Django <span class="filter-count" id="count-django">3</span></button>
             <button class="filter-btn" data-filter="web">Desarrollo Web <span class="filter-count" id="count-web">3</span></button>
             <button class="filter-btn" data-filter="tendencias">Tendencias <span class="filter-count" id="count-tendencias">3</span></button>
-            <button class="filter-btn" data-filter="negocio">Negocio <span class="filter-count" id="count-negocio">2</span></button>
+            <button class="filter-btn" data-filter="negocio">Negocio <span class="filter-count" id="count-negocio">3</span></button>
             <button class="filter-btn" data-filter="devops">DevOps <span class="filter-count" id="count-devops">2</span></button>
           </div>
         </div>
@@ -265,6 +277,47 @@
        BLOG DATA
        ============================================= */
     const blogPosts = [
+      {
+        id: 'como-digitalizamos-402-fast-food',
+        title: 'Cómo digitalizamos la operación de un restaurante en Castañuelas y mejoramos sus ganancias hasta un 50%',
+        excerpt: '402 Fast Food tenía un problema concreto: control de caja caótico y tiempos de atención lentos. En 2 meses y medio construimos un sistema Django completo que redujo 5 minutos por cuenta generada y mejoró las ganancias entre un 30% y 50%.',
+        category: 'negocio',
+        categoryLabel: 'Negocio',
+        date: '20 Jun 2026',
+        readTime: '5 min',
+        author: 'DerejSoft',
+        image: '/imagenes/blog/402-fast-food.webp',
+        tags: ['negocio', 'django', 'html', 'css', 'javascript'],
+        content: `
+          <p>En 2024, 402 Fast Food nos contactó con un problema concreto: el tiempo de atención era lento y el control del dinero en caja era un caos. Sin un sistema centralizado, los errores eran inevitables y las pérdidas, silenciosas.</p>
+
+          <h2>El problema</h2>
+          <p>El restaurante manejaba pedidos, caja e inventario de forma manual. Cada cierre de caja era una fuente de inconsistencias — dinero que no cuadraba, pedidos que se perdían entre cocina y mostrador, y cero visibilidad de las ganancias reales del día.</p>
+
+          <h2>Lo que construimos</h2>
+          <p>En 2 meses y medio desarrollamos un sistema web completo en Django con los siguientes módulos:</p>
+          <ul>
+            <li>Gestión de pedidos con ticket directo a cocina</li>
+            <li>Facturación e impresión térmica</li>
+            <li>Control de caja con historial de movimientos</li>
+            <li>Registro de clientes</li>
+            <li>Anulaciones y devoluciones</li>
+            <li>Control de inventario</li>
+            <li>Dashboard con métricas del negocio</li>
+            <li>Sistema de roles para el personal</li>
+          </ul>
+
+          <h2>El resultado</h2>
+          <p>Desde que 402 Fast Food usa el sistema, el tiempo de generación de cuenta bajó 5 minutos por cliente — en un restaurante, eso se multiplica por decenas de mesas al día. El control de caja pasó de ser el problema principal a ser el módulo más usado. Las ganancias mejoraron entre un 30% y un 50% según la propia administración del negocio.</p>
+
+          <blockquote>
+            <p>"En un restaurante cada segundo cuenta. El sistema que desarrolló DerejSoft redujo el tiempo de toma de pedidos y eliminó los errores de caja que teníamos antes." — Claudia Fernández, 402 Fast Food</p>
+          </blockquote>
+
+          <h2>Conclusión</h2>
+          <p>No fue magia. Fue eliminar el papel, centralizar la información y darle al equipo una herramienta que se adapta a cómo trabajan ellos — no al revés. Si tu negocio tiene procesos manuales que generan pérdidas, contáctanos.</p>
+        `
+      },
       {
         id: 'python-2026',
         title: 'Python en 2026: Por qué sigue siendo la lengua franca del desarrollo moderno',

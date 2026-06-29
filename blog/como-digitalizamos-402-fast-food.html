@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+	<meta name="google-adsense-account" content="ca-pub-7683583332859980" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cómo digitalizamos la operación de un restaurante en Castañuelas y mejoramos sus ganancias hasta un 50% | DerejSoft Blog</title>
+    <link rel="shortcut icon" href="/logos/logo2D(1).ico" />
+    <meta name="description" content="Caso de estudio: cómo DerejSoft desarrolló un sistema Django para 402 Fast Food que redujo tiempos de atención y mejoró las ganancias entre un 30% y 50%." />
+    <meta name="keywords" content="django, html, css, javascript, restaurante, digitalización, DerejSoft" />
+    <meta name="theme-color" content="#050a18" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" />
+    <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" /></noscript>
+
+    <link rel="preload" as="style" href="../styles.css" />
+    <link rel="preload" as="style" href="../blog.css" />
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../blog.css">
+
+    <!-- Canonical & SEO -->
+    <link rel="canonical" href="https://derejsoft.com/blog/como-digitalizamos-402-fast-food.html" />
+    <meta property="og:title" content="Cómo digitalizamos la operación de un restaurante en Castañuelas y mejoramos sus ganancias hasta un 50% | DerejSoft Blog" />
+    <meta property="og:description" content="Caso de estudio: cómo DerejSoft desarrolló un sistema Django para 402 Fast Food que redujo tiempos de atención y mejoró las ganancias entre un 30% y 50%." />
+    <meta property="og:url" content="https://derejsoft.com/blog/como-digitalizamos-402-fast-food.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="es_DO" />
+    <meta property="og:site_name" content="DerejSoft" />
+    <meta property="og:image" content="https://derejsoft.com/imagenes/blog/402-fast-food.webp" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Cómo digitalizamos la operación de un restaurante en Castañuelas y mejoramos sus ganancias hasta un 50%" />
+    <meta name="twitter:description" content="Caso de estudio: cómo DerejSoft desarrolló un sistema Django para 402 Fast Food que redujo tiempos de atención y mejoró las ganancias entre un 30% y 50%." />
+    <meta name="twitter:site" content="@derejsoft" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Cómo digitalizamos la operación de un restaurante en Castañuelas y mejoramos sus ganancias hasta un 50%",
+      "description": "Caso de estudio: cómo DerejSoft desarrolló un sistema Django para 402 Fast Food que redujo tiempos de atención y mejoró las ganancias entre un 30% y 50%.",
+      "image": "https://derejsoft.com/imagenes/blog/402-fast-food.webp",
+      "datePublished": "2026-06-20",
+      "dateModified": "2026-06-20",
+      "author": {
+        "@type": "Organization",
+        "name": "DerejSoft",
+        "url": "https://derejsoft.com"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "DerejSoft",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://derejsoft.com/logos/DerejSoft.webp"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://derejsoft.com/blog/como-digitalizamos-402-fast-food.html"
+      }
+    }
+    </script>
+
+  </head>
+  <body>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7683583332859980" crossorigin="anonymous"></script>
+    <!-- Background layers -->
+    <canvas id="bg-canvas"></canvas>
+    <div id="grid-overlay"></div>
+    <div id="ambient-glow"></div>
+
+    <!-- Header -->
+    <header class="site-header">
+      <nav>
+        <a href="../index.html" class="logo">
+          <img src="../logos/DerejLogo.webp" alt="Logo DerejSoft" class="logo-img" width="38" height="38" />
+          <div class="logo-text">Derej<span>Soft</span></div>
+        </a>
+        <button class="menu-toggle" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+        <ul class="nav-links">
+          <li><a href="../index.html#inicio"><span class="link-text">Inicio</span></a></li>
+          <li><a href="../index.html#servicios"><span class="link-text">Servicios</span></a></li>
+          <li><a href="../nosotros.html"><span class="link-text">Nosotros</span></a></li>
+          <li><a href="../index.html#proyectos"><span class="link-text">Proyectos</span></a></li>
+          <li><a href="../blog.html" class="active"><span class="link-text">Blog</span></a></li>
+          <li><a href="../index.html#contacto"><span class="link-text">Contacto</span></a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- WhatsApp -->
+    <div class="whatsapp-float">
+      <a href="https://wa.me/8294772269" target="_blank" aria-label="Abrir chat de WhatsApp">
+        <svg class="icon" width="28" height="28"><use href="/svg/icons.svg#icon-whatsapp"/></svg>
+      </a>
+    </div>
+
+    <main>
+      <div class="container">
+        <!-- ARTICLE VIEW -->
+        <div class="article-view active" style="padding-top:120px">
+          <a class="article-back" href="../blog.html">
+            <svg class="icon" style="width:1em;height:1em"><use href="/svg/icons.svg#icon-chevron-left"/></svg>
+            Volver al blog
+          </a>
+
+          <div class="article-header">
+            <span class="featured-category cat-negocio">Negocio</span>
+            <h1>Cómo digitalizamos la operación de un restaurante en Castañuelas y mejoramos sus ganancias hasta un 50%</h1>
+            <div class="article-meta">
+              <span>DerejSoft</span>
+              <span class="dot"></span>
+              <span>20 Jun 2026</span>
+              <span class="dot"></span>
+              <span>5 min de lectura</span>
+            </div>
+          </div>
+
+          <div class="article-hero-image">
+            <img src="/imagenes/blog/402-fast-food.webp" alt="402 Fast Food" />
+          </div>
+
+          <div class="article-body">
+            <p>En 2024, 402 Fast Food nos contactó con un problema concreto: el tiempo de atención era lento y el control del dinero en caja era un caos. Sin un sistema centralizado, los errores eran inevitables y las pérdidas, silenciosas.</p>
+
+            <h2>El problema</h2>
+            <p>El restaurante manejaba pedidos, caja e inventario de forma manual. Cada cierre de caja era una fuente de inconsistencias — dinero que no cuadraba, pedidos que se perdían entre cocina y mostrador, y cero visibilidad de las ganancias reales del día.</p>
+
+            <h2>Lo que construimos</h2>
+            <p>En 2 meses y medio desarrollamos un sistema web completo en Django con los siguientes módulos:</p>
+            <ul>
+              <li>Gestión de pedidos con ticket directo a cocina</li>
+              <li>Facturación e impresión térmica</li>
+              <li>Control de caja con historial de movimientos</li>
+              <li>Registro de clientes</li>
+              <li>Anulaciones y devoluciones</li>
+              <li>Control de inventario</li>
+              <li>Dashboard con métricas del negocio</li>
+              <li>Sistema de roles para el personal</li>
+            </ul>
+
+            <h2>El resultado</h2>
+            <p>Desde que 402 Fast Food usa el sistema, el tiempo de generación de cuenta bajó 5 minutos por cliente — en un restaurante, eso se multiplica por decenas de mesas al día. El control de caja pasó de ser el problema principal a ser el módulo más usado. Las ganancias mejoraron entre un 30% y un 50% según la propia administración del negocio.</p>
+
+            <blockquote>
+              <p>"En un restaurante cada segundo cuenta. El sistema que desarrolló DerejSoft redujo el tiempo de toma de pedidos y eliminó los errores de caja que teníamos antes." — Claudia Fernández, 402 Fast Food</p>
+            </blockquote>
+
+            <h2>Conclusión</h2>
+            <p>No fue magia. Fue eliminar el papel, centralizar la información y darle al equipo una herramienta que se adapta a cómo trabajan ellos — no al revés. Si tu negocio tiene procesos manuales que generan pérdidas, contáctanos.</p>
+          </div>
+
+          <div class="article-tags">
+            <span class="article-tag-item">negocio</span>
+            <span class="article-tag-item">django</span>
+            <span class="article-tag-item">html</span>
+            <span class="article-tag-item">css</span>
+            <span class="article-tag-item">javascript</span>
+          </div>
+
+          <div class="article-share">
+            <span>Compartir:</span>
+            <button class="share-btn" onclick="window.open('https://twitter.com/intent/tweet?url='+encodeURIComponent(window.location.href)+'&text='+encodeURIComponent(document.title),'_blank')" aria-label="Compartir en Twitter">
+              <svg class="icon" style="width:.85em;height:.85em" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </button>
+
+            <button class="share-btn" onclick="navigator.clipboard.writeText(window.location.href).then(()=>{event.currentTarget.innerHTML='<svg class=\"icon\" style=\"width:.85em;height:.85em\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z\"/></svg>';setTimeout(()=>{event.currentTarget.innerHTML='<svg class=\"icon\" style=\"width:.85em;height:.85em\" viewBox=\"0 0 24 24\"><path d=\"M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z\"/></svg>'},2000)})" aria-label="Copiar enlace">
+              <svg class="icon" style="width:.85em;height:.85em" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-top">
+          <div class="footer-logo-container">
+            <img loading="lazy" src="../logos/DerejLogo.webp" alt="Logo DerejSoft" class="footer-logo-img" width="36" height="36" />
+            <div class="footer-logo-text">Derej<span>Soft</span></div>
+          </div>
+          <div class="footer-links">
+            <a href="../index.html#servicios" class="footer-link">Servicios</a>
+            <a href="../blog.html" class="footer-link">Blog</a>
+            <a href="../nosotros.html" class="footer-link">Nosotros</a>
+            <a href="../index.html#contacto" class="footer-link">Contacto</a>
+          </div>
+          <div class="footer-social">
+            <span class="footer-social-title">Síguenos</span>
+            <ul>
+              <li><a href="https://www.instagram.com/derejsoft" target="_blank" class="social-icon instagram" aria-label="Instagram"><svg class="icon"><use href="/svg/icons.svg#icon-instagram"/></svg></a></li>
+              <li><a href="https://www.facebook.com/share/1JKws2oMEp" target="_blank" class="social-icon facebook" aria-label="Facebook"><svg class="icon"><use href="/svg/icons.svg#icon-facebook-f"/></svg></a></li>
+              <li><a href="https://www.tiktok.com/@derejsoft" target="_blank" class="social-icon tiktok" aria-label="TikTok"><svg class="icon"><use href="/svg/icons.svg#icon-tiktok"/></svg></a></li>
+
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div>&copy; <script>document.write(new Date().getFullYear())</script> <span style="color:var(--accent-cyan);font-weight:700">DerejSoft</span>. Todos los derechos reservados.</div>
+          <div>Hecho con <svg class="icon" style="color:#e11d48"><use href="/svg/icons.svg#icon-heart"/></svg> en República Dominicana</div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+    (self.requestIdleCallback || setTimeout)(() => {
+      const isMobile = window.innerWidth < 768;
+      const c = document.getElementById('bg-canvas'), ctx = c.getContext('2d');
+      let W, H, pts = [];
+      function resize() { W = c.width = innerWidth; H = c.height = innerHeight }
+      resize(); addEventListener('resize', resize);
+      const N = isMobile ? Math.min(Math.floor(W*H/80000),15) : Math.min(Math.floor(W*H/25000),50);
+      for (let i = 0; i < N; i++) pts.push({
+        x: Math.random() * W, y: Math.random() * H,
+        vx: (Math.random() - .5) * .3, vy: (Math.random() - .5) * .3,
+        r: Math.random() * 1.5 + .5
+      });
+      function draw() {
+        ctx.clearRect(0, 0, W, H);
+        for (let i = 0; i < pts.length; i++) {
+          const p = pts[i];
+          p.x += p.vx; p.y += p.vy;
+          if (p.x < 0 || p.x > W) p.vx *= -1;
+          if (p.y < 0 || p.y > H) p.vy *= -1;
+          ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(0,229,255,0.35)'; ctx.fill();
+          for (let j = i + 1; j < pts.length; j++) {
+            const q = pts[j], dx = p.x - q.x, dy = p.y - q.y, d = dx * dx + dy * dy;
+            if (d < 25600) { ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(q.x, q.y); ctx.strokeStyle = `rgba(0,229,255,${.15 * (1 - d / 25600)})`; ctx.lineWidth = .5; ctx.stroke() }
+          }
+        }
+        requestAnimationFrame(draw);
+      }
+      draw();
+    });
+    </script>
+  </body>
+</html>
