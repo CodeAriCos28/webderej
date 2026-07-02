@@ -83,132 +83,96 @@
     <!-- Schema JSON-LD -->
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@graph": [
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "name": "DerejSoft",
+      "url": "https://derejsoft.com",
+      "logo": "https://derejsoft.com/logos/DerejSoft1200x630.webp",
+      "description": "Empresa de desarrollo de software con sede en República Dominicana. Especialistas en Python, Django, desarrollo web y consultoría tecnológica.",
+      "foundingDate": "2021",
+      "areaServed": ["República Dominicana", "Latinoamérica"],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Brisa del Yaque, Casa #10, Loma de Castañuelas",
+        "addressLocality": "Castañuelas",
+        "addressRegion": "Montecristi",
+        "postalCode": "62100",
+        "addressCountry": "DO"
+      },
+      "sameAs": [
+        "https://www.instagram.com/derejsoft",
+        "https://www.facebook.com/share/1JKws2oMEp",
+        "https://www.tiktok.com/@derejsoft"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-829-477-2269",
+        "contactType": "servicio al cliente",
+        "availableLanguage": "Spanish"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "name": "DerejSoft",
+      "url": "https://derejsoft.com"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
         {
-          "@type": "Organization",
-          "name": "DerejSoft",
-          "url": "https://derejsoft.com",
-          "logo": "https://derejsoft.com/logos/DerejSoft1200x630.webp",
-          "description": "Empresa de desarrollo de software con sede en República Dominicana. Especialistas en Python, Django, desarrollo web y consultoría tecnológica.",
-          "foundingDate": "2021",
-          "areaServed": ["República Dominicana", "Latinoamérica"],
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Brisa del Yaque, Casa #10, Loma de Castañuelas",
-            "addressLocality": "Castañuelas",
-            "addressRegion": "Montecristi",
-            "postalCode": "62100",
-            "addressCountry": "DO"
-          },
-          "sameAs": [
-            "https://www.instagram.com/derejsoft",
-            "https://www.facebook.com/share/1JKws2oMEp",
-            "https://www.tiktok.com/@derejsoft"
-          ],
-          "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+1-829-477-2269",
-            "contactType": "servicio al cliente",
-            "availableLanguage": "Spanish"
-          },
-          "customer": [
-            {"@type": "Organization", "name": "DD Max Moto Import"},
-            {"@type": "Organization", "name": "402 Fast Food"},
-            {"@type": "Organization", "name": "Super Bestia"}
-          ],
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "5",
-            "reviewCount": "3"
-          },
-          "review": [
-            {
-              "@type": "Review",
-              "reviewRating": {"@type": "Rating", "ratingValue": "5"},
-              "author": {"@type": "Person", "name": "Leopoldo Rodríguez", "affiliation": {"@type": "Organization", "name": "DD Max Moto Import"}},
-              "reviewBody": "Antes de DerejSoft llevábamos las ventas a crédito en libretas y perdíamos el hilo de las deudas de los clientes. Hoy todo está centralizado: sabemos exactamente quién debe, cuánto y desde cuándo. El control que tenemos ahora no tiene comparación."
-            },
-            {
-              "@type": "Review",
-              "reviewRating": {"@type": "Rating", "ratingValue": "5"},
-              "author": {"@type": "Person", "name": "Joaquín Méndez", "affiliation": {"@type": "Organization", "name": "Super Bestia"}},
-              "reviewBody": "Con un inventario tan amplio como el nuestro, los errores eran inevitables. DerejSoft desarrolló un sistema que se adapta a cómo trabajamos nosotros, no al revés. Hoy gestionamos ventas, stock y reportes desde un solo lugar, sin perder tiempo buscando información."
-            },
-            {
-              "@type": "Review",
-              "reviewRating": {"@type": "Rating", "ratingValue": "5"},
-              "author": {"@type": "Person", "name": "Claudia Fernández", "affiliation": {"@type": "Organization", "name": "402 Fast Food"}},
-              "reviewBody": "En un restaurante cada segundo cuenta. El sistema que desarrolló DerejSoft redujo el tiempo de toma de pedidos y eliminó los errores de caja que teníamos antes. La operación es más rápida y el equipo lo adoptó sin dificultad desde el primer día."
-            },
-            {
-              "@type": "Review",
-              "reviewRating": {"@type": "Rating", "ratingValue": "5"},
-              "author": {"@type": "Person", "name": "Juliana Perez", "affiliation": {"@type": "Organization", "name": "Hospital DR. Julio Alvarez Acosta"}},
-              "reviewBody": "Como institución de salud necesitábamos un soporte técnico confiable. Derejsoft realizó la instalación y configuración de más de 25 computadoras, junto con los controladores de impresión. Todo quedó funcionando correctamente, permitiéndonos trabajar con tranquilidad y continuidad."
-            }
-          ]
+          "@type": "Question",
+          "name": "¿Cuánto cuesta desarrollar un software a medida?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El costo depende de los requerimientos de tu proyecto. Como referencia: proyectos sencillos parten desde RD$ 25,000, proyectos de complejidad media desde RD$ 40,000 y proyectos avanzados desde RD$ 80,000. Solicita una consulta gratuita y te enviamos una propuesta en menos de 24 horas."
+          }
         },
         {
-          "@type": "WebSite",
-          "name": "DerejSoft",
-          "url": "https://derejsoft.com"
+          "@type": "Question",
+          "name": "¿Cuánto tiempo tarda en estar listo mi sistema?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Depende de la complejidad. Un proyecto sencillo se entrega en 1 a 2 meses, uno de complejidad media entre 3 y 6 meses, y uno avanzado en 6 meses en adelante. Desde el primer día te damos un cronograma claro con fechas de entrega."
+          }
         },
         {
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "¿Cuánto cuesta desarrollar un software a medida?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "El costo depende de los requerimientos de tu proyecto. Como referencia: proyectos sencillos parten desde RD$ 25,000, proyectos de complejidad media desde RD$ 40,000 y proyectos avanzados desde RD$ 80,000. Solicita una consulta gratuita y te enviamos una propuesta en menos de 24 horas."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "¿Cuánto tiempo tarda en estar listo mi sistema?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Depende de la complejidad. Un proyecto sencillo se entrega en 1 a 2 meses, uno de complejidad media entre 3 y 6 meses, y uno avanzado en 6 meses en adelante. Desde el primer día te damos un cronograma claro con fechas de entrega."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "¿Qué soporte recibo después de que me entreguen el sistema?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Todo proyecto incluye 6 meses de soporte técnico gratuito después de la entrega. Si contratas una plataforma SaaS, el soporte es continuo sin costo adicional mientras uses el servicio."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "¿El sistema funciona desde el celular?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Sí. Todos nuestros sistemas son aplicaciones web con tecnología PWA, lo que significa que funcionan desde cualquier dispositivo — celular, tablet o computadora — sin necesidad de descargar una app."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "¿Puedo pedir cambios después de que el sistema esté terminado?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Sí. Durante los 6 meses de soporte gratuito atendemos ajustes y correcciones. Cambios mayores o nuevos módulos se cotizan según el alcance."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "¿Necesito saber de tecnología para trabajar con DerejSoft?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "No. Nos encargamos de toda la parte técnica. Tú nos explicas cómo funciona tu negocio y nosotros diseñamos la solución. El proceso es claro y te mantenemos informado en cada etapa."
-              }
-            }
-          ]
+          "@type": "Question",
+          "name": "¿Qué soporte recibo después de que me entreguen el sistema?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Todo proyecto incluye 6 meses de soporte técnico gratuito después de la entrega. Si contratas una plataforma SaaS, el soporte es continuo sin costo adicional mientras uses el servicio."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿El sistema funciona desde el celular?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Todos nuestros sistemas son aplicaciones web con tecnología PWA, lo que significa que funcionan desde cualquier dispositivo — celular, tablet o computadora — sin necesidad de descargar una app."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Puedo pedir cambios después de que el sistema esté terminado?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Durante los 6 meses de soporte gratuito atendemos ajustes y correcciones. Cambios mayores o nuevos módulos se cotizan según el alcance."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Necesito saber de tecnología para trabajar con DerejSoft?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Nos encargamos de toda la parte técnica. Tú nos explicas cómo funciona tu negocio y nosotros diseñamos la solución. El proceso es claro y te mantenemos informado en cada etapa."
+          }
         }
       ]
     }
+  ]
+}
     </script>
     <link rel="manifest" href="/site.webmanifest" />
   </head>
